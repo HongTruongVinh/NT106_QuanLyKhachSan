@@ -8,3 +8,5 @@ C:\Users\HONG VINH\source\repos\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKh
 C:\Users\HONG VINH\source\repos\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CoreCompileInputs.cache
 C:\Users\HONG VINH\source\repos\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
 C:\Users\HONG VINH\source\repos\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
+C:\Users\HONG VINH\source\repos\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fAdmin.resources
+C:\Users\HONG VINH\source\repos\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fLogin.resources

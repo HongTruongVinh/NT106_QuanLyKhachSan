@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,7 @@ namespace QuanLyKhachSan
             pn_Menu.Hide();
             panel2startPosition = new Point(pn_Window.Location.X, pn_Window.Location.Y);
             pn_Window.Location = new Point(12, 13);
-            pn_Window.Size = new Size(1173, 636);
+            pn_Window.Size = new Size(2000, 2000);
             pn_MenuOnWD.Size = new Size(pn_MenuOnWD.Width, 1000);
 
             ToolTip toolTip = new ToolTip();
@@ -38,7 +39,7 @@ namespace QuanLyKhachSan
                 pn_MenuOnWD.Hide();
                 menuIsHide = false;
                 pn_Window.Location = panel2startPosition;
-                pn_Window.Size = new Size(924, 636);
+                //pn_Window.Size = new Size(2000, 2000);
             }
             else
             {
@@ -46,7 +47,7 @@ namespace QuanLyKhachSan
                 pn_MenuOnWD.Show();
                 menuIsHide = true;
                 pn_Window.Location = new Point(12, 13);
-                pn_Window.Size = new Size(1173, 636);
+                //pn_Window.Size = new Size(2000, 2000);
             }
         }
         private void btn_MenuOnMenu_Click(object sender, EventArgs e)
@@ -104,5 +105,17 @@ namespace QuanLyKhachSan
             btn_InforAccount.BackColor = Color.DeepSkyBlue;
         }
 
+        
+
+        private void btn_InforAccount_Click(object sender, EventArgs e)
+        {
+            fAdmin fAdmin = new fAdmin();
+            fAdmin.ShowDialog();
+        }
+
+        private void btn_SignOut_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

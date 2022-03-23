@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using QuanLyKhachSan.DAO;
+
+namespace QuanLyKhachSan
+{
+    public partial class fAdmin : Form
+    {
+        public fAdmin()
+        {
+            InitializeComponent();
+
+            LoadAccountList();
+        }
+
+        void LoadAccountList()
+        {
+            string query = "SELECT DisplayName AS [Tên tài khoản] FROM dbo.Account";
+
+            dataGridView1.DataSource = DataProvider.Instance.ExecuteQuery(query);
+        }
+    }
+}
