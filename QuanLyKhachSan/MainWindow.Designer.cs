@@ -36,8 +36,10 @@ namespace QuanLyKhachSan
             this.btn_Help = new System.Windows.Forms.Label();
             this.btn_InforAccount = new System.Windows.Forms.Label();
             this.pn_Window = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.pn_MenuOnWD = new System.Windows.Forms.Panel();
             this.btn_Menu = new System.Windows.Forms.Label();
+            this.lb_Admin = new System.Windows.Forms.Label();
             this.pn_Menu.SuspendLayout();
             this.pn_Window.SuspendLayout();
             this.pn_MenuOnWD.SuspendLayout();
@@ -46,6 +48,7 @@ namespace QuanLyKhachSan
             // pn_Menu
             // 
             this.pn_Menu.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.pn_Menu.Controls.Add(this.lb_Admin);
             this.pn_Menu.Controls.Add(this.btn_MenuOnMenu);
             this.pn_Menu.Controls.Add(this.btn_SignOut);
             this.pn_Menu.Controls.Add(this.btn_About);
@@ -125,11 +128,23 @@ namespace QuanLyKhachSan
             // pn_Window
             // 
             this.pn_Window.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.pn_Window.Controls.Add(this.button1);
             this.pn_Window.Controls.Add(this.pn_MenuOnWD);
             this.pn_Window.Location = new System.Drawing.Point(261, 13);
             this.pn_Window.Name = "pn_Window";
             this.pn_Window.Size = new System.Drawing.Size(924, 636);
             this.pn_Window.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.Location = new System.Drawing.Point(551, 185);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(144, 95);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Đặt phòng";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // pn_MenuOnWD
             // 
@@ -151,6 +166,18 @@ namespace QuanLyKhachSan
             this.btn_Menu.TabIndex = 8;
             this.btn_Menu.Text = "≡";
             this.btn_Menu.Click += new System.EventHandler(this.btn_Menu_Click);
+            // 
+            // lb_Admin
+            // 
+            this.lb_Admin.AutoSize = true;
+            this.lb_Admin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Admin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lb_Admin.Location = new System.Drawing.Point(14, 369);
+            this.lb_Admin.Name = "lb_Admin";
+            this.lb_Admin.Size = new System.Drawing.Size(153, 25);
+            this.lb_Admin.TabIndex = 10;
+            this.lb_Admin.Text = "🤵  Quản trị viên";
+            this.lb_Admin.Click += new System.EventHandler(this.lb_Admin_Click);
             // 
             // MainWindow
             // 
@@ -183,6 +210,8 @@ namespace QuanLyKhachSan
         private System.Windows.Forms.Label btn_Menu;
         private System.Windows.Forms.Panel pn_MenuOnWD;
         private System.Windows.Forms.Label btn_MenuOnMenu;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label lb_Admin;
     }
 }
 

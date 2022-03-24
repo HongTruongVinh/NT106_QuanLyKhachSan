@@ -109,13 +109,25 @@ namespace QuanLyKhachSan
 
         private void btn_InforAccount_Click(object sender, EventArgs e)
         {
-            fAdmin fAdmin = new fAdmin();
-            fAdmin.ShowDialog();
+            fInformation fInformation = new fInformation();
+            fInformation.ShowDialog();
         }
 
         private void btn_SignOut_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            fOderRoom fOderRoom = new fOderRoom();
+            fOderRoom.ShowDialog();
+        }
+
+        private void lb_Admin_Click(object sender, EventArgs e)
+        {
+            fAdmin fAdmin = new fAdmin();
+            fAdmin.ShowDialog();
         }
     }
 }

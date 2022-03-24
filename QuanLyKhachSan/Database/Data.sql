@@ -35,7 +35,7 @@ CREATE TABLE Room
 	id INT IDENTITY PRIMARY KEY,
 	name NVARCHAR(100) NOT NULL  DEFAULT N'Chưa đặt tên',
 	status NVARCHAR(100) NOT NULL, --Trống || Có người
-	type Int NOT NULL, --Loại 1 || Loại 2 || Loại 3 
+	type NVARCHAR(100) NOT NULL, --Vip hoặc loại thường 
 	price FLOAT NOT NULL DEFAULT 0
 )
 GO
@@ -61,6 +61,17 @@ INSERT INTO dbo.Account
 			  DisplayName,
 			  Password
 			)
+VALUES       ( N'HongVinh',
+			  N'Hong Truong Vinh',
+			  N'1'
+			)
+GO
+
+INSERT INTO dbo.Account
+			( UserName,
+			  DisplayName,
+			  Password
+			)
 VALUES       ( N'staff',
 			  N'staff',
 			  N'1'
@@ -77,3 +88,45 @@ VALUES       ( N'admin',
 			  N'0'
 			)
 GO
+-------------------------------------------------------
+USE QuanLyKhachSan
+GO
+
+CREATE PROC USP_Login
+@UserName NVARCHAR(100), @PassWord NVARCHAR(1000)
+AS
+BEGIN
+	SELECT * FROM dbo.Account WHERE UserName = @UserName AND PassWord = @PassWord
+END
+GO
+-------------------------------------------------------
+USE QuanLyKhachSan
+GO
+
+INSERT INTO dbo.Room VALUES (N'Phòng 101',N'Trống', N'Vip', 300000)
+INSERT INTO dbo.Room VALUES (N'Phòng 102',N'Trống', N'Vip', 300000)
+INSERT INTO dbo.Room VALUES (N'Phòng 103',N'Trống', N'Vip', 300000)
+INSERT INTO dbo.Room VALUES (N'Phòng 104',N'Trống', N'Thường', 200000)
+INSERT INTO dbo.Room VALUES (N'Phòng 105',N'Trống', N'Thường', 200000)
+INSERT INTO dbo.Room VALUES (N'Phòng 106',N'Trống', N'Thường', 200000)
+
+--DROP PROCEDURE [USP_GetRoomList];  
+--GO
+
+--ALTER TABLE dbo.Room
+--ALTER COLUMN type NVARCHAR(100) NOT NULL
+ALTER TABLE dbo.Room ADD floor INT NOT NULL
+GO
+
+CREATE PROC USP_GetRoomList
+AS
+BEGIN
+	SELECT * FROM dbo.Room
+END
+GO
+
+EXEC USP_GetRoomList
+
+UPDATE dbo.Room SET STATUS = 'Có người' WHERE id = 4
+
+-------------------------------------------------------
