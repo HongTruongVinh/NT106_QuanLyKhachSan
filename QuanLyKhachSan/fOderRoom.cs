@@ -18,11 +18,12 @@ namespace QuanLyKhachSan
         {
             InitializeComponent();
 
+
             LoadRoomList();
 
         }
 
-        //ImageList imageList = new ImageList();
+        #region Method
 
         void LoadRoomList()
         {
@@ -34,43 +35,59 @@ namespace QuanLyKhachSan
 
                 btn.Text = room.Name + Environment.NewLine + room.Status;
 
+                btn.Click += Room_Click;
+                btn.Tag = room;
+
                 btn.Margin = new Padding(10, 30, 30, 0);
 
-                if (room.Type == "Vip")
-                {
-                    btn.Text = btn.Text + Environment.NewLine + "VIP";
-                    btn.Font = new Font(Font, FontStyle.Bold);
-                    btn.ForeColor = Color.Red;
-                }
+                //if (room.Type == "Vip")
+                //{
+                //    btn.Text = btn.Text + Environment.NewLine + "VIP";
+                //    btn.Font = new Font(Font, FontStyle.Bold);
+                //    btn.ForeColor = Color.Red;
+                //}
 
-                switch (room.Status)
-                {
-                    case "Trống":
-                        btn.BackColor = Color.Aqua;
-                        break;
-                    default:
-                        btn.BackColor = Color.LightPink;
-                        break;
-                }
+                //switch (room.Status)
+                //{
+                //    case "Trống":
+                //        btn.BackColor = Color.Aqua;
+                //        break;
+                //    default:
+                //        btn.BackColor = Color.LightPink;
+                //        break;
+                //}
 
                 flp_1stFloor.Controls.Add(btn);
             }
+        }
 
-            for (int i = 0; i < 10; i++)
-            {
-                Button btn = new Button() { Width = RoomDAO.RoomWidth, Height = RoomDAO.RoomHeight };
-                btn.Margin=new Padding(10, 30, 30, 0);
-                btn.Text = (i + 1).ToString();
-                flp_1stFloor.Controls.Add(btn);
-            }
+        void ShowBill(int id)
+        {
 
-            for (int i = 0; i < 10; i++)
-            {
-                Button btn = new Button() { Width = RoomDAO.RoomWidth, Height = RoomDAO.RoomHeight };
-                btn.Margin = new Padding(10, 30, 30, 0);
-                btn.Text = (i + 1).ToString();
-                flp_2ndFloor.Controls.Add(btn);
-            }
+        }
+
+        #endregion
+
+
+        #region Event
+        private void Room_Click(object sender, EventArgs e)
+        {
+            Button btn = (sender as Button);
+            Room thisRoom = (Room)btn.Tag;
+            fInforRoom fInforRoom = new fInforRoom();
+            fInforRoom.ShowDialog();
+        }
+
+        private void btn_AddBill_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        #endregion
+
+        private void btn_Close_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

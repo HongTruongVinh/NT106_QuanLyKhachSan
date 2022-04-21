@@ -4,9 +4,8 @@ GO
 USE QuanLyKhachSan
 GO
 
---Phong
---Account
---Bill
+---------------------------------------------------------------------------
+-- Phần tạo bảng
 
 
 CREATE TABLE Account

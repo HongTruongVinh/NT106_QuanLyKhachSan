@@ -12,3 +12,5 @@ C:\Users\HONG VINH\source\repos\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKh
 C:\Users\HONG VINH\source\repos\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fLogin.resources
 C:\Users\HONG VINH\source\repos\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fOderRoom.resources
 C:\Users\HONG VINH\source\repos\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fInformation.resources
+C:\Users\HONG VINH\source\repos\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fBill.resources
+C:\Users\HONG VINH\source\repos\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fInforRoom.resources

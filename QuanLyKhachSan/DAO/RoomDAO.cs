@@ -31,7 +31,7 @@ namespace QuanLyKhachSan.DAO
         {
             List<DTO.Room> roomList = new List<DTO.Room>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("USP_GetRoomList");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.ROOM");
 
             foreach (DataRow row in data.Rows)
             {
