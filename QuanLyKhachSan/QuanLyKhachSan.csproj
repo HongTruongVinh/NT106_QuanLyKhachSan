@@ -82,11 +82,11 @@
     <Compile Include="fLogin.Designer.cs">
       <DependentUpon>fLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="fOderRoom.cs">
+    <Compile Include="fLoadRoom.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fOderRoom.Designer.cs">
-      <DependentUpon>fOderRoom.cs</DependentUpon>
+    <Compile Include="fLoadRoom.Designer.cs">
+      <DependentUpon>fLoadRoom.cs</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.cs">
       <SubType>Form</SubType>
@@ -111,8 +111,8 @@
     <EmbeddedResource Include="fLogin.resx">
       <DependentUpon>fLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fOderRoom.resx">
-      <DependentUpon>fOderRoom.cs</DependentUpon>
+    <EmbeddedResource Include="fLoadRoom.resx">
+      <DependentUpon>fLoadRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainWindow.resx">
       <DependentUpon>MainWindow.cs</DependentUpon>

@@ -32,10 +32,15 @@ namespace QuanLyKhachSan.DTO
 
         public Room(DataRow row)
         {
-            this.ID = (int)row["id"];
+            string _id = (string)row["id"];
+            this.ID = int.Parse(_id);
+
             this.Name = row["name"].ToString();
+
             this.status= row["status"].ToString();
+
             this.Type= row["type"].ToString();
+
             string _price = row["price"].ToString();
             this.Price = uint.Parse(_price);
         }

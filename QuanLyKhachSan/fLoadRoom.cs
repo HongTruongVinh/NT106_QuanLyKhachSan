@@ -12,15 +12,23 @@ using QuanLyKhachSan.DTO;
 
 namespace QuanLyKhachSan
 {
-    public partial class fOderRoom : Form
+    public partial class fLoadRoom : Form
     {
-        public fOderRoom()
+        public fLoadRoom()
         {
             InitializeComponent();
 
+            SetDefulControl();
 
-            //LoadRoomList();
+            LoadRoomList();
+        }
 
+        void SetDefulControl()
+        {
+            lb_TypeA.BackColor = Color.LightCyan;
+            lb_TypeB.BackColor = Color.PaleTurquoise;
+            lb_TypeC.BackColor = Color.Aqua;
+            lb_Ordered.BackColor = Color.LightPink;
         }
 
         #region Method
@@ -40,22 +48,30 @@ namespace QuanLyKhachSan
 
                 btn.Margin = new Padding(10, 30, 30, 0);
 
-                //if (room.Type == "Vip")
-                //{
-                //    btn.Text = btn.Text + Environment.NewLine + "VIP";
-                //    btn.Font = new Font(Font, FontStyle.Bold);
-                //    btn.ForeColor = Color.Red;
-                //}
+                switch (room.Status)
+                {
+                    case "1":
+                        btn.BackColor = Color.LightPink;
+                        btn.Text = room.ID + "\n" + "có người";
+                        break;
+                    default:
+                        if(room.Type == "A")
+                        {
+                            btn.BackColor = Color.LightCyan;
+                        }
+                        else if(room.Type == "B")
+                        {
+                            btn.BackColor = Color.PaleTurquoise;
+                        }
+                        else
+                        {
+                            btn.BackColor = Color.Aqua;
+                        }
 
-                //switch (room.Status)
-                //{
-                //    case "Trống":
-                //        btn.BackColor = Color.Aqua;
-                //        break;
-                //    default:
-                //        btn.BackColor = Color.LightPink;
-                //        break;
-                //}
+                        btn.Text = room.ID + "\n" + "Trống";
+
+                        break;
+                }
 
                 flp_1stFloor.Controls.Add(btn);
             }
@@ -89,5 +105,6 @@ namespace QuanLyKhachSan
         {
             this.Close();
         }
+
     }
 }

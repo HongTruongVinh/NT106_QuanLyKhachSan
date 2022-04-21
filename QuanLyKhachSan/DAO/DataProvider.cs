@@ -24,6 +24,13 @@ namespace QuanLyKhachSan.DAO
 
         private string connectionSTR = @"Data Source=.\sqlexpress;Initial Catalog=QuanLyKS;Integrated Security=True";
 
+
+        /// <summary>
+        /// Hàm thực hiện lệnh truyền vào 
+        /// </summary>
+        /// <param name="query"></param>
+        /// <param name="parameter"></param>
+        /// <returns></returns>
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
             DataTable data = new DataTable();
@@ -64,6 +71,13 @@ namespace QuanLyKhachSan.DAO
             return data;
         }
 
+
+        /// <summary>
+        /// Hàm trả ra số dòng thành công, vd các lệnh: Update , Insert, Delete, ...
+        /// </summary>
+        /// <param name="query"></param>
+        /// <param name="parameter"></param>
+        /// <returns></returns>
         public int ExecuteNonQuery(string query, object[] parameter = null)
         {
             int data = 0;
@@ -104,6 +118,13 @@ namespace QuanLyKhachSan.DAO
             return data;
         }
 
+
+        /// <summary>
+        /// Hàm thực hiện đếm số lượng (trả về ô đầu tiên của kết quả) , vd: SELECT Count(*) FROM ABC
+        /// </summary>
+        /// <param name="query"></param>
+        /// <param name="parameter"></param>
+        /// <returns></returns>
         public object ExecuteScalar(string query, object[] parameter = null)
         {
             // Hàm thực hiện đếm số lượng (trả về ô đầu tiên của kết quả) , vd: SELECT Count(*) FROM ABC

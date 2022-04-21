@@ -31,7 +31,7 @@ namespace QuanLyKhachSan.DAO
         {
             List<DTO.Room> roomList = new List<DTO.Room>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.ROOM");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT MaPhong as id, TenPhong as name, TinhTrang as status, TenLoaiPhong as type, DonGia as price FROM dbo.PHONG p, dbo.LOAIPHONG lp WHERE p.MaLoaiPhong = lp.MaLoaiPhong");
 
             foreach (DataRow row in data.Rows)
             {
