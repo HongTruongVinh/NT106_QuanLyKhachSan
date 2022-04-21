@@ -22,7 +22,7 @@ namespace QuanLyKhachSan.DAO
 
         private DataProvider() { }
 
-        private string connectionSTR = @"Data Source=.\sqlexpress;Initial Catalog=QuanLyKhachSan;Integrated Security=True";
+        private string connectionSTR = @"Data Source=.\sqlexpress;Initial Catalog=QuanLyKS;Integrated Security=True";
 
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
@@ -70,6 +70,8 @@ namespace QuanLyKhachSan.DAO
 
             using (SqlConnection connection = new SqlConnection(connectionSTR))
             {
+                // Hàm trả ra số dòng thành công, vd các lệnh: Update , Insert, Delete, ...
+
                 connection.Open();
 
                 SqlCommand command = new SqlCommand(query, connection);
@@ -102,8 +104,10 @@ namespace QuanLyKhachSan.DAO
             return data;
         }
 
-        public object ExecuteScala(string query, object[] parameter = null)
+        public object ExecuteScalar(string query, object[] parameter = null)
         {
+            // Hàm thực hiện đếm số lượng (trả về ô đầu tiên của kết quả) , vd: SELECT Count(*) FROM ABC
+
             object data = 0;
 
             using (SqlConnection connection = new SqlConnection(connectionSTR))

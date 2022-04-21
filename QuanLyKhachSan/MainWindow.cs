@@ -39,7 +39,6 @@ namespace QuanLyKhachSan
                 pn_MenuOnWD.Hide();
                 menuIsHide = false;
                 pn_Window.Location = panel2startPosition;
-                //pn_Window.Size = new Size(2000, 2000);
             }
             else
             {
@@ -47,7 +46,6 @@ namespace QuanLyKhachSan
                 pn_MenuOnWD.Show();
                 menuIsHide = true;
                 pn_Window.Location = new Point(12, 13);
-                //pn_Window.Size = new Size(2000, 2000);
             }
         }
         private void btn_MenuOnMenu_Click(object sender, EventArgs e)

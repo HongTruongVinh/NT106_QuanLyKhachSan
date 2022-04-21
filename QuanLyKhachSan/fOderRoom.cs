@@ -19,7 +19,7 @@ namespace QuanLyKhachSan
             InitializeComponent();
 
 
-            LoadRoomList();
+            //LoadRoomList();
 
         }
 
