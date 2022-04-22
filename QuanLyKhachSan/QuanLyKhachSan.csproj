@@ -48,9 +48,13 @@
   <ItemGroup>
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\BillDAO.cs" />
+    <Compile Include="DAO\ClientDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\RentalVoucherDAO.cs" />
     <Compile Include="DAO\RoomDAO.cs" />
     <Compile Include="DTO\Bill.cs" />
+    <Compile Include="DTO\Client.cs" />
+    <Compile Include="DTO\RentalVoucher.cs" />
     <Compile Include="DTO\Room.cs" />
     <Compile Include="fAdmin.cs">
       <SubType>Form</SubType>

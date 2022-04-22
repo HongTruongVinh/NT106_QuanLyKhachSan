@@ -77,11 +77,6 @@ namespace QuanLyKhachSan
             }
         }
 
-        void ShowBill(int id)
-        {
-
-        }
-
         #endregion
 
 
@@ -90,13 +85,8 @@ namespace QuanLyKhachSan
         {
             Button btn = (sender as Button);
             Room thisRoom = (Room)btn.Tag;
-            fInforRoom fInforRoom = new fInforRoom();
+            fInforRoom fInforRoom = new fInforRoom(thisRoom);
             fInforRoom.ShowDialog();
-        }
-
-        private void btn_AddBill_Click(object sender, EventArgs e)
-        {
-            
         }
 
         #endregion
