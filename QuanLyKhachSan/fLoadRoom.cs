@@ -33,26 +33,26 @@ namespace QuanLyKhachSan
 
         #region Method
 
-        void LoadRoomList()
+        public void LoadRoomList()
         {
-            List<Room> roomList = RoomDAO.Instance.LoadRoomList(); 
+            flp_LoadRooms.Controls.Clear();
+
+            List<Room> roomList = RoomDAO.Instance.GetRoomList(); 
 
             foreach (Room room in roomList)
             {
-                Button btn = new Button() { Width = RoomDAO.RoomWidth, Height = RoomDAO.RoomHeight };
-
-                btn.Text = room.Name + Environment.NewLine + room.Status;
-
+                Button btn = new Button() { Width = RoomDAO.RoomWidth, Height = RoomDAO.RoomHeight }; 
                 btn.Click += Room_Click;
                 btn.Tag = room;
-
                 btn.Margin = new Padding(10, 30, 30, 0);
+
+                string statusRoom = "...";
 
                 switch (room.Status)
                 {
                     case "1":
                         btn.BackColor = Color.LightPink;
-                        btn.Text = room.ID + "\n" + "có người";
+                        statusRoom = "có người";
                         break;
                     default:
                         if(room.Type == "A")
@@ -68,12 +68,14 @@ namespace QuanLyKhachSan
                             btn.BackColor = Color.Aqua;
                         }
 
-                        btn.Text = room.ID + "\n" + "Trống";
+                        statusRoom = "Trống";
 
                         break;
                 }
 
-                flp_1stFloor.Controls.Add(btn);
+                btn.Text = room.Name + Environment.NewLine + "Hạng " + room.Type + Environment.NewLine +statusRoom;
+
+                flp_LoadRooms.Controls.Add(btn);
             }
         }
 
@@ -85,7 +87,7 @@ namespace QuanLyKhachSan
         {
             Button btn = (sender as Button);
             Room thisRoom = (Room)btn.Tag;
-            fInforRoom fInforRoom = new fInforRoom(thisRoom);
+            fRentalVoucher fInforRoom = new fRentalVoucher(thisRoom, this);
             fInforRoom.ShowDialog();
         }
 

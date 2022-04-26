@@ -41,7 +41,7 @@ namespace QuanLyKhachSan
             this.lb_TypeA = new System.Windows.Forms.Label();
             this.btn_Close = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.flp_1stFloor = new System.Windows.Forms.FlowLayoutPanel();
+            this.flp_LoadRooms = new System.Windows.Forms.FlowLayoutPanel();
             this.pn_Backgound.SuspendLayout();
             this.pn_ControlBar.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -188,20 +188,20 @@ namespace QuanLyKhachSan
             this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.flowLayoutPanel1.AutoScroll = true;
-            this.flowLayoutPanel1.Controls.Add(this.flp_1stFloor);
+            this.flowLayoutPanel1.Controls.Add(this.flp_LoadRooms);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(19, 63);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1214, 595);
             this.flowLayoutPanel1.TabIndex = 4;
             // 
-            // flp_1stFloor
+            // flp_LoadRooms
             // 
-            this.flp_1stFloor.AutoScroll = true;
-            this.flp_1stFloor.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            this.flp_1stFloor.Location = new System.Drawing.Point(3, 3);
-            this.flp_1stFloor.Name = "flp_1stFloor";
-            this.flp_1stFloor.Size = new System.Drawing.Size(1180, 588);
-            this.flp_1stFloor.TabIndex = 7;
+            this.flp_LoadRooms.AutoScroll = true;
+            this.flp_LoadRooms.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            this.flp_LoadRooms.Location = new System.Drawing.Point(3, 3);
+            this.flp_LoadRooms.Name = "flp_LoadRooms";
+            this.flp_LoadRooms.Size = new System.Drawing.Size(1180, 588);
+            this.flp_LoadRooms.TabIndex = 7;
             // 
             // fLoadRoom
             // 
@@ -236,6 +236,6 @@ namespace QuanLyKhachSan
         private System.Windows.Forms.Label lb_TypeA;
         private System.Windows.Forms.Label btn_Close;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.FlowLayoutPanel flp_1stFloor;
+        private System.Windows.Forms.FlowLayoutPanel flp_LoadRooms;
     }
 }

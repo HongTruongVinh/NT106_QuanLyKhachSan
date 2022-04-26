@@ -9,7 +9,7 @@ namespace QuanLyKhachSan.DTO
 {
     public class RentalVoucher
     {
-        public RentalVoucher(int id, int clientID, int roomID, DateTime? dateTimeCheckIn, DateTime? dateTimeCheckOut, int numberPeople)
+        public RentalVoucher(int id, int clientID, int roomID, DateTime? dateTimeCheckIn, DateTime? dateTimeCheckOut, int numberPeople, int typeClient, float dependencyFactor)
         {
             this.ID = id;
             this.ClientID = clientID;
@@ -17,6 +17,7 @@ namespace QuanLyKhachSan.DTO
             this.DateTimeCheckIn = dateTimeCheckIn;
             this.DateTimeCheckOut = dateTimeCheckOut;
             this.NumberPeople = numberPeople;
+            this.DependencyFactor = dependencyFactor;
         }
 
         public RentalVoucher(DataRow row)
@@ -31,8 +32,24 @@ namespace QuanLyKhachSan.DTO
             this.RoomID = Int32.Parse(_roomID);
 
             this.DateTimeCheckIn = (DateTime?)row["dateTimeCheckIn"];
-            this.DateTimeCheckOut = (DateTime?)row["dateTimeCheckOut"];
-            this.NumberPeople = (int)row["numberPeople"];
+
+            try
+            {
+                this.DateTimeCheckOut = (DateTime?)row["dateTimeCheckOut"];
+            }
+            catch
+            {
+                this.DateTimeCheckOut = null;
+            }
+            
+
+            this.NumberPeople = (int)row["countPeople"];
+
+            this.TypeClient = (string)row["typeClient"].ToString();
+
+            string _dependencyFactor = (string)row["dependencyFactor"].ToString();
+            this.DependencyFactor = float.Parse(_dependencyFactor);
+
         }
 
 
@@ -41,8 +58,9 @@ namespace QuanLyKhachSan.DTO
         private int clientID;
         private DateTime? dateTimeCheckIn;
         private DateTime? dateTimeCheckOut;
+        private string typeClient;
         private int numberPeople;
-
+        private float dependencyFactor;
 
         public int ID { get => iD; set => iD = value; }
         public DateTime? DateTimeCheckIn { get => dateTimeCheckIn; set => dateTimeCheckIn = value; }
@@ -50,5 +68,7 @@ namespace QuanLyKhachSan.DTO
         public int NumberPeople { get => numberPeople; set => numberPeople = value; }
         public int RoomID { get => roomID; set => roomID = value; }
         public int ClientID { get => clientID; set => clientID = value; }
+        public string TypeClient { get => typeClient; set => typeClient = value; }
+        public float DependencyFactor { get => dependencyFactor; set => dependencyFactor = value; }
     }
 }

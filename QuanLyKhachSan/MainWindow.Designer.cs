@@ -30,6 +30,7 @@ namespace QuanLyKhachSan
         private void InitializeComponent()
         {
             this.pn_Menu = new System.Windows.Forms.Panel();
+            this.lb_Admin = new System.Windows.Forms.Label();
             this.btn_MenuOnMenu = new System.Windows.Forms.Label();
             this.btn_SignOut = new System.Windows.Forms.Label();
             this.btn_About = new System.Windows.Forms.Label();
@@ -39,7 +40,6 @@ namespace QuanLyKhachSan
             this.button1 = new System.Windows.Forms.Button();
             this.pn_MenuOnWD = new System.Windows.Forms.Panel();
             this.btn_Menu = new System.Windows.Forms.Label();
-            this.lb_Admin = new System.Windows.Forms.Label();
             this.pn_Menu.SuspendLayout();
             this.pn_Window.SuspendLayout();
             this.pn_MenuOnWD.SuspendLayout();
@@ -58,6 +58,18 @@ namespace QuanLyKhachSan
             this.pn_Menu.Name = "pn_Menu";
             this.pn_Menu.Size = new System.Drawing.Size(242, 636);
             this.pn_Menu.TabIndex = 0;
+            // 
+            // lb_Admin
+            // 
+            this.lb_Admin.AutoSize = true;
+            this.lb_Admin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Admin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lb_Admin.Location = new System.Drawing.Point(14, 369);
+            this.lb_Admin.Name = "lb_Admin";
+            this.lb_Admin.Size = new System.Drawing.Size(153, 25);
+            this.lb_Admin.TabIndex = 10;
+            this.lb_Admin.Text = "🤵  Quản trị viên";
+            this.lb_Admin.Click += new System.EventHandler(this.lb_Admin_Click);
             // 
             // btn_MenuOnMenu
             // 
@@ -166,18 +178,6 @@ namespace QuanLyKhachSan
             this.btn_Menu.TabIndex = 8;
             this.btn_Menu.Text = "≡";
             this.btn_Menu.Click += new System.EventHandler(this.btn_Menu_Click);
-            // 
-            // lb_Admin
-            // 
-            this.lb_Admin.AutoSize = true;
-            this.lb_Admin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Admin.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lb_Admin.Location = new System.Drawing.Point(14, 369);
-            this.lb_Admin.Name = "lb_Admin";
-            this.lb_Admin.Size = new System.Drawing.Size(153, 25);
-            this.lb_Admin.TabIndex = 10;
-            this.lb_Admin.Text = "🤵  Quản trị viên";
-            this.lb_Admin.Click += new System.EventHandler(this.lb_Admin_Click);
             // 
             // MainWindow
             // 

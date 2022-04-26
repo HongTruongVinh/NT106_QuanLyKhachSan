@@ -1,7 +1,7 @@
 ﻿
 namespace QuanLyKhachSan
 {
-    partial class fInforRoom
+    partial class fRentalVoucher
     {
         /// <summary>
         /// Required designer variable.
@@ -47,9 +47,12 @@ namespace QuanLyKhachSan
             this.tb_Status = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel15 = new System.Windows.Forms.Panel();
-            this.cbb_TypeClient = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
+            this.btn_Edit = new System.Windows.Forms.Button();
+            this.btn_Delete = new System.Windows.Forms.Button();
+            this.btn_Save = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.tb_IDClient = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
             this.tb_Address = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -58,21 +61,22 @@ namespace QuanLyKhachSan
             this.tb_IDPerson = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.panel19 = new System.Windows.Forms.Panel();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.tb_NumberPhone = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.panel21 = new System.Windows.Forms.Panel();
             this.tb_NameCLient = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
+            this.panel15 = new System.Windows.Forms.Panel();
+            this.cbb_TypeClient = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btn_LoadBill = new System.Windows.Forms.Button();
             this.panel23 = new System.Windows.Forms.Panel();
             this.tb_IDRentalVoucher = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.panel26 = new System.Windows.Forms.Panel();
-            this.tb_DatePay = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.panel28 = new System.Windows.Forms.Panel();
-            this.tb_NumberDay = new System.Windows.Forms.TextBox();
+            this.tb_DateEnd = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
             this.panel29 = new System.Windows.Forms.Panel();
             this.tb_DateStart = new System.Windows.Forms.TextBox();
@@ -81,6 +85,8 @@ namespace QuanLyKhachSan
             this.tb_NumberPeople = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.pn_ControlBar = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.btn_Close = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -89,14 +95,14 @@ namespace QuanLyKhachSan
             this.panel11.SuspendLayout();
             this.panel12.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.panel15.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panel19.SuspendLayout();
             this.panel21.SuspendLayout();
+            this.panel15.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel23.SuspendLayout();
-            this.panel26.SuspendLayout();
             this.panel28.SuspendLayout();
             this.panel29.SuspendLayout();
             this.panel30.SuspendLayout();
@@ -129,10 +135,10 @@ namespace QuanLyKhachSan
             // tb_NameRoom
             // 
             this.tb_NameRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_NameRoom.Location = new System.Drawing.Point(92, 11);
+            this.tb_NameRoom.Location = new System.Drawing.Point(125, 11);
             this.tb_NameRoom.Name = "tb_NameRoom";
             this.tb_NameRoom.ReadOnly = true;
-            this.tb_NameRoom.Size = new System.Drawing.Size(249, 27);
+            this.tb_NameRoom.Size = new System.Drawing.Size(216, 27);
             this.tb_NameRoom.TabIndex = 1;
             // 
             // label10
@@ -224,10 +230,10 @@ namespace QuanLyKhachSan
             // tb_Price
             // 
             this.tb_Price.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Price.Location = new System.Drawing.Point(94, 11);
+            this.tb_Price.Location = new System.Drawing.Point(124, 11);
             this.tb_Price.Name = "tb_Price";
             this.tb_Price.ReadOnly = true;
-            this.tb_Price.Size = new System.Drawing.Size(247, 27);
+            this.tb_Price.Size = new System.Drawing.Size(217, 27);
             this.tb_Price.TabIndex = 1;
             // 
             // label2
@@ -252,10 +258,10 @@ namespace QuanLyKhachSan
             // tb_Status
             // 
             this.tb_Status.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Status.Location = new System.Drawing.Point(115, 11);
+            this.tb_Status.Location = new System.Drawing.Point(124, 11);
             this.tb_Status.Name = "tb_Status";
             this.tb_Status.ReadOnly = true;
-            this.tb_Status.Size = new System.Drawing.Size(225, 27);
+            this.tb_Status.Size = new System.Drawing.Size(216, 27);
             this.tb_Status.TabIndex = 2;
             // 
             // label1
@@ -271,7 +277,10 @@ namespace QuanLyKhachSan
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Linen;
-            this.panel2.Controls.Add(this.panel15);
+            this.panel2.Controls.Add(this.btn_Edit);
+            this.panel2.Controls.Add(this.btn_Delete);
+            this.panel2.Controls.Add(this.btn_Save);
+            this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.panel16);
             this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.panel18);
@@ -282,42 +291,69 @@ namespace QuanLyKhachSan
             this.panel2.Size = new System.Drawing.Size(407, 411);
             this.panel2.TabIndex = 1;
             // 
-            // panel15
+            // btn_Edit
             // 
-            this.panel15.Controls.Add(this.cbb_TypeClient);
-            this.panel15.Controls.Add(this.label13);
-            this.panel15.Location = new System.Drawing.Point(44, 285);
-            this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(345, 44);
-            this.panel15.TabIndex = 15;
+            this.btn_Edit.Location = new System.Drawing.Point(174, 344);
+            this.btn_Edit.Name = "btn_Edit";
+            this.btn_Edit.Size = new System.Drawing.Size(93, 43);
+            this.btn_Edit.TabIndex = 20;
+            this.btn_Edit.Text = "Sửa";
+            this.btn_Edit.UseVisualStyleBackColor = true;
+            this.btn_Edit.Click += new System.EventHandler(this.btn_Edit_Click);
             // 
-            // cbb_TypeClient
+            // btn_Delete
             // 
-            this.cbb_TypeClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbb_TypeClient.FormattingEnabled = true;
-            this.cbb_TypeClient.Items.AddRange(new object[] {
-            "Việt Nam",
-            "Nước ngoài"});
-            this.cbb_TypeClient.Location = new System.Drawing.Point(122, 7);
-            this.cbb_TypeClient.Name = "cbb_TypeClient";
-            this.cbb_TypeClient.Size = new System.Drawing.Size(218, 28);
-            this.cbb_TypeClient.TabIndex = 1;
+            this.btn_Delete.Location = new System.Drawing.Point(44, 344);
+            this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Size = new System.Drawing.Size(93, 43);
+            this.btn_Delete.TabIndex = 19;
+            this.btn_Delete.Text = "Xóa";
+            this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
             // 
-            // label13
+            // btn_Save
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(3, 10);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(113, 25);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "Loại khách:";
+            this.btn_Save.Location = new System.Drawing.Point(295, 344);
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(93, 43);
+            this.btn_Save.TabIndex = 18;
+            this.btn_Save.Text = "Lưu";
+            this.btn_Save.UseVisualStyleBackColor = true;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.tb_IDClient);
+            this.panel5.Controls.Add(this.label6);
+            this.panel5.Location = new System.Drawing.Point(43, 85);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(345, 44);
+            this.panel5.TabIndex = 17;
+            // 
+            // tb_IDClient
+            // 
+            this.tb_IDClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_IDClient.Location = new System.Drawing.Point(92, 11);
+            this.tb_IDClient.Name = "tb_IDClient";
+            this.tb_IDClient.ReadOnly = true;
+            this.tb_IDClient.Size = new System.Drawing.Size(249, 27);
+            this.tb_IDClient.TabIndex = 1;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(3, 10);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(79, 25);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "Mã KH:";
             // 
             // panel16
             // 
             this.panel16.Controls.Add(this.tb_Address);
             this.panel16.Controls.Add(this.label14);
-            this.panel16.Location = new System.Drawing.Point(44, 235);
+            this.panel16.Location = new System.Drawing.Point(43, 285);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(345, 44);
             this.panel16.TabIndex = 14;
@@ -354,7 +390,7 @@ namespace QuanLyKhachSan
             // 
             this.panel18.Controls.Add(this.tb_IDPerson);
             this.panel18.Controls.Add(this.label17);
-            this.panel18.Location = new System.Drawing.Point(44, 185);
+            this.panel18.Location = new System.Drawing.Point(43, 235);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(345, 44);
             this.panel18.TabIndex = 10;
@@ -366,6 +402,7 @@ namespace QuanLyKhachSan
             this.tb_IDPerson.Name = "tb_IDPerson";
             this.tb_IDPerson.Size = new System.Drawing.Size(249, 27);
             this.tb_IDPerson.TabIndex = 1;
+            this.tb_IDPerson.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_IDPerson_KeyPress);
             // 
             // label17
             // 
@@ -379,20 +416,21 @@ namespace QuanLyKhachSan
             // 
             // panel19
             // 
-            this.panel19.Controls.Add(this.textBox12);
+            this.panel19.Controls.Add(this.tb_NumberPhone);
             this.panel19.Controls.Add(this.label18);
-            this.panel19.Location = new System.Drawing.Point(44, 135);
+            this.panel19.Location = new System.Drawing.Point(43, 185);
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(345, 44);
             this.panel19.TabIndex = 11;
             // 
-            // textBox12
+            // tb_NumberPhone
             // 
-            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(92, 11);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(249, 27);
-            this.textBox12.TabIndex = 1;
+            this.tb_NumberPhone.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_NumberPhone.Location = new System.Drawing.Point(92, 11);
+            this.tb_NumberPhone.Name = "tb_NumberPhone";
+            this.tb_NumberPhone.Size = new System.Drawing.Size(249, 27);
+            this.tb_NumberPhone.TabIndex = 1;
+            this.tb_NumberPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_NumberPhone_KeyPress);
             // 
             // label18
             // 
@@ -408,7 +446,7 @@ namespace QuanLyKhachSan
             // 
             this.panel21.Controls.Add(this.tb_NameCLient);
             this.panel21.Controls.Add(this.label20);
-            this.panel21.Location = new System.Drawing.Point(44, 85);
+            this.panel21.Location = new System.Drawing.Point(43, 135);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(345, 44);
             this.panel21.TabIndex = 8;
@@ -431,11 +469,43 @@ namespace QuanLyKhachSan
             this.label20.TabIndex = 0;
             this.label20.Text = "Họ Tên*:";
             // 
+            // panel15
+            // 
+            this.panel15.Controls.Add(this.cbb_TypeClient);
+            this.panel15.Controls.Add(this.label13);
+            this.panel15.Location = new System.Drawing.Point(40, 285);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(345, 44);
+            this.panel15.TabIndex = 15;
+            // 
+            // cbb_TypeClient
+            // 
+            this.cbb_TypeClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbb_TypeClient.FormattingEnabled = true;
+            this.cbb_TypeClient.Items.AddRange(new object[] {
+            "Nội địa",
+            "Nước ngoài"});
+            this.cbb_TypeClient.Location = new System.Drawing.Point(163, 7);
+            this.cbb_TypeClient.Name = "cbb_TypeClient";
+            this.cbb_TypeClient.Size = new System.Drawing.Size(177, 28);
+            this.cbb_TypeClient.TabIndex = 1;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(3, 10);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(113, 25);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Loại khách:";
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.panel3.Controls.Add(this.btn_LoadBill);
+            this.panel3.Controls.Add(this.panel15);
             this.panel3.Controls.Add(this.panel23);
-            this.panel3.Controls.Add(this.panel26);
             this.panel3.Controls.Add(this.label26);
             this.panel3.Controls.Add(this.panel28);
             this.panel3.Controls.Add(this.panel29);
@@ -444,6 +514,15 @@ namespace QuanLyKhachSan
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(407, 411);
             this.panel3.TabIndex = 1;
+            // 
+            // btn_LoadBill
+            // 
+            this.btn_LoadBill.Location = new System.Drawing.Point(40, 344);
+            this.btn_LoadBill.Name = "btn_LoadBill";
+            this.btn_LoadBill.Size = new System.Drawing.Size(345, 43);
+            this.btn_LoadBill.TabIndex = 19;
+            this.btn_LoadBill.Text = "Xem thông tin hóa đơn";
+            this.btn_LoadBill.UseVisualStyleBackColor = true;
             // 
             // panel23
             // 
@@ -457,10 +536,10 @@ namespace QuanLyKhachSan
             // tb_IDRentalVoucher
             // 
             this.tb_IDRentalVoucher.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_IDRentalVoucher.Location = new System.Drawing.Point(92, 11);
+            this.tb_IDRentalVoucher.Location = new System.Drawing.Point(163, 11);
             this.tb_IDRentalVoucher.Name = "tb_IDRentalVoucher";
             this.tb_IDRentalVoucher.ReadOnly = true;
-            this.tb_IDRentalVoucher.Size = new System.Drawing.Size(249, 27);
+            this.tb_IDRentalVoucher.Size = new System.Drawing.Size(178, 27);
             this.tb_IDRentalVoucher.TabIndex = 1;
             // 
             // label22
@@ -469,36 +548,9 @@ namespace QuanLyKhachSan
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(3, 10);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(79, 25);
+            this.label22.Size = new System.Drawing.Size(142, 25);
             this.label22.TabIndex = 0;
-            this.label22.Text = "Mã HĐ:";
-            // 
-            // panel26
-            // 
-            this.panel26.Controls.Add(this.tb_DatePay);
-            this.panel26.Controls.Add(this.label25);
-            this.panel26.Location = new System.Drawing.Point(40, 285);
-            this.panel26.Name = "panel26";
-            this.panel26.Size = new System.Drawing.Size(345, 44);
-            this.panel26.TabIndex = 13;
-            // 
-            // tb_DatePay
-            // 
-            this.tb_DatePay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_DatePay.Location = new System.Drawing.Point(170, 8);
-            this.tb_DatePay.Name = "tb_DatePay";
-            this.tb_DatePay.Size = new System.Drawing.Size(170, 27);
-            this.tb_DatePay.TabIndex = 2;
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(3, 10);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(161, 25);
-            this.label25.TabIndex = 0;
-            this.label25.Text = "Ngày thanh toán:";
+            this.label22.Text = "Mã phiếu thuê:";
             // 
             // label26
             // 
@@ -512,20 +564,20 @@ namespace QuanLyKhachSan
             // 
             // panel28
             // 
-            this.panel28.Controls.Add(this.tb_NumberDay);
+            this.panel28.Controls.Add(this.tb_DateEnd);
             this.panel28.Controls.Add(this.label28);
             this.panel28.Location = new System.Drawing.Point(40, 235);
             this.panel28.Name = "panel28";
             this.panel28.Size = new System.Drawing.Size(345, 44);
             this.panel28.TabIndex = 11;
             // 
-            // tb_NumberDay
+            // tb_DateEnd
             // 
-            this.tb_NumberDay.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_NumberDay.Location = new System.Drawing.Point(143, 11);
-            this.tb_NumberDay.Name = "tb_NumberDay";
-            this.tb_NumberDay.Size = new System.Drawing.Size(198, 27);
-            this.tb_NumberDay.TabIndex = 1;
+            this.tb_DateEnd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_DateEnd.Location = new System.Drawing.Point(163, 11);
+            this.tb_DateEnd.Name = "tb_DateEnd";
+            this.tb_DateEnd.Size = new System.Drawing.Size(178, 27);
+            this.tb_DateEnd.TabIndex = 1;
             // 
             // label28
             // 
@@ -533,9 +585,9 @@ namespace QuanLyKhachSan
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label28.Location = new System.Drawing.Point(3, 10);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(134, 25);
+            this.label28.Size = new System.Drawing.Size(137, 25);
             this.label28.TabIndex = 0;
-            this.label28.Text = "Số ngày thuê:";
+            this.label28.Text = "Ngày kết thúc:";
             // 
             // panel29
             // 
@@ -549,9 +601,9 @@ namespace QuanLyKhachSan
             // tb_DateStart
             // 
             this.tb_DateStart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_DateStart.Location = new System.Drawing.Point(143, 11);
+            this.tb_DateStart.Location = new System.Drawing.Point(163, 11);
             this.tb_DateStart.Name = "tb_DateStart";
-            this.tb_DateStart.Size = new System.Drawing.Size(198, 27);
+            this.tb_DateStart.Size = new System.Drawing.Size(178, 27);
             this.tb_DateStart.TabIndex = 1;
             // 
             // label29
@@ -580,6 +632,7 @@ namespace QuanLyKhachSan
             this.tb_NumberPeople.Name = "tb_NumberPeople";
             this.tb_NumberPeople.Size = new System.Drawing.Size(178, 27);
             this.tb_NumberPeople.TabIndex = 1;
+            this.tb_NumberPeople.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_NumberPeople_KeyPress);
             // 
             // label30
             // 
@@ -593,11 +646,33 @@ namespace QuanLyKhachSan
             // 
             // pn_ControlBar
             // 
+            this.pn_ControlBar.Controls.Add(this.label7);
+            this.pn_ControlBar.Controls.Add(this.label4);
             this.pn_ControlBar.Controls.Add(this.btn_Close);
             this.pn_ControlBar.Location = new System.Drawing.Point(13, 12);
             this.pn_ControlBar.Name = "pn_ControlBar";
             this.pn_ControlBar.Size = new System.Drawing.Size(1233, 36);
             this.pn_ControlBar.TabIndex = 2;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(27, 19);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(400, 17);
+            this.label7.TabIndex = 18;
+            this.label7.Text = "_________________________________________________";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(25, -3);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(207, 25);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "PHIẾU THUÊ PHÒNG";
             // 
             // btn_Close
             // 
@@ -612,7 +687,7 @@ namespace QuanLyKhachSan
             this.btn_Close.Text = "X";
             this.btn_Close.Click += new System.EventHandler(this.btn_Close_Click);
             // 
-            // fInforRoom
+            // fRentalVoucher
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -623,7 +698,7 @@ namespace QuanLyKhachSan
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "fInforRoom";
+            this.Name = "fRentalVoucher";
             this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fInforRoom";
@@ -641,8 +716,8 @@ namespace QuanLyKhachSan
             this.panel12.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel15.ResumeLayout(false);
-            this.panel15.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.panel16.ResumeLayout(false);
             this.panel16.PerformLayout();
             this.panel18.ResumeLayout(false);
@@ -651,12 +726,12 @@ namespace QuanLyKhachSan
             this.panel19.PerformLayout();
             this.panel21.ResumeLayout(false);
             this.panel21.PerformLayout();
+            this.panel15.ResumeLayout(false);
+            this.panel15.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel23.ResumeLayout(false);
             this.panel23.PerformLayout();
-            this.panel26.ResumeLayout(false);
-            this.panel26.PerformLayout();
             this.panel28.ResumeLayout(false);
             this.panel28.PerformLayout();
             this.panel29.ResumeLayout(false);
@@ -697,7 +772,7 @@ namespace QuanLyKhachSan
         private System.Windows.Forms.TextBox tb_IDPerson;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Panel panel19;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox tb_NumberPhone;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Panel panel21;
         private System.Windows.Forms.TextBox tb_NameCLient;
@@ -705,11 +780,9 @@ namespace QuanLyKhachSan
         private System.Windows.Forms.Panel panel23;
         private System.Windows.Forms.TextBox tb_IDRentalVoucher;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Panel panel26;
-        private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Panel panel28;
-        private System.Windows.Forms.TextBox tb_NumberDay;
+        private System.Windows.Forms.TextBox tb_DateEnd;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Panel panel29;
         private System.Windows.Forms.TextBox tb_DateStart;
@@ -721,8 +794,16 @@ namespace QuanLyKhachSan
         private System.Windows.Forms.TextBox tb_TypeRoom;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox tb_Status;
-        private System.Windows.Forms.TextBox tb_DatePay;
         private System.Windows.Forms.Panel pn_ControlBar;
         private System.Windows.Forms.Label btn_Close;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.TextBox tb_IDClient;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button btn_Save;
+        private System.Windows.Forms.Button btn_LoadBill;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btn_Delete;
+        private System.Windows.Forms.Button btn_Edit;
     }
 }

@@ -21,13 +21,16 @@ namespace QuanLyKhachSan.DTO
 
         private uint price;
 
-        public Room(int _id, string _name, string _status, string _type, uint _price)
+        private string note;
+
+        public Room(int _id, string _name, string _status, string _type, uint _price, string _note = "")
         {
             this.ID = _id;
             this.Name = _name;
             this.Status = _status;
             this.Type = _type;
             this.Price = _price;
+            this.Note = note;
         }
 
         public Room(DataRow row)
@@ -41,6 +44,8 @@ namespace QuanLyKhachSan.DTO
 
             this.Type= row["type"].ToString();
 
+            this.Note = row["note"].ToString();
+
             string _price = row["price"].ToString();
             this.Price = uint.Parse(_price);
         }
@@ -52,6 +57,7 @@ namespace QuanLyKhachSan.DTO
         public string Type { get => type; set => type = value; }
         public uint Price { get => price; set => price = value; }
         public int Floor { get => floor; set => floor = value; }
+        public string Note { get => note; set => note = value; }
         #endregion
     }
 }

@@ -22,7 +22,7 @@ namespace QuanLyKhachSan.DAO
 
         private DataProvider() { }
 
-        private string connectionSTR = @"Data Source=.\sqlexpress;Initial Catalog=QuanLyKS1;Integrated Security=True";
+        private string connectionSTR = @"Data Source=.\sqlexpress;Initial Catalog=QuanLyKhachSan;Integrated Security=True";
 
 
         /// <summary>

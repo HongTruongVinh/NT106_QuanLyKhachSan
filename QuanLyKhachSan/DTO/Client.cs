@@ -9,14 +9,13 @@ namespace QuanLyKhachSan.DTO
 {
     public class Client
     {
-        public Client(int id, int idPerson, string name, string address, string typeClient, float dependencyFactor = 1)
+        public Client(int id, int idPerson, string name, string address, string numberphone)
         {
             this.ID = id;
             this.IDPerson = idPerson;
             this.Name = name;
             this.Address = address;
-            this.TypeClient = typeClient;
-            this.DependencyFactor = dependencyFactor;
+            this.NumberPhone = numberphone;
         }
 
         public Client(DataRow row)
@@ -27,11 +26,10 @@ namespace QuanLyKhachSan.DTO
             this.IDPerson = Int32.Parse(_idPerson);
 
             this.Name = (string)row["name"];
-            this.Address = (string)row["address"];
-            this.TypeClient = (string)row["typeClient"];
 
-            string _dependencyFactor = (string)row["dependencyFactor"].ToString();
-            this.DependencyFactor = float.Parse(_dependencyFactor);
+            this.Address = (string)row["address"];
+
+            this.NumberPhone = (string)row["numberPhone"];
         }
 
 
@@ -39,22 +37,12 @@ namespace QuanLyKhachSan.DTO
         int idPerson;
         string address;
         string name;
-        string typeClient;
-        float dependencyFactor;
+        string numberPhone;
 
         public int ID { get => iD; set => iD = value; }
         public int IDPerson { get => idPerson; set => idPerson = value; }
         public string Address { get => address; set => address = value; }
         public string Name { get => name; set => name = value; }
-
-        /// <summary>
-        /// Loại KH : nội địa hoặc nước ngoài
-        /// </summary>
-        public string TypeClient { get => typeClient; set => typeClient = value; }
-
-        /// <summary>
-        /// Hệ số phụ thu
-        /// </summary>
-        public float DependencyFactor { get => dependencyFactor; set => dependencyFactor = value; }
+        public string NumberPhone { get => numberPhone; set => numberPhone = value; }
     }
 }

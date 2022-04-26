@@ -27,11 +27,11 @@ namespace QuanLyKhachSan.DAO
         public static int RoomWidth = 80;
         public static int RoomHeight = 80;
 
-        public List<DTO.Room> LoadRoomList()
+        public List<DTO.Room> GetRoomList()
         {
             List<DTO.Room> roomList = new List<DTO.Room>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT MaPhong as id, TenPhong as name, TinhTrang as status, TenLoaiPhong as type, DonGia as price FROM dbo.PHONG p, dbo.LOAIPHONG lp WHERE p.MaLoaiPhong = lp.MaLoaiPhong");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT MaPhong as id, TenPhong as name, TinhTrang as status, TenLoaiPhong as type, DonGia as price, GhiChu note FROM dbo.PHONG p, dbo.LOAIPHONG lp WHERE p.MaLoaiPhong = lp.MaLoaiPhong");
 
             foreach (DataRow row in data.Rows)
             {
@@ -40,6 +40,87 @@ namespace QuanLyKhachSan.DAO
             }
 
             return roomList;
+        }
+
+        /// <summary>
+        /// Tên của các trường thuộc tính là Tiếng Việt
+        /// </summary>
+        /// <returns></returns>
+        public DataTable GetRoomList(string TiengViet)
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT MaPhong as [Mã phòng], TenPhong as [Tên phòng], TinhTrang as [Tình trạng], TenLoaiPhong as [Loại phòng], p.MaLoaiPhong [Mã loại phòng], GhiChu as [Ghi chú] FROM dbo.PHONG p, dbo.LOAIPHONG lp WHERE p.MaLoaiPhong = lp.MaLoaiPhong");
+
+            return data;
+        }
+
+        /// <summary>
+        /// Cập nhật trạng thái phòng (có người hoặc không)
+        /// </summary>
+        /// <param name="roomID"></param>
+        /// <param name="status"></param>
+        /// <returns></returns>
+        public bool UpdateStatusRoom(int roomID, int status)
+        {
+            try
+            {
+                string query = "UPDATE dbo.PHONG SET TinhTrang = " + status + " WHERE MaPhong = " + roomID;
+
+                DataProvider.Instance.ExecuteNonQuery(query);
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool InsertRoom(int idTypeRoom, string name, string note)
+        {
+            try
+            {
+                string query = string.Format("INSERT INTO dbo.PHONG ( MaLoaiPhong, TenPhong, GhiChu, TinhTrang) VALUES ( '{0}', N'{1}', '{2}', 0 ) ", idTypeRoom, name, note);
+
+                DataProvider.Instance.ExecuteScalar(query);
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool UpdateRoom(int idRoom, int idTypeRoom, string name, string note)
+        {
+            try
+            {
+                string query = string.Format("UPDATE dbo.PHONG SET MaLoaiPhong = {0}, TenPhong = '{1}', GhiChu = '{2}' WHERE MaPhong = {3}", idTypeRoom, name, note, idRoom);
+
+                DataProvider.Instance.ExecuteScalar(query);
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool DeleteRoom(int idRoom)
+        {
+            try
+            {
+                string query = "DELETE dbo.PHONG WHERE MaPhong = " + idRoom;
+
+                DataProvider.Instance.ExecuteScalar(query);
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

@@ -1,12 +1,12 @@
-﻿CREATE DATABASE QuanLyKS1
+﻿CREATE DATABASE QuanLyKhachSan
 GO
 
-USE QuanLyKS1
+USE QuanLyKhachSan
 GO
 
 --USE  master
 
---Drop database QuanLyKS1
+--Drop database QuanLyKhachSan
 
 ---------------------------------------------------------------------------
 -- Phần tạo bảng
@@ -18,7 +18,7 @@ CREATE TABLE TAIKHOAN
 	TenDangNhap NVARCHAR(100)  PRIMARY KEY,
 	TenHienThi NVARCHAR(100) NOT NULL,
 	MatKhau NVARCHAR(1000) NOT NULL DEFAULT 0,
-	LoaiTaiKhoan INT -- 0 là nhân viên, 1 là admin 
+	LoaiTaiKhoan INT DEFAULT 0 -- 0 là nhân viên, 1 là admin 
 )
 GO
 
@@ -36,7 +36,7 @@ CREATE TABLE PHONG
 	MaLoaiPhong INT NOT NULL,
 	TenPhong NVARCHAR(100) NOT NULL,
 	GhiChu NVARCHAR(500),
-	TinhTrang INT, --- 0 là trống, 1 là có người
+	TinhTrang INT DEFAULT 0, --- 0 là trống, 1 là có người
 	--Tang INT NULL,
 
 	FOREIGN KEY (MaLoaiPhong) REFERENCES dbo.LOAIPHONG(MaLoaiPhong)
@@ -45,7 +45,7 @@ GO
 
 CREATE TABLE LOAIKHACHHANG
 (
-	MaLoaiKH INT IDENTITY  PRIMARY KEY,
+	MaLoaiKH INT IDENTITY  PRIMARY KEY,  --1 la NoiDia, 2 la NuocNgoai
 	TenLoaiKH NVARCHAR(50) NOT NULL,
 	HeSoPhuThu FLOAT
 )
@@ -55,12 +55,9 @@ CREATE TABLE KHACHHANG
 (
 	MaKH INT IDENTITY  PRIMARY KEY,
 	TenKhachHang NVARCHAR(50) NOT NULL,
-	CMND VARCHAR(15),
-	DiaChi NVARCHAR(500),
-
-	MaLoaiKH INT NOT NULL,
-
-	FOREIGN KEY (MaLoaiKH) REFERENCES dbo.LOAIKHACHHANG(MaLoaiKH)
+	CMND VARCHAR(15) NOT NULL,
+	SDT VARCHAR(15),
+	DiaChi NVARCHAR(500)
 )
 GO
 
@@ -69,11 +66,12 @@ CREATE TABLE PHIEUTHUEPHONG
 	MaPhieu INT IDENTITY  PRIMARY KEY,
 	MaPhong	INT NOT NULL,
 	MaKH INT NOT NULL,
-	SoLuongKhach INT,
+	MaLoaiKH INT NOT NULL,
+	SoLuongKhach INT NOT NULL,
 	NgayBatDau Date NOT NULL,
-	NgayKetThuc	Date ,
+	NgayKetThuc	Date,
 
-
+	FOREIGN KEY (MaLoaiKH) REFERENCES dbo.LOAIKHACHHANG(MaLoaiKH),
 	FOREIGN KEY (MaPhong) REFERENCES dbo.PHONG(MaPhong),
 	FOREIGN KEY (MaKH) REFERENCES dbo.KHACHHANG(MaKH)
 )
@@ -83,7 +81,7 @@ CREATE TABLE HOADON
 (
 	MaHD INT IDENTITY  PRIMARY KEY,
 	MaKH INT NOT NULL,
-	TriGia INT,
+	TriGia INT NOT NULL DEFAULT 0,
 
 	FOREIGN KEY (MaKH) REFERENCES dbo.KHACHHANG(MaKH)
 )
@@ -93,36 +91,16 @@ CREATE TABLE CHITIETHOADON
 (
 	MaHD INT NOT NULL  PRIMARY KEY,
 	MaPhong INT NOT NULL,
-	SoNgayThue Int,
-	ThanhTien Int,
+	SoNgayThue Int NOT NULL,
+	ThanhTien Int NOT NULL DEFAULT 0,
 	NgayThanhToan Date,
-	DonGia INT,
+	DonGia INT NOT NULL DEFAULT 0,
 
 	FOREIGN KEY (MaHD) REFERENCES dbo.HOADON(MaHD),
 	FOREIGN KEY (MaPhong) REFERENCES dbo.PHONG(MaPhong)
 )
 GO
 
-CREATE TABLE BAOCAODOANHTHU
-(
-	MaBaoCao INT IDENTITY  PRIMARY KEY,
-	Thang Int,
-	Nam Int,
-	TongDoanhThu INT
-
-)
-GO
-
-CREATE TABLE CHITIETBAOCAO
-(
-	MaBaoCao INT NOT NULL  PRIMARY KEY,
-	NgayThanhToan Date,
-	DoanhThu Int,
-	TyLe Int,
-
-	FOREIGN KEY (MaBaoCao) REFERENCES dbo.BAOCAODOANHTHU(MaBaoCao)
-)
-GO
 
 CREATE TABLE THAMSO
 (
@@ -133,8 +111,59 @@ CREATE TABLE THAMSO
 )
 GO
 
+----------------------------------------------------------------------------
+--Phần tạo PROC
+-- Tạo phiếu thuê phòng cho phòng theo id phòng
+CREATE PROC USP_InsertRentalVoucher
+@idRoom INT, @idClient INT, @MaLoaiKH INT, @countPeople INT
+AS
+BEGIN
+	INSERT INTO dbo.PHIEUTHUEPHONG
+			(	
+				MaPhong,
+				MaKH,
+				MaLoaiKH,
+				SoLuongKhach,
+				NgayBatDau,
+				NgayKetThuc 
+			)
+VALUES		(	
+				@idRoom,
+				@idClient,
+				@MaLoaiKH,
+				@countPeople,
+				GETDATE(),
+				NULL
+			)
+END
+GO
+
+ALTER PROC USP_InsertClient
+	@TenKhachHang NVARCHAR(50),--(50) NOT NULL,
+	@CMND VARCHAR(15),--(15) NOT NULL,
+	@SDT VARCHAR(15),--(15),
+	@DiaChi NVARCHAR(500) 
+AS
+BEGIN
+	INSERT INTO dbo.KHACHHANG
+			(	
+				TenKhachHang,
+				CMND,
+				DiaChi,
+				SDT
+			)
+VALUES		(	
+				@TenKhachHang,
+				@CMND,
+				@DiaChi,
+				@SDT
+			)
+END
+GO
+
 ---------------------------------------------------------------------------
 -- Phần tạo rằng buộc 
+--rằng buộc đăng nhập
 CREATE PROC USP_Login
 @UserName NVARCHAR(100), @PassWord NVARCHAR(1000)
 AS
@@ -142,6 +171,9 @@ BEGIN
 	SELECT * FROM dbo.TaiKhoan WHERE TenDangNhap = @UserName AND MatKhau = @PassWord
 END
 GO
+
+
+
 
 
 ---------------------------------------------------------------------------
@@ -278,14 +310,14 @@ INSERT INTO dbo.KHACHHANG
 			(	
 				TenKhachHang,
 				CMND,
-				DiaChi,
-				MaLoaiKH
+				SDT,
+				DiaChi
 			)
 VALUES		(	
 				N'Dang',
 				N'000000000',
-				N'CaMau',
-				1
+				023486658,
+				N'CaMau'
 			)
 GO
 
@@ -293,14 +325,14 @@ INSERT INTO dbo.KHACHHANG
 			(
 				TenKhachHang,
 				CMND,
-				DiaChi,
-				MaLoaiKH
+				SDT,
+				DiaChi
 			)
 VALUES		(
 				N'Vinh',
 				N'111111111',
-				N'SaiGon',
-				1
+				024435553,
+				N'SaiGon'
 			)
 GO
 
@@ -309,13 +341,13 @@ INSERT INTO dbo.KHACHHANG
 				TenKhachHang,
 				CMND,
 				DiaChi,
-				MaLoaiKH
+				SDT
 			)
 VALUES		(
 				N'Dat',
 				N'222222222',
 				N'HaNoi',
-				1
+				03457738
 			)
 GO
 
@@ -324,13 +356,13 @@ INSERT INTO dbo.KHACHHANG
 				TenKhachHang,
 				CMND,
 				DiaChi,
-				MaLoaiKH
+				SDT
 			)
 VALUES		(	
 				N'Quoc',
 				N'333333333',
 				N'Helsinki',
-				2
+				048877636
 			)
 GO
 
@@ -339,13 +371,13 @@ INSERT INTO dbo.KHACHHANG
 				TenKhachHang,
 				CMND,
 				DiaChi,
-				MaLoaiKH
+				SDT
 			)
 VALUES		(	
 				N'Kiet',
 				N'444444444',
 				N'VungTau',
-				2
+				04866345
 			)
 GO
 
@@ -355,14 +387,16 @@ INSERT INTO dbo.PHIEUTHUEPHONG
 				MaKH,
 				SoLuongKhach,
 				NgayBatDau,
-				NgayKetThuc 
+				NgayKetThuc,
+				MaLoaiKH
 			)
 VALUES		(	
 				1,
 				N'0001',
 				3,
 				'2022/4/21',
-				'2022/4/25'
+				'2022/4/25',
+				1
 			)
 GO
 
@@ -372,14 +406,16 @@ INSERT INTO dbo.PHIEUTHUEPHONG
 				MaKH,
 				SoLuongKhach,
 				NgayBatDau,
-				NgayKetThuc 
+				NgayKetThuc,
+				MaLoaiKH 
 			)
 VALUES		(	 --T KHÔNG BIẾT LÀ PHIẾU THUÊ PHÒNG CỦA MỘT PHÒNG DUY NHẤT THÌ CÓ CẦN KHÁC MÃ KHÔNG?
 				1,
 				2,
 				3,
 				'2022/4/21',
-				'2022/4/21'
+				'2022/4/21',
+				2
 			)
 GO
 
@@ -389,14 +425,16 @@ INSERT INTO dbo.PHIEUTHUEPHONG
 				MaKH,
 				SoLuongKhach,
 				NgayBatDau,
-				NgayKetThuc 
+				NgayKetThuc,
+				MaLoaiKH 
 			)
 VALUES		(	
 				1,
 				3,
 				3,
 				'2022/4/21',
-				'2022/4/25'
+				'2022/4/25',
+				2
 			)
 GO
 
@@ -406,14 +444,16 @@ INSERT INTO dbo.PHIEUTHUEPHONG
 				MaKH,
 				SoLuongKhach,
 				NgayBatDau,
-				NgayKetThuc 
+				NgayKetThuc,
+				MaLoaiKH 
 			)
 VALUES		(
 				3,
 				4,
 				1,
 				'2022/4/23',
-				'2022/4/25'
+				'2022/4/25',
+				1
 			)
 GO
 
@@ -423,14 +463,16 @@ INSERT INTO dbo.PHIEUTHUEPHONG
 				MaKH,
 				SoLuongKhach,
 				NgayBatDau,
-				NgayKetThuc 
+				NgayKetThuc,
+				MaLoaiKH 
 			)
 VALUES		(
 				2,
 				5,
 				1,
 				'2022/3/19',
-				'2022/3/24'
+				'2022/3/24',
+				1
 			)
 GO
 
@@ -540,84 +582,6 @@ VALUES		(	3,
 			)
 GO
 
-INSERT INTO dbo.BAOCAODOANHTHU
-			(	
-				Thang,
-				Nam,
-				TongDoanhThu
-			)
-VALUES		(	
-				3,
-				2022,
-				850
-			)
-GO
-
-INSERT INTO dbo.BAOCAODOANHTHU
-			(	
-				Thang,
-				Nam,
-				TongDoanhThu
-			)
-VALUES		(	
-				4,
-				2022,
-				1450
-			)
-GO
-
-INSERT INTO dbo.BAOCAODOANHTHU
-			(	
-				Thang,
-				Nam,
-				TongDoanhThu
-			)
-VALUES		(	
-				4,
-				2022,
-				1500
-			)
-GO
-
-INSERT INTO dbo.CHITIETBAOCAO
-			(	MaBaoCao,
-				NgayThanhToan,
-				DoanhThu,
-				TyLe
-			)
-VALUES		(	1,
-				'2022/3/24',
-				850,
-				0.3696
-			)
-GO
-
-INSERT INTO dbo.CHITIETBAOCAO
-			(	MaBaoCao,
-				NgayThanhToan,
-				DoanhThu,
-				TyLe
-			)
-VALUES		(	2,
-				'2022/4/25',
-				450,
-				0.1957
-			)
-GO
-
-INSERT INTO dbo.CHITIETBAOCAO
-			(	MaBaoCao,
-				NgayThanhToan,
-				DoanhThu,
-				TyLe
-			)
-VALUES		(	3,
-				'2022/4/25',
-				1000,
-				0.4347
-			)
-GO
-
 --INSERT INTO dbo.THAMSO
 --			(	KhachToiDa,
 --				TyLe,
@@ -636,3 +600,14 @@ GO
 --GO
 
 --SELECT MaPhong as id, TenPhong as name, TinhTrang as status, TenLoaiPhong as type, DonGia as price FROM dbo.PHONG p, dbo.LOAIPHONG lp WHERE p.MaLoaiPhong = lp.MaLoaiPhong
+
+
+
+
+-- SELECT MaKH id, TenKhachHang name, CMND idPerson, DiaChi address, SDT numberPhone FROM dbo.KHACHHANG WHERE MaKH = '1'
+--
+--
+ -- SELECT MaPhieu id, MaPhong roomID, ptp.MaKH ClientID, NgayBatDau dateTimeCheckIn, NgayKetThuc dateTimeCheckOut, SoLuongKhach countPeople , TenLoaiKH typeCLient, HeSoPhuThu dependencyFactor
+ --              FROM dbo.PHIEUTHUEPHONG ptp, dbo.LOAIKHACHHANG lkh 
+--			   WHERE ptp.MaLoaiKH = lkh.MaLoaiKH AND  MaPhong = 2
+

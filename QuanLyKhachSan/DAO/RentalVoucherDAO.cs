@@ -22,6 +22,7 @@ namespace QuanLyKhachSan.DAO
 
         private RentalVoucherDAO() { }
 
+        #region các hàm Load dữ liệu
         /// <summary>
         /// trả về ID của phiếu thuê phòng dựa vào ID của phòng nếu phòng có người NẾU thất bại trả về -1
         /// </summary>
@@ -41,8 +42,8 @@ namespace QuanLyKhachSan.DAO
 
         public RentalVoucher GetUnCheckRentalVoucherByRoomID(int id)
         {
-            string query = "SELECT MaPhieu id, MaPhong roomID, MaKH ClientID, NgayBatDau dateTimeCheckIn, NgayKetThuc dateTimeCheckOut, SoLuongKhach numberPeople "
-                            + "FROM dbo.PHIEUTHUEPHONG WHERE MaPhong = '" + id +"'";
+            string query = "SELECT MaPhieu id, MaPhong roomID, ptp.MaKH clientID, NgayBatDau dateTimeCheckIn, NgayKetThuc dateTimeCheckOut, SoLuongKhach countPeople , TenLoaiKH typeCLient, HeSoPhuThu dependencyFactor"
+                            + " FROM dbo.PHIEUTHUEPHONG ptp, dbo.LOAIKHACHHANG lkh WHERE ptp.MaLoaiKH = lkh.MaLoaiKH AND  MaPhong = '" + id +"'";
 
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
@@ -54,5 +55,41 @@ namespace QuanLyKhachSan.DAO
 
             return null;
         }
+
+        #endregion
+
+        #region các hàm Insert dữ liệu
+        public bool InsertRentalVoucher(int idRoom, int idClient, int idTypeClient, int countPeople)
+        {
+            
+            try
+            {
+                DataProvider.Instance.ExecuteNonQuery("USP_InsertRentalVoucher @idRoom , @idClient , @MaLoaiKH , @countPeople", new object[] { idRoom, idClient, idTypeClient, countPeople });
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        //hàm Delete
+        public bool DeleteRentalVoucher(int idRentalVoucher, int idClient)
+        {
+            try
+            {
+                string query = "DELETE dbo.PHIEUTHUEPHONG WHERE MaPhieu = " + idRentalVoucher +" AND MaKH =" + idClient;
+
+                DataProvider.Instance.ExecuteNonQuery(query);
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        #endregion
     }
 }
