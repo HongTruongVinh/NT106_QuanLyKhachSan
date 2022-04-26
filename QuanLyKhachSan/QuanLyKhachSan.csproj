@@ -141,6 +141,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Database\Data.sql.ssmssln" />
     <None Include="Properties\Settings.settings">
@@ -161,7 +162,19 @@
     <Content Include="Image\exit-to-app_119178.png" />
     <Content Include="Image\grade_119072.png" />
     <Content Include="Image\ic_Star.png" />
+    <Content Include="Image\MainWindow\close.png" />
+    <Content Include="Image\MainWindow\help-circle-outline.png" />
+    <Content Include="Image\MainWindow\hotel-booking-gray.png" />
+    <Content Include="Image\MainWindow\hotel-customer-gray.png" />
+    <Content Include="Image\MainWindow\hotel-receipt-gray.png" />
+    <Content Include="Image\MainWindow\hotel-room-gray.png" />
+    <Content Include="Image\MainWindow\information-circle-outline.png" />
+    <Content Include="Image\MainWindow\log-out-outline 1.png" />
+    <Content Include="Image\MainWindow\menu-outline.png" />
+    <Content Include="Image\MainWindow\person-circle-outline.png" />
+    <Content Include="Image\MainWindow\shield-checkmark-outline.png" />
     <Content Include="Image\person_118819.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

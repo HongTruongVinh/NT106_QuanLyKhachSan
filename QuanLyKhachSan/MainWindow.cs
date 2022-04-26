@@ -26,11 +26,12 @@ namespace QuanLyKhachSan
             ToolTip toolTip = new ToolTip();
             toolTip.SetToolTip(btn_Menu, "Tùy chọn");
 
-            
+
         }
 
         bool menuIsHide = true;
         Point panel2startPosition;
+
         private void btn_Menu_Click(object sender, EventArgs e)
         {
             if (menuIsHide)
@@ -48,67 +49,16 @@ namespace QuanLyKhachSan
                 pn_Window.Location = new Point(12, 13);
             }
         }
+
         private void btn_MenuOnMenu_Click(object sender, EventArgs e)
         {
             btn_Menu_Click(sender, e);
         }
 
-        private void label1_MouseHover(object sender, EventArgs e)
+        private void btn_Admin_Click(object sender, EventArgs e)
         {
-            btn_InforAccount.BackColor = Color.LightSkyBlue;
-        }
-
-        private void label1_MouseLeave(object sender, EventArgs e)
-        {
-            btn_InforAccount.BackColor = Color.DeepSkyBlue;
-        }
-
-        private void btn_Help_MouseHover(object sender, EventArgs e)
-        {
-            btn_Help.BackColor = Color.LightSkyBlue;
-        }
-
-        private void btn_Help_MouseLeave(object sender, EventArgs e)
-        {
-            btn_Help.BackColor = Color.DeepSkyBlue;
-        }
-
-        private void btn_About_MouseHover(object sender, EventArgs e)
-        {
-            btn_About.BackColor = Color.LightSkyBlue;
-        }
-
-        private void btn_About_MouseLeave(object sender, EventArgs e)
-        {
-            btn_About.BackColor = Color.DeepSkyBlue;
-        }
-
-        private void btn_SignOut_MouseHover(object sender, EventArgs e)
-        {
-            btn_SignOut.BackColor = Color.LightSkyBlue;
-        }
-
-        private void btn_SignOut_MouseLeave(object sender, EventArgs e)
-        {
-            btn_SignOut.BackColor = Color.DeepSkyBlue;
-        }
-
-        private void btn_InforAccount_MouseHover(object sender, EventArgs e)
-        {
-            btn_InforAccount.BackColor = Color.LightSkyBlue;
-        }
-
-        private void btn_InforAccount_MouseLeave(object sender, EventArgs e)
-        {
-            btn_InforAccount.BackColor = Color.DeepSkyBlue;
-        }
-
-        
-
-        private void btn_InforAccount_Click(object sender, EventArgs e)
-        {
-            fInformation fInformation = new fInformation();
-            fInformation.ShowDialog();
+            fAdmin fAdmin = new fAdmin();
+            fAdmin.ShowDialog();
         }
 
         private void btn_SignOut_Click(object sender, EventArgs e)
@@ -116,16 +66,16 @@ namespace QuanLyKhachSan
             this.Close();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btn_AccountInfo_Click(object sender, EventArgs e)
         {
-            fLoadRoom fOderRoom = new fLoadRoom();
-            fOderRoom.ShowDialog();
+            fInformation fInformation = new fInformation();
+            fInformation.ShowDialog();
         }
 
-        private void lb_Admin_Click(object sender, EventArgs e)
+        // Hover Effect
+        private void btn_MouseHover(object sender, EventArgs e)
         {
-            fAdmin fAdmin = new fAdmin();
-            fAdmin.ShowDialog();
+            this.BackColor = Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(160)))), ((int)(((byte)(90)))));
         }
     }
 }
