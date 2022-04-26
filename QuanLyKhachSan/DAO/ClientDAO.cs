@@ -78,6 +78,23 @@ namespace QuanLyKhachSan.DAO
             }
             return false;
         }
+
+        public bool UpdateLient(int id, string name, int idPerson, string numberPhone, string address)
+        {
+            try
+            {
+                string query = string.Format("UPDATE dbo.KHACHHANG SET TenKhachHang = '{0}' , CMND = '{1}' , DiaChi = '{2}' , SDT = '{3}' WHERE MaKH = {4}", name, idPerson, address, numberPhone, id);
+
+                DataProvider.Instance.ExecuteNonQuery(query);
+
+                return true;
+            }
+            catch
+            {
+
+            }
+            return false;
+        }
         #endregion
     }
 }

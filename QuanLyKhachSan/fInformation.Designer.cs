@@ -41,12 +41,6 @@ namespace QuanLyKhachSan
             this.panel5 = new System.Windows.Forms.Panel();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,8 +48,6 @@ namespace QuanLyKhachSan
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,8 +57,6 @@ namespace QuanLyKhachSan
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
@@ -78,7 +68,7 @@ namespace QuanLyKhachSan
             this.panel7.Controls.Add(this.button4);
             this.panel7.Controls.Add(this.textBox5);
             this.panel7.Controls.Add(this.label5);
-            this.panel7.Location = new System.Drawing.Point(5, 281);
+            this.panel7.Location = new System.Drawing.Point(3, 119);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(477, 44);
             this.panel7.TabIndex = 4;
@@ -114,7 +104,7 @@ namespace QuanLyKhachSan
             // 
             this.panel6.Controls.Add(this.button3);
             this.panel6.Controls.Add(this.button2);
-            this.panel6.Location = new System.Drawing.Point(169, 341);
+            this.panel6.Location = new System.Drawing.Point(167, 179);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(258, 42);
             this.panel6.TabIndex = 7;
@@ -139,7 +129,7 @@ namespace QuanLyKhachSan
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(5, 341);
+            this.button1.Location = new System.Drawing.Point(3, 179);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(141, 35);
             this.button1.TabIndex = 4;
@@ -150,7 +140,7 @@ namespace QuanLyKhachSan
             // 
             this.panel5.Controls.Add(this.textBox4);
             this.panel5.Controls.Add(this.label4);
-            this.panel5.Location = new System.Drawing.Point(5, 215);
+            this.panel5.Location = new System.Drawing.Point(3, 53);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(477, 44);
             this.panel5.TabIndex = 3;
@@ -172,60 +162,6 @@ namespace QuanLyKhachSan
             this.label4.Size = new System.Drawing.Size(197, 25);
             this.label4.TabIndex = 0;
             this.label4.Text = "Tài khoản đăng nhập";
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.textBox3);
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(3, 144);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(345, 44);
-            this.panel4.TabIndex = 2;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(92, 11);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(249, 27);
-            this.textBox3.TabIndex = 1;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 10);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(77, 25);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Địa chỉ:";
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.textBox2);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(3, 73);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(345, 44);
-            this.panel3.TabIndex = 1;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(92, 11);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(249, 27);
-            this.textBox2.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 25);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "STD:";
             // 
             // panel2
             // 
@@ -268,10 +204,6 @@ namespace QuanLyKhachSan
             this.panel6.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -292,12 +224,6 @@ namespace QuanLyKhachSan
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;

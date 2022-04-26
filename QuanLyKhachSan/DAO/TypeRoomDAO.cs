@@ -107,7 +107,7 @@ namespace QuanLyKhachSan.DAO
         {
             try
             {
-                string query = string.Format("UPDATE dbo.LOAIPHONG SET TenPhong = '{0}', DonGia = '{1}' WHERE MaPhong = {2}",name, price, idTypeRoom);
+                string query = string.Format("UPDATE dbo.LOAIPHONG SET TenLoaiPhong = '{0}', DonGia = {1} WHERE MaLoaiPhong = {2}",name, price, idTypeRoom);
 
                 DataProvider.Instance.ExecuteScalar(query);
 
@@ -131,7 +131,7 @@ namespace QuanLyKhachSan.DAO
                     return false;
                 }
 
-                string query = "DELETE dbo.LOAIPHONG WHERE MaPhong = " + idTypeRoom;
+                string query = "DELETE dbo.LOAIPHONG WHERE MaLoaiPhong = " + idTypeRoom;
 
                 DataProvider.Instance.ExecuteScalar(query);
 

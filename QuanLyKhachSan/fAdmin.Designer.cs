@@ -194,7 +194,7 @@ namespace QuanLyKhachSan
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1006, 557);
             this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Thông tin quản trị viên";
+            this.tabPage1.Text = "Báo cáo doanh thu";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // panel1
@@ -982,6 +982,7 @@ namespace QuanLyKhachSan
             this.btn_EditTypeRoom.TabIndex = 2;
             this.btn_EditTypeRoom.Text = "Sửa";
             this.btn_EditTypeRoom.UseVisualStyleBackColor = true;
+            this.btn_EditTypeRoom.Click += new System.EventHandler(this.btn_EditTypeRoom_Click);
             // 
             // btn_DeleteTypeRoom
             // 
@@ -992,6 +993,7 @@ namespace QuanLyKhachSan
             this.btn_DeleteTypeRoom.TabIndex = 1;
             this.btn_DeleteTypeRoom.Text = "Xóa";
             this.btn_DeleteTypeRoom.UseVisualStyleBackColor = true;
+            this.btn_DeleteTypeRoom.Click += new System.EventHandler(this.btn_DeleteTypeRoom_Click);
             // 
             // btn_AddTypeRoom
             // 
@@ -1032,7 +1034,7 @@ namespace QuanLyKhachSan
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(337, 10);
+            this.label3.Location = new System.Drawing.Point(373, 13);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(30, 25);
             this.label3.TabIndex = 4;
@@ -1041,10 +1043,11 @@ namespace QuanLyKhachSan
             // tb_SurchargeForeign
             // 
             this.tb_SurchargeForeign.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_SurchargeForeign.Location = new System.Drawing.Point(274, 8);
+            this.tb_SurchargeForeign.Location = new System.Drawing.Point(310, 11);
             this.tb_SurchargeForeign.Name = "tb_SurchargeForeign";
             this.tb_SurchargeForeign.Size = new System.Drawing.Size(57, 27);
             this.tb_SurchargeForeign.TabIndex = 1;
+            this.tb_SurchargeForeign.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_SurchargeForeign_KeyPress);
             // 
             // label22
             // 
@@ -1068,7 +1071,7 @@ namespace QuanLyKhachSan
             // nud_MaxPeople
             // 
             this.nud_MaxPeople.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nud_MaxPeople.Location = new System.Drawing.Point(295, 8);
+            this.nud_MaxPeople.Location = new System.Drawing.Point(310, 8);
             this.nud_MaxPeople.Name = "nud_MaxPeople";
             this.nud_MaxPeople.Size = new System.Drawing.Size(110, 27);
             this.nud_MaxPeople.TabIndex = 1;
@@ -1097,7 +1100,7 @@ namespace QuanLyKhachSan
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(254, 10);
+            this.label20.Location = new System.Drawing.Point(373, 10);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(65, 25);
             this.label20.TabIndex = 3;
@@ -1106,7 +1109,7 @@ namespace QuanLyKhachSan
             // nud_PriceForCountCLient
             // 
             this.nud_PriceForCountCLient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nud_PriceForCountCLient.Location = new System.Drawing.Point(191, 8);
+            this.nud_PriceForCountCLient.Location = new System.Drawing.Point(310, 8);
             this.nud_PriceForCountCLient.Name = "nud_PriceForCountCLient";
             this.nud_PriceForCountCLient.Size = new System.Drawing.Size(57, 27);
             this.nud_PriceForCountCLient.TabIndex = 2;
@@ -1135,7 +1138,7 @@ namespace QuanLyKhachSan
             // 
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(253, 9);
+            this.label21.Location = new System.Drawing.Point(372, 9);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(30, 25);
             this.label21.TabIndex = 4;
@@ -1144,10 +1147,11 @@ namespace QuanLyKhachSan
             // tb_Surcharge
             // 
             this.tb_Surcharge.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Surcharge.Location = new System.Drawing.Point(190, 10);
+            this.tb_Surcharge.Location = new System.Drawing.Point(309, 7);
             this.tb_Surcharge.Name = "tb_Surcharge";
             this.tb_Surcharge.Size = new System.Drawing.Size(57, 27);
             this.tb_Surcharge.TabIndex = 1;
+            this.tb_Surcharge.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_Surcharge_KeyPress);
             // 
             // label19
             // 

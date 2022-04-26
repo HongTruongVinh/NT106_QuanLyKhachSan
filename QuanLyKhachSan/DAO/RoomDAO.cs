@@ -111,6 +111,15 @@ namespace QuanLyKhachSan.DAO
         {
             try
             {
+                /*
+                string queryCheck = "SELECT Count(MaPhieu) FROM dbo.PHIEUTHUEPHONG WHERE NgayKetThuc = NULL AND MaPhong = " + idRoom;
+
+                if (DataProvider.Instance.ExecuteNonQuery(queryCheck) > 0)
+                {
+                    //Nếu có khách đang thuê phòng này thì không thể xóa phòng này
+                    return false;
+                }
+                */
                 string query = "DELETE dbo.PHONG WHERE MaPhong = " + idRoom;
 
                 DataProvider.Instance.ExecuteScalar(query);

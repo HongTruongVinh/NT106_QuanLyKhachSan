@@ -20,6 +20,11 @@ namespace QuanLyKhachSan
         }
 
         fLoadRoom fLoadRoom;
+
+        RentalVoucher rentalVoucher;
+
+        int maxCountPeople;
+
         public fRentalVoucher(Room room, fLoadRoom _fLoadRoom)
         {
             InitializeComponent();
@@ -38,29 +43,58 @@ namespace QuanLyKhachSan
 
         void LoadInforRentalVoucher(Room room)
         {
-            //Load Infor Room
+            LoadRoomInfor(room);
+
+            rentalVoucher = RentalVoucherDAO.Instance.GetUnCheckRentalVoucherByRoomID(room.ID);
+
+            if(rentalVoucher == null)
+            {
+                return;
+            }
+
+            LoadCLientInfor(rentalVoucher.ClientID);
+
+            LoadRentalVoucherInfor(room.ID);
+
+        }
+
+        void LoadCLientInfor(int idClient)
+        {
+            Client client = ClientDAO.Instance.GetClientByID(idClient);
+            tb_IDClient.Text = client.ID.ToString();
+            tb_IDPerson.Text = client.IDPerson.ToString();
+            tb_NameCLient.Text = client.Name;
+            tb_Address.Text = client.Address;
+            tb_NumberPhone.Text = client.NumberPhone;
+        }
+
+        void LoadRoomInfor(Room room)
+        {
             tb_NameRoom.Text = room.Name;
             tb_TypeRoom.Text = room.Type;
             tb_NoteRoom.Text = room.Note;
             tb_Status.Text = room.Status;
             tb_Price.Text = room.Price.ToString();
 
-            if(room.Status != "1")
+            if (room.Status != "1")
             {
                 tb_DateStart.Text = DateTime.Today.ToString("dd/MM/yyyy");
                 tb_Status.Text = "Trống";
                 cbb_TypeClient.SelectedIndex = 1;
                 return;
             }
+
             tb_Status.Text = "Có người";
+        }
 
-            //Load infor Rental Voucher
-            RentalVoucher rentalVoucher = RentalVoucherDAO.Instance.GetUnCheckRentalVoucherByRoomID(room.ID);
-                tb_IDRentalVoucher.Text = rentalVoucher.ID.ToString();
-                tb_NumberPeople.Text = rentalVoucher.NumberPeople.ToString();
-                tb_DateStart.Text = rentalVoucher.DateTimeCheckIn.ToString();
-                tb_DateEnd.Text = rentalVoucher.DateTimeCheckOut.ToString();
+        void LoadRentalVoucherInfor(int idRoom)
+        {
+            RentalVoucher rentalVoucher = RentalVoucherDAO.Instance.GetUnCheckRentalVoucherByRoomID(idRoom);
 
+            tb_IDRentalVoucher.Text = rentalVoucher.ID.ToString();
+            tb_NumberPeople.Text = rentalVoucher.NumberPeople.ToString();
+            tb_DateStart.Text = rentalVoucher.DateTimeCheckIn?.ToString("dd/MM/yyyy");
+            tb_DateEnd.Text = rentalVoucher.DateTimeCheckOut?.ToString("dd/MM/yyyy");
 
             if (rentalVoucher.TypeClient == "NoiDia")
             {
@@ -70,14 +104,6 @@ namespace QuanLyKhachSan
             {
                 cbb_TypeClient.SelectedIndex = 1;
             }
-
-            //Load infor Client
-            Client client = ClientDAO.Instance.GetClientByID(rentalVoucher.ClientID);
-            tb_IDClient.Text = client.ID.ToString();
-            tb_IDPerson.Text = client.IDPerson.ToString();
-            tb_NameCLient.Text = client.Name;
-            tb_Address.Text = client.Address;
-            tb_NumberPhone.Text = client.NumberPhone;
         }
 
         private void btn_Close_Click(object sender, EventArgs e)
@@ -135,6 +161,45 @@ namespace QuanLyKhachSan
 
         private void btn_Edit_Click(object sender, EventArgs e)
         {
+            var result = MessageBox.Show("Bạn có chắc muốn sửa?", "Thông báo", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+
+            try
+            {
+                Client cLient = ClientDAO.Instance.GetClientByID(rentalVoucher.ClientID);
+
+                cLient.Name = tb_NameCLient.Text;
+                cLient.IDPerson = Convert.ToInt32(tb_IDPerson.Text);
+                cLient.NumberPhone = tb_NumberPhone.Text;
+                cLient.Address = tb_Address.Text;
+
+                int idTypeClient = -1;
+
+                switch(cbb_TypeClient.SelectedIndex)
+                {
+                    case 1:
+                        idTypeClient = 2;
+                        break;
+                    default:
+                        idTypeClient = 1;
+                        break;
+                }
+
+                int countPeople = Convert.ToInt32(tb_NumberPeople.Text);
+
+                RentalVoucherDAO.Instance.UpdateRentalVoucher(rentalVoucher.ID, idTypeClient, countPeople, cLient);
+
+                MessageBox.Show("Sửa thông tin phiếu thuê phòng thành công!");
+
+            }
+            catch
+            {
+                MessageBox.Show("!!!Lỗi sửa thông tin phiếu thuê phòng không thành công!!!");
+            }
 
         }
 

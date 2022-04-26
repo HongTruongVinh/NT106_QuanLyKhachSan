@@ -21,17 +21,27 @@ namespace QuanLyKhachSan
         {
             InitializeComponent();
 
+            SetDefaultControls();
+
             Load();
         }
 
-        void Load()
+        void SetDefaultControls()
         {
-
             dgv_Room.DataSource = listRoom;
 
             dgv_TypeRoom.DataSource = listTypeRoom;
 
             cbb_TypeRoom.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            nud_MaxPeople.Maximum = 10;
+            nud_MaxPeople.Minimum = 1;
+            nud_PriceForCountCLient.Maximum = 10;
+            nud_PriceForCountCLient.Minimum = 1;
+        }
+
+        void Load()
+        {
 
             LoadAccountList();
             LoadRoomList();
@@ -159,6 +169,13 @@ namespace QuanLyKhachSan
 
         private void btn_EditRoom_Click(object sender, EventArgs e)
         {
+            var result = MessageBox.Show("Bạn có chắc muốn sửa?", "Thông báo", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+
             string name = tb_NameRoom.Text;
             int id = Convert.ToInt32(tb_idRoom.Text);
             int idTpeRoom = (cbb_TypeRoom.SelectedItem as TypeRoom).ID;
@@ -177,6 +194,13 @@ namespace QuanLyKhachSan
 
         private void btn_DeleteRoom_Click(object sender, EventArgs e)
         {
+            var result = MessageBox.Show("Bạn có chắc muốn XÓA?", "Thông báo", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+
             int id = Convert.ToInt32(tb_idRoom.Text);
 
             if (RoomDAO.Instance.DeleteRoom(id))
@@ -203,6 +227,70 @@ namespace QuanLyKhachSan
             else
             {
                 MessageBox.Show("!!!Lỗi thêm loại phòng mới không thành công!!!");
+            }
+        }
+
+        private void btn_EditTypeRoom_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Bạn có chắc muốn sửa?", "Thông báo", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+
+            string name = tb_NameTypeRoom.Text;
+            int price = Convert.ToInt32(tb_PriceTypeRoom.Text);
+            int id = Convert.ToInt32(tb_idTypeRoom.Text);
+
+            if(TypeRoomDAO.Instance.Update(id, name, price))
+            {
+                MessageBox.Show("Sửa danh mục phòng thành công!");
+                LoadCategoryRoom();
+                LoadCategoryRoomIntoCBB(cbb_TypeRoom);
+            }
+            else
+            {
+                MessageBox.Show("!!!Lỗi sửa danh mục phòng không thành công!!!");
+            }
+        }
+
+        private void btn_DeleteTypeRoom_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Bạn có chắc muốn XÓA?", "Thông báo", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+
+            int id = Convert.ToInt32(tb_idTypeRoom.Text);
+
+            if (TypeRoomDAO.Instance.Delete(id))
+            {
+                MessageBox.Show("Xóa danh mục phòng thành công!");
+                LoadCategoryRoom();
+                LoadCategoryRoomIntoCBB(cbb_TypeRoom);
+            }
+            else
+            {
+                MessageBox.Show("!!!Lỗi xóa danh mục phòng không thành công!!!");
+            }
+        }
+
+        private void tb_Surcharge_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tb_SurchargeForeign_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
             }
         }
     }

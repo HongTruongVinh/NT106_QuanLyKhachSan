@@ -10,6 +10,7 @@ namespace QuanLyKhachSan.DAO
 {
     public class RentalVoucherDAO
     {
+        #region Tạo singleton
         private static RentalVoucherDAO instance;
         public static RentalVoucherDAO Instance
         {
@@ -21,6 +22,8 @@ namespace QuanLyKhachSan.DAO
         }
 
         private RentalVoucherDAO() { }
+        #endregion
+
 
         #region các hàm Load dữ liệu
         /// <summary>
@@ -65,6 +68,24 @@ namespace QuanLyKhachSan.DAO
             try
             {
                 DataProvider.Instance.ExecuteNonQuery("USP_InsertRentalVoucher @idRoom , @idClient , @MaLoaiKH , @countPeople", new object[] { idRoom, idClient, idTypeClient, countPeople });
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool UpdateRentalVoucher(int idRentalVoucher, int idTypeClient,int countPeople, Client client)
+        {
+            try
+            {
+                ClientDAO.Instance.UpdateLient(client.ID, client.Name, client.IDPerson, client.NumberPhone, client.Address);
+
+                string query = string.Format("UPDATE dbo.PHIEUTHUEPHONG SET SoLuongKhach = {0}, MaLoaiKH = {1} WHERE MaPhieu = {2}",countPeople, idTypeClient, idRentalVoucher);
+
+                DataProvider.Instance.ExecuteNonQuery(query);
 
                 return true;
             }
