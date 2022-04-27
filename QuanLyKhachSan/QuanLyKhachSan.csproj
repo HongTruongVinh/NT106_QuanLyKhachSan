@@ -78,6 +78,12 @@
     <Compile Include="fClientManage.Designer.cs">
       <DependentUpon>fClientManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="fGuestMgmt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fGuestMgmt.Designer.cs">
+      <DependentUpon>fGuestMgmt.cs</DependentUpon>
+    </Compile>
     <Compile Include="fInformation.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +124,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fClientManage.resx">
       <DependentUpon>fClientManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fGuestMgmt.resx">
+      <DependentUpon>fGuestMgmt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fInformation.resx">
       <DependentUpon>fInformation.cs</DependentUpon>
@@ -162,6 +171,7 @@
     <Content Include="Database\Data.sql" />
     <Content Include="Image\exit-to-app_119178.png" />
     <Content Include="Image\grade_119072.png" />
+    <Content Include="Image\Icons\search.png" />
     <Content Include="Image\ic_Star.png" />
     <Content Include="Image\MainWindow\close.png" />
     <Content Include="Image\MainWindow\help-circle-outline.png" />

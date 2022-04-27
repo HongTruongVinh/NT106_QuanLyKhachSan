@@ -33,3 +33,22 @@ C:\Users\Vasilias Da Nykta\Desktop\LTM\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.c
 C:\Users\Vasilias Da Nykta\Desktop\LTM\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CoreCompileInputs.cache
 C:\Users\Vasilias Da Nykta\Desktop\LTM\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
 C:\Users\Vasilias Da Nykta\Desktop\LTM\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe.config
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.pdb
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.AssemblyReference.cache
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.SuggestedBindingRedirects.cache
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fAdmin.resources
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fBill.resources
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fClientManage.resources
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fGuestMgmt.resources
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fInformation.resources
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fRentalVoucher.resources
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fLogin.resources
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fLoadRoom.resources
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.MainWindow.resources
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Properties.Resources.resources
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.GenerateResource.cache
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CoreCompileInputs.cache
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
