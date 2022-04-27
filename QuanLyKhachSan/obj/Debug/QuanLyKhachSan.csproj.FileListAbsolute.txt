@@ -52,3 +52,4 @@ F:\University\Sophomore year\Spring semester\Network Programming\Final Project\Q
 F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CoreCompileInputs.cache
 F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
 F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
+C:\Users\Vasilias Da Nykta\Desktop\LTM\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fGuestMgmt.resources

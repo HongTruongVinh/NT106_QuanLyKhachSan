@@ -171,7 +171,6 @@
     <Content Include="Database\Data.sql" />
     <Content Include="Image\exit-to-app_119178.png" />
     <Content Include="Image\grade_119072.png" />
-    <Content Include="Image\Icons\search.png" />
     <Content Include="Image\ic_Star.png" />
     <Content Include="Image\MainWindow\close.png" />
     <Content Include="Image\MainWindow\help-circle-outline.png" />
