@@ -82,6 +82,7 @@ CREATE TABLE HOADON
 	MaHD INT IDENTITY  PRIMARY KEY,
 	MaKH INT NOT NULL,
 	TriGia INT NOT NULL DEFAULT 0,
+	--MaNhanVien INT
 
 	FOREIGN KEY (MaKH) REFERENCES dbo.KHACHHANG(MaKH)
 )
@@ -102,8 +103,10 @@ CREATE TABLE CHITIETHOADON
 GO
 
 
+
 CREATE TABLE THAMSO
 (
+	ID INT DEFAULT 1,
 	KhachToiDa Int,
 	DonGiaPhongCho Int,
 	PhuThuTuKhach FLOAT
@@ -178,6 +181,8 @@ GO
 
 ---------------------------------------------------------------------------
 -- Phần thêm dữ liệu
+
+INSERT INTO dbo.THAMSO (KhachToiDa, DonGiaPhongCho, PhuThuTuKhach) VALUES (3, 2, 0.25) 
 
 INSERT INTO dbo.TAIKHOAN
 			( TenDangNhap,

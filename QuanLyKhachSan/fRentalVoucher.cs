@@ -23,8 +23,6 @@ namespace QuanLyKhachSan
 
         RentalVoucher rentalVoucher;
 
-        int maxCountPeople;
-
         public fRentalVoucher(Room room, fLoadRoom _fLoadRoom)
         {
             InitializeComponent();
@@ -120,6 +118,14 @@ namespace QuanLyKhachSan
                 return;
             }
 
+            int countPeople = Convert.ToInt32(tb_NumberPeople.Text);
+            int maxCount = RegulationDAO.Instance.GetMaxCountPeople();
+
+            if (maxCount < countPeople)
+            {
+                MessageBox.Show("Số người không được vượt quá "+ maxCount);
+                return;
+            }
 
             #region kiểm tra và Inser CLient trước
             int idPerson = 0;
@@ -142,8 +148,7 @@ namespace QuanLyKhachSan
             #endregion
 
             #region sau đó Insert phiếu thuê phòng mới 
-            int countPeople = 0;
-            countPeople = Int32.Parse(tb_NumberPeople.Text);
+            
             if (RentalVoucherDAO.Instance.InsertRentalVoucher((this.Tag as Room).ID, client.ID, cbb_TypeClient.SelectedIndex == 1 ? 1: 2, countPeople))
             {
                 RoomDAO.Instance.UpdateStatusRoom((this.Tag as Room).ID, 1);
@@ -225,6 +230,7 @@ namespace QuanLyKhachSan
 
             LoadInforRentalVoucher(this.Tag as Room);
             fLoadRoom.LoadRoomList();
+            this.Close();
         }
 
         private void tb_NumberPhone_KeyPress(object sender, KeyPressEventArgs e)

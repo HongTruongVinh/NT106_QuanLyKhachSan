@@ -50,6 +50,7 @@
     <Compile Include="DAO\BillDAO.cs" />
     <Compile Include="DAO\ClientDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\RegulationDAO.cs" />
     <Compile Include="DAO\RentalVoucherDAO.cs" />
     <Compile Include="DAO\RoomDAO.cs" />
     <Compile Include="DAO\TypeRoomDAO.cs" />

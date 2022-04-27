@@ -63,9 +63,13 @@ namespace QuanLyKhachSan
                         {
                             btn.BackColor = Color.PaleTurquoise;
                         }
-                        else
+                        else if(room.Type == "C")
                         {
                             btn.BackColor = Color.Aqua;
+                        }
+                        else
+                        {
+
                         }
 
                         statusRoom = "Trống";

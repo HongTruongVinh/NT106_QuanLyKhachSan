@@ -10,6 +10,7 @@ namespace QuanLyKhachSan.DAO
 {
     public class AccountDAO
     {
+        #region Make singleton
         private static AccountDAO instance;
         public static AccountDAO Instance
         {
@@ -21,6 +22,7 @@ namespace QuanLyKhachSan.DAO
         }
 
         private AccountDAO() { }
+        #endregion
 
         public bool Login(string username, string password)
         {
