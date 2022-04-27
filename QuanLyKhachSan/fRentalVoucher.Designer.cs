@@ -82,12 +82,12 @@ namespace QuanLyKhachSan
             this.tb_DateStart = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.panel30 = new System.Windows.Forms.Panel();
+            this.tb_NumberPeople = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.pn_ControlBar = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btn_Close = new System.Windows.Forms.Label();
-            this.tb_NumberPeople = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel10.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -364,7 +364,7 @@ namespace QuanLyKhachSan
             this.tb_Address.Location = new System.Drawing.Point(93, 11);
             this.tb_Address.Name = "tb_Address";
             this.tb_Address.Size = new System.Drawing.Size(248, 27);
-            this.tb_Address.TabIndex = 1;
+            this.tb_Address.TabIndex = 4;
             // 
             // label14
             // 
@@ -401,7 +401,7 @@ namespace QuanLyKhachSan
             this.tb_IDPerson.Location = new System.Drawing.Point(92, 11);
             this.tb_IDPerson.Name = "tb_IDPerson";
             this.tb_IDPerson.Size = new System.Drawing.Size(249, 27);
-            this.tb_IDPerson.TabIndex = 1;
+            this.tb_IDPerson.TabIndex = 3;
             this.tb_IDPerson.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_IDPerson_KeyPress);
             // 
             // label17
@@ -429,7 +429,7 @@ namespace QuanLyKhachSan
             this.tb_NumberPhone.Location = new System.Drawing.Point(92, 11);
             this.tb_NumberPhone.Name = "tb_NumberPhone";
             this.tb_NumberPhone.Size = new System.Drawing.Size(249, 27);
-            this.tb_NumberPhone.TabIndex = 1;
+            this.tb_NumberPhone.TabIndex = 2;
             this.tb_NumberPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_NumberPhone_KeyPress);
             // 
             // label18
@@ -488,7 +488,7 @@ namespace QuanLyKhachSan
             this.cbb_TypeClient.Location = new System.Drawing.Point(163, 7);
             this.cbb_TypeClient.Name = "cbb_TypeClient";
             this.cbb_TypeClient.Size = new System.Drawing.Size(177, 28);
-            this.cbb_TypeClient.TabIndex = 1;
+            this.cbb_TypeClient.TabIndex = 7;
             // 
             // label13
             // 
@@ -605,7 +605,7 @@ namespace QuanLyKhachSan
             this.tb_DateStart.Location = new System.Drawing.Point(163, 11);
             this.tb_DateStart.Name = "tb_DateStart";
             this.tb_DateStart.Size = new System.Drawing.Size(178, 27);
-            this.tb_DateStart.TabIndex = 1;
+            this.tb_DateStart.TabIndex = 6;
             // 
             // label29
             // 
@@ -625,6 +625,15 @@ namespace QuanLyKhachSan
             this.panel30.Name = "panel30";
             this.panel30.Size = new System.Drawing.Size(345, 44);
             this.panel30.TabIndex = 8;
+            // 
+            // tb_NumberPeople
+            // 
+            this.tb_NumberPeople.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_NumberPeople.Location = new System.Drawing.Point(163, 11);
+            this.tb_NumberPeople.Name = "tb_NumberPeople";
+            this.tb_NumberPeople.Size = new System.Drawing.Size(178, 27);
+            this.tb_NumberPeople.TabIndex = 5;
+            this.tb_NumberPeople.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_NumberPeople_KeyPress);
             // 
             // label30
             // 
@@ -678,15 +687,6 @@ namespace QuanLyKhachSan
             this.btn_Close.TabIndex = 5;
             this.btn_Close.Text = "X";
             this.btn_Close.Click += new System.EventHandler(this.btn_Close_Click);
-            // 
-            // tb_NumberPeople
-            // 
-            this.tb_NumberPeople.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_NumberPeople.Location = new System.Drawing.Point(163, 11);
-            this.tb_NumberPeople.Name = "tb_NumberPeople";
-            this.tb_NumberPeople.Size = new System.Drawing.Size(178, 27);
-            this.tb_NumberPeople.TabIndex = 1;
-            this.tb_NumberPeople.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_NumberPeople_KeyPress);
             // 
             // fRentalVoucher
             // 

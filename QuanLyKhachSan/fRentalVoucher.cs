@@ -27,6 +27,9 @@ namespace QuanLyKhachSan
         {
             InitializeComponent();
 
+            cbb_TypeClient.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbb_TypeClient.SelectedIndex = 1;
+
             this.Tag = room;
 
             this.fLoadRoom = _fLoadRoom;

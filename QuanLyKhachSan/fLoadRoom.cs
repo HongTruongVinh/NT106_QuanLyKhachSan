@@ -29,6 +29,8 @@ namespace QuanLyKhachSan
             lb_TypeB.BackColor = Color.PaleTurquoise;
             lb_TypeC.BackColor = Color.Aqua;
             lb_Ordered.BackColor = Color.LightPink;
+
+            
         }
 
         #region Method
