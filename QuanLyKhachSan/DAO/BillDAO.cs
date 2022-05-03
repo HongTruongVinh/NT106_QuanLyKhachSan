@@ -26,17 +26,22 @@ namespace QuanLyKhachSan.DAO
 
         public int GetUncheckBillIDByRoomID(int id)
         {
-            string query = "SELECT * FROM dbo.Bill WHERE idRoom = " + id + " AND status = 0";
+            string query = "SELECT * FROM dbo.HOADON, dbo.PHONG WHERE HOADON.MaHD = PHONG.MaHD AND MaHD = " + id + " AND TinhTrang = 0";
 
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
-            if (data.Rows.Count > 0)
+            if (data.Rows.Count > 0)    
             {
                 Bill bill = new Bill(data.Rows[0]);
                 return bill.ID; // lấy đc bill id thì return 
             }
 
             return -1;// lấy bill id thất bại thì -1 
+        }
+        //Chua tao USP_GetListBillByDate trong database
+        public DataTable GetBillListByDate(DateTime checkIn, DateTime checkOut)
+        {
+            return DataProvider.Instance.ExecuteQuery("exec USP_GetListBillByDate @checkIn, @checkOut", new object[] { checkIn, checkOut });
         }
     }
 }

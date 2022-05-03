@@ -26,6 +26,7 @@ namespace QuanLyKhachSan
             Load();
         }
 
+        #region methods
         void SetDefaultControls()
         {
             dgv_Room.DataSource = listRoom;
@@ -51,6 +52,7 @@ namespace QuanLyKhachSan
 
             AddRoomBinding();
             AddTypeRoomBinding();
+            LoadDateTimePickerBill();
         }
 
         void AddRoomBinding()
@@ -85,7 +87,7 @@ namespace QuanLyKhachSan
             try
             {
                 listRoom.DataSource = RoomDAO.Instance.GetRoomList("TiengViet");
-                
+
             }
             catch
             {
@@ -105,13 +107,26 @@ namespace QuanLyKhachSan
                 MessageBox.Show("!!!Không thể hiển thị danh mục phòng!!!");
             }
         }
-
         void LoadCategoryRoomIntoCBB(ComboBox cb)
         {
             cb.DataSource = TypeRoomDAO.Instance.GetCategoryRoom();
             cb.DisplayMember = "name";
         }
 
+        void LoadListBillByDate(DateTime checkIn, DateTime checkOut)
+        {
+            dtgvBill.DataSource = BillDAO.Instance.GetBillListByDate(checkIn, checkOut);
+        }
+
+        void LoadDateTimePickerBill()
+        {
+            DateTime today = DateTime.Now;
+            dtpkFromDate.Value = new DateTime(today.Year, today.Month, 1);
+            dtpkToDate.Value = dtpkFromDate.Value.AddMonths(1).AddDays(-1);
+        } 
+        #endregion
+
+        #region events
         private void btn_AddRoom_Click(object sender, EventArgs e)
         {
             int idTypeRoom = (cbb_TypeRoom.SelectedItem as TypeRoom).ID;
@@ -133,7 +148,7 @@ namespace QuanLyKhachSan
             {
                 try
                 {
-                    if(dgv_Room.SelectedCells[0].OwningRow.Cells["Mã loại phòng"].Value == null)
+                    if (dgv_Room.SelectedCells[0].OwningRow.Cells["Mã loại phòng"].Value == null)
                     {
                         return;
                     }
@@ -243,7 +258,7 @@ namespace QuanLyKhachSan
             int price = Convert.ToInt32(tb_PriceTypeRoom.Text);
             int id = Convert.ToInt32(tb_idTypeRoom.Text);
 
-            if(TypeRoomDAO.Instance.Update(id, name, price))
+            if (TypeRoomDAO.Instance.Update(id, name, price))
             {
                 MessageBox.Show("Sửa danh mục phòng thành công!");
                 LoadCategoryRoom();
@@ -293,5 +308,14 @@ namespace QuanLyKhachSan
                 e.Handled = true;
             }
         }
+
+        private void btnViewBill_Click(object sender, EventArgs e)
+        {
+            
+            LoadListBillByDate(dtpkFromDate.Value, dtpkToDate.Value);
+        }
+        #endregion
+
+
     }
 }

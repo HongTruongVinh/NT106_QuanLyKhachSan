@@ -53,3 +53,22 @@ F:\University\Sophomore year\Spring semester\Network Programming\Final Project\Q
 F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
 F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
 C:\Users\Vasilias Da Nykta\Desktop\LTM\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fGuestMgmt.resources
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe.config
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.pdb
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.AssemblyReference.cache
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.SuggestedBindingRedirects.cache
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fAdmin.resources
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fBill.resources
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fClientManage.resources
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fGuestMgmt.resources
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fInformation.resources
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fRentalVoucher.resources
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fLogin.resources
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fLoadRoom.resources
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.MainWindow.resources
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Properties.Resources.resources
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.GenerateResource.cache
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CoreCompileInputs.cache
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
