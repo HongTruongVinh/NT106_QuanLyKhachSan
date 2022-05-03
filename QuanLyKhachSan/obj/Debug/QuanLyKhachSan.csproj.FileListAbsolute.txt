@@ -16,4 +16,64 @@ C:\Users\HONG VINH\source\repos\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKh
 C:\Users\HONG VINH\source\repos\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CoreCompileInputs.cache
 C:\Users\HONG VINH\source\repos\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
 C:\Users\HONG VINH\source\repos\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
+<<<<<<< HEAD
 C:\Users\HONG VINH\source\repos\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fListRentalVoucher.resources
+=======
+C:\Users\Vasilias Da Nykta\Desktop\LTM\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe.config
+C:\Users\Vasilias Da Nykta\Desktop\LTM\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe
+C:\Users\Vasilias Da Nykta\Desktop\LTM\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.pdb
+C:\Users\Vasilias Da Nykta\Desktop\LTM\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.AssemblyReference.cache
+C:\Users\Vasilias Da Nykta\Desktop\LTM\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.SuggestedBindingRedirects.cache
+C:\Users\Vasilias Da Nykta\Desktop\LTM\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fAdmin.resources
+C:\Users\Vasilias Da Nykta\Desktop\LTM\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fBill.resources
+C:\Users\Vasilias Da Nykta\Desktop\LTM\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fClientManage.resources
+C:\Users\Vasilias Da Nykta\Desktop\LTM\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fInformation.resources
+C:\Users\Vasilias Da Nykta\Desktop\LTM\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fRentalVoucher.resources
+C:\Users\Vasilias Da Nykta\Desktop\LTM\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fLogin.resources
+C:\Users\Vasilias Da Nykta\Desktop\LTM\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fLoadRoom.resources
+C:\Users\Vasilias Da Nykta\Desktop\LTM\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.MainWindow.resources
+C:\Users\Vasilias Da Nykta\Desktop\LTM\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Properties.Resources.resources
+C:\Users\Vasilias Da Nykta\Desktop\LTM\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.GenerateResource.cache
+C:\Users\Vasilias Da Nykta\Desktop\LTM\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CoreCompileInputs.cache
+C:\Users\Vasilias Da Nykta\Desktop\LTM\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
+C:\Users\Vasilias Da Nykta\Desktop\LTM\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe.config
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.pdb
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.AssemblyReference.cache
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.SuggestedBindingRedirects.cache
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fAdmin.resources
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fBill.resources
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fClientManage.resources
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fGuestMgmt.resources
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fInformation.resources
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fRentalVoucher.resources
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fLogin.resources
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fLoadRoom.resources
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.MainWindow.resources
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Properties.Resources.resources
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.GenerateResource.cache
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CoreCompileInputs.cache
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
+F:\University\Sophomore year\Spring semester\Network Programming\Final Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
+C:\Users\Vasilias Da Nykta\Desktop\LTM\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fGuestMgmt.resources
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe.config
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.pdb
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.AssemblyReference.cache
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.SuggestedBindingRedirects.cache
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fAdmin.resources
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fBill.resources
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fClientManage.resources
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fGuestMgmt.resources
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fInformation.resources
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fRentalVoucher.resources
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fLogin.resources
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fLoadRoom.resources
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.MainWindow.resources
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Properties.Resources.resources
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.GenerateResource.cache
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CoreCompileInputs.cache
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
+E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
+>>>>>>> fa494f6675b474d5d999c89ac0e425c8d9f6dcbb

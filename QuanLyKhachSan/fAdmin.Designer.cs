@@ -32,14 +32,14 @@ namespace QuanLyKhachSan
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dtgvBill = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txbAmount = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lbAmounts = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnViewBill = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
+            this.dtpkToDate = new System.Windows.Forms.DateTimePicker();
+            this.lbToDate = new System.Windows.Forms.Label();
             this.dtpkFromDate = new System.Windows.Forms.DateTimePicker();
             this.lbFromDate = new System.Windows.Forms.Label();
             this.tp_ManageEmployee = new System.Windows.Forms.TabPage();
@@ -129,7 +129,7 @@ namespace QuanLyKhachSan
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.tp_ManageEmployee.SuspendLayout();
@@ -198,24 +198,25 @@ namespace QuanLyKhachSan
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.dataGridView1);
+            this.panel4.Controls.Add(this.dtgvBill);
             this.panel4.Location = new System.Drawing.Point(3, 41);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(746, 368);
             this.panel4.TabIndex = 2;
             // 
-            // dataGridView1
+            // dtgvBill
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(2, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(741, 368);
-            this.dataGridView1.TabIndex = 0;
+            this.dtgvBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvBill.Location = new System.Drawing.Point(2, 0);
+            this.dtgvBill.Name = "dtgvBill";
+            this.dtgvBill.Size = new System.Drawing.Size(741, 368);
+            this.dtgvBill.TabIndex = 0;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.txbAmount);
-            this.panel2.Controls.Add(this.label4);
+            this.panel2.Controls.Add(this.lbAmounts);
             this.panel2.Location = new System.Drawing.Point(3, 410);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(746, 37);
@@ -229,21 +230,21 @@ namespace QuanLyKhachSan
             this.txbAmount.Size = new System.Drawing.Size(276, 26);
             this.txbAmount.TabIndex = 2;
             // 
-            // label4
+            // lbAmounts
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(345, 8);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(116, 19);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Tổng doanh thu:";
+            this.lbAmounts.AutoSize = true;
+            this.lbAmounts.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAmounts.Location = new System.Drawing.Point(345, 8);
+            this.lbAmounts.Name = "lbAmounts";
+            this.lbAmounts.Size = new System.Drawing.Size(116, 19);
+            this.lbAmounts.TabIndex = 1;
+            this.lbAmounts.Text = "Tổng doanh thu:";
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btnViewBill);
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.dtpkToDate);
+            this.panel1.Controls.Add(this.lbToDate);
             this.panel1.Controls.Add(this.dtpkFromDate);
             this.panel1.Controls.Add(this.lbFromDate);
             this.panel1.Location = new System.Drawing.Point(3, 3);
@@ -260,24 +261,25 @@ namespace QuanLyKhachSan
             this.btnViewBill.TabIndex = 4;
             this.btnViewBill.Text = "Thống kê";
             this.btnViewBill.UseVisualStyleBackColor = true;
+            this.btnViewBill.Click += new System.EventHandler(this.btnViewBill_Click);
             // 
-            // dateTimePicker1
+            // dtpkToDate
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(407, 6);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(242, 25);
-            this.dateTimePicker1.TabIndex = 3;
+            this.dtpkToDate.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpkToDate.Location = new System.Drawing.Point(407, 6);
+            this.dtpkToDate.Name = "dtpkToDate";
+            this.dtpkToDate.Size = new System.Drawing.Size(242, 25);
+            this.dtpkToDate.TabIndex = 3;
             // 
-            // label1
+            // lbToDate
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(332, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 19);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Đến ngày:";
+            this.lbToDate.AutoSize = true;
+            this.lbToDate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbToDate.Location = new System.Drawing.Point(332, 10);
+            this.lbToDate.Name = "lbToDate";
+            this.lbToDate.Size = new System.Drawing.Size(76, 19);
+            this.lbToDate.TabIndex = 2;
+            this.lbToDate.Text = "Đến ngày:";
             // 
             // dtpkFromDate
             // 
@@ -458,6 +460,7 @@ namespace QuanLyKhachSan
             // 
             // dgv_Account
             // 
+            this.dgv_Account.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Account.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Account.Location = new System.Drawing.Point(3, 3);
             this.dgv_Account.Margin = new System.Windows.Forms.Padding(2);
@@ -716,6 +719,7 @@ namespace QuanLyKhachSan
             // 
             // dgv_Room
             // 
+            this.dgv_Room.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Room.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Room.Location = new System.Drawing.Point(3, 2);
             this.dgv_Room.Margin = new System.Windows.Forms.Padding(2);
@@ -966,6 +970,7 @@ namespace QuanLyKhachSan
             // 
             // dgv_TypeRoom
             // 
+            this.dgv_TypeRoom.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_TypeRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_TypeRoom.Location = new System.Drawing.Point(3, 2);
             this.dgv_TypeRoom.Margin = new System.Windows.Forms.Padding(2);
@@ -1220,7 +1225,7 @@ namespace QuanLyKhachSan
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -1371,14 +1376,14 @@ namespace QuanLyKhachSan
         private System.Windows.Forms.Button btn_DeleteTypeRoom;
         private System.Windows.Forms.Button btn_AddTypeRoom;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dtgvBill;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txbAmount;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lbAmounts;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnViewBill;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DateTimePicker dtpkToDate;
+        private System.Windows.Forms.Label lbToDate;
         private System.Windows.Forms.DateTimePicker dtpkFromDate;
         private System.Windows.Forms.Label lbFromDate;
     }
