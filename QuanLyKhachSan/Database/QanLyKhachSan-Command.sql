@@ -1,4 +1,4 @@
-USE QuanLyKhachSan
+﻿USE QuanLyKhachSan
 
 --DELETE dbo.KHACHHANG
 --DELETE dbo.PHIEUTHUEPHONG
@@ -23,3 +23,7 @@ SELECT MaKH id, TenKhachHang name, CMND idPerson, DiaChi address, SDT numberPhon
 SELECT MaPhieu id, MaPhong roomID, ptp.MaKH ClientID, NgayBatDau dateTimeCheckIn, NgayKetThuc dateTimeCheckOut, SoLuongKhach countPeople , TenLoaiKH typeCLient, HeSoPhuThu dependencyFactor
 FROM dbo.PHIEUTHUEPHONG ptp, dbo.LOAIKHACHHANG lkh 
 WHERE ptp.MaLoaiKH = lkh.MaLoaiKH AND  MaPhong = 2
+
+
+---Load list vé thuê phòng đang có người dùng
+SELECT ptp.MaKH clientID, p.MaPhong roomID, TenPhong roomName, TenKhachHang nameClient, SDT numberPhone, DiaChi adsress, CMND, lkh.MaLoaiKH typeClient, SoLuongKhach  FROM dbo.PHIEUTHUEPHONG ptp, dbo.PHONG p, dbo.KHACHHANG kh, dbo.LOAIKHACHHANG lkh WHERE p.TinhTrang = 1 AND ptp.MaPhong = p.MaPhong AND ptp.MaKH = kh.MaKH AND ptp.MaLoaiKH = lkh.MaLoaiKH

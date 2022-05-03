@@ -59,6 +59,24 @@ namespace QuanLyKhachSan.DAO
             return null;
         }
 
+        public DataTable ListRentalVoucherUnCheckOut()
+        {
+            string query = "SELECT ptp.MaKH clientID, p.MaPhong roomID, TenPhong roomName, TenKhachHang nameClient, SDT numberPhone, DiaChi adsress, CMND, lkh.MaLoaiKH typeClient, SoLuongKhach  FROM dbo.PHIEUTHUEPHONG ptp, dbo.PHONG p, dbo.KHACHHANG kh, dbo.LOAIKHACHHANG lkh WHERE p.TinhTrang = 1 AND ptp.MaPhong = p.MaPhong AND ptp.MaKH = kh.MaKH AND ptp.MaLoaiKH = lkh.MaLoaiKH";
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            return data;
+        }
+
+        public DataTable ListRentalVoucherUnCheckOut(string TiengViet)
+        {
+            string query = "SELECT TenPhong 'Phòng', NgayBatDau 'Ngày bắt đầu',TenKhachHang 'Khách hàng', lkh.MaLoaiKH 'Loại khách', SoLuongKhach 'Số khách', SDT , DiaChi 'Địa chỉ', CMND, ptp.MaKH MaKH, ptp.MaPhieu, p.MaPhong   FROM dbo.PHIEUTHUEPHONG ptp, dbo.PHONG p, dbo.KHACHHANG kh, dbo.LOAIKHACHHANG lkh WHERE p.TinhTrang = 1 AND ptp.MaPhong = p.MaPhong AND ptp.MaKH = kh.MaKH AND ptp.MaLoaiKH = lkh.MaLoaiKH";
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            return data;
+        }
+
         #endregion
 
         #region các hàm Insert dữ liệu
@@ -111,6 +129,7 @@ namespace QuanLyKhachSan.DAO
                 return false;
             }
         }
+
         #endregion
     }
 }

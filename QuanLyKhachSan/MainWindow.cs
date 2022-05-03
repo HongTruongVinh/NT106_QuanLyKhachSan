@@ -83,5 +83,23 @@ namespace QuanLyKhachSan
             fLoadRoom fLoadRoom = new fLoadRoom();
             fLoadRoom.ShowDialog();
         }
+
+        private void btn_GuestMgmt_Click(object sender, EventArgs e)
+        {
+            fClientManage fClientManage = new fClientManage();
+            fClientManage.ShowDialog();
+        }
+
+        private void btn_BillMgmt_Click(object sender, EventArgs e)
+        {
+            fGuestMgmt fGuestMgmt = new fGuestMgmt();
+            fGuestMgmt.ShowDialog();
+        }
+
+        private void btn_RoomMgmt_Click(object sender, EventArgs e)
+        {
+            fListRentalVoucher fListRentalVoucher = new fListRentalVoucher();
+            fListRentalVoucher.ShowDialog();
+        }
     }
 }

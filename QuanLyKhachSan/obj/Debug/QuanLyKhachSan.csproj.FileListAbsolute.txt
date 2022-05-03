@@ -5,6 +5,7 @@ C:\Users\HONG VINH\source\repos\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKh
 C:\Users\HONG VINH\source\repos\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fAdmin.resources
 C:\Users\HONG VINH\source\repos\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fBill.resources
 C:\Users\HONG VINH\source\repos\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fClientManage.resources
+C:\Users\HONG VINH\source\repos\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fGuestMgmt.resources
 C:\Users\HONG VINH\source\repos\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fInformation.resources
 C:\Users\HONG VINH\source\repos\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fRentalVoucher.resources
 C:\Users\HONG VINH\source\repos\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fLogin.resources
@@ -15,3 +16,4 @@ C:\Users\HONG VINH\source\repos\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKh
 C:\Users\HONG VINH\source\repos\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CoreCompileInputs.cache
 C:\Users\HONG VINH\source\repos\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
 C:\Users\HONG VINH\source\repos\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
+C:\Users\HONG VINH\source\repos\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fListRentalVoucher.resources

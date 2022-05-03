@@ -217,6 +217,7 @@ namespace QuanLyKhachSan
             this.btn_GuestMgmt.TabIndex = 9;
             this.btn_GuestMgmt.Text = "Quản lý khách hàng";
             this.btn_GuestMgmt.UseVisualStyleBackColor = true;
+            this.btn_GuestMgmt.Click += new System.EventHandler(this.btn_GuestMgmt_Click);
             // 
             // btn_BillMgmt
             // 
@@ -232,6 +233,7 @@ namespace QuanLyKhachSan
             this.btn_BillMgmt.TabIndex = 8;
             this.btn_BillMgmt.Text = "Quản lý hóa đơn";
             this.btn_BillMgmt.UseVisualStyleBackColor = true;
+            this.btn_BillMgmt.Click += new System.EventHandler(this.btn_BillMgmt_Click);
             // 
             // btn_RoomMgmt
             // 
@@ -245,8 +247,9 @@ namespace QuanLyKhachSan
             this.btn_RoomMgmt.Name = "btn_RoomMgmt";
             this.btn_RoomMgmt.Size = new System.Drawing.Size(481, 340);
             this.btn_RoomMgmt.TabIndex = 7;
-            this.btn_RoomMgmt.Text = "Quản lý phòng";
+            this.btn_RoomMgmt.Text = "Quản lý phiếu thuê phòng";
             this.btn_RoomMgmt.UseVisualStyleBackColor = true;
+            this.btn_RoomMgmt.Click += new System.EventHandler(this.btn_RoomMgmt_Click);
             // 
             // btn_Booking
             // 

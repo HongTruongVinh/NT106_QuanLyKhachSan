@@ -57,6 +57,7 @@
     <Compile Include="DTO\Account.cs" />
     <Compile Include="DTO\Bill.cs" />
     <Compile Include="DTO\Client.cs" />
+    <Compile Include="DTO\InforRentalVoucher.cs" />
     <Compile Include="DTO\RentalVoucher.cs" />
     <Compile Include="DTO\Room.cs" />
     <Compile Include="DTO\TypeRoom.cs" />
@@ -78,11 +79,23 @@
     <Compile Include="fClientManage.Designer.cs">
       <DependentUpon>fClientManage.cs</DependentUpon>
     </Compile>
+    <Compile Include="fGuestMgmt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fGuestMgmt.Designer.cs">
+      <DependentUpon>fGuestMgmt.cs</DependentUpon>
+    </Compile>
     <Compile Include="fInformation.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fInformation.Designer.cs">
       <DependentUpon>fInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fListRentalVoucher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fListRentalVoucher.Designer.cs">
+      <DependentUpon>fListRentalVoucher.cs</DependentUpon>
     </Compile>
     <Compile Include="fRentalVoucher.cs">
       <SubType>Form</SubType>
@@ -119,8 +132,14 @@
     <EmbeddedResource Include="fClientManage.resx">
       <DependentUpon>fClientManage.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fGuestMgmt.resx">
+      <DependentUpon>fGuestMgmt.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fInformation.resx">
       <DependentUpon>fInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fListRentalVoucher.resx">
+      <DependentUpon>fListRentalVoucher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fRentalVoucher.resx">
       <DependentUpon>fRentalVoucher.cs</DependentUpon>

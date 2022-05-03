@@ -70,7 +70,6 @@ namespace QuanLyKhachSan
             this.cbb_TypeClient = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btn_LoadBill = new System.Windows.Forms.Button();
             this.panel23 = new System.Windows.Forms.Panel();
             this.tb_IDRentalVoucher = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
@@ -503,7 +502,6 @@ namespace QuanLyKhachSan
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.panel3.Controls.Add(this.btn_LoadBill);
             this.panel3.Controls.Add(this.panel15);
             this.panel3.Controls.Add(this.panel23);
             this.panel3.Controls.Add(this.label26);
@@ -514,15 +512,6 @@ namespace QuanLyKhachSan
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(407, 411);
             this.panel3.TabIndex = 1;
-            // 
-            // btn_LoadBill
-            // 
-            this.btn_LoadBill.Location = new System.Drawing.Point(40, 344);
-            this.btn_LoadBill.Name = "btn_LoadBill";
-            this.btn_LoadBill.Size = new System.Drawing.Size(345, 43);
-            this.btn_LoadBill.TabIndex = 19;
-            this.btn_LoadBill.Text = "Xem thông tin hóa đơn";
-            this.btn_LoadBill.UseVisualStyleBackColor = true;
             // 
             // panel23
             // 
@@ -801,7 +790,6 @@ namespace QuanLyKhachSan
         private System.Windows.Forms.TextBox tb_IDClient;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btn_Save;
-        private System.Windows.Forms.Button btn_LoadBill;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btn_Delete;
         private System.Windows.Forms.Button btn_Edit;
