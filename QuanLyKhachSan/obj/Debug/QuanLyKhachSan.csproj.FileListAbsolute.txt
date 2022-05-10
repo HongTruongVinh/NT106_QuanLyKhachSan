@@ -77,3 +77,22 @@ E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CoreCo
 E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
 E:\NNLT\C#\NT106M21Project\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
 >>>>>>> fa494f6675b474d5d999c89ac0e425c8d9f6dcbb
+C:\Users\Hp\Downloads\Quoc_DoAn_Github\NT106_QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe.config
+C:\Users\Hp\Downloads\Quoc_DoAn_Github\NT106_QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe
+C:\Users\Hp\Downloads\Quoc_DoAn_Github\NT106_QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.pdb
+C:\Users\Hp\Downloads\Quoc_DoAn_Github\NT106_QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csprojAssemblyReference.cache
+C:\Users\Hp\Downloads\Quoc_DoAn_Github\NT106_QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fAdmin.resources
+C:\Users\Hp\Downloads\Quoc_DoAn_Github\NT106_QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fBill.resources
+C:\Users\Hp\Downloads\Quoc_DoAn_Github\NT106_QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fClientManage.resources
+C:\Users\Hp\Downloads\Quoc_DoAn_Github\NT106_QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fGuestMgmt.resources
+C:\Users\Hp\Downloads\Quoc_DoAn_Github\NT106_QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fInformation.resources
+C:\Users\Hp\Downloads\Quoc_DoAn_Github\NT106_QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fListRentalVoucher.resources
+C:\Users\Hp\Downloads\Quoc_DoAn_Github\NT106_QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fRentalVoucher.resources
+C:\Users\Hp\Downloads\Quoc_DoAn_Github\NT106_QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fLogin.resources
+C:\Users\Hp\Downloads\Quoc_DoAn_Github\NT106_QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fLoadRoom.resources
+C:\Users\Hp\Downloads\Quoc_DoAn_Github\NT106_QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.MainWindow.resources
+C:\Users\Hp\Downloads\Quoc_DoAn_Github\NT106_QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Properties.Resources.resources
+C:\Users\Hp\Downloads\Quoc_DoAn_Github\NT106_QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.GenerateResource.cache
+C:\Users\Hp\Downloads\Quoc_DoAn_Github\NT106_QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CoreCompileInputs.cache
+C:\Users\Hp\Downloads\Quoc_DoAn_Github\NT106_QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
+C:\Users\Hp\Downloads\Quoc_DoAn_Github\NT106_QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb

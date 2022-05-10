@@ -32,7 +32,7 @@ namespace QuanLyKhachSan.DAO
         public Client GetClientByID(int id)
         {
             DataTable data = DataProvider.Instance.ExecuteQuery("SELECT MaKH id, TenKhachHang name, CMND idPerson, DiaChi address, SDT numberPhone " +
-                                                                "FROM KHACHHANG " + " WHERE MaKH = '"+ id +"'");
+                                                                "FROM KHACHHANG " + " WHERE MaKH = '" + id + "'");
 
             if (data.Rows.Count > 0)
             {
@@ -74,7 +74,7 @@ namespace QuanLyKhachSan.DAO
             }
             catch
             {
-                
+
             }
             return false;
         }
@@ -96,5 +96,76 @@ namespace QuanLyKhachSan.DAO
             return false;
         }
         #endregion
+
+        public List<Client> GetCustomerByCategoryID(int id)
+        {
+            List<Client> list = new List<Client>();
+
+            string query = "select * from KHACHHANG where MaKH = " + id;
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                Client customer = new Client(item);
+                list.Add(customer);
+            }
+
+            return list;
+        }
+
+        public List<Client> GetListClient()
+        {
+            List<Client> list = new List<Client>();
+
+            string query = "select * from KHACHHANG";
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+
+
+            foreach (DataRow item in data.Rows)
+            {
+                Client customer = new Client(item);
+                list.Add(customer);
+            }
+
+            return list;
+        }
+
+        public bool InsertClient(string hoten, string sdt, string cmnd, string diachi)
+        {
+            string query = "INSERT KHACHHANG (TenKhachHang,SDT,CMND,DiaChi) VALUES(" +
+                 "'" + hoten + "'," +
+                "'" + sdt + "'," +
+                "'" + cmnd + "'," +
+                 "'" + diachi + "')";
+
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+
+        public bool UpdateClient(int makhachhang, string hoten, string sdt, string cmnd, string diachi)
+        {
+            string query = string.Format("UPDATE KHACHHANG SET TenKhachHang = N'{0}', " +
+                "SDT = '{1}', " +
+                "CMND = '{2}', " +
+                "DiaChi = '{3}' " +
+                "WHERE MaKH = {4}", hoten, sdt, cmnd, diachi, makhachhang);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+
+        public bool DeleteClient(int id)
+        {
+
+
+            string query = string.Format("Delete KHACHHANG where MaKH = {0}", id);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
     }
 }

@@ -20,16 +20,30 @@ namespace QuanLyKhachSan.DTO
 
         public Client(DataRow row)
         {
-            this.ID = (int)row["id"];
+            this.ID = (int)row["MaKH"];
 
-            string _idPerson = (string)row["idPerson"];
-            this.IDPerson = Int32.Parse(_idPerson);
+            string _idPerson = (string)row["CMND"];
 
-            this.Name = (string)row["name"];
+            this.IDPerson = Convert.ToInt32(_idPerson);
 
-            this.Address = (string)row["address"];
 
-            this.NumberPhone = (string)row["numberPhone"];
+            this.Name = (string)row["TenKhachHang"];
+
+            this.Address = (string)row["DiaChi"];
+
+            this.NumberPhone = (string)row["SDT"];
+
+            /*
+            this.ID = (int)row["MaKH"];
+
+
+            this.IDPerson = row["CMND"].ToString();
+
+            this.Name = row["TenKhachHang"].ToString();
+
+            this.Address = row["DiaChi"].ToString();
+
+            this.NumberPhone = row["SDT"].ToString();*/
         }
 
 

@@ -28,17 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pn_NhapTuKhoa = new System.Windows.Forms.Panel();
             this.tb_NhapTuKhoa = new System.Windows.Forms.TextBox();
             this.btn_TiemKiem = new System.Windows.Forms.Button();
-            this.dgv_TTKH = new System.Windows.Forms.DataGridView();
-            this.MaKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoTen = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.LoaiKH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btn_CapNhap = new System.Windows.Forms.Button();
             this.btn_Xoa = new System.Windows.Forms.Button();
             this.btn_Them = new System.Windows.Forms.Button();
@@ -66,8 +58,8 @@
             this.pn_TimKiem = new System.Windows.Forms.Panel();
             this.btn_TimKiemNangCao = new System.Windows.Forms.Button();
             this.lb_TimKiem = new System.Windows.Forms.Label();
+            this.dgv_TTKH = new System.Windows.Forms.DataGridView();
             this.pn_NhapTuKhoa.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_TTKH)).BeginInit();
             this.pn_HoTen.SuspendLayout();
             this.pn_MaKH.SuspendLayout();
             this.pn_ID.SuspendLayout();
@@ -76,6 +68,7 @@
             this.pn_LoaiKH.SuspendLayout();
             this.pn_TTKH.SuspendLayout();
             this.pn_TimKiem.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_TTKH)).BeginInit();
             this.SuspendLayout();
             // 
             // pn_NhapTuKhoa
@@ -85,7 +78,7 @@
             this.pn_NhapTuKhoa.Controls.Add(this.tb_NhapTuKhoa);
             this.pn_NhapTuKhoa.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.pn_NhapTuKhoa.Location = new System.Drawing.Point(120, 17);
-            this.pn_NhapTuKhoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pn_NhapTuKhoa.Margin = new System.Windows.Forms.Padding(2);
             this.pn_NhapTuKhoa.Name = "pn_NhapTuKhoa";
             this.pn_NhapTuKhoa.Padding = new System.Windows.Forms.Padding(8, 12, 8, 12);
             this.pn_NhapTuKhoa.Size = new System.Drawing.Size(160, 40);
@@ -98,7 +91,7 @@
             this.tb_NhapTuKhoa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_NhapTuKhoa.ForeColor = System.Drawing.Color.DimGray;
             this.tb_NhapTuKhoa.Location = new System.Drawing.Point(8, 12);
-            this.tb_NhapTuKhoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_NhapTuKhoa.Margin = new System.Windows.Forms.Padding(2);
             this.tb_NhapTuKhoa.Name = "tb_NhapTuKhoa";
             this.tb_NhapTuKhoa.Size = new System.Drawing.Size(142, 16);
             this.tb_NhapTuKhoa.TabIndex = 0;
@@ -112,81 +105,12 @@
             this.btn_TiemKiem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_TiemKiem.ForeColor = System.Drawing.Color.White;
             this.btn_TiemKiem.Location = new System.Drawing.Point(292, 17);
-            this.btn_TiemKiem.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_TiemKiem.Margin = new System.Windows.Forms.Padding(2);
             this.btn_TiemKiem.Name = "btn_TiemKiem";
             this.btn_TiemKiem.Size = new System.Drawing.Size(96, 40);
             this.btn_TiemKiem.TabIndex = 6;
             this.btn_TiemKiem.Text = "Tìm kiếm";
             this.btn_TiemKiem.UseVisualStyleBackColor = false;
-            // 
-            // dgv_TTKH
-            // 
-            this.dgv_TTKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_TTKH.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaKH,
-            this.HoTen,
-            this.ID,
-            this.LoaiKH,
-            this.SDT,
-            this.DiaChi});
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(11)))), ((int)(((byte)(10)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_TTKH.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_TTKH.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.dgv_TTKH.Location = new System.Drawing.Point(418, 108);
-            this.dgv_TTKH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.dgv_TTKH.Name = "dgv_TTKH";
-            this.dgv_TTKH.RowHeadersWidth = 51;
-            this.dgv_TTKH.RowTemplate.Height = 24;
-            this.dgv_TTKH.Size = new System.Drawing.Size(548, 310);
-            this.dgv_TTKH.TabIndex = 7;
-            // 
-            // MaKH
-            // 
-            this.MaKH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.MaKH.HeaderText = "Mã KH";
-            this.MaKH.MinimumWidth = 6;
-            this.MaKH.Name = "MaKH";
-            // 
-            // HoTen
-            // 
-            this.HoTen.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.HoTen.HeaderText = "Họ Tên";
-            this.HoTen.MinimumWidth = 6;
-            this.HoTen.Name = "HoTen";
-            // 
-            // ID
-            // 
-            this.ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ID.HeaderText = "CCCD/CMND";
-            this.ID.MinimumWidth = 6;
-            this.ID.Name = "ID";
-            // 
-            // LoaiKH
-            // 
-            this.LoaiKH.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.LoaiKH.HeaderText = "Loại KH";
-            this.LoaiKH.MinimumWidth = 6;
-            this.LoaiKH.Name = "LoaiKH";
-            // 
-            // SDT
-            // 
-            this.SDT.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.SDT.HeaderText = "SĐT";
-            this.SDT.MinimumWidth = 6;
-            this.SDT.Name = "SDT";
-            // 
-            // DiaChi
-            // 
-            this.DiaChi.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DiaChi.HeaderText = "Địa Chỉ";
-            this.DiaChi.MinimumWidth = 6;
-            this.DiaChi.Name = "DiaChi";
             // 
             // btn_CapNhap
             // 
@@ -196,12 +120,13 @@
             this.btn_CapNhap.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_CapNhap.ForeColor = System.Drawing.Color.White;
             this.btn_CapNhap.Location = new System.Drawing.Point(270, 310);
-            this.btn_CapNhap.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_CapNhap.Margin = new System.Windows.Forms.Padding(2);
             this.btn_CapNhap.Name = "btn_CapNhap";
             this.btn_CapNhap.Size = new System.Drawing.Size(96, 42);
             this.btn_CapNhap.TabIndex = 2;
             this.btn_CapNhap.Text = "Cập nhập";
             this.btn_CapNhap.UseVisualStyleBackColor = false;
+            this.btn_CapNhap.Click += new System.EventHandler(this.btn_CapNhap_Click);
             // 
             // btn_Xoa
             // 
@@ -211,12 +136,13 @@
             this.btn_Xoa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Xoa.ForeColor = System.Drawing.Color.White;
             this.btn_Xoa.Location = new System.Drawing.Point(147, 310);
-            this.btn_Xoa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Xoa.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Xoa.Name = "btn_Xoa";
             this.btn_Xoa.Size = new System.Drawing.Size(96, 42);
             this.btn_Xoa.TabIndex = 1;
             this.btn_Xoa.Text = "Xóa";
             this.btn_Xoa.UseVisualStyleBackColor = false;
+            this.btn_Xoa.Click += new System.EventHandler(this.btn_Xoa_Click);
             // 
             // btn_Them
             // 
@@ -226,12 +152,13 @@
             this.btn_Them.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Them.ForeColor = System.Drawing.Color.White;
             this.btn_Them.Location = new System.Drawing.Point(24, 310);
-            this.btn_Them.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_Them.Margin = new System.Windows.Forms.Padding(2);
             this.btn_Them.Name = "btn_Them";
             this.btn_Them.Size = new System.Drawing.Size(96, 42);
             this.btn_Them.TabIndex = 0;
             this.btn_Them.Text = "Thêm";
             this.btn_Them.UseVisualStyleBackColor = false;
+            this.btn_Them.Click += new System.EventHandler(this.btn_Them_Click);
             // 
             // pn_HoTen
             // 
@@ -240,7 +167,7 @@
             this.pn_HoTen.Controls.Add(this.tb_HoTen);
             this.pn_HoTen.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.pn_HoTen.Location = new System.Drawing.Point(219, 111);
-            this.pn_HoTen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pn_HoTen.Margin = new System.Windows.Forms.Padding(2);
             this.pn_HoTen.Name = "pn_HoTen";
             this.pn_HoTen.Padding = new System.Windows.Forms.Padding(8, 12, 8, 12);
             this.pn_HoTen.Size = new System.Drawing.Size(160, 40);
@@ -253,7 +180,7 @@
             this.tb_HoTen.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_HoTen.ForeColor = System.Drawing.Color.Black;
             this.tb_HoTen.Location = new System.Drawing.Point(8, 12);
-            this.tb_HoTen.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_HoTen.Margin = new System.Windows.Forms.Padding(2);
             this.tb_HoTen.Name = "tb_HoTen";
             this.tb_HoTen.Size = new System.Drawing.Size(142, 16);
             this.tb_HoTen.TabIndex = 0;
@@ -288,7 +215,7 @@
             this.pn_MaKH.Controls.Add(this.tb_MaKH);
             this.pn_MaKH.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.pn_MaKH.Location = new System.Drawing.Point(37, 111);
-            this.pn_MaKH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pn_MaKH.Margin = new System.Windows.Forms.Padding(2);
             this.pn_MaKH.Name = "pn_MaKH";
             this.pn_MaKH.Padding = new System.Windows.Forms.Padding(8, 12, 8, 12);
             this.pn_MaKH.Size = new System.Drawing.Size(160, 40);
@@ -301,7 +228,7 @@
             this.tb_MaKH.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_MaKH.ForeColor = System.Drawing.Color.Black;
             this.tb_MaKH.Location = new System.Drawing.Point(8, 12);
-            this.tb_MaKH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_MaKH.Margin = new System.Windows.Forms.Padding(2);
             this.tb_MaKH.Name = "tb_MaKH";
             this.tb_MaKH.Size = new System.Drawing.Size(142, 16);
             this.tb_MaKH.TabIndex = 0;
@@ -325,7 +252,7 @@
             this.pn_ID.Controls.Add(this.tb_ID);
             this.pn_ID.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.pn_ID.Location = new System.Drawing.Point(37, 182);
-            this.pn_ID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pn_ID.Margin = new System.Windows.Forms.Padding(2);
             this.pn_ID.Name = "pn_ID";
             this.pn_ID.Padding = new System.Windows.Forms.Padding(8, 12, 8, 12);
             this.pn_ID.Size = new System.Drawing.Size(160, 40);
@@ -338,7 +265,7 @@
             this.tb_ID.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_ID.ForeColor = System.Drawing.Color.Black;
             this.tb_ID.Location = new System.Drawing.Point(8, 12);
-            this.tb_ID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_ID.Margin = new System.Windows.Forms.Padding(2);
             this.tb_ID.Name = "tb_ID";
             this.tb_ID.Size = new System.Drawing.Size(142, 16);
             this.tb_ID.TabIndex = 0;
@@ -362,7 +289,7 @@
             this.pn_SDT.Controls.Add(this.tb_SDT);
             this.pn_SDT.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.pn_SDT.Location = new System.Drawing.Point(219, 182);
-            this.pn_SDT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pn_SDT.Margin = new System.Windows.Forms.Padding(2);
             this.pn_SDT.Name = "pn_SDT";
             this.pn_SDT.Padding = new System.Windows.Forms.Padding(8, 12, 8, 12);
             this.pn_SDT.Size = new System.Drawing.Size(160, 40);
@@ -375,7 +302,7 @@
             this.tb_SDT.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_SDT.ForeColor = System.Drawing.Color.Black;
             this.tb_SDT.Location = new System.Drawing.Point(8, 12);
-            this.tb_SDT.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_SDT.Margin = new System.Windows.Forms.Padding(2);
             this.tb_SDT.Name = "tb_SDT";
             this.tb_SDT.Size = new System.Drawing.Size(142, 16);
             this.tb_SDT.TabIndex = 0;
@@ -399,7 +326,7 @@
             this.pn_DiaChi.Controls.Add(this.tb_DiaChi);
             this.pn_DiaChi.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.pn_DiaChi.Location = new System.Drawing.Point(37, 253);
-            this.pn_DiaChi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pn_DiaChi.Margin = new System.Windows.Forms.Padding(2);
             this.pn_DiaChi.Name = "pn_DiaChi";
             this.pn_DiaChi.Padding = new System.Windows.Forms.Padding(8, 12, 8, 12);
             this.pn_DiaChi.Size = new System.Drawing.Size(160, 40);
@@ -412,7 +339,7 @@
             this.tb_DiaChi.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_DiaChi.ForeColor = System.Drawing.Color.Black;
             this.tb_DiaChi.Location = new System.Drawing.Point(8, 12);
-            this.tb_DiaChi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tb_DiaChi.Margin = new System.Windows.Forms.Padding(2);
             this.tb_DiaChi.Name = "tb_DiaChi";
             this.tb_DiaChi.Size = new System.Drawing.Size(142, 16);
             this.tb_DiaChi.TabIndex = 0;
@@ -425,9 +352,9 @@
             this.pn_LoaiKH.Controls.Add(this.cb_LoaiKH);
             this.pn_LoaiKH.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.pn_LoaiKH.Location = new System.Drawing.Point(219, 253);
-            this.pn_LoaiKH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pn_LoaiKH.Margin = new System.Windows.Forms.Padding(2);
             this.pn_LoaiKH.Name = "pn_LoaiKH";
-            this.pn_LoaiKH.Padding = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.pn_LoaiKH.Padding = new System.Windows.Forms.Padding(8);
             this.pn_LoaiKH.Size = new System.Drawing.Size(160, 40);
             this.pn_LoaiKH.TabIndex = 19;
             // 
@@ -438,7 +365,7 @@
             this.cb_LoaiKH.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_LoaiKH.FormattingEnabled = true;
             this.cb_LoaiKH.Location = new System.Drawing.Point(8, 8);
-            this.cb_LoaiKH.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cb_LoaiKH.Margin = new System.Windows.Forms.Padding(2);
             this.cb_LoaiKH.Name = "cb_LoaiKH";
             this.cb_LoaiKH.Size = new System.Drawing.Size(142, 23);
             this.cb_LoaiKH.TabIndex = 21;
@@ -472,9 +399,8 @@
             this.pn_TTKH.Controls.Add(this.btn_CapNhap);
             this.pn_TTKH.Controls.Add(this.btn_Xoa);
             this.pn_TTKH.Controls.Add(this.btn_Them);
-            this.pn_TTKH.Location = new System.Drawing.Point(16, 15);
-            this.pn_TTKH.Margin = new System.Windows.Forms.Padding(4);
             this.pn_TTKH.Location = new System.Drawing.Point(12, 12);
+            this.pn_TTKH.Margin = new System.Windows.Forms.Padding(4);
             this.pn_TTKH.Name = "pn_TTKH";
             this.pn_TTKH.Size = new System.Drawing.Size(390, 406);
             this.pn_TTKH.TabIndex = 22;
@@ -486,9 +412,8 @@
             this.pn_TimKiem.Controls.Add(this.lb_TimKiem);
             this.pn_TimKiem.Controls.Add(this.pn_NhapTuKhoa);
             this.pn_TimKiem.Controls.Add(this.btn_TiemKiem);
-            this.pn_TimKiem.Location = new System.Drawing.Point(557, 16);
-            this.pn_TimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.pn_TimKiem.Location = new System.Drawing.Point(418, 13);
+            this.pn_TimKiem.Margin = new System.Windows.Forms.Padding(4);
             this.pn_TimKiem.Name = "pn_TimKiem";
             this.pn_TimKiem.Size = new System.Drawing.Size(548, 81);
             this.pn_TimKiem.TabIndex = 23;
@@ -501,7 +426,7 @@
             this.btn_TimKiemNangCao.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_TimKiemNangCao.ForeColor = System.Drawing.Color.Black;
             this.btn_TimKiemNangCao.Location = new System.Drawing.Point(399, 17);
-            this.btn_TimKiemNangCao.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_TimKiemNangCao.Margin = new System.Windows.Forms.Padding(2);
             this.btn_TimKiemNangCao.Name = "btn_TimKiemNangCao";
             this.btn_TimKiemNangCao.Size = new System.Drawing.Size(134, 40);
             this.btn_TimKiemNangCao.TabIndex = 7;
@@ -518,12 +443,21 @@
             this.lb_TimKiem.TabIndex = 0;
             this.lb_TimKiem.Text = "TÌM KIẾM";
             // 
+            // dgv_TTKH
+            // 
+            this.dgv_TTKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_TTKH.Location = new System.Drawing.Point(418, 111);
+            this.dgv_TTKH.Name = "dgv_TTKH";
+            this.dgv_TTKH.Size = new System.Drawing.Size(548, 307);
+            this.dgv_TTKH.TabIndex = 24;
+            // 
             // fGuestMgmt
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(999, 430);
+            this.Controls.Add(this.dgv_TTKH);
             this.Controls.Add(this.lb_LoaiKH);
             this.Controls.Add(this.pn_LoaiKH);
             this.Controls.Add(this.lb_DiaChi);
@@ -536,15 +470,13 @@
             this.Controls.Add(this.pn_MaKH);
             this.Controls.Add(this.lb_HoTen);
             this.Controls.Add(this.pn_HoTen);
-            this.Controls.Add(this.dgv_TTKH);
             this.Controls.Add(this.pn_TTKH);
             this.Controls.Add(this.pn_TimKiem);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fGuestMgmt";
             this.Text = "Quản lý khách hàng";
             this.pn_NhapTuKhoa.ResumeLayout(false);
             this.pn_NhapTuKhoa.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_TTKH)).EndInit();
             this.pn_HoTen.ResumeLayout(false);
             this.pn_HoTen.PerformLayout();
             this.pn_MaKH.ResumeLayout(false);
@@ -560,6 +492,7 @@
             this.pn_TTKH.PerformLayout();
             this.pn_TimKiem.ResumeLayout(false);
             this.pn_TimKiem.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_TTKH)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -569,7 +502,6 @@
         private System.Windows.Forms.Panel pn_NhapTuKhoa;
         private System.Windows.Forms.TextBox tb_NhapTuKhoa;
         private System.Windows.Forms.Button btn_TiemKiem;
-        private System.Windows.Forms.DataGridView dgv_TTKH;
         private System.Windows.Forms.Button btn_CapNhap;
         private System.Windows.Forms.Button btn_Xoa;
         private System.Windows.Forms.Button btn_Them;
@@ -585,12 +517,6 @@
         private System.Windows.Forms.Label lb_SDT;
         private System.Windows.Forms.Panel pn_SDT;
         private System.Windows.Forms.TextBox tb_SDT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn HoTen;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn LoaiKH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SDT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
         private System.Windows.Forms.Label lb_DiaChi;
         private System.Windows.Forms.Panel pn_DiaChi;
         private System.Windows.Forms.TextBox tb_DiaChi;
@@ -603,5 +529,6 @@
         private System.Windows.Forms.Panel pn_TimKiem;
         private System.Windows.Forms.Label lb_TimKiem;
         private System.Windows.Forms.Button btn_TimKiemNangCao;
+        private System.Windows.Forms.DataGridView dgv_TTKH;
     }
 }
