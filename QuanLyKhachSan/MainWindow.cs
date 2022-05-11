@@ -86,14 +86,14 @@ namespace QuanLyKhachSan
 
         private void btn_GuestMgmt_Click(object sender, EventArgs e)
         {
-            fClientManage fClientManage = new fClientManage();
-            fClientManage.ShowDialog();
+            fGuestMgmt fGuestMgmt = new fGuestMgmt();
+            fGuestMgmt.ShowDialog();
         }
 
         private void btn_BillMgmt_Click(object sender, EventArgs e)
         {
-            fGuestMgmt fGuestMgmt = new fGuestMgmt();
-            fGuestMgmt.ShowDialog();
+            fBillMgmt fBillMgmt = new fBillMgmt();
+            fBillMgmt.ShowDialog();
         }
 
         private void btn_RoomMgmt_Click(object sender, EventArgs e)
