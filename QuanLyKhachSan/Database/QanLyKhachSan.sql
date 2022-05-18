@@ -24,7 +24,7 @@ GO
 
 CREATE TABLE LOAIPHONG
 (
-	MaLoaiPhong INT IDENTITY  PRIMARY KEY,
+	MaLoaiPhong INT IDENTITY PRIMARY KEY,
 	TenLoaiPhong NVARCHAR(100) NOT NULL,
 	DonGia	INT
 )
@@ -32,7 +32,7 @@ GO
 
 CREATE TABLE PHONG
 (
-	MaPhong INT IDENTITY  PRIMARY KEY,
+	MaPhong INT IDENTITY PRIMARY KEY,
 	MaLoaiPhong INT NOT NULL,
 	TenPhong NVARCHAR(100) NOT NULL,
 	GhiChu NVARCHAR(500),
@@ -45,7 +45,7 @@ GO
 
 CREATE TABLE LOAIKHACHHANG
 (
-	MaLoaiKH INT IDENTITY  PRIMARY KEY,  --1 la NoiDia, 2 la NuocNgoai
+	MaLoaiKH INT IDENTITY PRIMARY KEY,  --1 la NoiDia, 2 la NuocNgoai
 	TenLoaiKH NVARCHAR(50) NOT NULL,
 	HeSoPhuThu FLOAT
 )
@@ -53,7 +53,7 @@ GO
 
 CREATE TABLE KHACHHANG
 (
-	MaKH INT IDENTITY  PRIMARY KEY,
+	MaKH INT IDENTITY PRIMARY KEY,
 	TenKhachHang NVARCHAR(50) NOT NULL,
 	CMND VARCHAR(15) NOT NULL,
 	SDT VARCHAR(15),
@@ -68,7 +68,7 @@ CREATE TABLE PHIEUTHUEPHONG
 	MaKH INT NOT NULL,
 	MaLoaiKH INT NOT NULL,
 	SoLuongKhach INT NOT NULL,
-	NgayBatDau Date NOT NULL DEFAULT GETDATE(),
+	NgayBatDau Date NOT NULL,
 	NgayKetThuc	Date,
 
 	FOREIGN KEY (MaLoaiKH) REFERENCES dbo.LOAIKHACHHANG(MaLoaiKH),
@@ -82,20 +82,24 @@ CREATE TABLE HOADON
 	MaHD INT IDENTITY  PRIMARY KEY,
 	MaKH INT NOT NULL,
 	TriGia INT NOT NULL DEFAULT 0,
+	
 	--MaNhanVien INT
 
 	FOREIGN KEY (MaKH) REFERENCES dbo.KHACHHANG(MaKH)
 )
 GO
 
+
 CREATE TABLE CHITIETHOADON
 (
-	MaHD INT NOT NULL  PRIMARY KEY,
+	MaCTHD INT IDENTITY PRIMARY KEY,
+	MaHD INT NOT NULL ,
 	MaPhong INT NOT NULL,
 	SoNgayThue Int NOT NULL,
 	ThanhTien Int NOT NULL DEFAULT 0,
 	NgayThanhToan Date,
 	DonGia INT NOT NULL DEFAULT 0,
+	TrangThai INT NOT NULL DEFAULT 0 --- 0 là chưa thanh toán, 1 là đã thanh toán,
 
 	FOREIGN KEY (MaHD) REFERENCES dbo.HOADON(MaHD),
 	FOREIGN KEY (MaPhong) REFERENCES dbo.PHONG(MaPhong)
@@ -163,16 +167,6 @@ VALUES		(
 			)
 END
 GO
-
---Thống kê hóa đơn theo ngày cho trước
-CREATE PROC USP_GetListBillByDate
-@checkIn date, @checkOut date
-AS
-BEGIN
-SELECT P.TenPhong AS [Tên phòng], CTHD.ThanhTien AS [Thành tiền], PTP.NgayBatDau AS [Ngày vào], PTP.NgayKetThuc AS [Ngày ra], CTHD.DonGia AS [Đơn giá], CTHD.SoNgayThue AS [Số ngày thuê]
-FROM dbo.HOADON AS HD, dbo.CHITIETHOADON AS CTHD, dbo.PHIEUTHUEPHONG AS PTP, dbo.PHONG AS P
-WHERE	HD.MaHD = CTHD.MaHD AND HD.MaKH = PTP.MaKH AND PTP.MaPhong = P.MaPhong
-		AND NgayThanhToan >= @checkIn AND NgayThanhToan <= @checkOut -- Theo cách hiểu của tôi, khi mình thanh toán tiền khách sạn rồi mình mới có bill. Tức là khi chúng ta tra cứu hóa đơn chúng ta tra cứu ngày trả tiền ở khách sạn
 ---------------------------------------------------------------------------
 -- Phần tạo rằng buộc 
 --rằng buộc đăng nhập
@@ -298,291 +292,65 @@ VALUES       	(
 GO
 
 INSERT INTO dbo.LOAIKHACHHANG
-			(	MaLoaiKH,
+			(
 				TenLoaiKH,
 				HeSoPhuThu
 			)
-VALUES		(	N'0001',
+VALUES		(
 				N'NoiDia',
 				1
 			)
 GO
 INSERT INTO dbo.LOAIKHACHHANG
-			(	MaLoaiKH,
+			(
 				TenLoaiKH,
 				HeSoPhuThu
 			)
-VALUES		(	N'0002',
+VALUES		(
 				N'NuocNgoai',
 				1.5
 			)
 GO
 
-INSERT INTO dbo.KHACHHANG
-			(	MaKH,
-				TenKhachHang,
-				CMND,
-				DiaChi,
-				MaLoaiKH,
-			)
-VALUES		(	N'0001',
-				N'Dang',
-				N'000000000',
-				N'CaMau',
-				N'0001'
-			)
-GO
-
-INSERT INTO dbo.KHACHHANG
-			(	MaKH,
-				TenKhachHang,
-				CMND,
-				DiaChi,
-				MaLoaiKH,
-			)
-VALUES		(	N'0002',
-				N'Vinh',
-				N'111111111',
-				N'SaiGon',
-				N'0001'
-			)
-GO
-
-INSERT INTO dbo.KHACHHANG
-			(	MaKH,
-				TenKhachHang,
-				CMND,
-				DiaChi,
-				MaLoaiKH,
-			)
-VALUES		(	N'0003',
-				N'Dat',
-				N'222222222',
-				N'HaNoi',
-				N'0001'
-			)
-GO
-
-INSERT INTO dbo.KHACHHANG
-			(	MaKH,
-				TenKhachHang,
-				CMND,
-				DiaChi,
-				MaLoaiKH,
-			)
-VALUES		(	N'0004',
-				N'Quoc',
-				N'333333333',
-				N'Helsinki',
-				N'0002'
-			)
-GO
-
-INSERT INTO dbo.KHACHHANG
-			(	MaKH,
-				TenKhachHang,
-				CMND,
-				DiaChi,
-				MaLoaiKH,
-			)
-VALUES		(	N'0005',
-				N'Kiet',
-				N'444444444',
-				N'VungTau',
-				N'0002'
-			)
-GO
-
-INSERT INTO dbo.PHIEUTHUEPHONG
-			(	MaPhieu,
+INSERT INTO dbo.CHITIETHOADON
+			(	MaHD,
 				MaPhong,
-				MaKH,
-				SoLuongKhach,
-				NgayBatDau,
-				NgayKetThuc 
+				SoNgayThue,
+				ThanhTien,
+				NgayThanhToan,
+				DonGia
 			)
-VALUES		(	N'0001',
-				'101',
-				N'0001',
-				3,
-				'21/4/2022',
-				'25/4/2022'
-			)
-GO
-
-INSERT INTO dbo.PHIEUTHUEPHONG
-			(	MaPhieu,
-				MaPhong,
-				MaKH,
-				SoLuongKhach,
-				NgayBatDau,
-				NgayKetThuc 
-			)
-VALUES		(	N'0001', --T KHÔNG BIẾT LÀ PHIẾU THUÊ PHÒNG CỦA MỘT PHÒNG DUY NHẤT THÌ CÓ CẦN KHÁC MÃ KHÔNG?
-				'101',
-				N'0002',
-				3,
-				'21/4/2022',
-				'25/4/2022'
-			)
-GO
-
-INSERT INTO dbo.PHIEUTHUEPHONG
-			(	MaPhieu,
-				MaPhong,
-				MaKH,
-				SoLuongKhach,
-				NgayBatDau,
-				NgayKetThuc 
-			)
-VALUES		(	N'0001',
-				'101',
-				N'0003',
-				3,
-				'21/4/2022',
-				'25/4/2022'
-			)
-GO
-
-INSERT INTO dbo.PHIEUTHUEPHONG
-			(	MaPhieu,
-				MaPhong,
-				MaKH,
-				SoLuongKhach,
-				NgayBatDau,
-				NgayKetThuc 
-			)
-VALUES		(	N'0002',
-				'103',
-				N'0004',
+VALUES		(	3,
 				1,
-				'23/4/2022',
-				'25/4/2022'
-			)
-GO
-
-INSERT INTO dbo.PHIEUTHUEPHONG
-			(	MaPhieu,
-				MaPhong,
-				MaKH,
-				SoLuongKhach,
-				NgayBatDau,
-				NgayKetThuc 
-			)
-VALUES		(	N'0003',
-				'102',
-				N'0005',
-				1,
-				'19/3/2022',
-				'24/3/2022'
-			)
-GO
-
-INSERT INTO dbo.HOADON
-			(	MaHD,
-				MaKH,
-				TriGia 
-			)
-VALUES		(	N'0001',
-				N'0001',
-				1000 -- 250 * 4
-			)
-GO
-
-INSERT INTO dbo.HOADON
-			(	MaHD,
-				MaKH,
-				TriGia 
-			)
-VALUES		(	N'0001',
-				N'0002',
-				1000
-			)
-GO
-
-INSERT INTO dbo.HOADON
-			(	MaHD,
-				MaKH,
-				TriGia 
-			)
-VALUES		(	N'0001',
-				N'0003',
-				1000
-			)
-GO
-
-INSERT INTO dbo.HOADON
-			(	MaHD,
-				MaKH,
-				TriGia 
-			)
-VALUES		(	N'0002',
-				N'0004',
-				450
-			)
-GO
-
-INSERT INTO dbo.HOADON
-			(	MaHD,
-				MaKH,
-				TriGia 
-			)
-VALUES		(	N'0003',
-				N'0005',
-				850
-			)
-GO
-
-INSERT INTO dbo.CHITIETHOADON
-			(	MaHD,
-				MaPhong,
-				SoNgayThue,
-				ThanhTien,
-				NgayThanhToan,
-				DonGia
-			)
-VALUES		(	N'0001',
-				'101',
-				4,
-				1000, 
-				'25/4/2022'
-				200
-			)
-GO
-
-INSERT INTO dbo.CHITIETHOADON
-			(	MaHD,
-				MaPhong,
-				SoNgayThue,
-				ThanhTien,
-				NgayThanhToan,
-				DonGia
-			)
-VALUES		(	N'0002',
-				'103',
-				2,
-				450, 
-				'25/4/2022',
-				150
-			)
-GO
-
-INSERT INTO dbo.CHITIETHOADON
-			(	MaHD,
-				MaPhong,
-				SoNgayThue,
-				ThanhTien,
-				NgayThanhToan,
-				DonGia
-			)
-VALUES		(	N'0003',
-				'102',
 				5,
-				850, 
-				'24/3/2022',
-				170
+				150000,
+				GETDATE(),
+				150000
 			)
-GO
+
+INSERT INTO dbo.CHITIETHOADON
+			(	MaHD,
+				MaPhong,
+				SoNgayThue,
+				ThanhTien,
+				NgayThanhToan,
+				DonGia
+			)
+VALUES		(	3,
+				1,
+				3,
+				300000,
+				GETDATE(),
+				300000
+			) 
+
+INSERT INTO dbo.HOADON
+			(	MaKH,
+				TriGia
+			)
+VALUES		(	1,
+				450000
+			)
 
 
 
