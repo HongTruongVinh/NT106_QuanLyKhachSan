@@ -17,12 +17,5 @@ namespace QuanLyKhachSan
         {
             InitializeComponent();
         }
-
-        private void btn_Xuat_Click(object sender, EventArgs e)
-        {
-            int id = int.Parse(tb_NhapMaHD.Text);
-            //DataTable data = BillDAO.Instance.GetBillByID(id);
-            //dgv_ChiTietHD.DataSource = data;
-        }
     }
 }
