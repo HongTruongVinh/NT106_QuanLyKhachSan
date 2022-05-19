@@ -33,19 +33,23 @@ namespace QuanLyKhachSan.DTO
 
             this.NumberPhone = (string)row["numberPhone"];
 
-            /*
-            this.ID = (int)row["MaKH"];
-
-
-            this.IDPerson = row["CMND"].ToString();
-
-            this.Name = row["TenKhachHang"].ToString();
-
-            this.Address = row["DiaChi"].ToString();
-
-            this.NumberPhone = row["SDT"].ToString();*/
+          
         }
 
+        public Client(DataRow row,int code)
+        {
+            
+          this.ID = (int)row["MaKH"];
+
+          string _idPerson = row["CMND"].ToString();
+          this.IDPerson = Convert.ToInt32(_idPerson);
+
+          this.Name = row["TenKhachHang"].ToString();
+
+          this.Address = row["DiaChi"].ToString();
+
+          this.NumberPhone = row["SDT"].ToString();
+        }
 
         int iD;
         int idPerson;

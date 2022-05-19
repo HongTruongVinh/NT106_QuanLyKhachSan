@@ -107,7 +107,7 @@ namespace QuanLyKhachSan.DAO
 
             foreach (DataRow item in data.Rows)
             {
-                Client customer = new Client(item);
+                Client customer = new Client(item,0);
                 list.Add(customer);
             }
 
@@ -126,7 +126,7 @@ namespace QuanLyKhachSan.DAO
 
             foreach (DataRow item in data.Rows)
             {
-                Client customer = new Client(item);
+                Client customer = new Client(item,0);
                 list.Add(customer);
             }
 
