@@ -135,11 +135,13 @@ namespace QuanLyKhachSan.DAO
 
         public bool InsertClient(string hoten, string sdt, string cmnd, string diachi)
         {
-            string query = "INSERT KHACHHANG (TenKhachHang,SDT,CMND,DiaChi) VALUES(" +
-                 "'" + hoten + "'," +
-                "'" + sdt + "'," +
-                "'" + cmnd + "'," +
-                 "'" + diachi + "')";
+            string query = $@"
+                USP_InsertClient
+                @TenKhachHang=[{hoten}],
+                @CMND='{cmnd}',
+                @SDT='{sdt}',
+                @DiaChi=[{diachi}]
+            ";
 
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
@@ -151,7 +153,7 @@ namespace QuanLyKhachSan.DAO
             string query = string.Format("UPDATE KHACHHANG SET TenKhachHang = N'{0}', " +
                 "SDT = '{1}', " +
                 "CMND = '{2}', " +
-                "DiaChi = '{3}' " +
+                "DiaChi = N'{3}' " +
                 "WHERE MaKH = {4}", hoten, sdt, cmnd, diachi, makhachhang);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
