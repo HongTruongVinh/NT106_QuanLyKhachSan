@@ -41,7 +41,7 @@ namespace QuanLyKhachSan.DAO
         //Chua tao USP_GetListBillByDate trong database
         public DataTable GetBillListByDate(DateTime checkIn, DateTime checkOut)
         {
-            return DataProvider.Instance.ExecuteQuery("exec USP_GetListBillByDate @checkIn, @checkOut", new object[] { checkIn, checkOut });
+            return DataProvider.Instance.ExecuteQuery("exec USP_GetListBillByDate @checkIn , @checkOut", new object[] { checkIn, checkOut });
         }
     }
 }

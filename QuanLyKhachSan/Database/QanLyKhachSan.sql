@@ -167,6 +167,20 @@ VALUES		(
 			)
 END
 GO
+
+CREATE PROC USP_GetListBillByDate
+@checkIn DATE, @checkOut DATE
+AS
+BEGIN
+SELECT CTHD.MaHD, TenPhong, TenKhachHang, SoNgayThue, ThanhTien, NgayThanhToan, DonGia 
+FROM dbo.CHITIETHOADON CTHD, dbo.HOADON HD, dbo.KHACHHANG KH, dbo.PHONG P
+WHERE	CTHD.MaHD = HD.MaHD AND
+		HD.MaKH = KH.MaKH AND
+		P.MaPhong = CTHD.MaPhong AND
+		NgayThanhToan >= @checkIn AND NgayThanhToan <= @checkOut AND
+		TrangThai = 1
+END
+GO
 ---------------------------------------------------------------------------
 -- Phần tạo rằng buộc 
 --rằng buộc đăng nhập

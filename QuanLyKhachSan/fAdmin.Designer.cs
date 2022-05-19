@@ -176,7 +176,7 @@ namespace QuanLyKhachSan
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(20, 19);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1520, 915);
@@ -188,9 +188,9 @@ namespace QuanLyKhachSan
             this.tabPage1.Controls.Add(this.panel2);
             this.tabPage1.Controls.Add(this.panel1);
             this.tabPage1.Location = new System.Drawing.Point(8, 39);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage1.Size = new System.Drawing.Size(1504, 868);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Báo cáo doanh thu";
@@ -200,7 +200,7 @@ namespace QuanLyKhachSan
             // 
             this.panel4.Controls.Add(this.dtgvBill);
             this.panel4.Location = new System.Drawing.Point(6, 79);
-            this.panel4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel4.Margin = new System.Windows.Forms.Padding(6);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1492, 708);
             this.panel4.TabIndex = 2;
@@ -210,7 +210,7 @@ namespace QuanLyKhachSan
             this.dtgvBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvBill.Location = new System.Drawing.Point(4, 0);
-            this.dtgvBill.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dtgvBill.Margin = new System.Windows.Forms.Padding(6);
             this.dtgvBill.Name = "dtgvBill";
             this.dtgvBill.RowHeadersWidth = 82;
             this.dtgvBill.Size = new System.Drawing.Size(1482, 708);
@@ -221,7 +221,7 @@ namespace QuanLyKhachSan
             this.panel2.Controls.Add(this.txbAmount);
             this.panel2.Controls.Add(this.lbAmounts);
             this.panel2.Location = new System.Drawing.Point(6, 788);
-            this.panel2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel2.Margin = new System.Windows.Forms.Padding(6);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1492, 71);
             this.panel2.TabIndex = 1;
@@ -230,7 +230,7 @@ namespace QuanLyKhachSan
             // 
             this.txbAmount.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbAmount.Location = new System.Drawing.Point(938, 11);
-            this.txbAmount.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txbAmount.Margin = new System.Windows.Forms.Padding(6);
             this.txbAmount.Name = "txbAmount";
             this.txbAmount.Size = new System.Drawing.Size(548, 44);
             this.txbAmount.TabIndex = 2;
@@ -254,7 +254,7 @@ namespace QuanLyKhachSan
             this.panel1.Controls.Add(this.dtpkFromDate);
             this.panel1.Controls.Add(this.lbFromDate);
             this.panel1.Location = new System.Drawing.Point(6, 6);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1492, 77);
             this.panel1.TabIndex = 0;
@@ -263,7 +263,7 @@ namespace QuanLyKhachSan
             // 
             this.btnViewBill.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnViewBill.Location = new System.Drawing.Point(1310, 6);
-            this.btnViewBill.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnViewBill.Margin = new System.Windows.Forms.Padding(6);
             this.btnViewBill.Name = "btnViewBill";
             this.btnViewBill.Size = new System.Drawing.Size(176, 56);
             this.btnViewBill.TabIndex = 4;
@@ -275,7 +275,7 @@ namespace QuanLyKhachSan
             // 
             this.dtpkToDate.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpkToDate.Location = new System.Drawing.Point(814, 12);
-            this.dtpkToDate.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dtpkToDate.Margin = new System.Windows.Forms.Padding(6);
             this.dtpkToDate.Name = "dtpkToDate";
             this.dtpkToDate.Size = new System.Drawing.Size(480, 42);
             this.dtpkToDate.TabIndex = 3;
@@ -295,7 +295,7 @@ namespace QuanLyKhachSan
             // 
             this.dtpkFromDate.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpkFromDate.Location = new System.Drawing.Point(142, 12);
-            this.dtpkFromDate.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dtpkFromDate.Margin = new System.Windows.Forms.Padding(6);
             this.dtpkFromDate.Name = "dtpkFromDate";
             this.dtpkFromDate.Size = new System.Drawing.Size(480, 42);
             this.dtpkFromDate.TabIndex = 1;
@@ -321,9 +321,9 @@ namespace QuanLyKhachSan
             this.tp_ManageEmployee.Controls.Add(this.panel20);
             this.tp_ManageEmployee.Controls.Add(this.panel21);
             this.tp_ManageEmployee.Location = new System.Drawing.Point(8, 39);
-            this.tp_ManageEmployee.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tp_ManageEmployee.Margin = new System.Windows.Forms.Padding(4);
             this.tp_ManageEmployee.Name = "tp_ManageEmployee";
-            this.tp_ManageEmployee.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tp_ManageEmployee.Padding = new System.Windows.Forms.Padding(4);
             this.tp_ManageEmployee.Size = new System.Drawing.Size(1504, 868);
             this.tp_ManageEmployee.TabIndex = 1;
             this.tp_ManageEmployee.Text = "Quản lý tài khoản nhân viên";
@@ -346,7 +346,7 @@ namespace QuanLyKhachSan
             this.panel14.Controls.Add(this.tb_UserName);
             this.panel14.Controls.Add(this.label7);
             this.panel14.Location = new System.Drawing.Point(924, 146);
-            this.panel14.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel14.Margin = new System.Windows.Forms.Padding(4);
             this.panel14.Name = "panel14";
             this.panel14.Size = new System.Drawing.Size(554, 69);
             this.panel14.TabIndex = 29;
@@ -355,7 +355,7 @@ namespace QuanLyKhachSan
             // 
             this.tb_UserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_UserName.Location = new System.Drawing.Point(240, 17);
-            this.tb_UserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_UserName.Margin = new System.Windows.Forms.Padding(4);
             this.tb_UserName.Name = "tb_UserName";
             this.tb_UserName.Size = new System.Drawing.Size(302, 38);
             this.tb_UserName.TabIndex = 1;
@@ -376,7 +376,7 @@ namespace QuanLyKhachSan
             this.panel17.Controls.Add(this.tb_DisplayName);
             this.panel17.Controls.Add(this.label12);
             this.panel17.Location = new System.Drawing.Point(924, 225);
-            this.panel17.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel17.Margin = new System.Windows.Forms.Padding(4);
             this.panel17.Name = "panel17";
             this.panel17.Size = new System.Drawing.Size(548, 69);
             this.panel17.TabIndex = 28;
@@ -385,7 +385,7 @@ namespace QuanLyKhachSan
             // 
             this.tb_DisplayName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_DisplayName.Location = new System.Drawing.Point(240, 17);
-            this.tb_DisplayName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_DisplayName.Margin = new System.Windows.Forms.Padding(4);
             this.tb_DisplayName.Name = "tb_DisplayName";
             this.tb_DisplayName.Size = new System.Drawing.Size(302, 38);
             this.tb_DisplayName.TabIndex = 1;
@@ -406,7 +406,7 @@ namespace QuanLyKhachSan
             this.panel18.Controls.Add(this.tb_Password);
             this.panel18.Controls.Add(this.label13);
             this.panel18.Location = new System.Drawing.Point(926, 304);
-            this.panel18.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel18.Margin = new System.Windows.Forms.Padding(4);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(548, 69);
             this.panel18.TabIndex = 27;
@@ -415,7 +415,7 @@ namespace QuanLyKhachSan
             // 
             this.tb_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_Password.Location = new System.Drawing.Point(238, 17);
-            this.tb_Password.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_Password.Margin = new System.Windows.Forms.Padding(4);
             this.tb_Password.Name = "tb_Password";
             this.tb_Password.Size = new System.Drawing.Size(302, 38);
             this.tb_Password.TabIndex = 1;
@@ -436,7 +436,7 @@ namespace QuanLyKhachSan
             this.panel19.Controls.Add(this.tb_SearchAccount);
             this.panel19.Controls.Add(this.btn_SearchAccount);
             this.panel19.Location = new System.Drawing.Point(918, 12);
-            this.panel19.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel19.Margin = new System.Windows.Forms.Padding(4);
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(564, 121);
             this.panel19.TabIndex = 26;
@@ -445,7 +445,7 @@ namespace QuanLyKhachSan
             // 
             this.tb_SearchAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_SearchAccount.Location = new System.Drawing.Point(6, 40);
-            this.tb_SearchAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_SearchAccount.Margin = new System.Windows.Forms.Padding(4);
             this.tb_SearchAccount.Name = "tb_SearchAccount";
             this.tb_SearchAccount.Size = new System.Drawing.Size(392, 44);
             this.tb_SearchAccount.TabIndex = 5;
@@ -454,7 +454,7 @@ namespace QuanLyKhachSan
             // 
             this.btn_SearchAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_SearchAccount.Location = new System.Drawing.Point(408, 2);
-            this.btn_SearchAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_SearchAccount.Margin = new System.Windows.Forms.Padding(4);
             this.btn_SearchAccount.Name = "btn_SearchAccount";
             this.btn_SearchAccount.Size = new System.Drawing.Size(152, 115);
             this.btn_SearchAccount.TabIndex = 4;
@@ -465,7 +465,7 @@ namespace QuanLyKhachSan
             // 
             this.panel20.Controls.Add(this.dgv_Account);
             this.panel20.Location = new System.Drawing.Point(4, 142);
-            this.panel20.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel20.Margin = new System.Windows.Forms.Padding(4);
             this.panel20.Name = "panel20";
             this.panel20.Size = new System.Drawing.Size(904, 729);
             this.panel20.TabIndex = 25;
@@ -475,7 +475,7 @@ namespace QuanLyKhachSan
             this.dgv_Account.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Account.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Account.Location = new System.Drawing.Point(6, 6);
-            this.dgv_Account.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgv_Account.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_Account.Name = "dgv_Account";
             this.dgv_Account.ReadOnly = true;
             this.dgv_Account.RowHeadersWidth = 51;
@@ -490,7 +490,7 @@ namespace QuanLyKhachSan
             this.panel21.Controls.Add(this.btn_DeleteAccount);
             this.panel21.Controls.Add(this.btn_AddAccount);
             this.panel21.Location = new System.Drawing.Point(8, 8);
-            this.panel21.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel21.Margin = new System.Windows.Forms.Padding(4);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(900, 127);
             this.panel21.TabIndex = 24;
@@ -499,7 +499,7 @@ namespace QuanLyKhachSan
             // 
             this.btn_ViewAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ViewAccount.Location = new System.Drawing.Point(744, 4);
-            this.btn_ViewAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_ViewAccount.Margin = new System.Windows.Forms.Padding(4);
             this.btn_ViewAccount.Name = "btn_ViewAccount";
             this.btn_ViewAccount.Size = new System.Drawing.Size(152, 115);
             this.btn_ViewAccount.TabIndex = 3;
@@ -510,7 +510,7 @@ namespace QuanLyKhachSan
             // 
             this.btn_EditAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_EditAccount.Location = new System.Drawing.Point(496, 4);
-            this.btn_EditAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_EditAccount.Margin = new System.Windows.Forms.Padding(4);
             this.btn_EditAccount.Name = "btn_EditAccount";
             this.btn_EditAccount.Size = new System.Drawing.Size(152, 115);
             this.btn_EditAccount.TabIndex = 2;
@@ -521,7 +521,7 @@ namespace QuanLyKhachSan
             // 
             this.btn_DeleteAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_DeleteAccount.Location = new System.Drawing.Point(238, 4);
-            this.btn_DeleteAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_DeleteAccount.Margin = new System.Windows.Forms.Padding(4);
             this.btn_DeleteAccount.Name = "btn_DeleteAccount";
             this.btn_DeleteAccount.Size = new System.Drawing.Size(152, 115);
             this.btn_DeleteAccount.TabIndex = 1;
@@ -532,7 +532,7 @@ namespace QuanLyKhachSan
             // 
             this.btn_AddAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AddAccount.Location = new System.Drawing.Point(4, 4);
-            this.btn_AddAccount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_AddAccount.Margin = new System.Windows.Forms.Padding(4);
             this.btn_AddAccount.Name = "btn_AddAccount";
             this.btn_AddAccount.Size = new System.Drawing.Size(152, 115);
             this.btn_AddAccount.TabIndex = 0;
@@ -546,9 +546,9 @@ namespace QuanLyKhachSan
             this.tp_ManageRoom.Controls.Add(this.panel9);
             this.tp_ManageRoom.Controls.Add(this.panel8);
             this.tp_ManageRoom.Location = new System.Drawing.Point(8, 39);
-            this.tp_ManageRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tp_ManageRoom.Margin = new System.Windows.Forms.Padding(4);
             this.tp_ManageRoom.Name = "tp_ManageRoom";
-            this.tp_ManageRoom.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tp_ManageRoom.Padding = new System.Windows.Forms.Padding(4);
             this.tp_ManageRoom.Size = new System.Drawing.Size(1504, 868);
             this.tp_ManageRoom.TabIndex = 2;
             this.tp_ManageRoom.Text = "Phòng";
@@ -561,7 +561,7 @@ namespace QuanLyKhachSan
             this.panel11.Controls.Add(this.panel13);
             this.panel11.Controls.Add(this.panel15);
             this.panel11.Location = new System.Drawing.Point(926, 156);
-            this.panel11.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel11.Margin = new System.Windows.Forms.Padding(4);
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(558, 706);
             this.panel11.TabIndex = 3;
@@ -571,7 +571,7 @@ namespace QuanLyKhachSan
             this.panel16.Controls.Add(this.tb_idRoom);
             this.panel16.Controls.Add(this.label11);
             this.panel16.Location = new System.Drawing.Point(4, 4);
-            this.panel16.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel16.Margin = new System.Windows.Forms.Padding(4);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(558, 69);
             this.panel16.TabIndex = 28;
@@ -580,7 +580,7 @@ namespace QuanLyKhachSan
             // 
             this.tb_idRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_idRoom.Location = new System.Drawing.Point(188, 17);
-            this.tb_idRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_idRoom.Margin = new System.Windows.Forms.Padding(4);
             this.tb_idRoom.Name = "tb_idRoom";
             this.tb_idRoom.ReadOnly = true;
             this.tb_idRoom.Size = new System.Drawing.Size(360, 38);
@@ -603,7 +603,7 @@ namespace QuanLyKhachSan
             this.panel12.Controls.Add(this.tb_NameRoom);
             this.panel12.Controls.Add(this.label10);
             this.panel12.Location = new System.Drawing.Point(4, 83);
-            this.panel12.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel12.Margin = new System.Windows.Forms.Padding(4);
             this.panel12.Name = "panel12";
             this.panel12.Size = new System.Drawing.Size(558, 69);
             this.panel12.TabIndex = 27;
@@ -612,7 +612,7 @@ namespace QuanLyKhachSan
             // 
             this.tb_NameRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_NameRoom.Location = new System.Drawing.Point(188, 17);
-            this.tb_NameRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_NameRoom.Margin = new System.Windows.Forms.Padding(4);
             this.tb_NameRoom.Name = "tb_NameRoom";
             this.tb_NameRoom.Size = new System.Drawing.Size(360, 38);
             this.tb_NameRoom.TabIndex = 1;
@@ -633,7 +633,7 @@ namespace QuanLyKhachSan
             this.panel13.Controls.Add(this.cbb_TypeRoom);
             this.panel13.Controls.Add(this.label9);
             this.panel13.Location = new System.Drawing.Point(6, 162);
-            this.panel13.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel13.Margin = new System.Windows.Forms.Padding(4);
             this.panel13.Name = "panel13";
             this.panel13.Size = new System.Drawing.Size(556, 69);
             this.panel13.TabIndex = 26;
@@ -643,7 +643,7 @@ namespace QuanLyKhachSan
             this.cbb_TypeRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbb_TypeRoom.FormattingEnabled = true;
             this.cbb_TypeRoom.Location = new System.Drawing.Point(188, 13);
-            this.cbb_TypeRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbb_TypeRoom.Margin = new System.Windows.Forms.Padding(4);
             this.cbb_TypeRoom.Name = "cbb_TypeRoom";
             this.cbb_TypeRoom.Size = new System.Drawing.Size(358, 39);
             this.cbb_TypeRoom.TabIndex = 1;
@@ -664,7 +664,7 @@ namespace QuanLyKhachSan
             this.panel15.Controls.Add(this.tb_NoteRoom);
             this.panel15.Controls.Add(this.label6);
             this.panel15.Location = new System.Drawing.Point(6, 238);
-            this.panel15.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel15.Margin = new System.Windows.Forms.Padding(4);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(552, 160);
             this.panel15.TabIndex = 25;
@@ -673,7 +673,7 @@ namespace QuanLyKhachSan
             // 
             this.tb_NoteRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_NoteRoom.Location = new System.Drawing.Point(140, 17);
-            this.tb_NoteRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_NoteRoom.Margin = new System.Windows.Forms.Padding(4);
             this.tb_NoteRoom.Multiline = true;
             this.tb_NoteRoom.Name = "tb_NoteRoom";
             this.tb_NoteRoom.Size = new System.Drawing.Size(404, 127);
@@ -695,7 +695,7 @@ namespace QuanLyKhachSan
             this.panel10.Controls.Add(this.tb_SearchRoom);
             this.panel10.Controls.Add(this.btn_SearchRoom);
             this.panel10.Location = new System.Drawing.Point(918, 12);
-            this.panel10.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel10.Margin = new System.Windows.Forms.Padding(4);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(564, 121);
             this.panel10.TabIndex = 2;
@@ -704,7 +704,7 @@ namespace QuanLyKhachSan
             // 
             this.tb_SearchRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_SearchRoom.Location = new System.Drawing.Point(6, 40);
-            this.tb_SearchRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_SearchRoom.Margin = new System.Windows.Forms.Padding(4);
             this.tb_SearchRoom.Name = "tb_SearchRoom";
             this.tb_SearchRoom.Size = new System.Drawing.Size(392, 44);
             this.tb_SearchRoom.TabIndex = 5;
@@ -713,7 +713,7 @@ namespace QuanLyKhachSan
             // 
             this.btn_SearchRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_SearchRoom.Location = new System.Drawing.Point(408, 2);
-            this.btn_SearchRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_SearchRoom.Margin = new System.Windows.Forms.Padding(4);
             this.btn_SearchRoom.Name = "btn_SearchRoom";
             this.btn_SearchRoom.Size = new System.Drawing.Size(152, 115);
             this.btn_SearchRoom.TabIndex = 4;
@@ -724,7 +724,7 @@ namespace QuanLyKhachSan
             // 
             this.panel9.Controls.Add(this.dgv_Room);
             this.panel9.Location = new System.Drawing.Point(4, 144);
-            this.panel9.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel9.Margin = new System.Windows.Forms.Padding(4);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(904, 735);
             this.panel9.TabIndex = 1;
@@ -734,7 +734,7 @@ namespace QuanLyKhachSan
             this.dgv_Room.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_Room.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_Room.Location = new System.Drawing.Point(6, 4);
-            this.dgv_Room.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgv_Room.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_Room.Name = "dgv_Room";
             this.dgv_Room.ReadOnly = true;
             this.dgv_Room.RowHeadersWidth = 51;
@@ -749,7 +749,7 @@ namespace QuanLyKhachSan
             this.panel8.Controls.Add(this.btn_DeleteRoom);
             this.panel8.Controls.Add(this.btn_AddRoom);
             this.panel8.Location = new System.Drawing.Point(8, 8);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(900, 127);
             this.panel8.TabIndex = 0;
@@ -758,7 +758,7 @@ namespace QuanLyKhachSan
             // 
             this.bnt_ViewRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bnt_ViewRoom.Location = new System.Drawing.Point(744, 4);
-            this.bnt_ViewRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.bnt_ViewRoom.Margin = new System.Windows.Forms.Padding(4);
             this.bnt_ViewRoom.Name = "bnt_ViewRoom";
             this.bnt_ViewRoom.Size = new System.Drawing.Size(152, 115);
             this.bnt_ViewRoom.TabIndex = 3;
@@ -769,7 +769,7 @@ namespace QuanLyKhachSan
             // 
             this.btn_EditRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_EditRoom.Location = new System.Drawing.Point(496, 4);
-            this.btn_EditRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_EditRoom.Margin = new System.Windows.Forms.Padding(4);
             this.btn_EditRoom.Name = "btn_EditRoom";
             this.btn_EditRoom.Size = new System.Drawing.Size(152, 115);
             this.btn_EditRoom.TabIndex = 2;
@@ -781,7 +781,7 @@ namespace QuanLyKhachSan
             // 
             this.btn_DeleteRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_DeleteRoom.Location = new System.Drawing.Point(238, 4);
-            this.btn_DeleteRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_DeleteRoom.Margin = new System.Windows.Forms.Padding(4);
             this.btn_DeleteRoom.Name = "btn_DeleteRoom";
             this.btn_DeleteRoom.Size = new System.Drawing.Size(152, 115);
             this.btn_DeleteRoom.TabIndex = 1;
@@ -793,7 +793,7 @@ namespace QuanLyKhachSan
             // 
             this.btn_AddRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AddRoom.Location = new System.Drawing.Point(4, 4);
-            this.btn_AddRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_AddRoom.Margin = new System.Windows.Forms.Padding(4);
             this.btn_AddRoom.Name = "btn_AddRoom";
             this.btn_AddRoom.Size = new System.Drawing.Size(152, 115);
             this.btn_AddRoom.TabIndex = 0;
@@ -808,9 +808,9 @@ namespace QuanLyKhachSan
             this.tabPage2.Controls.Add(this.panel30);
             this.tabPage2.Controls.Add(this.panel31);
             this.tabPage2.Location = new System.Drawing.Point(8, 39);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage2.Size = new System.Drawing.Size(1504, 868);
             this.tabPage2.TabIndex = 3;
             this.tabPage2.Text = "Danh mục phòng";
@@ -823,7 +823,7 @@ namespace QuanLyKhachSan
             this.panel23.Controls.Add(this.panel25);
             this.panel23.Controls.Add(this.panel26);
             this.panel23.Location = new System.Drawing.Point(924, 156);
-            this.panel23.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel23.Margin = new System.Windows.Forms.Padding(4);
             this.panel23.Name = "panel23";
             this.panel23.Size = new System.Drawing.Size(558, 706);
             this.panel23.TabIndex = 7;
@@ -832,7 +832,7 @@ namespace QuanLyKhachSan
             // 
             this.tb_ShowPriceTypeRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_ShowPriceTypeRoom.Location = new System.Drawing.Point(148, 254);
-            this.tb_ShowPriceTypeRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_ShowPriceTypeRoom.Margin = new System.Windows.Forms.Padding(4);
             this.tb_ShowPriceTypeRoom.Name = "tb_ShowPriceTypeRoom";
             this.tb_ShowPriceTypeRoom.ReadOnly = true;
             this.tb_ShowPriceTypeRoom.Size = new System.Drawing.Size(404, 38);
@@ -843,7 +843,7 @@ namespace QuanLyKhachSan
             this.panel24.Controls.Add(this.tb_idTypeRoom);
             this.panel24.Controls.Add(this.label14);
             this.panel24.Location = new System.Drawing.Point(4, 4);
-            this.panel24.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel24.Margin = new System.Windows.Forms.Padding(4);
             this.panel24.Name = "panel24";
             this.panel24.Size = new System.Drawing.Size(558, 69);
             this.panel24.TabIndex = 28;
@@ -852,7 +852,7 @@ namespace QuanLyKhachSan
             // 
             this.tb_idTypeRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_idTypeRoom.Location = new System.Drawing.Point(236, 17);
-            this.tb_idTypeRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_idTypeRoom.Margin = new System.Windows.Forms.Padding(4);
             this.tb_idTypeRoom.Name = "tb_idTypeRoom";
             this.tb_idTypeRoom.ReadOnly = true;
             this.tb_idTypeRoom.Size = new System.Drawing.Size(312, 38);
@@ -874,7 +874,7 @@ namespace QuanLyKhachSan
             this.panel25.Controls.Add(this.tb_NameTypeRoom);
             this.panel25.Controls.Add(this.label15);
             this.panel25.Location = new System.Drawing.Point(4, 83);
-            this.panel25.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel25.Margin = new System.Windows.Forms.Padding(4);
             this.panel25.Name = "panel25";
             this.panel25.Size = new System.Drawing.Size(558, 69);
             this.panel25.TabIndex = 27;
@@ -883,7 +883,7 @@ namespace QuanLyKhachSan
             // 
             this.tb_NameTypeRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_NameTypeRoom.Location = new System.Drawing.Point(236, 17);
-            this.tb_NameTypeRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_NameTypeRoom.Margin = new System.Windows.Forms.Padding(4);
             this.tb_NameTypeRoom.Name = "tb_NameTypeRoom";
             this.tb_NameTypeRoom.Size = new System.Drawing.Size(312, 38);
             this.tb_NameTypeRoom.TabIndex = 1;
@@ -905,7 +905,7 @@ namespace QuanLyKhachSan
             this.panel26.Controls.Add(this.tb_PriceTypeRoom);
             this.panel26.Controls.Add(this.label16);
             this.panel26.Location = new System.Drawing.Point(6, 162);
-            this.panel26.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel26.Margin = new System.Windows.Forms.Padding(4);
             this.panel26.Name = "panel26";
             this.panel26.Size = new System.Drawing.Size(556, 69);
             this.panel26.TabIndex = 26;
@@ -925,7 +925,7 @@ namespace QuanLyKhachSan
             // 
             this.tb_PriceTypeRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_PriceTypeRoom.Location = new System.Drawing.Point(140, 17);
-            this.tb_PriceTypeRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_PriceTypeRoom.Margin = new System.Windows.Forms.Padding(4);
             this.tb_PriceTypeRoom.Name = "tb_PriceTypeRoom";
             this.tb_PriceTypeRoom.Size = new System.Drawing.Size(218, 38);
             this.tb_PriceTypeRoom.TabIndex = 1;
@@ -946,7 +946,7 @@ namespace QuanLyKhachSan
             this.panel29.Controls.Add(this.tb_SearchTypeRoom);
             this.panel29.Controls.Add(this.btn_SearchTypeRoom);
             this.panel29.Location = new System.Drawing.Point(918, 13);
-            this.panel29.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel29.Margin = new System.Windows.Forms.Padding(4);
             this.panel29.Name = "panel29";
             this.panel29.Size = new System.Drawing.Size(564, 121);
             this.panel29.TabIndex = 6;
@@ -955,7 +955,7 @@ namespace QuanLyKhachSan
             // 
             this.tb_SearchTypeRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_SearchTypeRoom.Location = new System.Drawing.Point(6, 40);
-            this.tb_SearchTypeRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_SearchTypeRoom.Margin = new System.Windows.Forms.Padding(4);
             this.tb_SearchTypeRoom.Name = "tb_SearchTypeRoom";
             this.tb_SearchTypeRoom.Size = new System.Drawing.Size(392, 44);
             this.tb_SearchTypeRoom.TabIndex = 5;
@@ -964,7 +964,7 @@ namespace QuanLyKhachSan
             // 
             this.btn_SearchTypeRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_SearchTypeRoom.Location = new System.Drawing.Point(408, 2);
-            this.btn_SearchTypeRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_SearchTypeRoom.Margin = new System.Windows.Forms.Padding(4);
             this.btn_SearchTypeRoom.Name = "btn_SearchTypeRoom";
             this.btn_SearchTypeRoom.Size = new System.Drawing.Size(152, 115);
             this.btn_SearchTypeRoom.TabIndex = 4;
@@ -975,7 +975,7 @@ namespace QuanLyKhachSan
             // 
             this.panel30.Controls.Add(this.dgv_TypeRoom);
             this.panel30.Location = new System.Drawing.Point(4, 146);
-            this.panel30.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel30.Margin = new System.Windows.Forms.Padding(4);
             this.panel30.Name = "panel30";
             this.panel30.Size = new System.Drawing.Size(904, 735);
             this.panel30.TabIndex = 5;
@@ -985,7 +985,7 @@ namespace QuanLyKhachSan
             this.dgv_TypeRoom.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgv_TypeRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_TypeRoom.Location = new System.Drawing.Point(6, 4);
-            this.dgv_TypeRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgv_TypeRoom.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_TypeRoom.Name = "dgv_TypeRoom";
             this.dgv_TypeRoom.ReadOnly = true;
             this.dgv_TypeRoom.RowHeadersWidth = 51;
@@ -1000,7 +1000,7 @@ namespace QuanLyKhachSan
             this.panel31.Controls.Add(this.btn_DeleteTypeRoom);
             this.panel31.Controls.Add(this.btn_AddTypeRoom);
             this.panel31.Location = new System.Drawing.Point(8, 8);
-            this.panel31.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel31.Margin = new System.Windows.Forms.Padding(4);
             this.panel31.Name = "panel31";
             this.panel31.Size = new System.Drawing.Size(900, 127);
             this.panel31.TabIndex = 4;
@@ -1009,7 +1009,7 @@ namespace QuanLyKhachSan
             // 
             this.btn_ViewTypeRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_ViewTypeRoom.Location = new System.Drawing.Point(744, 4);
-            this.btn_ViewTypeRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_ViewTypeRoom.Margin = new System.Windows.Forms.Padding(4);
             this.btn_ViewTypeRoom.Name = "btn_ViewTypeRoom";
             this.btn_ViewTypeRoom.Size = new System.Drawing.Size(152, 115);
             this.btn_ViewTypeRoom.TabIndex = 3;
@@ -1020,7 +1020,7 @@ namespace QuanLyKhachSan
             // 
             this.btn_EditTypeRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_EditTypeRoom.Location = new System.Drawing.Point(496, 4);
-            this.btn_EditTypeRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_EditTypeRoom.Margin = new System.Windows.Forms.Padding(4);
             this.btn_EditTypeRoom.Name = "btn_EditTypeRoom";
             this.btn_EditTypeRoom.Size = new System.Drawing.Size(152, 115);
             this.btn_EditTypeRoom.TabIndex = 2;
@@ -1032,7 +1032,7 @@ namespace QuanLyKhachSan
             // 
             this.btn_DeleteTypeRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_DeleteTypeRoom.Location = new System.Drawing.Point(238, 4);
-            this.btn_DeleteTypeRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_DeleteTypeRoom.Margin = new System.Windows.Forms.Padding(4);
             this.btn_DeleteTypeRoom.Name = "btn_DeleteTypeRoom";
             this.btn_DeleteTypeRoom.Size = new System.Drawing.Size(152, 115);
             this.btn_DeleteTypeRoom.TabIndex = 1;
@@ -1044,7 +1044,7 @@ namespace QuanLyKhachSan
             // 
             this.btn_AddTypeRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_AddTypeRoom.Location = new System.Drawing.Point(4, 4);
-            this.btn_AddTypeRoom.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btn_AddTypeRoom.Margin = new System.Windows.Forms.Padding(4);
             this.btn_AddTypeRoom.Name = "btn_AddTypeRoom";
             this.btn_AddTypeRoom.Size = new System.Drawing.Size(152, 115);
             this.btn_AddTypeRoom.TabIndex = 0;
@@ -1059,9 +1059,9 @@ namespace QuanLyKhachSan
             this.tabPage3.Controls.Add(this.panel28);
             this.tabPage3.Controls.Add(this.panel32);
             this.tabPage3.Location = new System.Drawing.Point(8, 39);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
             this.tabPage3.Size = new System.Drawing.Size(1504, 868);
             this.tabPage3.TabIndex = 4;
             this.tabPage3.Text = "Chỉnh sửa quy định";
@@ -1073,7 +1073,7 @@ namespace QuanLyKhachSan
             this.panel3.Controls.Add(this.tb_SurchargeForeign);
             this.panel3.Controls.Add(this.label22);
             this.panel3.Location = new System.Drawing.Point(26, 262);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(676, 69);
             this.panel3.TabIndex = 30;
@@ -1093,7 +1093,7 @@ namespace QuanLyKhachSan
             // 
             this.tb_SurchargeForeign.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_SurchargeForeign.Location = new System.Drawing.Point(464, 17);
-            this.tb_SurchargeForeign.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_SurchargeForeign.Margin = new System.Windows.Forms.Padding(4);
             this.tb_SurchargeForeign.Name = "tb_SurchargeForeign";
             this.tb_SurchargeForeign.Size = new System.Drawing.Size(84, 38);
             this.tb_SurchargeForeign.TabIndex = 1;
@@ -1115,7 +1115,7 @@ namespace QuanLyKhachSan
             this.panel27.Controls.Add(this.nud_MaxPeople);
             this.panel27.Controls.Add(this.label17);
             this.panel27.Location = new System.Drawing.Point(26, 27);
-            this.panel27.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel27.Margin = new System.Windows.Forms.Padding(4);
             this.panel27.Name = "panel27";
             this.panel27.Size = new System.Drawing.Size(676, 69);
             this.panel27.TabIndex = 31;
@@ -1124,7 +1124,7 @@ namespace QuanLyKhachSan
             // 
             this.nud_MaxPeople.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nud_MaxPeople.Location = new System.Drawing.Point(464, 12);
-            this.nud_MaxPeople.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nud_MaxPeople.Margin = new System.Windows.Forms.Padding(4);
             this.nud_MaxPeople.Name = "nud_MaxPeople";
             this.nud_MaxPeople.Size = new System.Drawing.Size(164, 38);
             this.nud_MaxPeople.TabIndex = 1;
@@ -1146,7 +1146,7 @@ namespace QuanLyKhachSan
             this.panel28.Controls.Add(this.nud_PriceForCountCLient);
             this.panel28.Controls.Add(this.label18);
             this.panel28.Location = new System.Drawing.Point(26, 104);
-            this.panel28.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel28.Margin = new System.Windows.Forms.Padding(4);
             this.panel28.Name = "panel28";
             this.panel28.Size = new System.Drawing.Size(676, 69);
             this.panel28.TabIndex = 30;
@@ -1166,7 +1166,7 @@ namespace QuanLyKhachSan
             // 
             this.nud_PriceForCountCLient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nud_PriceForCountCLient.Location = new System.Drawing.Point(464, 12);
-            this.nud_PriceForCountCLient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nud_PriceForCountCLient.Margin = new System.Windows.Forms.Padding(4);
             this.nud_PriceForCountCLient.Name = "nud_PriceForCountCLient";
             this.nud_PriceForCountCLient.Size = new System.Drawing.Size(86, 38);
             this.nud_PriceForCountCLient.TabIndex = 2;
@@ -1188,7 +1188,7 @@ namespace QuanLyKhachSan
             this.panel32.Controls.Add(this.tb_Surcharge);
             this.panel32.Controls.Add(this.label19);
             this.panel32.Location = new System.Drawing.Point(28, 183);
-            this.panel32.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel32.Margin = new System.Windows.Forms.Padding(4);
             this.panel32.Name = "panel32";
             this.panel32.Size = new System.Drawing.Size(676, 69);
             this.panel32.TabIndex = 29;
@@ -1208,7 +1208,7 @@ namespace QuanLyKhachSan
             // 
             this.tb_Surcharge.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_Surcharge.Location = new System.Drawing.Point(464, 12);
-            this.tb_Surcharge.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tb_Surcharge.Margin = new System.Windows.Forms.Padding(4);
             this.tb_Surcharge.Name = "tb_Surcharge";
             this.tb_Surcharge.Size = new System.Drawing.Size(84, 38);
             this.tb_Surcharge.TabIndex = 1;
@@ -1229,9 +1229,10 @@ namespace QuanLyKhachSan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1558, 938);
             this.Controls.Add(this.tabControl1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fAdmin";
             this.Text = "Quản trị viên";
             this.tabControl1.ResumeLayout(false);
