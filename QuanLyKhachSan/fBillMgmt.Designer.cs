@@ -29,58 +29,54 @@ namespace QuanLyKhachSan
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lb_MaKH = new System.Windows.Forms.Label();
             this.lb_TenKH = new System.Windows.Forms.Label();
-            this.dgv_ChiTietHD = new System.Windows.Forms.DataGridView();
-            this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Chon = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.SoNgayThue = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ThanhTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayThanhToan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DonGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tlp_ThongTinKH = new System.Windows.Forms.TableLayoutPanel();
             this.lb_DLLoaiKH = new System.Windows.Forms.Label();
             this.lb_DLDiaChi = new System.Windows.Forms.Label();
             this.lb_CMND = new System.Windows.Forms.Label();
             this.lb_DiaChi = new System.Windows.Forms.Label();
             this.lb_LoaiKH = new System.Windows.Forms.Label();
-            this.cb_MaKH = new System.Windows.Forms.ComboBox();
-            this.cb_TenKH = new System.Windows.Forms.ComboBox();
-            this.cb_CMND = new System.Windows.Forms.ComboBox();
+            this.lb_DLMaKH = new System.Windows.Forms.Label();
+            this.lb_DLTenKH = new System.Windows.Forms.Label();
+            this.lb_DLCMND = new System.Windows.Forms.Label();
             this.lb_ThongTinKH = new System.Windows.Forms.Label();
             this.lb_ChiTietHD = new System.Windows.Forms.Label();
             this.tlp_Chinh = new System.Windows.Forms.TableLayoutPanel();
-            this.tlp_Duoi = new System.Windows.Forms.TableLayoutPanel();
-            this.btn_Tao = new System.Windows.Forms.Button();
-            this.btn_Sua = new System.Windows.Forms.Button();
-            this.btn_Xoa = new System.Windows.Forms.Button();
+            this.btn_ThanhToan = new System.Windows.Forms.Button();
             this.tlp_TongKet = new System.Windows.Forms.TableLayoutPanel();
-            this.cb_TinhTrangThanhToan = new System.Windows.Forms.ComboBox();
-            this.lb_TinhTrangThanhToan = new System.Windows.Forms.Label();
             this.lb_TriGia = new System.Windows.Forms.Label();
             this.lb_DLTriGia = new System.Windows.Forms.Label();
             this.tlp_Tren = new System.Windows.Forms.TableLayoutPanel();
             this.lb_TieuDe = new System.Windows.Forms.Label();
             this.tlp_MaHD = new System.Windows.Forms.TableLayoutPanel();
-            this.pn_NhapMaHD = new System.Windows.Forms.Panel();
-            this.tb_NhapMaHD = new System.Windows.Forms.TextBox();
             this.lb_MaHD = new System.Windows.Forms.Label();
+            this.tb_MaHD = new System.Windows.Forms.TextBox();
+            this.tlp_ChiTietHD = new System.Windows.Forms.TableLayoutPanel();
+            this.lb_SoNgayThue = new System.Windows.Forms.Label();
+            this.lb_MaPhong = new System.Windows.Forms.Label();
+            this.lb_DLMaPhong = new System.Windows.Forms.Label();
+            this.lb_ThanhTien = new System.Windows.Forms.Label();
+            this.lb_DLThanhTien = new System.Windows.Forms.Label();
+            this.lb_DLSoNgayThue = new System.Windows.Forms.Label();
+            this.lb_NgayThanhToan = new System.Windows.Forms.Label();
+            this.lb_DLNgayThanhToan = new System.Windows.Forms.Label();
+            this.lb_DLDonGia = new System.Windows.Forms.Label();
+            this.lb_DonGia = new System.Windows.Forms.Label();
             this.dgv_DSHD = new System.Windows.Forms.DataGridView();
-            this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TriGia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TinhTrangThanhToan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lb_DSHD = new System.Windows.Forms.Label();
             this.tlp_DSHD = new System.Windows.Forms.TableLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_ChiTietHD)).BeginInit();
+            this.fBillMgmtBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tlp_ThongTinKH.SuspendLayout();
             this.tlp_Chinh.SuspendLayout();
-            this.tlp_Duoi.SuspendLayout();
             this.tlp_TongKet.SuspendLayout();
             this.tlp_Tren.SuspendLayout();
             this.tlp_MaHD.SuspendLayout();
-            this.pn_NhapMaHD.SuspendLayout();
+            this.tlp_ChiTietHD.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DSHD)).BeginInit();
             this.tlp_DSHD.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fBillMgmtBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lb_MaKH
@@ -90,90 +86,31 @@ namespace QuanLyKhachSan
             this.lb_MaKH.Location = new System.Drawing.Point(3, 3);
             this.lb_MaKH.Margin = new System.Windows.Forms.Padding(3);
             this.lb_MaKH.Name = "lb_MaKH";
-            this.lb_MaKH.Size = new System.Drawing.Size(92, 23);
+            this.lb_MaKH.Size = new System.Drawing.Size(100, 26);
             this.lb_MaKH.TabIndex = 4;
             this.lb_MaKH.Text = "Mã khách hàng:";
+            this.lb_MaKH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lb_TenKH
             // 
             this.lb_TenKH.AutoSize = true;
             this.lb_TenKH.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lb_TenKH.Location = new System.Drawing.Point(3, 32);
+            this.lb_TenKH.Location = new System.Drawing.Point(3, 35);
             this.lb_TenKH.Margin = new System.Windows.Forms.Padding(3);
             this.lb_TenKH.Name = "lb_TenKH";
-            this.lb_TenKH.Size = new System.Drawing.Size(92, 23);
+            this.lb_TenKH.Size = new System.Drawing.Size(100, 26);
             this.lb_TenKH.TabIndex = 10;
             this.lb_TenKH.Text = "Tên khách hàng:";
-            // 
-            // dgv_ChiTietHD
-            // 
-            this.dgv_ChiTietHD.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgv_ChiTietHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_ChiTietHD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaPhong,
-            this.Chon,
-            this.SoNgayThue,
-            this.ThanhTien,
-            this.NgayThanhToan,
-            this.DonGia});
-            this.dgv_ChiTietHD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_ChiTietHD.Location = new System.Drawing.Point(28, 230);
-            this.dgv_ChiTietHD.Margin = new System.Windows.Forms.Padding(27, 3, 27, 3);
-            this.dgv_ChiTietHD.Name = "dgv_ChiTietHD";
-            this.dgv_ChiTietHD.RowHeadersWidth = 51;
-            this.dgv_ChiTietHD.Size = new System.Drawing.Size(608, 222);
-            this.dgv_ChiTietHD.TabIndex = 12;
-            // 
-            // MaPhong
-            // 
-            this.MaPhong.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.MaPhong.HeaderText = "Mã Phòng";
-            this.MaPhong.MinimumWidth = 6;
-            this.MaPhong.Name = "MaPhong";
-            // 
-            // Chon
-            // 
-            this.Chon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Chon.HeaderText = "Chọn";
-            this.Chon.MinimumWidth = 6;
-            this.Chon.Name = "Chon";
-            // 
-            // SoNgayThue
-            // 
-            this.SoNgayThue.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.SoNgayThue.HeaderText = "Số Ngày Thuê";
-            this.SoNgayThue.MinimumWidth = 6;
-            this.SoNgayThue.Name = "SoNgayThue";
-            // 
-            // ThanhTien
-            // 
-            this.ThanhTien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ThanhTien.HeaderText = "Thành Tiền";
-            this.ThanhTien.MinimumWidth = 6;
-            this.ThanhTien.Name = "ThanhTien";
-            // 
-            // NgayThanhToan
-            // 
-            this.NgayThanhToan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NgayThanhToan.HeaderText = "Ngày Thanh Toán";
-            this.NgayThanhToan.MinimumWidth = 6;
-            this.NgayThanhToan.Name = "NgayThanhToan";
-            // 
-            // DonGia
-            // 
-            this.DonGia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DonGia.HeaderText = "Đơn Giá";
-            this.DonGia.MinimumWidth = 6;
-            this.DonGia.Name = "DonGia";
+            this.lb_TenKH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tlp_ThongTinKH
             // 
             this.tlp_ThongTinKH.ColumnCount = 5;
-            this.tlp_ThongTinKH.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 42.62948F));
-            this.tlp_ThongTinKH.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.37052F));
-            this.tlp_ThongTinKH.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
-            this.tlp_ThongTinKH.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 113F));
-            this.tlp_ThongTinKH.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 167F));
+            this.tlp_ThongTinKH.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 47.88136F));
+            this.tlp_ThongTinKH.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 52.11864F));
+            this.tlp_ThongTinKH.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 66F));
+            this.tlp_ThongTinKH.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110F));
+            this.tlp_ThongTinKH.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 119F));
             this.tlp_ThongTinKH.Controls.Add(this.lb_DLLoaiKH, 4, 1);
             this.tlp_ThongTinKH.Controls.Add(this.lb_DLDiaChi, 4, 0);
             this.tlp_ThongTinKH.Controls.Add(this.lb_CMND, 0, 2);
@@ -181,102 +118,115 @@ namespace QuanLyKhachSan
             this.tlp_ThongTinKH.Controls.Add(this.lb_TenKH, 0, 1);
             this.tlp_ThongTinKH.Controls.Add(this.lb_DiaChi, 3, 0);
             this.tlp_ThongTinKH.Controls.Add(this.lb_LoaiKH, 3, 1);
-            this.tlp_ThongTinKH.Controls.Add(this.cb_MaKH, 1, 0);
-            this.tlp_ThongTinKH.Controls.Add(this.cb_TenKH, 1, 1);
-            this.tlp_ThongTinKH.Controls.Add(this.cb_CMND, 1, 2);
+            this.tlp_ThongTinKH.Controls.Add(this.lb_DLMaKH, 1, 0);
+            this.tlp_ThongTinKH.Controls.Add(this.lb_DLTenKH, 1, 1);
+            this.tlp_ThongTinKH.Controls.Add(this.lb_DLCMND, 1, 2);
             this.tlp_ThongTinKH.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tlp_ThongTinKH.Location = new System.Drawing.Point(28, 99);
-            this.tlp_ThongTinKH.Margin = new System.Windows.Forms.Padding(27, 9, 27, 3);
+            this.tlp_ThongTinKH.Location = new System.Drawing.Point(28, 91);
+            this.tlp_ThongTinKH.Margin = new System.Windows.Forms.Padding(27, 3, 27, 3);
             this.tlp_ThongTinKH.Name = "tlp_ThongTinKH";
             this.tlp_ThongTinKH.RowCount = 3;
             this.tlp_ThongTinKH.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlp_ThongTinKH.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tlp_ThongTinKH.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tlp_ThongTinKH.Size = new System.Drawing.Size(608, 88);
+            this.tlp_ThongTinKH.Size = new System.Drawing.Size(517, 94);
             this.tlp_ThongTinKH.TabIndex = 13;
             // 
             // lb_DLLoaiKH
             // 
             this.lb_DLLoaiKH.AutoSize = true;
             this.lb_DLLoaiKH.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lb_DLLoaiKH.Location = new System.Drawing.Point(443, 32);
+            this.lb_DLLoaiKH.Location = new System.Drawing.Point(400, 35);
             this.lb_DLLoaiKH.Margin = new System.Windows.Forms.Padding(3);
             this.lb_DLLoaiKH.Name = "lb_DLLoaiKH";
-            this.lb_DLLoaiKH.Size = new System.Drawing.Size(162, 23);
+            this.lb_DLLoaiKH.Size = new System.Drawing.Size(114, 26);
             this.lb_DLLoaiKH.TabIndex = 17;
             this.lb_DLLoaiKH.Text = "(Loại khách hàng)";
-            this.lb_DLLoaiKH.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lb_DLLoaiKH.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lb_DLDiaChi
             // 
             this.lb_DLDiaChi.AutoSize = true;
             this.lb_DLDiaChi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lb_DLDiaChi.Location = new System.Drawing.Point(443, 3);
+            this.lb_DLDiaChi.Location = new System.Drawing.Point(400, 3);
             this.lb_DLDiaChi.Margin = new System.Windows.Forms.Padding(3);
             this.lb_DLDiaChi.Name = "lb_DLDiaChi";
-            this.lb_DLDiaChi.Size = new System.Drawing.Size(162, 23);
+            this.lb_DLDiaChi.Size = new System.Drawing.Size(114, 26);
             this.lb_DLDiaChi.TabIndex = 15;
             this.lb_DLDiaChi.Text = "(Địa chỉ)";
-            this.lb_DLDiaChi.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lb_DLDiaChi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lb_CMND
             // 
             this.lb_CMND.AutoSize = true;
             this.lb_CMND.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lb_CMND.Location = new System.Drawing.Point(3, 61);
+            this.lb_CMND.Location = new System.Drawing.Point(3, 67);
             this.lb_CMND.Margin = new System.Windows.Forms.Padding(3);
             this.lb_CMND.Name = "lb_CMND";
-            this.lb_CMND.Size = new System.Drawing.Size(92, 24);
+            this.lb_CMND.Size = new System.Drawing.Size(100, 24);
             this.lb_CMND.TabIndex = 15;
             this.lb_CMND.Text = "CMND:";
+            this.lb_CMND.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lb_DiaChi
             // 
             this.lb_DiaChi.AutoSize = true;
             this.lb_DiaChi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lb_DiaChi.Location = new System.Drawing.Point(330, 3);
+            this.lb_DiaChi.Location = new System.Drawing.Point(290, 3);
             this.lb_DiaChi.Margin = new System.Windows.Forms.Padding(3);
             this.lb_DiaChi.Name = "lb_DiaChi";
-            this.lb_DiaChi.Size = new System.Drawing.Size(107, 23);
+            this.lb_DiaChi.Size = new System.Drawing.Size(104, 26);
             this.lb_DiaChi.TabIndex = 12;
             this.lb_DiaChi.Text = "Địa chỉ:";
+            this.lb_DiaChi.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lb_LoaiKH
             // 
             this.lb_LoaiKH.AutoSize = true;
             this.lb_LoaiKH.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lb_LoaiKH.Location = new System.Drawing.Point(330, 32);
+            this.lb_LoaiKH.Location = new System.Drawing.Point(290, 35);
             this.lb_LoaiKH.Margin = new System.Windows.Forms.Padding(3);
             this.lb_LoaiKH.Name = "lb_LoaiKH";
-            this.lb_LoaiKH.Size = new System.Drawing.Size(107, 23);
+            this.lb_LoaiKH.Size = new System.Drawing.Size(104, 26);
             this.lb_LoaiKH.TabIndex = 16;
             this.lb_LoaiKH.Text = "Loại khách hàng:";
+            this.lb_LoaiKH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // cb_MaKH
+            // lb_DLMaKH
             // 
-            this.cb_MaKH.FormattingEnabled = true;
-            this.cb_MaKH.Location = new System.Drawing.Point(101, 3);
-            this.cb_MaKH.Name = "cb_MaKH";
-            this.cb_MaKH.Size = new System.Drawing.Size(127, 28);
-            this.cb_MaKH.TabIndex = 18;
+            this.lb_DLMaKH.AutoSize = true;
+            this.lb_DLMaKH.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lb_DLMaKH.Location = new System.Drawing.Point(109, 3);
+            this.lb_DLMaKH.Margin = new System.Windows.Forms.Padding(3);
+            this.lb_DLMaKH.Name = "lb_DLMaKH";
+            this.lb_DLMaKH.Size = new System.Drawing.Size(109, 26);
+            this.lb_DLMaKH.TabIndex = 18;
+            this.lb_DLMaKH.Text = "(Mã Khách Hàng)";
+            this.lb_DLMaKH.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // cb_TenKH
+            // lb_DLTenKH
             // 
-            this.cb_TenKH.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cb_TenKH.FormattingEnabled = true;
-            this.cb_TenKH.Location = new System.Drawing.Point(101, 32);
-            this.cb_TenKH.Name = "cb_TenKH";
-            this.cb_TenKH.Size = new System.Drawing.Size(127, 28);
-            this.cb_TenKH.TabIndex = 19;
+            this.lb_DLTenKH.AutoSize = true;
+            this.lb_DLTenKH.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lb_DLTenKH.Location = new System.Drawing.Point(109, 35);
+            this.lb_DLTenKH.Margin = new System.Windows.Forms.Padding(3);
+            this.lb_DLTenKH.Name = "lb_DLTenKH";
+            this.lb_DLTenKH.Size = new System.Drawing.Size(109, 26);
+            this.lb_DLTenKH.TabIndex = 19;
+            this.lb_DLTenKH.Text = "Tên Khách Hàng";
+            this.lb_DLTenKH.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // cb_CMND
+            // lb_DLCMND
             // 
-            this.cb_CMND.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cb_CMND.FormattingEnabled = true;
-            this.cb_CMND.Location = new System.Drawing.Point(101, 61);
-            this.cb_CMND.Name = "cb_CMND";
-            this.cb_CMND.Size = new System.Drawing.Size(127, 28);
-            this.cb_CMND.TabIndex = 20;
+            this.lb_DLCMND.AutoSize = true;
+            this.lb_DLCMND.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lb_DLCMND.Location = new System.Drawing.Point(109, 67);
+            this.lb_DLCMND.Margin = new System.Windows.Forms.Padding(3);
+            this.lb_DLCMND.Name = "lb_DLCMND";
+            this.lb_DLCMND.Size = new System.Drawing.Size(109, 24);
+            this.lb_DLCMND.TabIndex = 20;
+            this.lb_DLCMND.Text = "(CMND)";
+            this.lb_DLCMND.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // lb_ThongTinKH
             // 
@@ -284,157 +234,87 @@ namespace QuanLyKhachSan
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lb_ThongTinKH.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_ThongTinKH.Location = new System.Drawing.Point(28, 64);
+            this.lb_ThongTinKH.Location = new System.Drawing.Point(28, 55);
             this.lb_ThongTinKH.Margin = new System.Windows.Forms.Padding(27, 9, 9, 9);
             this.lb_ThongTinKH.Name = "lb_ThongTinKH";
-            this.lb_ThongTinKH.Size = new System.Drawing.Size(626, 16);
+            this.lb_ThongTinKH.Size = new System.Drawing.Size(535, 23);
             this.lb_ThongTinKH.TabIndex = 15;
             this.lb_ThongTinKH.Text = "Thông tin khách hàng";
+            this.lb_ThongTinKH.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lb_ChiTietHD
             // 
             this.lb_ChiTietHD.AutoSize = true;
             this.lb_ChiTietHD.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lb_ChiTietHD.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_ChiTietHD.Location = new System.Drawing.Point(28, 200);
+            this.lb_ChiTietHD.Location = new System.Drawing.Point(28, 198);
             this.lb_ChiTietHD.Margin = new System.Windows.Forms.Padding(27, 9, 9, 9);
             this.lb_ChiTietHD.Name = "lb_ChiTietHD";
-            this.lb_ChiTietHD.Size = new System.Drawing.Size(626, 17);
+            this.lb_ChiTietHD.Size = new System.Drawing.Size(535, 16);
             this.lb_ChiTietHD.TabIndex = 16;
             this.lb_ChiTietHD.Text = "Chi tiết hóa đơn";
+            this.lb_ChiTietHD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tlp_Chinh
             // 
             this.tlp_Chinh.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
             this.tlp_Chinh.ColumnCount = 1;
             this.tlp_Chinh.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tlp_Chinh.Controls.Add(this.btn_ThanhToan, 0, 6);
             this.tlp_Chinh.Controls.Add(this.lb_ThongTinKH, 0, 1);
             this.tlp_Chinh.Controls.Add(this.lb_ChiTietHD, 0, 3);
             this.tlp_Chinh.Controls.Add(this.tlp_ThongTinKH, 0, 2);
-            this.tlp_Chinh.Controls.Add(this.dgv_ChiTietHD, 0, 4);
-            this.tlp_Chinh.Controls.Add(this.tlp_Duoi, 0, 6);
             this.tlp_Chinh.Controls.Add(this.tlp_TongKet, 0, 5);
             this.tlp_Chinh.Controls.Add(this.tlp_Tren, 0, 0);
+            this.tlp_Chinh.Controls.Add(this.tlp_ChiTietHD, 0, 4);
             this.tlp_Chinh.Dock = System.Windows.Forms.DockStyle.Right;
-            this.tlp_Chinh.Location = new System.Drawing.Point(504, 27);
+            this.tlp_Chinh.Location = new System.Drawing.Point(408, 27);
             this.tlp_Chinh.Margin = new System.Windows.Forms.Padding(0);
             this.tlp_Chinh.Name = "tlp_Chinh";
             this.tlp_Chinh.RowCount = 7;
-            this.tlp_Chinh.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 53F));
-            this.tlp_Chinh.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tlp_Chinh.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
+            this.tlp_Chinh.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
             this.tlp_Chinh.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 100F));
-            this.tlp_Chinh.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 35F));
+            this.tlp_Chinh.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
             this.tlp_Chinh.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlp_Chinh.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 67F));
-            this.tlp_Chinh.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 53F));
-            this.tlp_Chinh.Size = new System.Drawing.Size(664, 578);
+            this.tlp_Chinh.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tlp_Chinh.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
+            this.tlp_Chinh.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlp_Chinh.Size = new System.Drawing.Size(573, 427);
             this.tlp_Chinh.TabIndex = 18;
             // 
-            // tlp_Duoi
+            // btn_ThanhToan
             // 
-            this.tlp_Duoi.ColumnCount = 3;
-            this.tlp_Duoi.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.46444F));
-            this.tlp_Duoi.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.53556F));
-            this.tlp_Duoi.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 129F));
-            this.tlp_Duoi.Controls.Add(this.btn_Tao, 0, 0);
-            this.tlp_Duoi.Controls.Add(this.btn_Sua, 0, 0);
-            this.tlp_Duoi.Controls.Add(this.btn_Xoa, 0, 0);
-            this.tlp_Duoi.Dock = System.Windows.Forms.DockStyle.Right;
-            this.tlp_Duoi.Location = new System.Drawing.Point(283, 527);
-            this.tlp_Duoi.Margin = new System.Windows.Forms.Padding(3, 3, 27, 3);
-            this.tlp_Duoi.Name = "tlp_Duoi";
-            this.tlp_Duoi.RowCount = 1;
-            this.tlp_Duoi.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlp_Duoi.Size = new System.Drawing.Size(353, 47);
-            this.tlp_Duoi.TabIndex = 19;
-            // 
-            // btn_Tao
-            // 
-            this.btn_Tao.BackColor = System.Drawing.Color.Black;
-            this.btn_Tao.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_Tao.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
-            this.btn_Tao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Tao.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Tao.ForeColor = System.Drawing.Color.White;
-            this.btn_Tao.Location = new System.Drawing.Point(226, 3);
-            this.btn_Tao.Name = "btn_Tao";
-            this.btn_Tao.Size = new System.Drawing.Size(124, 41);
-            this.btn_Tao.TabIndex = 20;
-            this.btn_Tao.Text = "Tạo";
-            this.btn_Tao.UseVisualStyleBackColor = false;
-            // 
-            // btn_Sua
-            // 
-            this.btn_Sua.BackColor = System.Drawing.Color.Black;
-            this.btn_Sua.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_Sua.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
-            this.btn_Sua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Sua.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Sua.ForeColor = System.Drawing.Color.White;
-            this.btn_Sua.Location = new System.Drawing.Point(118, 3);
-            this.btn_Sua.Name = "btn_Sua";
-            this.btn_Sua.Size = new System.Drawing.Size(102, 41);
-            this.btn_Sua.TabIndex = 19;
-            this.btn_Sua.Text = "Sửa";
-            this.btn_Sua.UseVisualStyleBackColor = false;
-            // 
-            // btn_Xoa
-            // 
-            this.btn_Xoa.BackColor = System.Drawing.Color.Black;
-            this.btn_Xoa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btn_Xoa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
-            this.btn_Xoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Xoa.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Xoa.ForeColor = System.Drawing.Color.White;
-            this.btn_Xoa.Location = new System.Drawing.Point(3, 3);
-            this.btn_Xoa.Name = "btn_Xoa";
-            this.btn_Xoa.Size = new System.Drawing.Size(109, 41);
-            this.btn_Xoa.TabIndex = 18;
-            this.btn_Xoa.Text = "Xóa";
-            this.btn_Xoa.UseVisualStyleBackColor = false;
+            this.btn_ThanhToan.BackColor = System.Drawing.Color.Black;
+            this.btn_ThanhToan.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btn_ThanhToan.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btn_ThanhToan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_ThanhToan.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ThanhToan.ForeColor = System.Drawing.Color.White;
+            this.btn_ThanhToan.Location = new System.Drawing.Point(411, 385);
+            this.btn_ThanhToan.Margin = new System.Windows.Forms.Padding(3, 3, 27, 3);
+            this.btn_ThanhToan.Name = "btn_ThanhToan";
+            this.btn_ThanhToan.Size = new System.Drawing.Size(134, 38);
+            this.btn_ThanhToan.TabIndex = 22;
+            this.btn_ThanhToan.Text = "Thanh Toán";
+            this.btn_ThanhToan.UseVisualStyleBackColor = false;
+            this.btn_ThanhToan.Click += new System.EventHandler(this.btn_ThanhToan_Click);
             // 
             // tlp_TongKet
             // 
             this.tlp_TongKet.ColumnCount = 2;
             this.tlp_TongKet.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.27273F));
             this.tlp_TongKet.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.72727F));
-            this.tlp_TongKet.Controls.Add(this.cb_TinhTrangThanhToan, 1, 1);
-            this.tlp_TongKet.Controls.Add(this.lb_TinhTrangThanhToan, 0, 1);
             this.tlp_TongKet.Controls.Add(this.lb_TriGia, 0, 0);
             this.tlp_TongKet.Controls.Add(this.lb_DLTriGia, 1, 0);
             this.tlp_TongKet.Dock = System.Windows.Forms.DockStyle.Right;
-            this.tlp_TongKet.Location = new System.Drawing.Point(361, 465);
+            this.tlp_TongKet.Location = new System.Drawing.Point(270, 345);
             this.tlp_TongKet.Margin = new System.Windows.Forms.Padding(27, 9, 27, 3);
             this.tlp_TongKet.Name = "tlp_TongKet";
-            this.tlp_TongKet.RowCount = 2;
+            this.tlp_TongKet.RowCount = 1;
             this.tlp_TongKet.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlp_TongKet.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tlp_TongKet.Size = new System.Drawing.Size(275, 55);
+            this.tlp_TongKet.Size = new System.Drawing.Size(275, 33);
             this.tlp_TongKet.TabIndex = 20;
-            // 
-            // cb_TinhTrangThanhToan
-            // 
-            this.cb_TinhTrangThanhToan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cb_TinhTrangThanhToan.FormattingEnabled = true;
-            this.cb_TinhTrangThanhToan.Items.AddRange(new object[] {
-            "Chưa Thanh Toán",
-            "Đã Thanh Toán"});
-            this.cb_TinhTrangThanhToan.Location = new System.Drawing.Point(144, 28);
-            this.cb_TinhTrangThanhToan.Name = "cb_TinhTrangThanhToan";
-            this.cb_TinhTrangThanhToan.Size = new System.Drawing.Size(128, 28);
-            this.cb_TinhTrangThanhToan.TabIndex = 21;
-            this.cb_TinhTrangThanhToan.Text = "Chưa Thanh Toán";
-            // 
-            // lb_TinhTrangThanhToan
-            // 
-            this.lb_TinhTrangThanhToan.AutoSize = true;
-            this.lb_TinhTrangThanhToan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lb_TinhTrangThanhToan.Location = new System.Drawing.Point(3, 28);
-            this.lb_TinhTrangThanhToan.Margin = new System.Windows.Forms.Padding(3);
-            this.lb_TinhTrangThanhToan.Name = "lb_TinhTrangThanhToan";
-            this.lb_TinhTrangThanhToan.Size = new System.Drawing.Size(135, 24);
-            this.lb_TinhTrangThanhToan.TabIndex = 6;
-            this.lb_TinhTrangThanhToan.Text = "Tình trạng thanh toán:";
             // 
             // lb_TriGia
             // 
@@ -443,9 +323,10 @@ namespace QuanLyKhachSan
             this.lb_TriGia.Location = new System.Drawing.Point(3, 3);
             this.lb_TriGia.Margin = new System.Windows.Forms.Padding(3);
             this.lb_TriGia.Name = "lb_TriGia";
-            this.lb_TriGia.Size = new System.Drawing.Size(135, 19);
+            this.lb_TriGia.Size = new System.Drawing.Size(135, 27);
             this.lb_TriGia.TabIndex = 5;
-            this.lb_TriGia.Text = "Trị Giá";
+            this.lb_TriGia.Text = "Trị Giá:";
+            this.lb_TriGia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lb_DLTriGia
             // 
@@ -454,10 +335,10 @@ namespace QuanLyKhachSan
             this.lb_DLTriGia.Location = new System.Drawing.Point(144, 3);
             this.lb_DLTriGia.Margin = new System.Windows.Forms.Padding(3);
             this.lb_DLTriGia.Name = "lb_DLTriGia";
-            this.lb_DLTriGia.Size = new System.Drawing.Size(128, 19);
+            this.lb_DLTriGia.Size = new System.Drawing.Size(128, 27);
             this.lb_DLTriGia.TabIndex = 7;
             this.lb_DLTriGia.Text = "(Trị Giá)";
-            this.lb_DLTriGia.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lb_DLTriGia.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // tlp_Tren
             // 
@@ -472,7 +353,7 @@ namespace QuanLyKhachSan
             this.tlp_Tren.Name = "tlp_Tren";
             this.tlp_Tren.RowCount = 1;
             this.tlp_Tren.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlp_Tren.Size = new System.Drawing.Size(656, 47);
+            this.tlp_Tren.Size = new System.Drawing.Size(565, 38);
             this.tlp_Tren.TabIndex = 21;
             // 
             // lb_TieuDe
@@ -482,7 +363,7 @@ namespace QuanLyKhachSan
             this.lb_TieuDe.Location = new System.Drawing.Point(27, 9);
             this.lb_TieuDe.Margin = new System.Windows.Forms.Padding(27, 9, 27, 9);
             this.lb_TieuDe.Name = "lb_TieuDe";
-            this.lb_TieuDe.Size = new System.Drawing.Size(274, 29);
+            this.lb_TieuDe.Size = new System.Drawing.Size(228, 20);
             this.lb_TieuDe.TabIndex = 19;
             this.lb_TieuDe.Text = "HÓA ĐƠN THANH TOÁN";
             this.lb_TieuDe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -490,43 +371,18 @@ namespace QuanLyKhachSan
             // tlp_MaHD
             // 
             this.tlp_MaHD.ColumnCount = 2;
-            this.tlp_MaHD.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.30542F));
-            this.tlp_MaHD.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.69458F));
-            this.tlp_MaHD.Controls.Add(this.pn_NhapMaHD, 0, 0);
+            this.tlp_MaHD.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80F));
+            this.tlp_MaHD.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20F));
             this.tlp_MaHD.Controls.Add(this.lb_MaHD, 0, 0);
+            this.tlp_MaHD.Controls.Add(this.tb_MaHD, 1, 0);
             this.tlp_MaHD.Dock = System.Windows.Forms.DockStyle.Right;
-            this.tlp_MaHD.Location = new System.Drawing.Point(465, 3);
+            this.tlp_MaHD.Location = new System.Drawing.Point(425, 3);
+            this.tlp_MaHD.Margin = new System.Windows.Forms.Padding(3, 3, 27, 3);
             this.tlp_MaHD.Name = "tlp_MaHD";
             this.tlp_MaHD.RowCount = 1;
             this.tlp_MaHD.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tlp_MaHD.Size = new System.Drawing.Size(188, 41);
+            this.tlp_MaHD.Size = new System.Drawing.Size(113, 32);
             this.tlp_MaHD.TabIndex = 20;
-            // 
-            // pn_NhapMaHD
-            // 
-            this.pn_NhapMaHD.AutoSize = true;
-            this.pn_NhapMaHD.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pn_NhapMaHD.Controls.Add(this.tb_NhapMaHD);
-            this.pn_NhapMaHD.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.pn_NhapMaHD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pn_NhapMaHD.Location = new System.Drawing.Point(90, 3);
-            this.pn_NhapMaHD.Name = "pn_NhapMaHD";
-            this.pn_NhapMaHD.Padding = new System.Windows.Forms.Padding(9);
-            this.pn_NhapMaHD.Size = new System.Drawing.Size(95, 35);
-            this.pn_NhapMaHD.TabIndex = 6;
-            // 
-            // tb_NhapMaHD
-            // 
-            this.tb_NhapMaHD.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.tb_NhapMaHD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tb_NhapMaHD.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_NhapMaHD.ForeColor = System.Drawing.Color.DimGray;
-            this.tb_NhapMaHD.Location = new System.Drawing.Point(9, 9);
-            this.tb_NhapMaHD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tb_NhapMaHD.Name = "tb_NhapMaHD";
-            this.tb_NhapMaHD.Size = new System.Drawing.Size(75, 20);
-            this.tb_NhapMaHD.TabIndex = 0;
-            this.tb_NhapMaHD.Text = "(Mã Hóa Đơn)";
             // 
             // lb_MaHD
             // 
@@ -534,47 +390,186 @@ namespace QuanLyKhachSan
             this.lb_MaHD.Location = new System.Drawing.Point(3, 3);
             this.lb_MaHD.Margin = new System.Windows.Forms.Padding(3);
             this.lb_MaHD.Name = "lb_MaHD";
-            this.lb_MaHD.Size = new System.Drawing.Size(81, 35);
+            this.lb_MaHD.Size = new System.Drawing.Size(84, 26);
             this.lb_MaHD.TabIndex = 5;
             this.lb_MaHD.Text = "Mã Hóa Đơn:";
-            this.lb_MaHD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lb_MaHD.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // tb_MaHD
+            // 
+            this.tb_MaHD.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tb_MaHD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tb_MaHD.Location = new System.Drawing.Point(93, 9);
+            this.tb_MaHD.Margin = new System.Windows.Forms.Padding(3, 9, 3, 3);
+            this.tb_MaHD.Name = "tb_MaHD";
+            this.tb_MaHD.Size = new System.Drawing.Size(17, 16);
+            this.tb_MaHD.TabIndex = 6;
+            this.tb_MaHD.TextChanged += new System.EventHandler(this.tb_MaHD_TextChanged);
+            // 
+            // tlp_ChiTietHD
+            // 
+            this.tlp_ChiTietHD.ColumnCount = 5;
+            this.tlp_ChiTietHD.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.88757F));
+            this.tlp_ChiTietHD.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.11243F));
+            this.tlp_ChiTietHD.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tlp_ChiTietHD.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 110F));
+            this.tlp_ChiTietHD.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 119F));
+            this.tlp_ChiTietHD.Controls.Add(this.lb_SoNgayThue, 0, 1);
+            this.tlp_ChiTietHD.Controls.Add(this.lb_MaPhong, 0, 0);
+            this.tlp_ChiTietHD.Controls.Add(this.lb_DLMaPhong, 1, 0);
+            this.tlp_ChiTietHD.Controls.Add(this.lb_ThanhTien, 3, 0);
+            this.tlp_ChiTietHD.Controls.Add(this.lb_DLThanhTien, 4, 0);
+            this.tlp_ChiTietHD.Controls.Add(this.lb_DLSoNgayThue, 1, 1);
+            this.tlp_ChiTietHD.Controls.Add(this.lb_NgayThanhToan, 3, 1);
+            this.tlp_ChiTietHD.Controls.Add(this.lb_DLNgayThanhToan, 4, 1);
+            this.tlp_ChiTietHD.Controls.Add(this.lb_DLDonGia, 4, 2);
+            this.tlp_ChiTietHD.Controls.Add(this.lb_DonGia, 3, 2);
+            this.tlp_ChiTietHD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tlp_ChiTietHD.Location = new System.Drawing.Point(28, 227);
+            this.tlp_ChiTietHD.Margin = new System.Windows.Forms.Padding(27, 3, 27, 3);
+            this.tlp_ChiTietHD.Name = "tlp_ChiTietHD";
+            this.tlp_ChiTietHD.RowCount = 3;
+            this.tlp_ChiTietHD.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.94118F));
+            this.tlp_ChiTietHD.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 47.05882F));
+            this.tlp_ChiTietHD.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tlp_ChiTietHD.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlp_ChiTietHD.Size = new System.Drawing.Size(517, 105);
+            this.tlp_ChiTietHD.TabIndex = 23;
+            // 
+            // lb_SoNgayThue
+            // 
+            this.lb_SoNgayThue.AutoSize = true;
+            this.lb_SoNgayThue.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lb_SoNgayThue.Location = new System.Drawing.Point(3, 41);
+            this.lb_SoNgayThue.Margin = new System.Windows.Forms.Padding(3);
+            this.lb_SoNgayThue.Name = "lb_SoNgayThue";
+            this.lb_SoNgayThue.Size = new System.Drawing.Size(107, 28);
+            this.lb_SoNgayThue.TabIndex = 6;
+            this.lb_SoNgayThue.Text = "Số Ngày Thuê:";
+            this.lb_SoNgayThue.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lb_MaPhong
+            // 
+            this.lb_MaPhong.AutoSize = true;
+            this.lb_MaPhong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lb_MaPhong.Location = new System.Drawing.Point(3, 3);
+            this.lb_MaPhong.Margin = new System.Windows.Forms.Padding(3);
+            this.lb_MaPhong.Name = "lb_MaPhong";
+            this.lb_MaPhong.Size = new System.Drawing.Size(107, 32);
+            this.lb_MaPhong.TabIndex = 5;
+            this.lb_MaPhong.Text = "Mã Phòng:";
+            this.lb_MaPhong.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lb_DLMaPhong
+            // 
+            this.lb_DLMaPhong.AutoSize = true;
+            this.lb_DLMaPhong.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lb_DLMaPhong.Location = new System.Drawing.Point(116, 3);
+            this.lb_DLMaPhong.Margin = new System.Windows.Forms.Padding(3);
+            this.lb_DLMaPhong.Name = "lb_DLMaPhong";
+            this.lb_DLMaPhong.Size = new System.Drawing.Size(103, 32);
+            this.lb_DLMaPhong.TabIndex = 7;
+            this.lb_DLMaPhong.Text = "(Mã Phòng)";
+            this.lb_DLMaPhong.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lb_ThanhTien
+            // 
+            this.lb_ThanhTien.AutoSize = true;
+            this.lb_ThanhTien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lb_ThanhTien.Location = new System.Drawing.Point(290, 3);
+            this.lb_ThanhTien.Margin = new System.Windows.Forms.Padding(3);
+            this.lb_ThanhTien.Name = "lb_ThanhTien";
+            this.lb_ThanhTien.Size = new System.Drawing.Size(104, 32);
+            this.lb_ThanhTien.TabIndex = 8;
+            this.lb_ThanhTien.Text = "Thành Tiền:";
+            this.lb_ThanhTien.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lb_DLThanhTien
+            // 
+            this.lb_DLThanhTien.AutoSize = true;
+            this.lb_DLThanhTien.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lb_DLThanhTien.Location = new System.Drawing.Point(400, 3);
+            this.lb_DLThanhTien.Margin = new System.Windows.Forms.Padding(3);
+            this.lb_DLThanhTien.Name = "lb_DLThanhTien";
+            this.lb_DLThanhTien.Size = new System.Drawing.Size(114, 32);
+            this.lb_DLThanhTien.TabIndex = 9;
+            this.lb_DLThanhTien.Text = "(ThanhTien)";
+            this.lb_DLThanhTien.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lb_DLSoNgayThue
+            // 
+            this.lb_DLSoNgayThue.AutoSize = true;
+            this.lb_DLSoNgayThue.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lb_DLSoNgayThue.Location = new System.Drawing.Point(116, 41);
+            this.lb_DLSoNgayThue.Margin = new System.Windows.Forms.Padding(3);
+            this.lb_DLSoNgayThue.Name = "lb_DLSoNgayThue";
+            this.lb_DLSoNgayThue.Size = new System.Drawing.Size(103, 28);
+            this.lb_DLSoNgayThue.TabIndex = 10;
+            this.lb_DLSoNgayThue.Text = "(Số Ngày Thuê)";
+            this.lb_DLSoNgayThue.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lb_NgayThanhToan
+            // 
+            this.lb_NgayThanhToan.AutoSize = true;
+            this.lb_NgayThanhToan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lb_NgayThanhToan.Location = new System.Drawing.Point(290, 41);
+            this.lb_NgayThanhToan.Margin = new System.Windows.Forms.Padding(3);
+            this.lb_NgayThanhToan.Name = "lb_NgayThanhToan";
+            this.lb_NgayThanhToan.Size = new System.Drawing.Size(104, 28);
+            this.lb_NgayThanhToan.TabIndex = 11;
+            this.lb_NgayThanhToan.Text = "Ngày Thanh Toán:";
+            this.lb_NgayThanhToan.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lb_DLNgayThanhToan
+            // 
+            this.lb_DLNgayThanhToan.AutoSize = true;
+            this.lb_DLNgayThanhToan.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lb_DLNgayThanhToan.Location = new System.Drawing.Point(400, 41);
+            this.lb_DLNgayThanhToan.Margin = new System.Windows.Forms.Padding(3);
+            this.lb_DLNgayThanhToan.Name = "lb_DLNgayThanhToan";
+            this.lb_DLNgayThanhToan.Size = new System.Drawing.Size(114, 28);
+            this.lb_DLNgayThanhToan.TabIndex = 12;
+            this.lb_DLNgayThanhToan.Text = "(Ngày Thanh Toán)";
+            this.lb_DLNgayThanhToan.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lb_DLDonGia
+            // 
+            this.lb_DLDonGia.AutoSize = true;
+            this.lb_DLDonGia.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lb_DLDonGia.Location = new System.Drawing.Point(400, 75);
+            this.lb_DLDonGia.Margin = new System.Windows.Forms.Padding(3);
+            this.lb_DLDonGia.Name = "lb_DLDonGia";
+            this.lb_DLDonGia.Size = new System.Drawing.Size(114, 27);
+            this.lb_DLDonGia.TabIndex = 13;
+            this.lb_DLDonGia.Text = "(Đơn Giá)";
+            this.lb_DLDonGia.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lb_DonGia
+            // 
+            this.lb_DonGia.AutoSize = true;
+            this.lb_DonGia.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lb_DonGia.Location = new System.Drawing.Point(290, 75);
+            this.lb_DonGia.Margin = new System.Windows.Forms.Padding(3);
+            this.lb_DonGia.Name = "lb_DonGia";
+            this.lb_DonGia.Size = new System.Drawing.Size(104, 27);
+            this.lb_DonGia.TabIndex = 14;
+            this.lb_DonGia.Text = "Đơn Giá:";
+            this.lb_DonGia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // dgv_DSHD
             // 
+            this.dgv_DSHD.AllowUserToAddRows = false;
+            this.dgv_DSHD.AllowUserToDeleteRows = false;
+            this.dgv_DSHD.AllowUserToOrderColumns = true;
             this.dgv_DSHD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_DSHD.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.MaHD,
-            this.TriGia,
-            this.TinhTrangThanhToan});
             this.dgv_DSHD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_DSHD.Location = new System.Drawing.Point(28, 58);
+            this.dgv_DSHD.Location = new System.Drawing.Point(28, 44);
             this.dgv_DSHD.Margin = new System.Windows.Forms.Padding(27, 3, 27, 27);
             this.dgv_DSHD.Name = "dgv_DSHD";
-            this.dgv_DSHD.RowHeadersWidth = 51;
+            this.dgv_DSHD.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgv_DSHD.RowTemplate.Height = 24;
-            this.dgv_DSHD.Size = new System.Drawing.Size(395, 492);
+            this.dgv_DSHD.Size = new System.Drawing.Size(286, 355);
             this.dgv_DSHD.TabIndex = 0;
-            // 
-            // MaHD
-            // 
-            this.MaHD.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.MaHD.HeaderText = "Mã Hóa Đơn";
-            this.MaHD.MinimumWidth = 6;
-            this.MaHD.Name = "MaHD";
-            // 
-            // TriGia
-            // 
-            this.TriGia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TriGia.HeaderText = "Trị Giá";
-            this.TriGia.MinimumWidth = 6;
-            this.TriGia.Name = "TriGia";
-            // 
-            // TinhTrangThanhToan
-            // 
-            this.TinhTrangThanhToan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.TinhTrangThanhToan.HeaderText = "Tình Trạng Thanh Toán";
-            this.TinhTrangThanhToan.MinimumWidth = 6;
-            this.TinhTrangThanhToan.Name = "TinhTrangThanhToan";
             // 
             // lb_DSHD
             // 
@@ -584,9 +579,9 @@ namespace QuanLyKhachSan
             this.lb_DSHD.Location = new System.Drawing.Point(28, 10);
             this.lb_DSHD.Margin = new System.Windows.Forms.Padding(27, 9, 9, 9);
             this.lb_DSHD.Name = "lb_DSHD";
-            this.lb_DSHD.Size = new System.Drawing.Size(145, 35);
+            this.lb_DSHD.Size = new System.Drawing.Size(150, 21);
             this.lb_DSHD.TabIndex = 16;
-            this.lb_DSHD.Text = "Danh sách hóa đơn";
+            this.lb_DSHD.Text = "Hóa đơn chưa thanh toán";
             this.lb_DSHD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tlp_DSHD
@@ -602,15 +597,19 @@ namespace QuanLyKhachSan
             this.tlp_DSHD.RowCount = 2;
             this.tlp_DSHD.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.358752F));
             this.tlp_DSHD.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.64125F));
-            this.tlp_DSHD.Size = new System.Drawing.Size(451, 578);
+            this.tlp_DSHD.Size = new System.Drawing.Size(342, 427);
             this.tlp_DSHD.TabIndex = 19;
+            // 
+            // fBillMgmtBindingSource
+            // 
+            this.fBillMgmtBindingSource.DataSource = typeof(QuanLyKhachSan.fBillMgmt);
             // 
             // fBillMgmt
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1195, 632);
+            this.ClientSize = new System.Drawing.Size(1008, 481);
             this.Controls.Add(this.tlp_DSHD);
             this.Controls.Add(this.tlp_Chinh);
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -618,22 +617,21 @@ namespace QuanLyKhachSan
             this.Name = "fBillMgmt";
             this.Padding = new System.Windows.Forms.Padding(27);
             this.Text = "Quản lý hóa đơn";
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_ChiTietHD)).EndInit();
             this.tlp_ThongTinKH.ResumeLayout(false);
             this.tlp_ThongTinKH.PerformLayout();
             this.tlp_Chinh.ResumeLayout(false);
             this.tlp_Chinh.PerformLayout();
-            this.tlp_Duoi.ResumeLayout(false);
             this.tlp_TongKet.ResumeLayout(false);
             this.tlp_TongKet.PerformLayout();
             this.tlp_Tren.ResumeLayout(false);
             this.tlp_MaHD.ResumeLayout(false);
             this.tlp_MaHD.PerformLayout();
-            this.pn_NhapMaHD.ResumeLayout(false);
-            this.pn_NhapMaHD.PerformLayout();
+            this.tlp_ChiTietHD.ResumeLayout(false);
+            this.tlp_ChiTietHD.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_DSHD)).EndInit();
             this.tlp_DSHD.ResumeLayout(false);
             this.tlp_DSHD.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.fBillMgmtBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -641,7 +639,6 @@ namespace QuanLyKhachSan
         #endregion
         private System.Windows.Forms.Label lb_MaKH;
         private System.Windows.Forms.Label lb_TenKH;
-        private System.Windows.Forms.DataGridView dgv_ChiTietHD;
         private System.Windows.Forms.TableLayoutPanel tlp_ThongTinKH;
         private System.Windows.Forms.Label lb_CMND;
         private System.Windows.Forms.Label lb_DiaChi;
@@ -652,34 +649,31 @@ namespace QuanLyKhachSan
         private System.Windows.Forms.Label lb_ChiTietHD;
         private System.Windows.Forms.TableLayoutPanel tlp_Chinh;
         private System.Windows.Forms.DataGridView dgv_DSHD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaHD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TriGia;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TinhTrangThanhToan;
         private System.Windows.Forms.Label lb_DSHD;
         private System.Windows.Forms.TableLayoutPanel tlp_DSHD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaPhong;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Chon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SoNgayThue;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ThanhTien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn NgayThanhToan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn DonGia;
-        private System.Windows.Forms.ComboBox cb_MaKH;
-        private System.Windows.Forms.ComboBox cb_TenKH;
-        private System.Windows.Forms.ComboBox cb_CMND;
-        private System.Windows.Forms.TableLayoutPanel tlp_Duoi;
-        private System.Windows.Forms.Button btn_Xoa;
-        private System.Windows.Forms.Button btn_Tao;
-        private System.Windows.Forms.Button btn_Sua;
         private System.Windows.Forms.TableLayoutPanel tlp_TongKet;
-        private System.Windows.Forms.Label lb_TinhTrangThanhToan;
         private System.Windows.Forms.Label lb_TriGia;
-        private System.Windows.Forms.Label lb_DLTriGia;
-        private System.Windows.Forms.ComboBox cb_TinhTrangThanhToan;
         private System.Windows.Forms.TableLayoutPanel tlp_Tren;
         private System.Windows.Forms.Label lb_TieuDe;
         private System.Windows.Forms.TableLayoutPanel tlp_MaHD;
         private System.Windows.Forms.Label lb_MaHD;
-        private System.Windows.Forms.Panel pn_NhapMaHD;
-        private System.Windows.Forms.TextBox tb_NhapMaHD;
+        private System.Windows.Forms.Button btn_ThanhToan;
+        private System.Windows.Forms.Label lb_DLTriGia;
+        private System.Windows.Forms.BindingSource fBillMgmtBindingSource;
+        private System.Windows.Forms.TextBox tb_MaHD;
+        private System.Windows.Forms.TableLayoutPanel tlp_ChiTietHD;
+        private System.Windows.Forms.Label lb_MaPhong;
+        private System.Windows.Forms.Label lb_SoNgayThue;
+        private System.Windows.Forms.Label lb_DLMaPhong;
+        private System.Windows.Forms.Label lb_ThanhTien;
+        private System.Windows.Forms.Label lb_DLThanhTien;
+        private System.Windows.Forms.Label lb_DLSoNgayThue;
+        private System.Windows.Forms.Label lb_NgayThanhToan;
+        private System.Windows.Forms.Label lb_DLNgayThanhToan;
+        private System.Windows.Forms.Label lb_DLDonGia;
+        private System.Windows.Forms.Label lb_DonGia;
+        private System.Windows.Forms.Label lb_DLMaKH;
+        private System.Windows.Forms.Label lb_DLTenKH;
+        private System.Windows.Forms.Label lb_DLCMND;
     }
 }

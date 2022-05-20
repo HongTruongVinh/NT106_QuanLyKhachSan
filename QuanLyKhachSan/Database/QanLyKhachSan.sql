@@ -106,8 +106,6 @@ CREATE TABLE CHITIETHOADON
 )
 GO
 
-
-
 CREATE TABLE THAMSO
 (
 	ID INT DEFAULT 1,
@@ -312,37 +310,11 @@ VALUES		(
 			)
 GO
 
-INSERT INTO dbo.CHITIETHOADON
-			(	MaHD,
-				MaPhong,
-				SoNgayThue,
-				ThanhTien,
-				NgayThanhToan,
-				DonGia
-			)
-VALUES		(	3,
-				1,
-				5,
-				150000,
-				GETDATE(),
-				150000
-			)
-
-INSERT INTO dbo.CHITIETHOADON
-			(	MaHD,
-				MaPhong,
-				SoNgayThue,
-				ThanhTien,
-				NgayThanhToan,
-				DonGia
-			)
-VALUES		(	3,
-				1,
-				3,
-				300000,
-				GETDATE(),
-				300000
-			) 
+USP_InsertClient
+@TenKhachHang=[Nguyễn Văn A],
+@CMND='123',
+@SDT='123',
+@DiaChi=[Việt Nam]
 
 INSERT INTO dbo.HOADON
 			(	MaKH,
@@ -352,5 +324,18 @@ VALUES		(	1,
 				450000
 			)
 
-
-
+INSERT INTO dbo.CHITIETHOADON
+			(	MaHD,
+				MaPhong,
+				SoNgayThue,
+				ThanhTien,
+				NgayThanhToan,
+				DonGia
+			)
+VALUES		(	1,
+				1,
+				5,
+				150000,
+				GETDATE(),
+				150000
+			)

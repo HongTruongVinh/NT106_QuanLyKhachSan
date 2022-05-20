@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\BillDetailsDAO.cs" />
+    <Compile Include="DTO\BillDetails.cs" />
     <Compile Include="fBillMgmt.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +157,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Database\Data.sql.ssmssln" />
+    <None Include="Properties\DataSources\fBillMgmt.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

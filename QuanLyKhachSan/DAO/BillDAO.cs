@@ -24,20 +24,33 @@ namespace QuanLyKhachSan.DAO
         private BillDAO() { }
         #endregion
 
-        public int GetUncheckBillIDByRoomID(int id)
-        {
-            string query = "SELECT * FROM dbo.HOADON, dbo.PHONG WHERE HOADON.MaHD = PHONG.MaHD AND MaHD = " + id + " AND TinhTrang = 0";
+        //public int GetUncheckBillIDByRoomID(int id)
+        //{
+        //    string query = "SELECT * FROM dbo.HOADON, dbo.PHONG WHERE HOADON.MaHD = PHONG.MaHD AND MaHD = " + id + " AND TinhTrang = 0";
 
+        //    DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+        //    if (data.Rows.Count > 0)    
+        //    {
+        //        Bill bill = new Bill(data.Rows[0]);
+        //        return bill.ID; // lấy đc bill id thì return 
+        //    }
+
+        //    return -1;// lấy bill id thất bại thì -1 
+        //}
+
+        public DataTable GetUnpaidBills()
+        {
+            string query = @"
+				SELECT HOADON.MaHD AS [Mã HD] , TriGia AS [Trị Giá] FROM HOADON, CHITIETHOADON
+                WHERE HOADON.MaHD = CHITIETHOADON.MaHD
+                AND TrangThai = 0
+            ";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
-            if (data.Rows.Count > 0)    
-            {
-                Bill bill = new Bill(data.Rows[0]);
-                return bill.ID; // lấy đc bill id thì return 
-            }
-
-            return -1;// lấy bill id thất bại thì -1 
+            return data;
         }
+
         //Chua tao USP_GetListBillByDate trong database
         public DataTable GetBillListByDate(DateTime checkIn, DateTime checkOut)
         {
