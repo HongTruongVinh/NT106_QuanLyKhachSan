@@ -118,6 +118,11 @@ namespace QuanLyKhachSan
             dtgvBill.DataSource = BillDAO.Instance.GetBillListByDate(checkIn, checkOut);
         }
 
+        void LoadAmountMoneyByDate(DateTime checkIn, DateTime checkOut)
+        {
+            txbAmount.Text = BillDAO.Instance.GetTotalAmountOfMoney(checkIn, checkOut).ToString();
+        }
+
         void LoadDateTimePickerBill()
         {
             DateTime today = DateTime.Now;
@@ -313,9 +318,14 @@ namespace QuanLyKhachSan
         {
             
             LoadListBillByDate(dtpkFromDate.Value, dtpkToDate.Value);
+            LoadAmountMoneyByDate(dtpkFromDate.Value, dtpkToDate.Value);
         }
         #endregion
 
-
+        private void btnViewBillByTypeOfRoom_Click(object sender, EventArgs e)
+        {
+            BillByTypeOfRoom f = new BillByTypeOfRoom();
+            f.Show();
+        }
     }
 }

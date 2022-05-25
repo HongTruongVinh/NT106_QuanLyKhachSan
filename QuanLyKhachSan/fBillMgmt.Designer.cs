@@ -173,7 +173,7 @@ namespace QuanLyKhachSan
             this.tlp_ThongTinKH.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 57.37052F));
             this.tlp_ThongTinKH.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 96F));
             this.tlp_ThongTinKH.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 113F));
-            this.tlp_ThongTinKH.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 167F));
+            this.tlp_ThongTinKH.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 168F));
             this.tlp_ThongTinKH.Controls.Add(this.lb_DLLoaiKH, 4, 1);
             this.tlp_ThongTinKH.Controls.Add(this.lb_DLDiaChi, 4, 0);
             this.tlp_ThongTinKH.Controls.Add(this.lb_CMND, 0, 2);
@@ -199,10 +199,10 @@ namespace QuanLyKhachSan
             // 
             this.lb_DLLoaiKH.AutoSize = true;
             this.lb_DLLoaiKH.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lb_DLLoaiKH.Location = new System.Drawing.Point(443, 32);
+            this.lb_DLLoaiKH.Location = new System.Drawing.Point(442, 32);
             this.lb_DLLoaiKH.Margin = new System.Windows.Forms.Padding(3);
             this.lb_DLLoaiKH.Name = "lb_DLLoaiKH";
-            this.lb_DLLoaiKH.Size = new System.Drawing.Size(162, 23);
+            this.lb_DLLoaiKH.Size = new System.Drawing.Size(163, 23);
             this.lb_DLLoaiKH.TabIndex = 17;
             this.lb_DLLoaiKH.Text = "(Loại khách hàng)";
             this.lb_DLLoaiKH.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -211,10 +211,10 @@ namespace QuanLyKhachSan
             // 
             this.lb_DLDiaChi.AutoSize = true;
             this.lb_DLDiaChi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lb_DLDiaChi.Location = new System.Drawing.Point(443, 3);
+            this.lb_DLDiaChi.Location = new System.Drawing.Point(442, 3);
             this.lb_DLDiaChi.Margin = new System.Windows.Forms.Padding(3);
             this.lb_DLDiaChi.Name = "lb_DLDiaChi";
-            this.lb_DLDiaChi.Size = new System.Drawing.Size(162, 23);
+            this.lb_DLDiaChi.Size = new System.Drawing.Size(163, 23);
             this.lb_DLDiaChi.TabIndex = 15;
             this.lb_DLDiaChi.Text = "(Địa chỉ)";
             this.lb_DLDiaChi.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -234,7 +234,7 @@ namespace QuanLyKhachSan
             // 
             this.lb_DiaChi.AutoSize = true;
             this.lb_DiaChi.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lb_DiaChi.Location = new System.Drawing.Point(330, 3);
+            this.lb_DiaChi.Location = new System.Drawing.Point(329, 3);
             this.lb_DiaChi.Margin = new System.Windows.Forms.Padding(3);
             this.lb_DiaChi.Name = "lb_DiaChi";
             this.lb_DiaChi.Size = new System.Drawing.Size(107, 23);
@@ -245,7 +245,7 @@ namespace QuanLyKhachSan
             // 
             this.lb_LoaiKH.AutoSize = true;
             this.lb_LoaiKH.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lb_LoaiKH.Location = new System.Drawing.Point(330, 32);
+            this.lb_LoaiKH.Location = new System.Drawing.Point(329, 32);
             this.lb_LoaiKH.Margin = new System.Windows.Forms.Padding(3);
             this.lb_LoaiKH.Name = "lb_LoaiKH";
             this.lb_LoaiKH.Size = new System.Drawing.Size(107, 23);
@@ -257,7 +257,7 @@ namespace QuanLyKhachSan
             this.cb_MaKH.FormattingEnabled = true;
             this.cb_MaKH.Location = new System.Drawing.Point(101, 3);
             this.cb_MaKH.Name = "cb_MaKH";
-            this.cb_MaKH.Size = new System.Drawing.Size(127, 28);
+            this.cb_MaKH.Size = new System.Drawing.Size(126, 40);
             this.cb_MaKH.TabIndex = 18;
             // 
             // cb_TenKH
@@ -266,7 +266,7 @@ namespace QuanLyKhachSan
             this.cb_TenKH.FormattingEnabled = true;
             this.cb_TenKH.Location = new System.Drawing.Point(101, 32);
             this.cb_TenKH.Name = "cb_TenKH";
-            this.cb_TenKH.Size = new System.Drawing.Size(127, 28);
+            this.cb_TenKH.Size = new System.Drawing.Size(126, 40);
             this.cb_TenKH.TabIndex = 19;
             // 
             // cb_CMND
@@ -275,7 +275,7 @@ namespace QuanLyKhachSan
             this.cb_CMND.FormattingEnabled = true;
             this.cb_CMND.Location = new System.Drawing.Point(101, 61);
             this.cb_CMND.Name = "cb_CMND";
-            this.cb_CMND.Size = new System.Drawing.Size(127, 28);
+            this.cb_CMND.Size = new System.Drawing.Size(126, 40);
             this.cb_CMND.TabIndex = 20;
             // 
             // lb_ThongTinKH
@@ -335,7 +335,7 @@ namespace QuanLyKhachSan
             this.tlp_Duoi.ColumnCount = 3;
             this.tlp_Duoi.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 51.46444F));
             this.tlp_Duoi.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 48.53556F));
-            this.tlp_Duoi.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 129F));
+            this.tlp_Duoi.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 130F));
             this.tlp_Duoi.Controls.Add(this.btn_Tao, 0, 0);
             this.tlp_Duoi.Controls.Add(this.btn_Sua, 0, 0);
             this.tlp_Duoi.Controls.Add(this.btn_Xoa, 0, 0);
@@ -356,9 +356,9 @@ namespace QuanLyKhachSan
             this.btn_Tao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Tao.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Tao.ForeColor = System.Drawing.Color.White;
-            this.btn_Tao.Location = new System.Drawing.Point(226, 3);
+            this.btn_Tao.Location = new System.Drawing.Point(225, 3);
             this.btn_Tao.Name = "btn_Tao";
-            this.btn_Tao.Size = new System.Drawing.Size(124, 41);
+            this.btn_Tao.Size = new System.Drawing.Size(125, 41);
             this.btn_Tao.TabIndex = 20;
             this.btn_Tao.Text = "Tạo";
             this.btn_Tao.UseVisualStyleBackColor = false;
@@ -371,7 +371,7 @@ namespace QuanLyKhachSan
             this.btn_Sua.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Sua.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Sua.ForeColor = System.Drawing.Color.White;
-            this.btn_Sua.Location = new System.Drawing.Point(118, 3);
+            this.btn_Sua.Location = new System.Drawing.Point(117, 3);
             this.btn_Sua.Name = "btn_Sua";
             this.btn_Sua.Size = new System.Drawing.Size(102, 41);
             this.btn_Sua.TabIndex = 19;
@@ -388,7 +388,7 @@ namespace QuanLyKhachSan
             this.btn_Xoa.ForeColor = System.Drawing.Color.White;
             this.btn_Xoa.Location = new System.Drawing.Point(3, 3);
             this.btn_Xoa.Name = "btn_Xoa";
-            this.btn_Xoa.Size = new System.Drawing.Size(109, 41);
+            this.btn_Xoa.Size = new System.Drawing.Size(108, 41);
             this.btn_Xoa.TabIndex = 18;
             this.btn_Xoa.Text = "Xóa";
             this.btn_Xoa.UseVisualStyleBackColor = false;
@@ -421,7 +421,7 @@ namespace QuanLyKhachSan
             "Đã Thanh Toán"});
             this.cb_TinhTrangThanhToan.Location = new System.Drawing.Point(144, 28);
             this.cb_TinhTrangThanhToan.Name = "cb_TinhTrangThanhToan";
-            this.cb_TinhTrangThanhToan.Size = new System.Drawing.Size(128, 28);
+            this.cb_TinhTrangThanhToan.Size = new System.Drawing.Size(128, 40);
             this.cb_TinhTrangThanhToan.TabIndex = 21;
             this.cb_TinhTrangThanhToan.Text = "Chưa Thanh Toán";
             // 
@@ -524,7 +524,7 @@ namespace QuanLyKhachSan
             this.tb_NhapMaHD.Location = new System.Drawing.Point(9, 9);
             this.tb_NhapMaHD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tb_NhapMaHD.Name = "tb_NhapMaHD";
-            this.tb_NhapMaHD.Size = new System.Drawing.Size(75, 20);
+            this.tb_NhapMaHD.Size = new System.Drawing.Size(75, 32);
             this.tb_NhapMaHD.TabIndex = 0;
             this.tb_NhapMaHD.Text = "(Mã Hóa Đơn)";
             // 
@@ -584,7 +584,7 @@ namespace QuanLyKhachSan
             this.lb_DSHD.Location = new System.Drawing.Point(28, 10);
             this.lb_DSHD.Margin = new System.Windows.Forms.Padding(27, 9, 9, 9);
             this.lb_DSHD.Name = "lb_DSHD";
-            this.lb_DSHD.Size = new System.Drawing.Size(145, 35);
+            this.lb_DSHD.Size = new System.Drawing.Size(230, 35);
             this.lb_DSHD.TabIndex = 16;
             this.lb_DSHD.Text = "Danh sách hóa đơn";
             this.lb_DSHD.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -607,7 +607,7 @@ namespace QuanLyKhachSan
             // 
             // fBillMgmt
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1195, 632);

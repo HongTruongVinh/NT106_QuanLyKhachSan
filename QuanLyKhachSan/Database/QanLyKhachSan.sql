@@ -181,6 +181,38 @@ WHERE	CTHD.MaHD = HD.MaHD AND
 		TrangThai = 1
 END
 GO
+
+CREATE PROC USP_GetTotalAmountMoney
+@checkIn DATE, @checkOut DATE
+AS
+BEGIN
+SELECT SUM(ThanhTien) 
+FROM dbo.CHITIETHOADON CTHD, dbo.HOADON HD, dbo.KHACHHANG KH, dbo.PHONG P
+WHERE	CTHD.MaHD = HD.MaHD AND
+		HD.MaKH = KH.MaKH AND
+		P.MaPhong = CTHD.MaPhong AND
+		NgayThanhToan >= @checkIn AND NgayThanhToan <= @checkOut AND
+		TrangThai = 1
+END
+GO
+
+--DROP PROCEDURE [USP_GetTotalAmountMoney];  
+--GO
+
+CREATE PROC USP_GetListBillByTypeOfRoom
+@Type NVARCHAR(100)
+AS
+BEGIN
+SELECT CTHD.MaHD, TenPhong, TenLoaiPhong,TenKhachHang, SoNgayThue, ThanhTien, NgayThanhToan, CTHD.DonGia 
+FROM dbo.CHITIETHOADON CTHD, dbo.HOADON HD, dbo.KHACHHANG KH, dbo.PHONG P,dbo.LOAIPHONG LP
+WHERE	CTHD.MaHD = HD.MaHD AND
+		HD.MaKH = KH.MaKH AND
+		P.MaPhong = CTHD.MaPhong AND
+		P.MaLoaiPhong = LP.MaLoaiPhong AND
+		TrangThai = 1
+END
+GO
+
 ---------------------------------------------------------------------------
 -- Phần tạo rằng buộc 
 --rằng buộc đăng nhập
@@ -366,5 +398,8 @@ VALUES		(	1,
 				450000
 			)
 
+
+SELECT * FROM dbo.CHITIETHOADON
+GO
 
 

@@ -29,40 +29,45 @@ namespace QuanLyKhachSan
         /// </summary>
         private void InitializeComponent()
         {
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.dtgvBill = new System.Windows.Forms.DataGridView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.txbAmount = new System.Windows.Forms.TextBox();
-            this.lbAmounts = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnViewBill = new System.Windows.Forms.Button();
-            this.dtpkToDate = new System.Windows.Forms.DateTimePicker();
-            this.lbToDate = new System.Windows.Forms.Label();
-            this.dtpkFromDate = new System.Windows.Forms.DateTimePicker();
-            this.lbFromDate = new System.Windows.Forms.Label();
-            this.tp_ManageEmployee = new System.Windows.Forms.TabPage();
-            this.btn_EditAccAdmin = new System.Windows.Forms.Label();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.tb_UserName = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.panel17 = new System.Windows.Forms.Panel();
-            this.tb_DisplayName = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.panel18 = new System.Windows.Forms.Panel();
-            this.tb_Password = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.panel19 = new System.Windows.Forms.Panel();
-            this.tb_SearchAccount = new System.Windows.Forms.TextBox();
-            this.btn_SearchAccount = new System.Windows.Forms.Button();
-            this.panel20 = new System.Windows.Forms.Panel();
-            this.dgv_Account = new System.Windows.Forms.DataGridView();
-            this.panel21 = new System.Windows.Forms.Panel();
-            this.btn_ViewAccount = new System.Windows.Forms.Button();
-            this.btn_EditAccount = new System.Windows.Forms.Button();
-            this.btn_DeleteAccount = new System.Windows.Forms.Button();
-            this.btn_AddAccount = new System.Windows.Forms.Button();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tb_SurchargeForeign = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.panel27 = new System.Windows.Forms.Panel();
+            this.nud_MaxPeople = new System.Windows.Forms.NumericUpDown();
+            this.label17 = new System.Windows.Forms.Label();
+            this.panel28 = new System.Windows.Forms.Panel();
+            this.label20 = new System.Windows.Forms.Label();
+            this.nud_PriceForCountCLient = new System.Windows.Forms.NumericUpDown();
+            this.label18 = new System.Windows.Forms.Label();
+            this.panel32 = new System.Windows.Forms.Panel();
+            this.label21 = new System.Windows.Forms.Label();
+            this.tb_Surcharge = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.panel23 = new System.Windows.Forms.Panel();
+            this.tb_ShowPriceTypeRoom = new System.Windows.Forms.TextBox();
+            this.panel24 = new System.Windows.Forms.Panel();
+            this.tb_idTypeRoom = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.panel25 = new System.Windows.Forms.Panel();
+            this.tb_NameTypeRoom = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.panel26 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tb_PriceTypeRoom = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.panel29 = new System.Windows.Forms.Panel();
+            this.tb_SearchTypeRoom = new System.Windows.Forms.TextBox();
+            this.btn_SearchTypeRoom = new System.Windows.Forms.Button();
+            this.panel30 = new System.Windows.Forms.Panel();
+            this.dgv_TypeRoom = new System.Windows.Forms.DataGridView();
+            this.panel31 = new System.Windows.Forms.Panel();
+            this.btn_ViewTypeRoom = new System.Windows.Forms.Button();
+            this.btn_EditTypeRoom = new System.Windows.Forms.Button();
+            this.btn_DeleteTypeRoom = new System.Windows.Forms.Button();
+            this.btn_AddTypeRoom = new System.Windows.Forms.Button();
             this.tp_ManageRoom = new System.Windows.Forms.TabPage();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
@@ -87,59 +92,58 @@ namespace QuanLyKhachSan
             this.btn_EditRoom = new System.Windows.Forms.Button();
             this.btn_DeleteRoom = new System.Windows.Forms.Button();
             this.btn_AddRoom = new System.Windows.Forms.Button();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.panel23 = new System.Windows.Forms.Panel();
-            this.tb_ShowPriceTypeRoom = new System.Windows.Forms.TextBox();
-            this.panel24 = new System.Windows.Forms.Panel();
-            this.tb_idTypeRoom = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.panel25 = new System.Windows.Forms.Panel();
-            this.tb_NameTypeRoom = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.panel26 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tb_PriceTypeRoom = new System.Windows.Forms.TextBox();
-            this.label16 = new System.Windows.Forms.Label();
-            this.panel29 = new System.Windows.Forms.Panel();
-            this.tb_SearchTypeRoom = new System.Windows.Forms.TextBox();
-            this.btn_SearchTypeRoom = new System.Windows.Forms.Button();
-            this.panel30 = new System.Windows.Forms.Panel();
-            this.dgv_TypeRoom = new System.Windows.Forms.DataGridView();
-            this.panel31 = new System.Windows.Forms.Panel();
-            this.btn_ViewTypeRoom = new System.Windows.Forms.Button();
-            this.btn_EditTypeRoom = new System.Windows.Forms.Button();
-            this.btn_DeleteTypeRoom = new System.Windows.Forms.Button();
-            this.btn_AddTypeRoom = new System.Windows.Forms.Button();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tb_SurchargeForeign = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.panel27 = new System.Windows.Forms.Panel();
-            this.nud_MaxPeople = new System.Windows.Forms.NumericUpDown();
-            this.label17 = new System.Windows.Forms.Label();
-            this.panel28 = new System.Windows.Forms.Panel();
-            this.label20 = new System.Windows.Forms.Label();
-            this.nud_PriceForCountCLient = new System.Windows.Forms.NumericUpDown();
-            this.label18 = new System.Windows.Forms.Label();
-            this.panel32 = new System.Windows.Forms.Panel();
-            this.label21 = new System.Windows.Forms.Label();
-            this.tb_Surcharge = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).BeginInit();
-            this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.tp_ManageEmployee.SuspendLayout();
-            this.panel14.SuspendLayout();
-            this.panel17.SuspendLayout();
-            this.panel18.SuspendLayout();
-            this.panel19.SuspendLayout();
-            this.panel20.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Account)).BeginInit();
-            this.panel21.SuspendLayout();
+            this.tp_ManageEmployee = new System.Windows.Forms.TabPage();
+            this.btn_EditAccAdmin = new System.Windows.Forms.Label();
+            this.panel14 = new System.Windows.Forms.Panel();
+            this.tb_UserName = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel17 = new System.Windows.Forms.Panel();
+            this.tb_DisplayName = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.tb_Password = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.tb_SearchAccount = new System.Windows.Forms.TextBox();
+            this.btn_SearchAccount = new System.Windows.Forms.Button();
+            this.panel20 = new System.Windows.Forms.Panel();
+            this.dgv_Account = new System.Windows.Forms.DataGridView();
+            this.panel21 = new System.Windows.Forms.Panel();
+            this.btn_ViewAccount = new System.Windows.Forms.Button();
+            this.btn_EditAccount = new System.Windows.Forms.Button();
+            this.btn_DeleteAccount = new System.Windows.Forms.Button();
+            this.btn_AddAccount = new System.Windows.Forms.Button();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.dtgvBill = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnViewBillByTypeOfRoom = new System.Windows.Forms.Button();
+            this.lbViewBillByTypeOfRoom = new System.Windows.Forms.Label();
+            this.txbAmount = new System.Windows.Forms.TextBox();
+            this.lbAmounts = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnViewBill = new System.Windows.Forms.Button();
+            this.dtpkToDate = new System.Windows.Forms.DateTimePicker();
+            this.lbToDate = new System.Windows.Forms.Label();
+            this.dtpkFromDate = new System.Windows.Forms.DateTimePicker();
+            this.lbFromDate = new System.Windows.Forms.Label();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage3.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel27.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_MaxPeople)).BeginInit();
+            this.panel28.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_PriceForCountCLient)).BeginInit();
+            this.panel32.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.panel23.SuspendLayout();
+            this.panel24.SuspendLayout();
+            this.panel25.SuspendLayout();
+            this.panel26.SuspendLayout();
+            this.panel29.SuspendLayout();
+            this.panel30.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_TypeRoom)).BeginInit();
+            this.panel31.SuspendLayout();
             this.tp_ManageRoom.SuspendLayout();
             this.panel11.SuspendLayout();
             this.panel16.SuspendLayout();
@@ -150,394 +154,445 @@ namespace QuanLyKhachSan
             this.panel9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Room)).BeginInit();
             this.panel8.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.panel23.SuspendLayout();
-            this.panel24.SuspendLayout();
-            this.panel25.SuspendLayout();
-            this.panel26.SuspendLayout();
-            this.panel29.SuspendLayout();
-            this.panel30.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_TypeRoom)).BeginInit();
-            this.panel31.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel27.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_MaxPeople)).BeginInit();
-            this.panel28.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_PriceForCountCLient)).BeginInit();
-            this.panel32.SuspendLayout();
+            this.tp_ManageEmployee.SuspendLayout();
+            this.panel14.SuspendLayout();
+            this.panel17.SuspendLayout();
+            this.panel18.SuspendLayout();
+            this.panel19.SuspendLayout();
+            this.panel20.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Account)).BeginInit();
+            this.panel21.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).BeginInit();
+            this.panel2.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
-            // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tp_ManageEmployee);
-            this.tabControl1.Controls.Add(this.tp_ManageRoom);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(20, 19);
-            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1520, 915);
-            this.tabControl1.TabIndex = 0;
-            // 
-            // tabPage1
-            // 
-            this.tabPage1.Controls.Add(this.panel4);
-            this.tabPage1.Controls.Add(this.panel2);
-            this.tabPage1.Controls.Add(this.panel1);
-            this.tabPage1.Location = new System.Drawing.Point(8, 39);
-            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage1.Size = new System.Drawing.Size(1504, 868);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Báo cáo doanh thu";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.dtgvBill);
-            this.panel4.Location = new System.Drawing.Point(6, 79);
-            this.panel4.Margin = new System.Windows.Forms.Padding(6);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1492, 708);
-            this.panel4.TabIndex = 2;
-            // 
-            // dtgvBill
-            // 
-            this.dtgvBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dtgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvBill.Location = new System.Drawing.Point(4, 0);
-            this.dtgvBill.Margin = new System.Windows.Forms.Padding(6);
-            this.dtgvBill.Name = "dtgvBill";
-            this.dtgvBill.RowHeadersWidth = 82;
-            this.dtgvBill.Size = new System.Drawing.Size(1482, 708);
-            this.dtgvBill.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.txbAmount);
-            this.panel2.Controls.Add(this.lbAmounts);
-            this.panel2.Location = new System.Drawing.Point(6, 788);
-            this.panel2.Margin = new System.Windows.Forms.Padding(6);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1492, 71);
-            this.panel2.TabIndex = 1;
-            // 
-            // txbAmount
-            // 
-            this.txbAmount.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbAmount.Location = new System.Drawing.Point(938, 11);
-            this.txbAmount.Margin = new System.Windows.Forms.Padding(6);
-            this.txbAmount.Name = "txbAmount";
-            this.txbAmount.Size = new System.Drawing.Size(548, 44);
-            this.txbAmount.TabIndex = 2;
-            // 
-            // lbAmounts
-            // 
-            this.lbAmounts.AutoSize = true;
-            this.lbAmounts.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbAmounts.Location = new System.Drawing.Point(694, 16);
-            this.lbAmounts.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lbAmounts.Name = "lbAmounts";
-            this.lbAmounts.Size = new System.Drawing.Size(231, 37);
-            this.lbAmounts.TabIndex = 1;
-            this.lbAmounts.Text = "Tổng doanh thu:";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnViewBill);
-            this.panel1.Controls.Add(this.dtpkToDate);
-            this.panel1.Controls.Add(this.lbToDate);
-            this.panel1.Controls.Add(this.dtpkFromDate);
-            this.panel1.Controls.Add(this.lbFromDate);
-            this.panel1.Location = new System.Drawing.Point(6, 6);
-            this.panel1.Margin = new System.Windows.Forms.Padding(6);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1492, 77);
-            this.panel1.TabIndex = 0;
-            // 
-            // btnViewBill
-            // 
-            this.btnViewBill.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnViewBill.Location = new System.Drawing.Point(1310, 6);
-            this.btnViewBill.Margin = new System.Windows.Forms.Padding(6);
-            this.btnViewBill.Name = "btnViewBill";
-            this.btnViewBill.Size = new System.Drawing.Size(176, 56);
-            this.btnViewBill.TabIndex = 4;
-            this.btnViewBill.Text = "Thống kê";
-            this.btnViewBill.UseVisualStyleBackColor = true;
-            this.btnViewBill.Click += new System.EventHandler(this.btnViewBill_Click);
-            // 
-            // dtpkToDate
-            // 
-            this.dtpkToDate.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpkToDate.Location = new System.Drawing.Point(814, 12);
-            this.dtpkToDate.Margin = new System.Windows.Forms.Padding(6);
-            this.dtpkToDate.Name = "dtpkToDate";
-            this.dtpkToDate.Size = new System.Drawing.Size(480, 42);
-            this.dtpkToDate.TabIndex = 3;
-            // 
-            // lbToDate
-            // 
-            this.lbToDate.AutoSize = true;
-            this.lbToDate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbToDate.Location = new System.Drawing.Point(664, 19);
-            this.lbToDate.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lbToDate.Name = "lbToDate";
-            this.lbToDate.Size = new System.Drawing.Size(151, 37);
-            this.lbToDate.TabIndex = 2;
-            this.lbToDate.Text = "Đến ngày:";
-            // 
-            // dtpkFromDate
-            // 
-            this.dtpkFromDate.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpkFromDate.Location = new System.Drawing.Point(142, 12);
-            this.dtpkFromDate.Margin = new System.Windows.Forms.Padding(6);
-            this.dtpkFromDate.Name = "dtpkFromDate";
-            this.dtpkFromDate.Size = new System.Drawing.Size(480, 42);
-            this.dtpkFromDate.TabIndex = 1;
-            // 
-            // lbFromDate
-            // 
-            this.lbFromDate.AutoSize = true;
-            this.lbFromDate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFromDate.Location = new System.Drawing.Point(6, 19);
-            this.lbFromDate.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
-            this.lbFromDate.Name = "lbFromDate";
-            this.lbFromDate.Size = new System.Drawing.Size(133, 37);
-            this.lbFromDate.TabIndex = 0;
-            this.lbFromDate.Text = "Từ ngày:";
-            // 
-            // tp_ManageEmployee
-            // 
-            this.tp_ManageEmployee.Controls.Add(this.btn_EditAccAdmin);
-            this.tp_ManageEmployee.Controls.Add(this.panel14);
-            this.tp_ManageEmployee.Controls.Add(this.panel17);
-            this.tp_ManageEmployee.Controls.Add(this.panel18);
-            this.tp_ManageEmployee.Controls.Add(this.panel19);
-            this.tp_ManageEmployee.Controls.Add(this.panel20);
-            this.tp_ManageEmployee.Controls.Add(this.panel21);
-            this.tp_ManageEmployee.Location = new System.Drawing.Point(8, 39);
-            this.tp_ManageEmployee.Margin = new System.Windows.Forms.Padding(4);
-            this.tp_ManageEmployee.Name = "tp_ManageEmployee";
-            this.tp_ManageEmployee.Padding = new System.Windows.Forms.Padding(4);
-            this.tp_ManageEmployee.Size = new System.Drawing.Size(1504, 868);
-            this.tp_ManageEmployee.TabIndex = 1;
-            this.tp_ManageEmployee.Text = "Quản lý tài khoản nhân viên";
-            this.tp_ManageEmployee.UseVisualStyleBackColor = true;
-            // 
-            // btn_EditAccAdmin
-            // 
-            this.btn_EditAccAdmin.AutoSize = true;
-            this.btn_EditAccAdmin.BackColor = System.Drawing.Color.LightSalmon;
-            this.btn_EditAccAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_EditAccAdmin.Location = new System.Drawing.Point(928, 800);
-            this.btn_EditAccAdmin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.btn_EditAccAdmin.Name = "btn_EditAccAdmin";
-            this.btn_EditAccAdmin.Size = new System.Drawing.Size(578, 37);
-            this.btn_EditAccAdmin.TabIndex = 2;
-            this.btn_EditAccAdmin.Text = "Đi tới sửa tài khoản quản trị viên ====>";
-            // 
-            // panel14
-            // 
-            this.panel14.Controls.Add(this.tb_UserName);
-            this.panel14.Controls.Add(this.label7);
-            this.panel14.Location = new System.Drawing.Point(924, 146);
-            this.panel14.Margin = new System.Windows.Forms.Padding(4);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(554, 69);
-            this.panel14.TabIndex = 29;
-            // 
-            // tb_UserName
-            // 
-            this.tb_UserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_UserName.Location = new System.Drawing.Point(240, 17);
-            this.tb_UserName.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_UserName.Name = "tb_UserName";
-            this.tb_UserName.Size = new System.Drawing.Size(302, 38);
-            this.tb_UserName.TabIndex = 1;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(4, 15);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(244, 37);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Tên đăng nhập:";
-            // 
-            // panel17
-            // 
-            this.panel17.Controls.Add(this.tb_DisplayName);
-            this.panel17.Controls.Add(this.label12);
-            this.panel17.Location = new System.Drawing.Point(924, 225);
-            this.panel17.Margin = new System.Windows.Forms.Padding(4);
-            this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(548, 69);
-            this.panel17.TabIndex = 28;
-            // 
-            // tb_DisplayName
-            // 
-            this.tb_DisplayName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_DisplayName.Location = new System.Drawing.Point(240, 17);
-            this.tb_DisplayName.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_DisplayName.Name = "tb_DisplayName";
-            this.tb_DisplayName.Size = new System.Drawing.Size(302, 38);
-            this.tb_DisplayName.TabIndex = 1;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(4, 15);
-            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(193, 37);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Tên hiển thị:";
-            // 
-            // panel18
-            // 
-            this.panel18.Controls.Add(this.tb_Password);
-            this.panel18.Controls.Add(this.label13);
-            this.panel18.Location = new System.Drawing.Point(926, 304);
-            this.panel18.Margin = new System.Windows.Forms.Padding(4);
-            this.panel18.Name = "panel18";
-            this.panel18.Size = new System.Drawing.Size(548, 69);
-            this.panel18.TabIndex = 27;
-            // 
-            // tb_Password
-            // 
-            this.tb_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Password.Location = new System.Drawing.Point(238, 17);
-            this.tb_Password.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_Password.Name = "tb_Password";
-            this.tb_Password.Size = new System.Drawing.Size(302, 38);
-            this.tb_Password.TabIndex = 1;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(4, 15);
-            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(158, 37);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "Mật khẩu:";
-            // 
-            // panel19
-            // 
-            this.panel19.Controls.Add(this.tb_SearchAccount);
-            this.panel19.Controls.Add(this.btn_SearchAccount);
-            this.panel19.Location = new System.Drawing.Point(918, 12);
-            this.panel19.Margin = new System.Windows.Forms.Padding(4);
-            this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(564, 121);
-            this.panel19.TabIndex = 26;
-            // 
-            // tb_SearchAccount
-            // 
-            this.tb_SearchAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_SearchAccount.Location = new System.Drawing.Point(6, 40);
-            this.tb_SearchAccount.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_SearchAccount.Name = "tb_SearchAccount";
-            this.tb_SearchAccount.Size = new System.Drawing.Size(392, 44);
-            this.tb_SearchAccount.TabIndex = 5;
-            // 
-            // btn_SearchAccount
-            // 
-            this.btn_SearchAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_SearchAccount.Location = new System.Drawing.Point(408, 2);
-            this.btn_SearchAccount.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_SearchAccount.Name = "btn_SearchAccount";
-            this.btn_SearchAccount.Size = new System.Drawing.Size(152, 115);
-            this.btn_SearchAccount.TabIndex = 4;
-            this.btn_SearchAccount.Text = "Tìm";
-            this.btn_SearchAccount.UseVisualStyleBackColor = true;
-            // 
-            // panel20
-            // 
-            this.panel20.Controls.Add(this.dgv_Account);
-            this.panel20.Location = new System.Drawing.Point(4, 142);
-            this.panel20.Margin = new System.Windows.Forms.Padding(4);
-            this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(904, 729);
-            this.panel20.TabIndex = 25;
-            // 
-            // dgv_Account
-            // 
-            this.dgv_Account.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_Account.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Account.Location = new System.Drawing.Point(6, 6);
-            this.dgv_Account.Margin = new System.Windows.Forms.Padding(4);
-            this.dgv_Account.Name = "dgv_Account";
-            this.dgv_Account.ReadOnly = true;
-            this.dgv_Account.RowHeadersWidth = 51;
-            this.dgv_Account.RowTemplate.Height = 24;
-            this.dgv_Account.Size = new System.Drawing.Size(894, 710);
-            this.dgv_Account.TabIndex = 0;
-            // 
-            // panel21
-            // 
-            this.panel21.Controls.Add(this.btn_ViewAccount);
-            this.panel21.Controls.Add(this.btn_EditAccount);
-            this.panel21.Controls.Add(this.btn_DeleteAccount);
-            this.panel21.Controls.Add(this.btn_AddAccount);
-            this.panel21.Location = new System.Drawing.Point(8, 8);
-            this.panel21.Margin = new System.Windows.Forms.Padding(4);
-            this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(900, 127);
-            this.panel21.TabIndex = 24;
-            // 
-            // btn_ViewAccount
-            // 
-            this.btn_ViewAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ViewAccount.Location = new System.Drawing.Point(744, 4);
-            this.btn_ViewAccount.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_ViewAccount.Name = "btn_ViewAccount";
-            this.btn_ViewAccount.Size = new System.Drawing.Size(152, 115);
-            this.btn_ViewAccount.TabIndex = 3;
-            this.btn_ViewAccount.Text = "Xem";
-            this.btn_ViewAccount.UseVisualStyleBackColor = true;
-            // 
-            // btn_EditAccount
-            // 
-            this.btn_EditAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_EditAccount.Location = new System.Drawing.Point(496, 4);
-            this.btn_EditAccount.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_EditAccount.Name = "btn_EditAccount";
-            this.btn_EditAccount.Size = new System.Drawing.Size(152, 115);
-            this.btn_EditAccount.TabIndex = 2;
-            this.btn_EditAccount.Text = "Sửa";
-            this.btn_EditAccount.UseVisualStyleBackColor = true;
-            // 
-            // btn_DeleteAccount
-            // 
-            this.btn_DeleteAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_DeleteAccount.Location = new System.Drawing.Point(238, 4);
-            this.btn_DeleteAccount.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_DeleteAccount.Name = "btn_DeleteAccount";
-            this.btn_DeleteAccount.Size = new System.Drawing.Size(152, 115);
-            this.btn_DeleteAccount.TabIndex = 1;
-            this.btn_DeleteAccount.Text = "Xóa";
-            this.btn_DeleteAccount.UseVisualStyleBackColor = true;
-            // 
-            // btn_AddAccount
-            // 
-            this.btn_AddAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AddAccount.Location = new System.Drawing.Point(4, 4);
-            this.btn_AddAccount.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_AddAccount.Name = "btn_AddAccount";
-            this.btn_AddAccount.Size = new System.Drawing.Size(152, 115);
-            this.btn_AddAccount.TabIndex = 0;
-            this.btn_AddAccount.Text = "Thêm";
-            this.btn_AddAccount.UseVisualStyleBackColor = true;
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.panel3);
+            this.tabPage3.Controls.Add(this.panel27);
+            this.tabPage3.Controls.Add(this.panel28);
+            this.tabPage3.Controls.Add(this.panel32);
+            this.tabPage3.Location = new System.Drawing.Point(8, 39);
+            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage3.Size = new System.Drawing.Size(1504, 868);
+            this.tabPage3.TabIndex = 4;
+            this.tabPage3.Text = "Chỉnh sửa quy định";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.tb_SurchargeForeign);
+            this.panel3.Controls.Add(this.label22);
+            this.panel3.Location = new System.Drawing.Point(26, 262);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(676, 69);
+            this.panel3.TabIndex = 30;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(560, 21);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 37);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "%";
+            // 
+            // tb_SurchargeForeign
+            // 
+            this.tb_SurchargeForeign.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_SurchargeForeign.Location = new System.Drawing.Point(464, 17);
+            this.tb_SurchargeForeign.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_SurchargeForeign.Name = "tb_SurchargeForeign";
+            this.tb_SurchargeForeign.Size = new System.Drawing.Size(84, 38);
+            this.tb_SurchargeForeign.TabIndex = 1;
+            this.tb_SurchargeForeign.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_SurchargeForeign_KeyPress);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(4, 15);
+            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(435, 37);
+            this.label22.TabIndex = 0;
+            this.label22.Text = "Phụ thu từ khách nước ngoài:";
+            // 
+            // panel27
+            // 
+            this.panel27.Controls.Add(this.nud_MaxPeople);
+            this.panel27.Controls.Add(this.label17);
+            this.panel27.Location = new System.Drawing.Point(26, 27);
+            this.panel27.Margin = new System.Windows.Forms.Padding(4);
+            this.panel27.Name = "panel27";
+            this.panel27.Size = new System.Drawing.Size(676, 69);
+            this.panel27.TabIndex = 31;
+            // 
+            // nud_MaxPeople
+            // 
+            this.nud_MaxPeople.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nud_MaxPeople.Location = new System.Drawing.Point(464, 12);
+            this.nud_MaxPeople.Margin = new System.Windows.Forms.Padding(4);
+            this.nud_MaxPeople.Name = "nud_MaxPeople";
+            this.nud_MaxPeople.Size = new System.Drawing.Size(164, 38);
+            this.nud_MaxPeople.TabIndex = 1;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(4, 15);
+            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(470, 37);
+            this.label17.TabIndex = 0;
+            this.label17.Text = "Số khách tối đa cho mỗi phòng:";
+            // 
+            // panel28
+            // 
+            this.panel28.Controls.Add(this.label20);
+            this.panel28.Controls.Add(this.nud_PriceForCountCLient);
+            this.panel28.Controls.Add(this.label18);
+            this.panel28.Location = new System.Drawing.Point(26, 104);
+            this.panel28.Margin = new System.Windows.Forms.Padding(4);
+            this.panel28.Name = "panel28";
+            this.panel28.Size = new System.Drawing.Size(676, 69);
+            this.panel28.TabIndex = 30;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(560, 15);
+            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(103, 37);
+            this.label20.TabIndex = 3;
+            this.label20.Text = "khách";
+            // 
+            // nud_PriceForCountCLient
+            // 
+            this.nud_PriceForCountCLient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nud_PriceForCountCLient.Location = new System.Drawing.Point(464, 12);
+            this.nud_PriceForCountCLient.Margin = new System.Windows.Forms.Padding(4);
+            this.nud_PriceForCountCLient.Name = "nud_PriceForCountCLient";
+            this.nud_PriceForCountCLient.Size = new System.Drawing.Size(86, 38);
+            this.nud_PriceForCountCLient.TabIndex = 2;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(4, 15);
+            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(297, 37);
+            this.label18.TabIndex = 0;
+            this.label18.Text = "Đơn giá phòng cho:";
+            // 
+            // panel32
+            // 
+            this.panel32.Controls.Add(this.label21);
+            this.panel32.Controls.Add(this.tb_Surcharge);
+            this.panel32.Controls.Add(this.label19);
+            this.panel32.Location = new System.Drawing.Point(28, 183);
+            this.panel32.Margin = new System.Windows.Forms.Padding(4);
+            this.panel32.Name = "panel32";
+            this.panel32.Size = new System.Drawing.Size(676, 69);
+            this.panel32.TabIndex = 29;
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(558, 13);
+            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(45, 37);
+            this.label21.TabIndex = 4;
+            this.label21.Text = "%";
+            // 
+            // tb_Surcharge
+            // 
+            this.tb_Surcharge.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Surcharge.Location = new System.Drawing.Point(464, 12);
+            this.tb_Surcharge.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_Surcharge.Name = "tb_Surcharge";
+            this.tb_Surcharge.Size = new System.Drawing.Size(84, 38);
+            this.tb_Surcharge.TabIndex = 1;
+            this.tb_Surcharge.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_Surcharge_KeyPress);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(4, 15);
+            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(268, 37);
+            this.label19.TabIndex = 0;
+            this.label19.Text = "Phụ thu từ khách:";
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.panel23);
+            this.tabPage2.Controls.Add(this.panel29);
+            this.tabPage2.Controls.Add(this.panel30);
+            this.tabPage2.Controls.Add(this.panel31);
+            this.tabPage2.Location = new System.Drawing.Point(8, 39);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage2.Size = new System.Drawing.Size(1504, 868);
+            this.tabPage2.TabIndex = 3;
+            this.tabPage2.Text = "Danh mục phòng";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // panel23
+            // 
+            this.panel23.Controls.Add(this.tb_ShowPriceTypeRoom);
+            this.panel23.Controls.Add(this.panel24);
+            this.panel23.Controls.Add(this.panel25);
+            this.panel23.Controls.Add(this.panel26);
+            this.panel23.Location = new System.Drawing.Point(924, 156);
+            this.panel23.Margin = new System.Windows.Forms.Padding(4);
+            this.panel23.Name = "panel23";
+            this.panel23.Size = new System.Drawing.Size(558, 706);
+            this.panel23.TabIndex = 7;
+            // 
+            // tb_ShowPriceTypeRoom
+            // 
+            this.tb_ShowPriceTypeRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_ShowPriceTypeRoom.Location = new System.Drawing.Point(148, 254);
+            this.tb_ShowPriceTypeRoom.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_ShowPriceTypeRoom.Name = "tb_ShowPriceTypeRoom";
+            this.tb_ShowPriceTypeRoom.ReadOnly = true;
+            this.tb_ShowPriceTypeRoom.Size = new System.Drawing.Size(404, 38);
+            this.tb_ShowPriceTypeRoom.TabIndex = 3;
+            // 
+            // panel24
+            // 
+            this.panel24.Controls.Add(this.tb_idTypeRoom);
+            this.panel24.Controls.Add(this.label14);
+            this.panel24.Location = new System.Drawing.Point(4, 4);
+            this.panel24.Margin = new System.Windows.Forms.Padding(4);
+            this.panel24.Name = "panel24";
+            this.panel24.Size = new System.Drawing.Size(558, 69);
+            this.panel24.TabIndex = 28;
+            // 
+            // tb_idTypeRoom
+            // 
+            this.tb_idTypeRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_idTypeRoom.Location = new System.Drawing.Point(236, 17);
+            this.tb_idTypeRoom.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_idTypeRoom.Name = "tb_idTypeRoom";
+            this.tb_idTypeRoom.ReadOnly = true;
+            this.tb_idTypeRoom.Size = new System.Drawing.Size(312, 38);
+            this.tb_idTypeRoom.TabIndex = 1;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(4, 15);
+            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(228, 37);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Mã loại phòng:";
+            // 
+            // panel25
+            // 
+            this.panel25.Controls.Add(this.tb_NameTypeRoom);
+            this.panel25.Controls.Add(this.label15);
+            this.panel25.Location = new System.Drawing.Point(4, 83);
+            this.panel25.Margin = new System.Windows.Forms.Padding(4);
+            this.panel25.Name = "panel25";
+            this.panel25.Size = new System.Drawing.Size(558, 69);
+            this.panel25.TabIndex = 27;
+            // 
+            // tb_NameTypeRoom
+            // 
+            this.tb_NameTypeRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_NameTypeRoom.Location = new System.Drawing.Point(236, 17);
+            this.tb_NameTypeRoom.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_NameTypeRoom.Name = "tb_NameTypeRoom";
+            this.tb_NameTypeRoom.Size = new System.Drawing.Size(312, 38);
+            this.tb_NameTypeRoom.TabIndex = 1;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(4, 15);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(239, 37);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "Tên loại phòng:";
+            // 
+            // panel26
+            // 
+            this.panel26.Controls.Add(this.label2);
+            this.panel26.Controls.Add(this.tb_PriceTypeRoom);
+            this.panel26.Controls.Add(this.label16);
+            this.panel26.Location = new System.Drawing.Point(6, 162);
+            this.panel26.Margin = new System.Windows.Forms.Padding(4);
+            this.panel26.Name = "panel26";
+            this.panel26.Size = new System.Drawing.Size(556, 69);
+            this.panel26.TabIndex = 26;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(370, 17);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(189, 37);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "x 1000 VND";
+            // 
+            // tb_PriceTypeRoom
+            // 
+            this.tb_PriceTypeRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_PriceTypeRoom.Location = new System.Drawing.Point(140, 17);
+            this.tb_PriceTypeRoom.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_PriceTypeRoom.Name = "tb_PriceTypeRoom";
+            this.tb_PriceTypeRoom.Size = new System.Drawing.Size(218, 38);
+            this.tb_PriceTypeRoom.TabIndex = 1;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(4, 15);
+            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(137, 37);
+            this.label16.TabIndex = 0;
+            this.label16.Text = "Đơn giá:";
+            // 
+            // panel29
+            // 
+            this.panel29.Controls.Add(this.tb_SearchTypeRoom);
+            this.panel29.Controls.Add(this.btn_SearchTypeRoom);
+            this.panel29.Location = new System.Drawing.Point(918, 13);
+            this.panel29.Margin = new System.Windows.Forms.Padding(4);
+            this.panel29.Name = "panel29";
+            this.panel29.Size = new System.Drawing.Size(564, 121);
+            this.panel29.TabIndex = 6;
+            // 
+            // tb_SearchTypeRoom
+            // 
+            this.tb_SearchTypeRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_SearchTypeRoom.Location = new System.Drawing.Point(6, 40);
+            this.tb_SearchTypeRoom.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_SearchTypeRoom.Name = "tb_SearchTypeRoom";
+            this.tb_SearchTypeRoom.Size = new System.Drawing.Size(392, 44);
+            this.tb_SearchTypeRoom.TabIndex = 5;
+            // 
+            // btn_SearchTypeRoom
+            // 
+            this.btn_SearchTypeRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_SearchTypeRoom.Location = new System.Drawing.Point(408, 2);
+            this.btn_SearchTypeRoom.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_SearchTypeRoom.Name = "btn_SearchTypeRoom";
+            this.btn_SearchTypeRoom.Size = new System.Drawing.Size(152, 115);
+            this.btn_SearchTypeRoom.TabIndex = 4;
+            this.btn_SearchTypeRoom.Text = "Tìm";
+            this.btn_SearchTypeRoom.UseVisualStyleBackColor = true;
+            // 
+            // panel30
+            // 
+            this.panel30.Controls.Add(this.dgv_TypeRoom);
+            this.panel30.Location = new System.Drawing.Point(4, 146);
+            this.panel30.Margin = new System.Windows.Forms.Padding(4);
+            this.panel30.Name = "panel30";
+            this.panel30.Size = new System.Drawing.Size(904, 735);
+            this.panel30.TabIndex = 5;
+            // 
+            // dgv_TypeRoom
+            // 
+            this.dgv_TypeRoom.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_TypeRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_TypeRoom.Location = new System.Drawing.Point(6, 4);
+            this.dgv_TypeRoom.Margin = new System.Windows.Forms.Padding(4);
+            this.dgv_TypeRoom.Name = "dgv_TypeRoom";
+            this.dgv_TypeRoom.ReadOnly = true;
+            this.dgv_TypeRoom.RowHeadersWidth = 51;
+            this.dgv_TypeRoom.RowTemplate.Height = 24;
+            this.dgv_TypeRoom.Size = new System.Drawing.Size(894, 708);
+            this.dgv_TypeRoom.TabIndex = 0;
+            // 
+            // panel31
+            // 
+            this.panel31.Controls.Add(this.btn_ViewTypeRoom);
+            this.panel31.Controls.Add(this.btn_EditTypeRoom);
+            this.panel31.Controls.Add(this.btn_DeleteTypeRoom);
+            this.panel31.Controls.Add(this.btn_AddTypeRoom);
+            this.panel31.Location = new System.Drawing.Point(8, 8);
+            this.panel31.Margin = new System.Windows.Forms.Padding(4);
+            this.panel31.Name = "panel31";
+            this.panel31.Size = new System.Drawing.Size(900, 127);
+            this.panel31.TabIndex = 4;
+            // 
+            // btn_ViewTypeRoom
+            // 
+            this.btn_ViewTypeRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ViewTypeRoom.Location = new System.Drawing.Point(744, 4);
+            this.btn_ViewTypeRoom.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_ViewTypeRoom.Name = "btn_ViewTypeRoom";
+            this.btn_ViewTypeRoom.Size = new System.Drawing.Size(152, 115);
+            this.btn_ViewTypeRoom.TabIndex = 3;
+            this.btn_ViewTypeRoom.Text = "Xem";
+            this.btn_ViewTypeRoom.UseVisualStyleBackColor = true;
+            // 
+            // btn_EditTypeRoom
+            // 
+            this.btn_EditTypeRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_EditTypeRoom.Location = new System.Drawing.Point(496, 4);
+            this.btn_EditTypeRoom.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_EditTypeRoom.Name = "btn_EditTypeRoom";
+            this.btn_EditTypeRoom.Size = new System.Drawing.Size(152, 115);
+            this.btn_EditTypeRoom.TabIndex = 2;
+            this.btn_EditTypeRoom.Text = "Sửa";
+            this.btn_EditTypeRoom.UseVisualStyleBackColor = true;
+            this.btn_EditTypeRoom.Click += new System.EventHandler(this.btn_EditTypeRoom_Click);
+            // 
+            // btn_DeleteTypeRoom
+            // 
+            this.btn_DeleteTypeRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_DeleteTypeRoom.Location = new System.Drawing.Point(238, 4);
+            this.btn_DeleteTypeRoom.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_DeleteTypeRoom.Name = "btn_DeleteTypeRoom";
+            this.btn_DeleteTypeRoom.Size = new System.Drawing.Size(152, 115);
+            this.btn_DeleteTypeRoom.TabIndex = 1;
+            this.btn_DeleteTypeRoom.Text = "Xóa";
+            this.btn_DeleteTypeRoom.UseVisualStyleBackColor = true;
+            this.btn_DeleteTypeRoom.Click += new System.EventHandler(this.btn_DeleteTypeRoom_Click);
+            // 
+            // btn_AddTypeRoom
+            // 
+            this.btn_AddTypeRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AddTypeRoom.Location = new System.Drawing.Point(4, 4);
+            this.btn_AddTypeRoom.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_AddTypeRoom.Name = "btn_AddTypeRoom";
+            this.btn_AddTypeRoom.Size = new System.Drawing.Size(152, 115);
+            this.btn_AddTypeRoom.TabIndex = 0;
+            this.btn_AddTypeRoom.Text = "Thêm";
+            this.btn_AddTypeRoom.UseVisualStyleBackColor = true;
+            this.btn_AddTypeRoom.Click += new System.EventHandler(this.btn_AddTypeRoom_Click);
             // 
             // tp_ManageRoom
             // 
@@ -801,429 +856,403 @@ namespace QuanLyKhachSan
             this.btn_AddRoom.UseVisualStyleBackColor = true;
             this.btn_AddRoom.Click += new System.EventHandler(this.btn_AddRoom_Click);
             // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.panel23);
-            this.tabPage2.Controls.Add(this.panel29);
-            this.tabPage2.Controls.Add(this.panel30);
-            this.tabPage2.Controls.Add(this.panel31);
-            this.tabPage2.Location = new System.Drawing.Point(8, 39);
-            this.tabPage2.Margin = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage2.Size = new System.Drawing.Size(1504, 868);
-            this.tabPage2.TabIndex = 3;
-            this.tabPage2.Text = "Danh mục phòng";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // panel23
-            // 
-            this.panel23.Controls.Add(this.tb_ShowPriceTypeRoom);
-            this.panel23.Controls.Add(this.panel24);
-            this.panel23.Controls.Add(this.panel25);
-            this.panel23.Controls.Add(this.panel26);
-            this.panel23.Location = new System.Drawing.Point(924, 156);
-            this.panel23.Margin = new System.Windows.Forms.Padding(4);
-            this.panel23.Name = "panel23";
-            this.panel23.Size = new System.Drawing.Size(558, 706);
-            this.panel23.TabIndex = 7;
-            // 
-            // tb_ShowPriceTypeRoom
-            // 
-            this.tb_ShowPriceTypeRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_ShowPriceTypeRoom.Location = new System.Drawing.Point(148, 254);
-            this.tb_ShowPriceTypeRoom.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_ShowPriceTypeRoom.Name = "tb_ShowPriceTypeRoom";
-            this.tb_ShowPriceTypeRoom.ReadOnly = true;
-            this.tb_ShowPriceTypeRoom.Size = new System.Drawing.Size(404, 38);
-            this.tb_ShowPriceTypeRoom.TabIndex = 3;
-            // 
-            // panel24
-            // 
-            this.panel24.Controls.Add(this.tb_idTypeRoom);
-            this.panel24.Controls.Add(this.label14);
-            this.panel24.Location = new System.Drawing.Point(4, 4);
-            this.panel24.Margin = new System.Windows.Forms.Padding(4);
-            this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(558, 69);
-            this.panel24.TabIndex = 28;
-            // 
-            // tb_idTypeRoom
-            // 
-            this.tb_idTypeRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_idTypeRoom.Location = new System.Drawing.Point(236, 17);
-            this.tb_idTypeRoom.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_idTypeRoom.Name = "tb_idTypeRoom";
-            this.tb_idTypeRoom.ReadOnly = true;
-            this.tb_idTypeRoom.Size = new System.Drawing.Size(312, 38);
-            this.tb_idTypeRoom.TabIndex = 1;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(4, 15);
-            this.label14.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(228, 37);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Mã loại phòng:";
-            // 
-            // panel25
-            // 
-            this.panel25.Controls.Add(this.tb_NameTypeRoom);
-            this.panel25.Controls.Add(this.label15);
-            this.panel25.Location = new System.Drawing.Point(4, 83);
-            this.panel25.Margin = new System.Windows.Forms.Padding(4);
-            this.panel25.Name = "panel25";
-            this.panel25.Size = new System.Drawing.Size(558, 69);
-            this.panel25.TabIndex = 27;
-            // 
-            // tb_NameTypeRoom
-            // 
-            this.tb_NameTypeRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_NameTypeRoom.Location = new System.Drawing.Point(236, 17);
-            this.tb_NameTypeRoom.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_NameTypeRoom.Name = "tb_NameTypeRoom";
-            this.tb_NameTypeRoom.Size = new System.Drawing.Size(312, 38);
-            this.tb_NameTypeRoom.TabIndex = 1;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(4, 15);
-            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(239, 37);
-            this.label15.TabIndex = 0;
-            this.label15.Text = "Tên loại phòng:";
-            // 
-            // panel26
-            // 
-            this.panel26.Controls.Add(this.label2);
-            this.panel26.Controls.Add(this.tb_PriceTypeRoom);
-            this.panel26.Controls.Add(this.label16);
-            this.panel26.Location = new System.Drawing.Point(6, 162);
-            this.panel26.Margin = new System.Windows.Forms.Padding(4);
-            this.panel26.Name = "panel26";
-            this.panel26.Size = new System.Drawing.Size(556, 69);
-            this.panel26.TabIndex = 26;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(370, 17);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(189, 37);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "x 1000 VND";
-            // 
-            // tb_PriceTypeRoom
-            // 
-            this.tb_PriceTypeRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_PriceTypeRoom.Location = new System.Drawing.Point(140, 17);
-            this.tb_PriceTypeRoom.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_PriceTypeRoom.Name = "tb_PriceTypeRoom";
-            this.tb_PriceTypeRoom.Size = new System.Drawing.Size(218, 38);
-            this.tb_PriceTypeRoom.TabIndex = 1;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(4, 15);
-            this.label16.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(137, 37);
-            this.label16.TabIndex = 0;
-            this.label16.Text = "Đơn giá:";
-            // 
-            // panel29
-            // 
-            this.panel29.Controls.Add(this.tb_SearchTypeRoom);
-            this.panel29.Controls.Add(this.btn_SearchTypeRoom);
-            this.panel29.Location = new System.Drawing.Point(918, 13);
-            this.panel29.Margin = new System.Windows.Forms.Padding(4);
-            this.panel29.Name = "panel29";
-            this.panel29.Size = new System.Drawing.Size(564, 121);
-            this.panel29.TabIndex = 6;
-            // 
-            // tb_SearchTypeRoom
-            // 
-            this.tb_SearchTypeRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_SearchTypeRoom.Location = new System.Drawing.Point(6, 40);
-            this.tb_SearchTypeRoom.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_SearchTypeRoom.Name = "tb_SearchTypeRoom";
-            this.tb_SearchTypeRoom.Size = new System.Drawing.Size(392, 44);
-            this.tb_SearchTypeRoom.TabIndex = 5;
-            // 
-            // btn_SearchTypeRoom
-            // 
-            this.btn_SearchTypeRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_SearchTypeRoom.Location = new System.Drawing.Point(408, 2);
-            this.btn_SearchTypeRoom.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_SearchTypeRoom.Name = "btn_SearchTypeRoom";
-            this.btn_SearchTypeRoom.Size = new System.Drawing.Size(152, 115);
-            this.btn_SearchTypeRoom.TabIndex = 4;
-            this.btn_SearchTypeRoom.Text = "Tìm";
-            this.btn_SearchTypeRoom.UseVisualStyleBackColor = true;
-            // 
-            // panel30
-            // 
-            this.panel30.Controls.Add(this.dgv_TypeRoom);
-            this.panel30.Location = new System.Drawing.Point(4, 146);
-            this.panel30.Margin = new System.Windows.Forms.Padding(4);
-            this.panel30.Name = "panel30";
-            this.panel30.Size = new System.Drawing.Size(904, 735);
-            this.panel30.TabIndex = 5;
-            // 
-            // dgv_TypeRoom
-            // 
-            this.dgv_TypeRoom.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgv_TypeRoom.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_TypeRoom.Location = new System.Drawing.Point(6, 4);
-            this.dgv_TypeRoom.Margin = new System.Windows.Forms.Padding(4);
-            this.dgv_TypeRoom.Name = "dgv_TypeRoom";
-            this.dgv_TypeRoom.ReadOnly = true;
-            this.dgv_TypeRoom.RowHeadersWidth = 51;
-            this.dgv_TypeRoom.RowTemplate.Height = 24;
-            this.dgv_TypeRoom.Size = new System.Drawing.Size(894, 708);
-            this.dgv_TypeRoom.TabIndex = 0;
-            // 
-            // panel31
-            // 
-            this.panel31.Controls.Add(this.btn_ViewTypeRoom);
-            this.panel31.Controls.Add(this.btn_EditTypeRoom);
-            this.panel31.Controls.Add(this.btn_DeleteTypeRoom);
-            this.panel31.Controls.Add(this.btn_AddTypeRoom);
-            this.panel31.Location = new System.Drawing.Point(8, 8);
-            this.panel31.Margin = new System.Windows.Forms.Padding(4);
-            this.panel31.Name = "panel31";
-            this.panel31.Size = new System.Drawing.Size(900, 127);
-            this.panel31.TabIndex = 4;
-            // 
-            // btn_ViewTypeRoom
-            // 
-            this.btn_ViewTypeRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ViewTypeRoom.Location = new System.Drawing.Point(744, 4);
-            this.btn_ViewTypeRoom.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_ViewTypeRoom.Name = "btn_ViewTypeRoom";
-            this.btn_ViewTypeRoom.Size = new System.Drawing.Size(152, 115);
-            this.btn_ViewTypeRoom.TabIndex = 3;
-            this.btn_ViewTypeRoom.Text = "Xem";
-            this.btn_ViewTypeRoom.UseVisualStyleBackColor = true;
-            // 
-            // btn_EditTypeRoom
-            // 
-            this.btn_EditTypeRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_EditTypeRoom.Location = new System.Drawing.Point(496, 4);
-            this.btn_EditTypeRoom.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_EditTypeRoom.Name = "btn_EditTypeRoom";
-            this.btn_EditTypeRoom.Size = new System.Drawing.Size(152, 115);
-            this.btn_EditTypeRoom.TabIndex = 2;
-            this.btn_EditTypeRoom.Text = "Sửa";
-            this.btn_EditTypeRoom.UseVisualStyleBackColor = true;
-            this.btn_EditTypeRoom.Click += new System.EventHandler(this.btn_EditTypeRoom_Click);
-            // 
-            // btn_DeleteTypeRoom
-            // 
-            this.btn_DeleteTypeRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_DeleteTypeRoom.Location = new System.Drawing.Point(238, 4);
-            this.btn_DeleteTypeRoom.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_DeleteTypeRoom.Name = "btn_DeleteTypeRoom";
-            this.btn_DeleteTypeRoom.Size = new System.Drawing.Size(152, 115);
-            this.btn_DeleteTypeRoom.TabIndex = 1;
-            this.btn_DeleteTypeRoom.Text = "Xóa";
-            this.btn_DeleteTypeRoom.UseVisualStyleBackColor = true;
-            this.btn_DeleteTypeRoom.Click += new System.EventHandler(this.btn_DeleteTypeRoom_Click);
-            // 
-            // btn_AddTypeRoom
-            // 
-            this.btn_AddTypeRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AddTypeRoom.Location = new System.Drawing.Point(4, 4);
-            this.btn_AddTypeRoom.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_AddTypeRoom.Name = "btn_AddTypeRoom";
-            this.btn_AddTypeRoom.Size = new System.Drawing.Size(152, 115);
-            this.btn_AddTypeRoom.TabIndex = 0;
-            this.btn_AddTypeRoom.Text = "Thêm";
-            this.btn_AddTypeRoom.UseVisualStyleBackColor = true;
-            this.btn_AddTypeRoom.Click += new System.EventHandler(this.btn_AddTypeRoom_Click);
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.panel3);
-            this.tabPage3.Controls.Add(this.panel27);
-            this.tabPage3.Controls.Add(this.panel28);
-            this.tabPage3.Controls.Add(this.panel32);
-            this.tabPage3.Location = new System.Drawing.Point(8, 39);
-            this.tabPage3.Margin = new System.Windows.Forms.Padding(4);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPage3.Size = new System.Drawing.Size(1504, 868);
-            this.tabPage3.TabIndex = 4;
-            this.tabPage3.Text = "Chỉnh sửa quy định";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.label3);
-            this.panel3.Controls.Add(this.tb_SurchargeForeign);
-            this.panel3.Controls.Add(this.label22);
-            this.panel3.Location = new System.Drawing.Point(26, 262);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(676, 69);
-            this.panel3.TabIndex = 30;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(560, 21);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 37);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "%";
-            // 
-            // tb_SurchargeForeign
-            // 
-            this.tb_SurchargeForeign.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_SurchargeForeign.Location = new System.Drawing.Point(464, 17);
-            this.tb_SurchargeForeign.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_SurchargeForeign.Name = "tb_SurchargeForeign";
-            this.tb_SurchargeForeign.Size = new System.Drawing.Size(84, 38);
-            this.tb_SurchargeForeign.TabIndex = 1;
-            this.tb_SurchargeForeign.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_SurchargeForeign_KeyPress);
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(4, 15);
-            this.label22.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(435, 37);
-            this.label22.TabIndex = 0;
-            this.label22.Text = "Phụ thu từ khách nước ngoài:";
-            // 
-            // panel27
-            // 
-            this.panel27.Controls.Add(this.nud_MaxPeople);
-            this.panel27.Controls.Add(this.label17);
-            this.panel27.Location = new System.Drawing.Point(26, 27);
-            this.panel27.Margin = new System.Windows.Forms.Padding(4);
-            this.panel27.Name = "panel27";
-            this.panel27.Size = new System.Drawing.Size(676, 69);
-            this.panel27.TabIndex = 31;
-            // 
-            // nud_MaxPeople
-            // 
-            this.nud_MaxPeople.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nud_MaxPeople.Location = new System.Drawing.Point(464, 12);
-            this.nud_MaxPeople.Margin = new System.Windows.Forms.Padding(4);
-            this.nud_MaxPeople.Name = "nud_MaxPeople";
-            this.nud_MaxPeople.Size = new System.Drawing.Size(164, 38);
-            this.nud_MaxPeople.TabIndex = 1;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(4, 15);
-            this.label17.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(470, 37);
-            this.label17.TabIndex = 0;
-            this.label17.Text = "Số khách tối đa cho mỗi phòng:";
-            // 
-            // panel28
-            // 
-            this.panel28.Controls.Add(this.label20);
-            this.panel28.Controls.Add(this.nud_PriceForCountCLient);
-            this.panel28.Controls.Add(this.label18);
-            this.panel28.Location = new System.Drawing.Point(26, 104);
-            this.panel28.Margin = new System.Windows.Forms.Padding(4);
-            this.panel28.Name = "panel28";
-            this.panel28.Size = new System.Drawing.Size(676, 69);
-            this.panel28.TabIndex = 30;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(560, 15);
-            this.label20.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(103, 37);
-            this.label20.TabIndex = 3;
-            this.label20.Text = "khách";
-            // 
-            // nud_PriceForCountCLient
-            // 
-            this.nud_PriceForCountCLient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nud_PriceForCountCLient.Location = new System.Drawing.Point(464, 12);
-            this.nud_PriceForCountCLient.Margin = new System.Windows.Forms.Padding(4);
-            this.nud_PriceForCountCLient.Name = "nud_PriceForCountCLient";
-            this.nud_PriceForCountCLient.Size = new System.Drawing.Size(86, 38);
-            this.nud_PriceForCountCLient.TabIndex = 2;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(4, 15);
-            this.label18.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(297, 37);
-            this.label18.TabIndex = 0;
-            this.label18.Text = "Đơn giá phòng cho:";
-            // 
-            // panel32
-            // 
-            this.panel32.Controls.Add(this.label21);
-            this.panel32.Controls.Add(this.tb_Surcharge);
-            this.panel32.Controls.Add(this.label19);
-            this.panel32.Location = new System.Drawing.Point(28, 183);
-            this.panel32.Margin = new System.Windows.Forms.Padding(4);
-            this.panel32.Name = "panel32";
-            this.panel32.Size = new System.Drawing.Size(676, 69);
-            this.panel32.TabIndex = 29;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(558, 13);
-            this.label21.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(45, 37);
-            this.label21.TabIndex = 4;
-            this.label21.Text = "%";
-            // 
-            // tb_Surcharge
-            // 
-            this.tb_Surcharge.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Surcharge.Location = new System.Drawing.Point(464, 12);
-            this.tb_Surcharge.Margin = new System.Windows.Forms.Padding(4);
-            this.tb_Surcharge.Name = "tb_Surcharge";
-            this.tb_Surcharge.Size = new System.Drawing.Size(84, 38);
-            this.tb_Surcharge.TabIndex = 1;
-            this.tb_Surcharge.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_Surcharge_KeyPress);
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(4, 15);
-            this.label19.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(268, 37);
-            this.label19.TabIndex = 0;
-            this.label19.Text = "Phụ thu từ khách:";
+            // tp_ManageEmployee
+            // 
+            this.tp_ManageEmployee.Controls.Add(this.btn_EditAccAdmin);
+            this.tp_ManageEmployee.Controls.Add(this.panel14);
+            this.tp_ManageEmployee.Controls.Add(this.panel17);
+            this.tp_ManageEmployee.Controls.Add(this.panel18);
+            this.tp_ManageEmployee.Controls.Add(this.panel19);
+            this.tp_ManageEmployee.Controls.Add(this.panel20);
+            this.tp_ManageEmployee.Controls.Add(this.panel21);
+            this.tp_ManageEmployee.Location = new System.Drawing.Point(8, 39);
+            this.tp_ManageEmployee.Margin = new System.Windows.Forms.Padding(4);
+            this.tp_ManageEmployee.Name = "tp_ManageEmployee";
+            this.tp_ManageEmployee.Padding = new System.Windows.Forms.Padding(4);
+            this.tp_ManageEmployee.Size = new System.Drawing.Size(1504, 868);
+            this.tp_ManageEmployee.TabIndex = 1;
+            this.tp_ManageEmployee.Text = "Quản lý tài khoản nhân viên";
+            this.tp_ManageEmployee.UseVisualStyleBackColor = true;
+            // 
+            // btn_EditAccAdmin
+            // 
+            this.btn_EditAccAdmin.AutoSize = true;
+            this.btn_EditAccAdmin.BackColor = System.Drawing.Color.LightSalmon;
+            this.btn_EditAccAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_EditAccAdmin.Location = new System.Drawing.Point(928, 800);
+            this.btn_EditAccAdmin.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.btn_EditAccAdmin.Name = "btn_EditAccAdmin";
+            this.btn_EditAccAdmin.Size = new System.Drawing.Size(578, 37);
+            this.btn_EditAccAdmin.TabIndex = 2;
+            this.btn_EditAccAdmin.Text = "Đi tới sửa tài khoản quản trị viên ====>";
+            // 
+            // panel14
+            // 
+            this.panel14.Controls.Add(this.tb_UserName);
+            this.panel14.Controls.Add(this.label7);
+            this.panel14.Location = new System.Drawing.Point(924, 146);
+            this.panel14.Margin = new System.Windows.Forms.Padding(4);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(554, 69);
+            this.panel14.TabIndex = 29;
+            // 
+            // tb_UserName
+            // 
+            this.tb_UserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_UserName.Location = new System.Drawing.Point(240, 17);
+            this.tb_UserName.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_UserName.Name = "tb_UserName";
+            this.tb_UserName.Size = new System.Drawing.Size(302, 38);
+            this.tb_UserName.TabIndex = 1;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(4, 15);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(244, 37);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "Tên đăng nhập:";
+            // 
+            // panel17
+            // 
+            this.panel17.Controls.Add(this.tb_DisplayName);
+            this.panel17.Controls.Add(this.label12);
+            this.panel17.Location = new System.Drawing.Point(924, 225);
+            this.panel17.Margin = new System.Windows.Forms.Padding(4);
+            this.panel17.Name = "panel17";
+            this.panel17.Size = new System.Drawing.Size(548, 69);
+            this.panel17.TabIndex = 28;
+            // 
+            // tb_DisplayName
+            // 
+            this.tb_DisplayName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_DisplayName.Location = new System.Drawing.Point(240, 17);
+            this.tb_DisplayName.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_DisplayName.Name = "tb_DisplayName";
+            this.tb_DisplayName.Size = new System.Drawing.Size(302, 38);
+            this.tb_DisplayName.TabIndex = 1;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(4, 15);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(193, 37);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Tên hiển thị:";
+            // 
+            // panel18
+            // 
+            this.panel18.Controls.Add(this.tb_Password);
+            this.panel18.Controls.Add(this.label13);
+            this.panel18.Location = new System.Drawing.Point(926, 304);
+            this.panel18.Margin = new System.Windows.Forms.Padding(4);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(548, 69);
+            this.panel18.TabIndex = 27;
+            // 
+            // tb_Password
+            // 
+            this.tb_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Password.Location = new System.Drawing.Point(238, 17);
+            this.tb_Password.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_Password.Name = "tb_Password";
+            this.tb_Password.Size = new System.Drawing.Size(302, 38);
+            this.tb_Password.TabIndex = 1;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(4, 15);
+            this.label13.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(158, 37);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Mật khẩu:";
+            // 
+            // panel19
+            // 
+            this.panel19.Controls.Add(this.tb_SearchAccount);
+            this.panel19.Controls.Add(this.btn_SearchAccount);
+            this.panel19.Location = new System.Drawing.Point(918, 12);
+            this.panel19.Margin = new System.Windows.Forms.Padding(4);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(564, 121);
+            this.panel19.TabIndex = 26;
+            // 
+            // tb_SearchAccount
+            // 
+            this.tb_SearchAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_SearchAccount.Location = new System.Drawing.Point(6, 40);
+            this.tb_SearchAccount.Margin = new System.Windows.Forms.Padding(4);
+            this.tb_SearchAccount.Name = "tb_SearchAccount";
+            this.tb_SearchAccount.Size = new System.Drawing.Size(392, 44);
+            this.tb_SearchAccount.TabIndex = 5;
+            // 
+            // btn_SearchAccount
+            // 
+            this.btn_SearchAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_SearchAccount.Location = new System.Drawing.Point(408, 2);
+            this.btn_SearchAccount.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_SearchAccount.Name = "btn_SearchAccount";
+            this.btn_SearchAccount.Size = new System.Drawing.Size(152, 115);
+            this.btn_SearchAccount.TabIndex = 4;
+            this.btn_SearchAccount.Text = "Tìm";
+            this.btn_SearchAccount.UseVisualStyleBackColor = true;
+            // 
+            // panel20
+            // 
+            this.panel20.Controls.Add(this.dgv_Account);
+            this.panel20.Location = new System.Drawing.Point(4, 142);
+            this.panel20.Margin = new System.Windows.Forms.Padding(4);
+            this.panel20.Name = "panel20";
+            this.panel20.Size = new System.Drawing.Size(904, 729);
+            this.panel20.TabIndex = 25;
+            // 
+            // dgv_Account
+            // 
+            this.dgv_Account.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgv_Account.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Account.Location = new System.Drawing.Point(6, 6);
+            this.dgv_Account.Margin = new System.Windows.Forms.Padding(4);
+            this.dgv_Account.Name = "dgv_Account";
+            this.dgv_Account.ReadOnly = true;
+            this.dgv_Account.RowHeadersWidth = 51;
+            this.dgv_Account.RowTemplate.Height = 24;
+            this.dgv_Account.Size = new System.Drawing.Size(894, 710);
+            this.dgv_Account.TabIndex = 0;
+            // 
+            // panel21
+            // 
+            this.panel21.Controls.Add(this.btn_ViewAccount);
+            this.panel21.Controls.Add(this.btn_EditAccount);
+            this.panel21.Controls.Add(this.btn_DeleteAccount);
+            this.panel21.Controls.Add(this.btn_AddAccount);
+            this.panel21.Location = new System.Drawing.Point(8, 8);
+            this.panel21.Margin = new System.Windows.Forms.Padding(4);
+            this.panel21.Name = "panel21";
+            this.panel21.Size = new System.Drawing.Size(900, 127);
+            this.panel21.TabIndex = 24;
+            // 
+            // btn_ViewAccount
+            // 
+            this.btn_ViewAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ViewAccount.Location = new System.Drawing.Point(744, 4);
+            this.btn_ViewAccount.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_ViewAccount.Name = "btn_ViewAccount";
+            this.btn_ViewAccount.Size = new System.Drawing.Size(152, 115);
+            this.btn_ViewAccount.TabIndex = 3;
+            this.btn_ViewAccount.Text = "Xem";
+            this.btn_ViewAccount.UseVisualStyleBackColor = true;
+            // 
+            // btn_EditAccount
+            // 
+            this.btn_EditAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_EditAccount.Location = new System.Drawing.Point(496, 4);
+            this.btn_EditAccount.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_EditAccount.Name = "btn_EditAccount";
+            this.btn_EditAccount.Size = new System.Drawing.Size(152, 115);
+            this.btn_EditAccount.TabIndex = 2;
+            this.btn_EditAccount.Text = "Sửa";
+            this.btn_EditAccount.UseVisualStyleBackColor = true;
+            // 
+            // btn_DeleteAccount
+            // 
+            this.btn_DeleteAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_DeleteAccount.Location = new System.Drawing.Point(238, 4);
+            this.btn_DeleteAccount.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_DeleteAccount.Name = "btn_DeleteAccount";
+            this.btn_DeleteAccount.Size = new System.Drawing.Size(152, 115);
+            this.btn_DeleteAccount.TabIndex = 1;
+            this.btn_DeleteAccount.Text = "Xóa";
+            this.btn_DeleteAccount.UseVisualStyleBackColor = true;
+            // 
+            // btn_AddAccount
+            // 
+            this.btn_AddAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AddAccount.Location = new System.Drawing.Point(4, 4);
+            this.btn_AddAccount.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_AddAccount.Name = "btn_AddAccount";
+            this.btn_AddAccount.Size = new System.Drawing.Size(152, 115);
+            this.btn_AddAccount.TabIndex = 0;
+            this.btn_AddAccount.Text = "Thêm";
+            this.btn_AddAccount.UseVisualStyleBackColor = true;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.panel4);
+            this.tabPage1.Controls.Add(this.panel2);
+            this.tabPage1.Controls.Add(this.panel1);
+            this.tabPage1.Location = new System.Drawing.Point(8, 39);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPage1.Size = new System.Drawing.Size(1504, 868);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Báo cáo doanh thu theo tháng";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.dtgvBill);
+            this.panel4.Location = new System.Drawing.Point(6, 79);
+            this.panel4.Margin = new System.Windows.Forms.Padding(6);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(1492, 708);
+            this.panel4.TabIndex = 2;
+            // 
+            // dtgvBill
+            // 
+            this.dtgvBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dtgvBill.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            this.dtgvBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgvBill.Location = new System.Drawing.Point(4, 0);
+            this.dtgvBill.Margin = new System.Windows.Forms.Padding(6);
+            this.dtgvBill.Name = "dtgvBill";
+            this.dtgvBill.RowHeadersWidth = 82;
+            this.dtgvBill.Size = new System.Drawing.Size(1482, 708);
+            this.dtgvBill.TabIndex = 0;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.btnViewBillByTypeOfRoom);
+            this.panel2.Controls.Add(this.lbViewBillByTypeOfRoom);
+            this.panel2.Controls.Add(this.txbAmount);
+            this.panel2.Controls.Add(this.lbAmounts);
+            this.panel2.Location = new System.Drawing.Point(6, 791);
+            this.panel2.Margin = new System.Windows.Forms.Padding(6);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1492, 71);
+            this.panel2.TabIndex = 1;
+            // 
+            // btnViewBillByTypeOfRoom
+            // 
+            this.btnViewBillByTypeOfRoom.BackColor = System.Drawing.Color.DarkGray;
+            this.btnViewBillByTypeOfRoom.Location = new System.Drawing.Point(464, 3);
+            this.btnViewBillByTypeOfRoom.Name = "btnViewBillByTypeOfRoom";
+            this.btnViewBillByTypeOfRoom.Size = new System.Drawing.Size(213, 65);
+            this.btnViewBillByTypeOfRoom.TabIndex = 4;
+            this.btnViewBillByTypeOfRoom.Text = "Thống kê";
+            this.btnViewBillByTypeOfRoom.UseVisualStyleBackColor = false;
+            this.btnViewBillByTypeOfRoom.Click += new System.EventHandler(this.btnViewBillByTypeOfRoom_Click);
+            // 
+            // lbViewBillByTypeOfRoom
+            // 
+            this.lbViewBillByTypeOfRoom.AutoSize = true;
+            this.lbViewBillByTypeOfRoom.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.125F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbViewBillByTypeOfRoom.Location = new System.Drawing.Point(7, 21);
+            this.lbViewBillByTypeOfRoom.Name = "lbViewBillByTypeOfRoom";
+            this.lbViewBillByTypeOfRoom.Size = new System.Drawing.Size(431, 31);
+            this.lbViewBillByTypeOfRoom.TabIndex = 3;
+            this.lbViewBillByTypeOfRoom.Text = "Báo cáo doanh thu theo loại phòng";
+            // 
+            // txbAmount
+            // 
+            this.txbAmount.Enabled = false;
+            this.txbAmount.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbAmount.Location = new System.Drawing.Point(1074, 8);
+            this.txbAmount.Margin = new System.Windows.Forms.Padding(6);
+            this.txbAmount.Name = "txbAmount";
+            this.txbAmount.Size = new System.Drawing.Size(412, 44);
+            this.txbAmount.TabIndex = 2;
+            this.txbAmount.Text = "0";
+            // 
+            // lbAmounts
+            // 
+            this.lbAmounts.AutoSize = true;
+            this.lbAmounts.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbAmounts.Location = new System.Drawing.Point(830, 13);
+            this.lbAmounts.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lbAmounts.Name = "lbAmounts";
+            this.lbAmounts.Size = new System.Drawing.Size(231, 37);
+            this.lbAmounts.TabIndex = 1;
+            this.lbAmounts.Text = "Tổng doanh thu:";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnViewBill);
+            this.panel1.Controls.Add(this.dtpkToDate);
+            this.panel1.Controls.Add(this.lbToDate);
+            this.panel1.Controls.Add(this.dtpkFromDate);
+            this.panel1.Controls.Add(this.lbFromDate);
+            this.panel1.Location = new System.Drawing.Point(6, 6);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1492, 77);
+            this.panel1.TabIndex = 0;
+            // 
+            // btnViewBill
+            // 
+            this.btnViewBill.BackColor = System.Drawing.Color.DarkGray;
+            this.btnViewBill.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnViewBill.Location = new System.Drawing.Point(1310, 6);
+            this.btnViewBill.Margin = new System.Windows.Forms.Padding(6);
+            this.btnViewBill.Name = "btnViewBill";
+            this.btnViewBill.Size = new System.Drawing.Size(176, 56);
+            this.btnViewBill.TabIndex = 4;
+            this.btnViewBill.Text = "Thống kê";
+            this.btnViewBill.UseVisualStyleBackColor = false;
+            this.btnViewBill.Click += new System.EventHandler(this.btnViewBill_Click);
+            // 
+            // dtpkToDate
+            // 
+            this.dtpkToDate.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpkToDate.Location = new System.Drawing.Point(814, 12);
+            this.dtpkToDate.Margin = new System.Windows.Forms.Padding(6);
+            this.dtpkToDate.Name = "dtpkToDate";
+            this.dtpkToDate.Size = new System.Drawing.Size(480, 42);
+            this.dtpkToDate.TabIndex = 3;
+            // 
+            // lbToDate
+            // 
+            this.lbToDate.AutoSize = true;
+            this.lbToDate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbToDate.Location = new System.Drawing.Point(664, 19);
+            this.lbToDate.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lbToDate.Name = "lbToDate";
+            this.lbToDate.Size = new System.Drawing.Size(151, 37);
+            this.lbToDate.TabIndex = 2;
+            this.lbToDate.Text = "Đến ngày:";
+            // 
+            // dtpkFromDate
+            // 
+            this.dtpkFromDate.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpkFromDate.Location = new System.Drawing.Point(142, 12);
+            this.dtpkFromDate.Margin = new System.Windows.Forms.Padding(6);
+            this.dtpkFromDate.Name = "dtpkFromDate";
+            this.dtpkFromDate.Size = new System.Drawing.Size(480, 42);
+            this.dtpkFromDate.TabIndex = 1;
+            // 
+            // lbFromDate
+            // 
+            this.lbFromDate.AutoSize = true;
+            this.lbFromDate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFromDate.Location = new System.Drawing.Point(6, 19);
+            this.lbFromDate.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.lbFromDate.Name = "lbFromDate";
+            this.lbFromDate.Size = new System.Drawing.Size(133, 37);
+            this.lbFromDate.TabIndex = 0;
+            this.lbFromDate.Text = "Từ ngày:";
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tp_ManageEmployee);
+            this.tabControl1.Controls.Add(this.tp_ManageRoom);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Location = new System.Drawing.Point(20, 19);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1520, 915);
+            this.tabControl1.TabIndex = 0;
             // 
             // fAdmin
             // 
@@ -1235,27 +1264,31 @@ namespace QuanLyKhachSan
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "fAdmin";
             this.Text = "Quản trị viên";
-            this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.tp_ManageEmployee.ResumeLayout(false);
-            this.tp_ManageEmployee.PerformLayout();
-            this.panel14.ResumeLayout(false);
-            this.panel14.PerformLayout();
-            this.panel17.ResumeLayout(false);
-            this.panel17.PerformLayout();
-            this.panel18.ResumeLayout(false);
-            this.panel18.PerformLayout();
-            this.panel19.ResumeLayout(false);
-            this.panel19.PerformLayout();
-            this.panel20.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_Account)).EndInit();
-            this.panel21.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel27.ResumeLayout(false);
+            this.panel27.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_MaxPeople)).EndInit();
+            this.panel28.ResumeLayout(false);
+            this.panel28.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_PriceForCountCLient)).EndInit();
+            this.panel32.ResumeLayout(false);
+            this.panel32.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.panel23.ResumeLayout(false);
+            this.panel23.PerformLayout();
+            this.panel24.ResumeLayout(false);
+            this.panel24.PerformLayout();
+            this.panel25.ResumeLayout(false);
+            this.panel25.PerformLayout();
+            this.panel26.ResumeLayout(false);
+            this.panel26.PerformLayout();
+            this.panel29.ResumeLayout(false);
+            this.panel29.PerformLayout();
+            this.panel30.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_TypeRoom)).EndInit();
+            this.panel31.ResumeLayout(false);
             this.tp_ManageRoom.ResumeLayout(false);
             this.panel11.ResumeLayout(false);
             this.panel16.ResumeLayout(false);
@@ -1271,51 +1304,98 @@ namespace QuanLyKhachSan
             this.panel9.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Room)).EndInit();
             this.panel8.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.panel23.ResumeLayout(false);
-            this.panel23.PerformLayout();
-            this.panel24.ResumeLayout(false);
-            this.panel24.PerformLayout();
-            this.panel25.ResumeLayout(false);
-            this.panel25.PerformLayout();
-            this.panel26.ResumeLayout(false);
-            this.panel26.PerformLayout();
-            this.panel29.ResumeLayout(false);
-            this.panel29.PerformLayout();
-            this.panel30.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_TypeRoom)).EndInit();
-            this.panel31.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel27.ResumeLayout(false);
-            this.panel27.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_MaxPeople)).EndInit();
-            this.panel28.ResumeLayout(false);
-            this.panel28.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nud_PriceForCountCLient)).EndInit();
-            this.panel32.ResumeLayout(false);
-            this.panel32.PerformLayout();
+            this.tp_ManageEmployee.ResumeLayout(false);
+            this.tp_ManageEmployee.PerformLayout();
+            this.panel14.ResumeLayout(false);
+            this.panel14.PerformLayout();
+            this.panel17.ResumeLayout(false);
+            this.panel17.PerformLayout();
+            this.panel18.ResumeLayout(false);
+            this.panel18.PerformLayout();
+            this.panel19.ResumeLayout(false);
+            this.panel19.PerformLayout();
+            this.panel20.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Account)).EndInit();
+            this.panel21.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dtgvBill)).EndInit();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tp_ManageEmployee;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox tb_SurchargeForeign;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Panel panel27;
+        private System.Windows.Forms.NumericUpDown nud_MaxPeople;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Panel panel28;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.NumericUpDown nud_PriceForCountCLient;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Panel panel32;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox tb_Surcharge;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Panel panel23;
+        private System.Windows.Forms.TextBox tb_ShowPriceTypeRoom;
+        private System.Windows.Forms.Panel panel24;
+        private System.Windows.Forms.TextBox tb_idTypeRoom;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Panel panel25;
+        private System.Windows.Forms.TextBox tb_NameTypeRoom;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Panel panel26;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox tb_PriceTypeRoom;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Panel panel29;
+        private System.Windows.Forms.TextBox tb_SearchTypeRoom;
+        private System.Windows.Forms.Button btn_SearchTypeRoom;
+        private System.Windows.Forms.Panel panel30;
+        private System.Windows.Forms.DataGridView dgv_TypeRoom;
+        private System.Windows.Forms.Panel panel31;
+        private System.Windows.Forms.Button btn_ViewTypeRoom;
+        private System.Windows.Forms.Button btn_EditTypeRoom;
+        private System.Windows.Forms.Button btn_DeleteTypeRoom;
+        private System.Windows.Forms.Button btn_AddTypeRoom;
         private System.Windows.Forms.TabPage tp_ManageRoom;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Button bnt_ViewRoom;
-        private System.Windows.Forms.Button btn_EditRoom;
-        private System.Windows.Forms.Button btn_DeleteRoom;
-        private System.Windows.Forms.Button btn_AddRoom;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.TextBox tb_idRoom;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.TextBox tb_NameRoom;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.ComboBox cbb_TypeRoom;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.TextBox tb_NoteRoom;
+        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.TextBox tb_SearchRoom;
         private System.Windows.Forms.Button btn_SearchRoom;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.DataGridView dgv_Room;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Button bnt_ViewRoom;
+        private System.Windows.Forms.Button btn_EditRoom;
+        private System.Windows.Forms.Button btn_DeleteRoom;
+        private System.Windows.Forms.Button btn_AddRoom;
+        private System.Windows.Forms.TabPage tp_ManageEmployee;
+        private System.Windows.Forms.Label btn_EditAccAdmin;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.TextBox tb_UserName;
         private System.Windows.Forms.Label label7;
@@ -1335,62 +1415,12 @@ namespace QuanLyKhachSan
         private System.Windows.Forms.Button btn_EditAccount;
         private System.Windows.Forms.Button btn_DeleteAccount;
         private System.Windows.Forms.Button btn_AddAccount;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Panel panel16;
-        private System.Windows.Forms.TextBox tb_idRoom;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.TextBox tb_NameRoom;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Panel panel13;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Panel panel15;
-        private System.Windows.Forms.TextBox tb_NoteRoom;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel23;
-        private System.Windows.Forms.Panel panel24;
-        private System.Windows.Forms.TextBox tb_idTypeRoom;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Panel panel25;
-        private System.Windows.Forms.TextBox tb_NameTypeRoom;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Panel panel26;
-        private System.Windows.Forms.TextBox tb_PriceTypeRoom;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Panel panel29;
-        private System.Windows.Forms.TextBox tb_SearchTypeRoom;
-        private System.Windows.Forms.Button btn_SearchTypeRoom;
-        private System.Windows.Forms.Panel panel30;
-        private System.Windows.Forms.DataGridView dgv_TypeRoom;
-        private System.Windows.Forms.Panel panel27;
-        private System.Windows.Forms.NumericUpDown nud_MaxPeople;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Panel panel28;
-        private System.Windows.Forms.NumericUpDown nud_PriceForCountCLient;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Panel panel32;
-        private System.Windows.Forms.TextBox tb_Surcharge;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.ComboBox cbb_TypeRoom;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox tb_ShowPriceTypeRoom;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox tb_SurchargeForeign;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label btn_EditAccAdmin;
-        private System.Windows.Forms.Panel panel31;
-        private System.Windows.Forms.Button btn_ViewTypeRoom;
-        private System.Windows.Forms.Button btn_EditTypeRoom;
-        private System.Windows.Forms.Button btn_DeleteTypeRoom;
-        private System.Windows.Forms.Button btn_AddTypeRoom;
+        private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridView dtgvBill;
         private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button btnViewBillByTypeOfRoom;
+        private System.Windows.Forms.Label lbViewBillByTypeOfRoom;
         private System.Windows.Forms.TextBox txbAmount;
         private System.Windows.Forms.Label lbAmounts;
         private System.Windows.Forms.Panel panel1;
@@ -1399,5 +1429,6 @@ namespace QuanLyKhachSan
         private System.Windows.Forms.Label lbToDate;
         private System.Windows.Forms.DateTimePicker dtpkFromDate;
         private System.Windows.Forms.Label lbFromDate;
+        private System.Windows.Forms.TabControl tabControl1;
     }
 }

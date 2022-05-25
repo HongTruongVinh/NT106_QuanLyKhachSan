@@ -47,26 +47,29 @@ namespace QuanLyKhachSan
             // 
             this.panel1.Controls.Add(this.tb_UserName);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(13, 12);
+            this.panel1.Location = new System.Drawing.Point(20, 19);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(522, 57);
+            this.panel1.Size = new System.Drawing.Size(783, 89);
             this.panel1.TabIndex = 0;
             // 
             // tb_UserName
             // 
             this.tb_UserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_UserName.Location = new System.Drawing.Point(166, 13);
+            this.tb_UserName.Location = new System.Drawing.Point(249, 20);
+            this.tb_UserName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_UserName.Name = "tb_UserName";
-            this.tb_UserName.Size = new System.Drawing.Size(339, 34);
+            this.tb_UserName.Size = new System.Drawing.Size(506, 49);
             this.tb_UserName.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(4, 16);
+            this.label1.Location = new System.Drawing.Point(6, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(141, 31);
+            this.label1.Size = new System.Drawing.Size(218, 50);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tài khoản:";
             // 
@@ -74,17 +77,19 @@ namespace QuanLyKhachSan
             // 
             this.panel2.Controls.Add(this.tb_PassWord);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Location = new System.Drawing.Point(13, 85);
+            this.panel2.Location = new System.Drawing.Point(20, 133);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(522, 57);
+            this.panel2.Size = new System.Drawing.Size(783, 89);
             this.panel2.TabIndex = 1;
             // 
             // tb_PassWord
             // 
             this.tb_PassWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_PassWord.Location = new System.Drawing.Point(166, 9);
+            this.tb_PassWord.Location = new System.Drawing.Point(249, 14);
+            this.tb_PassWord.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tb_PassWord.Name = "tb_PassWord";
-            this.tb_PassWord.Size = new System.Drawing.Size(339, 34);
+            this.tb_PassWord.Size = new System.Drawing.Size(506, 49);
             this.tb_PassWord.TabIndex = 2;
             this.tb_PassWord.UseSystemPasswordChar = true;
             // 
@@ -92,9 +97,10 @@ namespace QuanLyKhachSan
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 14);
+            this.label2.Location = new System.Drawing.Point(4, 22);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(139, 31);
+            this.label2.Size = new System.Drawing.Size(217, 50);
             this.label2.TabIndex = 1;
             this.label2.Text = "Mật khẩu:";
             // 
@@ -102,17 +108,19 @@ namespace QuanLyKhachSan
             // 
             this.panel3.Controls.Add(this.btn_Out);
             this.panel3.Controls.Add(this.btn_Login);
-            this.panel3.Location = new System.Drawing.Point(12, 162);
+            this.panel3.Location = new System.Drawing.Point(18, 253);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(523, 57);
+            this.panel3.Size = new System.Drawing.Size(784, 89);
             this.panel3.TabIndex = 2;
             // 
             // btn_Out
             // 
             this.btn_Out.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Out.Location = new System.Drawing.Point(390, 0);
+            this.btn_Out.Location = new System.Drawing.Point(585, 0);
+            this.btn_Out.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Out.Name = "btn_Out";
-            this.btn_Out.Size = new System.Drawing.Size(130, 42);
+            this.btn_Out.Size = new System.Drawing.Size(195, 66);
             this.btn_Out.TabIndex = 4;
             this.btn_Out.Text = "Thoát";
             this.btn_Out.UseVisualStyleBackColor = true;
@@ -121,9 +129,10 @@ namespace QuanLyKhachSan
             // btn_Login
             // 
             this.btn_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Login.Location = new System.Drawing.Point(241, 0);
+            this.btn_Login.Location = new System.Drawing.Point(362, 0);
+            this.btn_Login.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Login.Name = "btn_Login";
-            this.btn_Login.Size = new System.Drawing.Size(130, 42);
+            this.btn_Login.Size = new System.Drawing.Size(195, 66);
             this.btn_Login.TabIndex = 3;
             this.btn_Login.Text = "Đăng nhập";
             this.btn_Login.UseVisualStyleBackColor = true;
@@ -131,15 +140,18 @@ namespace QuanLyKhachSan
             // 
             // fLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AcceptButton = this.btn_Login;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(548, 226);
+            this.ClientSize = new System.Drawing.Size(822, 353);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "fLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng nhập";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.fLogin_FormClosing);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);

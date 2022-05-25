@@ -158,7 +158,8 @@ namespace QuanLyKhachSan.DAO
 
 
                 data = command.ExecuteScalar();
-
+                if(data == null)
+                    data = 0;
                 connection.Close();
             }
 

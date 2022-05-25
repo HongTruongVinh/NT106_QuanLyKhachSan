@@ -1,0 +1,12 @@
+thực hiện tính năng báo cáo doanh thu theo loại phòng
+- lấy được từng loại phòng.
+- xong dựa trên ngày mà liệt kê ra những thứ cần thiết
+- Phải lấy được id của loại phòng thông qua tên phòng, vậy làm sao để lấy được ID phòng?
+
+
+proc
+- Truyền vào một biến NVARCHAR(100) như một mã phòng
+
+
+Có thể có nhiều tên loại phòng, nhưng chỉ có một mã loại phòng, 
+xem lại cái b

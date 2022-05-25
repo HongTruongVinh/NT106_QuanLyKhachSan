@@ -5,7 +5,6 @@ F:\ProgLang\C#\Winforms\NT106.M21\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj
 F:\ProgLang\C#\Winforms\NT106.M21\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.SuggestedBindingRedirects.cache
 F:\ProgLang\C#\Winforms\NT106.M21\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fBillMgmt.resources
 F:\ProgLang\C#\Winforms\NT106.M21\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fAdmin.resources
-F:\ProgLang\C#\Winforms\NT106.M21\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fClientManage.resources
 F:\ProgLang\C#\Winforms\NT106.M21\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fGuestMgmt.resources
 F:\ProgLang\C#\Winforms\NT106.M21\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fInformation.resources
 F:\ProgLang\C#\Winforms\NT106.M21\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fListRentalVoucher.resources
@@ -75,3 +74,4 @@ F:\ProgLang\C#\Winforms\NT106.M21_edited\QuanLyKhachSan\obj\Debug\QuanLyKhachSan
 F:\ProgLang\C#\Winforms\NT106.M21_edited\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CoreCompileInputs.cache
 F:\ProgLang\C#\Winforms\NT106.M21_edited\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
 F:\ProgLang\C#\Winforms\NT106.M21_edited\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
+F:\ProgLang\C#\Winforms\NT106.M21\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.BillByTypeOfRoom.resources

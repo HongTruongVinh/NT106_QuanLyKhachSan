@@ -38,10 +38,26 @@ namespace QuanLyKhachSan.DAO
 
             return -1;// lấy bill id thất bại thì -1 
         }
-        //Chua tao USP_GetListBillByDate trong database
+
         public DataTable GetBillListByDate(DateTime checkIn, DateTime checkOut)
         {
             return DataProvider.Instance.ExecuteQuery("exec USP_GetListBillByDate @checkIn , @checkOut", new object[] { checkIn, checkOut });
+        }
+
+        public object GetTotalAmountOfMoney(DateTime checkIn, DateTime checkOut)
+        {
+            return DataProvider.Instance.ExecuteScalar("exec USP_GetTotalAmountMoney @checkIn , @checkOut", new object[] { checkIn, checkOut });
+        }
+
+        public DataTable GetCheckedBillIDByRoomID(int ID)
+        {
+            string query = "EXEC USP_GetListBillByTypeOfRoom @Type";
+            return DataProvider.Instance.ExecuteQuery(query, new object[] { ID });
+        }
+
+        public object GetTotalAmountOfMoneyByIDTypeRoom(int ID)
+        {
+            return DataProvider.Instance.ExecuteScalar("exec USP_GetTotalMoneyByIDTypeRoom @Type", new object[] { ID });
         }
     }
 }
