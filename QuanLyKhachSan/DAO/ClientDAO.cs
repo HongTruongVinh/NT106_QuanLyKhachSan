@@ -145,6 +145,9 @@ namespace QuanLyKhachSan.DAO
 
             int result = DataProvider.Instance.ExecuteNonQuery(query);
 
+            query = "UPDATE THAMSO SET KhachToiDa = KhachToiDa + 1";
+             result = DataProvider.Instance.ExecuteNonQuery(query);
+
             return result > 0;
         }
 
@@ -166,6 +169,9 @@ namespace QuanLyKhachSan.DAO
 
             string query = string.Format("Delete KHACHHANG where MaKH = {0}", id);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            query = "UPDATE THAMSO SET KhachToiDa = KhachToiDa - 1";
+            result = DataProvider.Instance.ExecuteNonQuery(query);
 
             return result > 0;
         }

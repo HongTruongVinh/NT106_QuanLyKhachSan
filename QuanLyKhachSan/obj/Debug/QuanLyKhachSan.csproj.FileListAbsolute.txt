@@ -56,3 +56,21 @@ C:\Users\Vasilias Da Nykta\Desktop\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanL
 C:\Users\Vasilias Da Nykta\Desktop\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CoreCompileInputs.cache
 C:\Users\Vasilias Da Nykta\Desktop\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
 C:\Users\Vasilias Da Nykta\Desktop\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
+C:\Users\Hp\Downloads\DoAn_NewClone\NT106_QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe.config
+C:\Users\Hp\Downloads\DoAn_NewClone\NT106_QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe
+C:\Users\Hp\Downloads\DoAn_NewClone\NT106_QuanLyKhachSan\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.pdb
+C:\Users\Hp\Downloads\DoAn_NewClone\NT106_QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csprojAssemblyReference.cache
+C:\Users\Hp\Downloads\DoAn_NewClone\NT106_QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fBillMgmt.resources
+C:\Users\Hp\Downloads\DoAn_NewClone\NT106_QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fAdmin.resources
+C:\Users\Hp\Downloads\DoAn_NewClone\NT106_QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fGuestMgmt.resources
+C:\Users\Hp\Downloads\DoAn_NewClone\NT106_QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fInformation.resources
+C:\Users\Hp\Downloads\DoAn_NewClone\NT106_QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fListRentalVoucher.resources
+C:\Users\Hp\Downloads\DoAn_NewClone\NT106_QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fRentalVoucher.resources
+C:\Users\Hp\Downloads\DoAn_NewClone\NT106_QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fLogin.resources
+C:\Users\Hp\Downloads\DoAn_NewClone\NT106_QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fLoadRoom.resources
+C:\Users\Hp\Downloads\DoAn_NewClone\NT106_QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.MainWindow.resources
+C:\Users\Hp\Downloads\DoAn_NewClone\NT106_QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Properties.Resources.resources
+C:\Users\Hp\Downloads\DoAn_NewClone\NT106_QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.GenerateResource.cache
+C:\Users\Hp\Downloads\DoAn_NewClone\NT106_QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CoreCompileInputs.cache
+C:\Users\Hp\Downloads\DoAn_NewClone\NT106_QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
+C:\Users\Hp\Downloads\DoAn_NewClone\NT106_QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
