@@ -20,24 +20,27 @@ namespace QuanLyKhachSan.DAO
         private BillDetailsDAO() { }
         #endregion
 
-        public BillDetails GetBillDetailsByBillID(int billID)
+        public DataTable GetUnCheckedBillsByGuestInfo(string name, string personalID)
         {
             string query = $@"
-                SELECT *
-                FROM CHITIETHOADON
-                WHERE MaHD = {billID}
+                SELECT CHITIETHOADON.MaHD, MaPhong, SoNgayThue, ThanhTien, NgayThanhToan, DonGia, TrangThai
+                FROM CHITIETHOADON, HOADON, KHACHHANG
+                WHERE TrangThai = 0
+                AND CHITIETHOADON.MaHD = HOADON.MaHD
+                AND HOADON.MaKH = KHACHHANG.MaKH
+                AND KHACHHANG.TenKhachHang = N'{name}'
+                AND KHACHHANG.CMND = '{personalID}'
             ";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
-            BillDetails billDetails = new BillDetails(data.Rows[0]);
-            return billDetails;
+            return data;
         }
 
-        public bool PayBillByBillID(int billID)
+        public bool PayBillDetailsByID(int id)
         {
             string query = $@"
                 UPDATE CHITIETHOADON
                 SET TrangThai = 1
-                WHERE MaHD = {billID}
+                WHERE MaCTHD = {id}
             ";
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;

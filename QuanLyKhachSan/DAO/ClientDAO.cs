@@ -169,5 +169,17 @@ namespace QuanLyKhachSan.DAO
 
             return result > 0;
         }
+
+        public DataTable GetGuestByBillID(int billId)
+        {
+            string query = $@"
+                SELECT *
+                FROM KHACHHANG, HOADON
+                WHERE HOADON.MaKH = KHACHHANG.MaKH
+                AND HOADON.MaHD = {billId}
+            ";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            return data;
+        }
     }
 }

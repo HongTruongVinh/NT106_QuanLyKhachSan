@@ -39,18 +39,6 @@ namespace QuanLyKhachSan.DAO
         //    return -1;// lấy bill id thất bại thì -1 
         //}
 
-        public DataTable GetUnpaidBills()
-        {
-            string query = @"
-				SELECT HOADON.MaHD AS [Mã HD] , TriGia AS [Trị Giá] FROM HOADON, CHITIETHOADON
-                WHERE HOADON.MaHD = CHITIETHOADON.MaHD
-                AND TrangThai = 0
-            ";
-            DataTable data = DataProvider.Instance.ExecuteQuery(query);
-
-            return data;
-        }
-
         //Chua tao USP_GetListBillByDate trong database
         public DataTable GetBillListByDate(DateTime checkIn, DateTime checkOut)
         {

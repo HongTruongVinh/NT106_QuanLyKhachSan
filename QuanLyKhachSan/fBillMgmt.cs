@@ -17,36 +17,60 @@ namespace QuanLyKhachSan
         public fBillMgmt()
         {
             InitializeComponent();
-
-            dgv_DSHD.DataSource = BillDAO.Instance.GetUnpaidBills();
-
-            tb_MaHD.DataBindings.Add(new Binding("Text", dgv_DSHD.DataSource, "Mã HD"));
-            lb_DLTriGia.DataBindings.Add(new Binding("Text", dgv_DSHD.DataSource, "Trị Giá"));
         }
 
-
-        private void tb_MaHD_TextChanged(object sender, EventArgs e)
-        {
-            int billId = int.Parse(tb_MaHD.Text);
-            BillDetails billDetails = BillDetailsDAO.Instance.GetBillDetailsByBillID(billId);
-            lb_DLMaPhong.Text = billDetails.RoomId.ToString();
-            lb_DLSoNgayThue.Text = billDetails.Days.ToString();
-            lb_DLThanhTien.Text = billDetails.Price.ToString();
-            lb_DLNgayThanhToan.Text = billDetails.Date.ToString("dd/MM/yyyy");
-            lb_DLDonGia.Text = billDetails.Amount.ToString();
-        }
+        private string name;
+        private string personalID;
 
         private void btn_ThanhToan_Click(object sender, EventArgs e)
         {
-            int billId = int.Parse(tb_MaHD.Text);
-            if (BillDetailsDAO.Instance.PayBillByBillID(billId))
+            int id = int.Parse(lb_DLMaHD.Text);
+            if (BillDetailsDAO.Instance.PayBillDetailsByID(id))
             {
-                MessageBox.Show("Thanh Toán Thành Công!");
-                dgv_DSHD.DataSource = BillDAO.Instance.GetUnpaidBills();
+                MessageBox.Show("Thanh toán thành công");
             }
             else
             {
-                MessageBox.Show("Có lỗi xảy ra! Thanh Toán Không Thành Công!");
+                MessageBox.Show("Có lỗi xảy ra");
+            }
+            LoadData();
+        }
+
+        private void LoadData()
+        {
+            DataTable bills = BillDetailsDAO.Instance.GetUnCheckedBillsByGuestInfo(name, personalID);
+            dgv_DSHD.DataSource = bills;
+            AddBindings(bills);
+        }
+
+        private void AddBindings(DataTable bills)
+        {
+            lb_DLMaHD.DataBindings.Clear();
+            lb_DLMaPhong.DataBindings.Clear();
+            lb_DLSoNgayThue.DataBindings.Clear();
+            lb_DLThanhTien.DataBindings.Clear();
+            lb_DLNgayThanhToan.DataBindings.Clear();
+            lb_DLDonGia.DataBindings.Clear();
+            lb_DLMaHD.DataBindings.Add(new Binding("Text", bills, "MaHD"));
+            lb_DLMaPhong.DataBindings.Add(new Binding("Text", bills, "MaPhong"));
+            lb_DLSoNgayThue.DataBindings.Add(new Binding("Text", bills, "SoNgayThue"));
+            lb_DLThanhTien.DataBindings.Add(new Binding("Text", bills, "ThanhTien"));
+            lb_DLNgayThanhToan.DataBindings.Add(new Binding("Text", bills, "NgayThanhToan"));
+            lb_DLDonGia.DataBindings.Add(new Binding("Text", bills, "DonGia"));
+        }
+
+        private void btn_TimKiem_Click(object sender, EventArgs e)
+        {
+            name = tb_DLTenKH.Text;
+            personalID = tb_DLCMND.Text;
+            DataTable bills = BillDetailsDAO.Instance.GetUnCheckedBillsByGuestInfo(name, personalID);
+            if (bills.Rows.Count > 0)
+            {
+                LoadData();
+            }
+            else
+            {
+                MessageBox.Show("Khách hàng không tồn tại");
             }    
         }
     }
