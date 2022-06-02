@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyKhachSan.Network;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,10 +14,19 @@ namespace QuanLyKhachSan
 {
     public partial class MainWindow : Form
     {
+
+        bool menuIsHide = true;
+        Point panel2startPosition;
+
         public MainWindow()
         {
             InitializeComponent();
 
+            Load();
+        }
+
+        void Load()
+        {
             pn_Menu.Hide();
             panel2startPosition = new Point(pn_Window.Location.X, pn_Window.Location.Y);
             pn_Window.Location = new Point(12, 13);
@@ -26,11 +36,32 @@ namespace QuanLyKhachSan
             ToolTip toolTip = new ToolTip();
             toolTip.SetToolTip(btn_Menu, "Tùy chọn");
 
+            TCPServer.Instance.TCPServerStart();
 
+            this.FormClosing += MainWindow_FormClosing;
         }
 
-        bool menuIsHide = true;
-        Point panel2startPosition;
+        private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult result = MessageBox.Show("Bạn có chắc muốn tắt máy chủ?\n\nLưu ý: Nếu làm điều này các máy khách sẽ không thể kết nối tới máy chủ của bạn.", "Thông báo", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    TCPServer.Instance.TCPServerStop();
+
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
 
         private void btn_Menu_Click(object sender, EventArgs e)
         {

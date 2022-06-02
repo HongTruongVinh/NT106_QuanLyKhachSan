@@ -34,6 +34,17 @@ namespace QuanLyKhachSan.DAO
             return result.Rows.Count > 0;
         }
 
+        public Account GetUser(string username, string password)
+        {
+            string query = String.Format("SELECT * FROM dbo.TaiKhoan WHERE TenDangNhap = N'{0}' AND MatKhau = N'{1}'", username, password);
+
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] { username, password });
+
+            Account account = new Account(result.Rows[0]);
+
+            return account;
+        }
+
         public List<Account> GetListAccount()
         {
             List<Account> lst = new List<Account>();

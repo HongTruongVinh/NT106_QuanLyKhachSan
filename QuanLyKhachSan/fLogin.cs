@@ -17,7 +17,7 @@ namespace QuanLyKhachSan
         {
             InitializeComponent();
 
-            tb_UserName.Text = "admin";
+            tb_UserName.Text = "Admin";
             tb_PassWord.Text = "0";
 
         }

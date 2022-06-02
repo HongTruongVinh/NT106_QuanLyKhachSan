@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QuanLyKhachSan_CLient.Network;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,10 +14,19 @@ namespace QuanLyKhachSan_CLient
 {
     public partial class MainWindow : Form
     {
+
+        bool menuIsHide = true;
+        Point panel2startPosition;
+
         public MainWindow()
         {
             InitializeComponent();
 
+            Load();
+        }
+
+        void Load()
+        {
             pn_Menu.Hide();
             panel2startPosition = new Point(pn_Window.Location.X, pn_Window.Location.Y);
             pn_Window.Location = new Point(12, 13);
@@ -26,11 +36,49 @@ namespace QuanLyKhachSan_CLient
             ToolTip toolTip = new ToolTip();
             toolTip.SetToolTip(btn_Menu, "Tùy chọn");
 
+            this.FormClosing += MainWindow_FormClosing;
+
+            if (User.Instance.TypeUser == "Admin")
+            {
+                
+            }
+            else if (User.Instance.TypeUser == "Employee")
+            {
+                btn_Admin.Enabled = false;
+            }
+            else
+            {
+                btn_Admin.Enabled = false;
+                btn_AccountInfo.Enabled = false;
+                btn_BillMgmt.Enabled = false;
+                btn_GuestMgmt.Enabled = false;
+                btn_RoomMgmt.Enabled = false;
+            }
 
         }
 
-        bool menuIsHide = true;
-        Point panel2startPosition;
+        private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                DialogResult result = MessageBox.Show("Bạn có chắc muốn tắt?", "Thông báo", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    TCPClient.Instance.TCPCLientStop();
+
+                    Environment.Exit(0);
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
+            }
+            else
+            {
+                e.Cancel = true;
+            }
+        }
+
 
         private void btn_Menu_Click(object sender, EventArgs e)
         {

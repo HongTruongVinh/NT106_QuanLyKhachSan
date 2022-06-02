@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyKhachSan_CLient.DAO;
+using QuanLyKhachSan_CLient.Network;
 
 namespace QuanLyKhachSan_CLient
 {
@@ -17,9 +18,8 @@ namespace QuanLyKhachSan_CLient
         {
             InitializeComponent();
 
-            tb_UserName.Text = "admin";
-            tb_PassWord.Text = "0";
-
+            tb_UserName.Text = "hai";
+            tb_PassWord.Text = "1";
         }
 
         private void btn_Login_Click(object sender, EventArgs e)
@@ -27,7 +27,7 @@ namespace QuanLyKhachSan_CLient
             string username = tb_UserName.Text;
             string password = tb_PassWord.Text;
 
-            if (AccountDAO.Instance.Login(username, password))
+            if (TCPClient.Instance.Login(username, password))
             {
                 this.Hide();
 

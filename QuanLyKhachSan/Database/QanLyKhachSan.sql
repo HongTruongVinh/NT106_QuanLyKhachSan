@@ -21,7 +21,7 @@ CREATE TABLE TAIKHOAN
 	LoaiTaiKhoan INT DEFAULT 0, check(LoaiTaiKhoan = 0 or LoaiTaiKhoan = 1) -- 0 là nhân viên, 1 là admin 
 )
 GO
-
+--SELECT * FROM TAIKHOAN
 CREATE TABLE THONGBAO
 (
 	MaThongBao INT IDENTITY PRIMARY KEY,
@@ -42,7 +42,7 @@ CREATE TABLE LOAIPHONG
 	DonGia	INT
 )
 GO
-
+SELECT Count(MaPhong) FROM dbo.PHONG WHERE TinhTrang = 0 AND MaPhong = 4
 CREATE TABLE PHONG
 (
 	MaPhong INT IDENTITY PRIMARY KEY,

@@ -296,7 +296,7 @@ namespace QuanLyKhachSan_CLient
             // 
             // MainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1238, 692);
@@ -305,7 +305,7 @@ namespace QuanLyKhachSan_CLient
             this.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "MainWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Phần mềm quản lý khách sạn";
+            this.Text = "CLIENT - Phần mềm quản lý khách sạn";
             this.pn_Menu.ResumeLayout(false);
             this.pn_Window.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
