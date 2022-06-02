@@ -111,7 +111,7 @@ namespace QuanLyKhachSan.DAO
         {
             try
             {
-                /*
+
                 string queryCheck = "SELECT Count(MaPhieu) FROM dbo.PHIEUTHUEPHONG WHERE NgayKetThuc = NULL AND MaPhong = " + idRoom;
 
                 if (DataProvider.Instance.ExecuteNonQuery(queryCheck) > 0)
@@ -119,12 +119,35 @@ namespace QuanLyKhachSan.DAO
                     //Nếu có khách đang thuê phòng này thì không thể xóa phòng này
                     return false;
                 }
-                */
+
                 string query = "DELETE dbo.PHONG WHERE MaPhong = " + idRoom;
 
                 DataProvider.Instance.ExecuteScalar(query);
 
                 return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool IsAvailable(int idRoom)
+        {
+            try
+            {
+                string queryCheck = "SELECT * FROM dbo.PHONG WHERE TinhTrang = 0 AND MaPhong = " + idRoom;
+                int count = (DataProvider.Instance.ExecuteQuery(queryCheck) as DataTable).Rows.Count;
+
+                if (count > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+                
             }
             catch
             {

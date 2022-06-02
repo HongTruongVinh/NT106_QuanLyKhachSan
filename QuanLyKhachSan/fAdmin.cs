@@ -316,6 +316,48 @@ namespace QuanLyKhachSan
         }
         #endregion
 
+        #region Them xoa sua account
+        private void btn_AddAccount_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(tb_UserName.Text) || String.IsNullOrEmpty(tb_DisplayName.Text) || String.IsNullOrEmpty(tb_Password.Text))
+            {
+                MessageBox.Show("Hãy nhập đầy đủ thông tin");
+                return;
+            }
+
+            if (AccountDAO.Instance.Insert(tb_UserName.Text, tb_DisplayName.Text, tb_Password.Text))
+            {
+                MessageBox.Show("Thêm tài khoản thành công");
+            }
+            else
+            {
+                MessageBox.Show("Lỗi!!! Thêm tài khoản không thành công");
+            }
+        }
+        private void btn_DeleteAccount_Click(object sender, EventArgs e)
+        {
+            if (AccountDAO.Instance.Delete(tb_UserName.Text))
+            {
+                MessageBox.Show("Xóa tài khoản thành công");
+            }
+            else
+            {
+                MessageBox.Show("Lỗi!!! Xóa tài khoản không thành công");
+            }
+        }
+        private void btn_ResetAccount_Click(object sender, EventArgs e)
+        {
+            if (AccountDAO.Instance.ResetPassword(tb_UserName.Text, "1"))
+            {
+                MessageBox.Show("Reset mật khẩu thành công");
+            }
+            else
+            {
+                MessageBox.Show("Lỗi!!! Reset mật khẩu không thành công");
+            }
+        }
+
+        #endregion
 
     }
 }

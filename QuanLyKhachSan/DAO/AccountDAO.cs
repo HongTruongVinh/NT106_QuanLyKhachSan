@@ -52,21 +52,84 @@ namespace QuanLyKhachSan.DAO
             return lst;
         }
 
+
+        #region Phần thêm xóa sửa Account
         public bool Insert(string userName, string displayName, string password)
         {
             try
             {
+                string queryCheck = String.Format("SELECT * FROM dbo.TAIKHOAN WHERE TenDangNhap = '{0}'", userName);
+                DataTable tableResual = DataProvider.Instance.ExecuteQuery(queryCheck);
+                if (tableResual.Rows.Count > 0)
+                {
+                    return false;// Kiểm tra nếu đã có người đặt username này thì không thể tạo thêm tài khoản 
+                }
+
                 string query = string.Format("INSERT INTO dbo.TAIKHOAN ( TenDangNhap , TenHienThi , MatKhau , LoaiTaiKhoan ) VALUES ( '{0}' , '{1}' , '{2}' , 0 )", userName, displayName, password);
 
-                DataProvider.Instance.ExecuteScalar(query);
+                int success = DataProvider.Instance.ExecuteNonQuery(query);
 
-                return true;
+                if (success > 0)
+                {
+                    return true;// Them thanh cong
+                }
+                else
+                {
+                    return false;// Them khong thanh cong
+                }
+
             }
             catch
             {
                 return false;
             }
         }
+
+        public bool Delete(string userName)
+        {
+            try
+            {
+                string query = string.Format("DELETE dbo.TAIKHOAN WHERE TenDangNhap = '{0}' ", userName);
+
+                int success = DataProvider.Instance.ExecuteNonQuery(query);
+
+                if (success > 0)
+                {
+                    return true;//Xoa thanh cong
+                }
+                else
+                {
+                    return false;//Xoa khong thanh cong
+                }
+
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public bool ResetPassword(string userName, string newPassword)
+        {
+            try
+            {
+                string query = string.Format("UPDATE dbo.TAIKHOAN SET MatKhau = {0} WHERE MaPhong = {1}", newPassword, userName);
+
+                if(DataProvider.Instance.ExecuteNonQuery(query) > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        #endregion
 
     }
 }

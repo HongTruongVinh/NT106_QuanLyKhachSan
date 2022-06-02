@@ -18,7 +18,20 @@ CREATE TABLE TAIKHOAN
 	TenDangNhap NVARCHAR(100)  PRIMARY KEY,
 	TenHienThi NVARCHAR(100) NOT NULL,
 	MatKhau NVARCHAR(1000) NOT NULL DEFAULT 0,
-	LoaiTaiKhoan INT DEFAULT 0 -- 0 là nhân viên, 1 là admin 
+	LoaiTaiKhoan INT DEFAULT 0, check(LoaiTaiKhoan = 0 or LoaiTaiKhoan = 1) -- 0 là nhân viên, 1 là admin 
+)
+GO
+
+CREATE TABLE THONGBAO
+(
+	MaThongBao INT IDENTITY PRIMARY KEY,
+	TenDangNhap NVARCHAR(100),
+	CMNDKhhHang  VARCHAR(15),
+	TieuDe NVARCHAR(1000) NOT NULL DEFAULT '',
+	NoiDung NVARCHAR(3000),
+
+
+	FOREIGN KEY (TenDangNhap) REFERENCES dbo.TAIKHOAN(TenDangNhap)
 )
 GO
 
@@ -36,9 +49,10 @@ CREATE TABLE PHONG
 	MaLoaiPhong INT NOT NULL,
 	TenPhong NVARCHAR(100) NOT NULL,
 	GhiChu NVARCHAR(500),
-	TinhTrang INT DEFAULT 0, --- 0 là trống, 1 là có người
-	--Tang INT NULL,
+	TinhTrang INT DEFAULT 0, 
 
+	check(TinhTrang = 0 or TinhTrang = 1), --- 0 là trống, 1 là có người
+	
 	FOREIGN KEY (MaLoaiPhong) REFERENCES dbo.LOAIPHONG(MaLoaiPhong)
 )
 GO

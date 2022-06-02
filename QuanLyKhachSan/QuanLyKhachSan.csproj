@@ -93,6 +93,12 @@
     <Compile Include="fListRentalVoucher.Designer.cs">
       <DependentUpon>fListRentalVoucher.cs</DependentUpon>
     </Compile>
+    <Compile Include="fNotice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fNotice.Designer.cs">
+      <DependentUpon>fNotice.cs</DependentUpon>
+    </Compile>
     <Compile Include="fRentalVoucher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,6 +140,9 @@
     <EmbeddedResource Include="fListRentalVoucher.resx">
       <DependentUpon>fListRentalVoucher.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fNotice.resx">
+      <DependentUpon>fNotice.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fRentalVoucher.resx">
       <DependentUpon>fRentalVoucher.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,7 +165,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="Database\Data.sql.ssmssln" />
     <None Include="Properties\DataSources\fBillMgmt.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -172,7 +180,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database\Data.sql" />
     <Content Include="Image\exit-to-app_119178.png" />
     <Content Include="Image\grade_119072.png" />
     <Content Include="Image\ic_Star.png" />
@@ -189,6 +196,8 @@
     <Content Include="Image\MainWindow\shield-checkmark-outline.png" />
     <Content Include="Image\person_118819.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Database\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

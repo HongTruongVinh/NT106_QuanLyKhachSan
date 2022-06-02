@@ -56,3 +56,23 @@ C:\Users\Vasilias Da Nykta\Desktop\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanL
 C:\Users\Vasilias Da Nykta\Desktop\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CoreCompileInputs.cache
 C:\Users\Vasilias Da Nykta\Desktop\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
 C:\Users\Vasilias Da Nykta\Desktop\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
+C:\Users\HONG VINH\Source\Repos\NT106_QuanLyKhachSan2\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe.config
+C:\Users\HONG VINH\Source\Repos\NT106_QuanLyKhachSan2\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe
+C:\Users\HONG VINH\Source\Repos\NT106_QuanLyKhachSan2\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.pdb
+C:\Users\HONG VINH\Source\Repos\NT106_QuanLyKhachSan2\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.AssemblyReference.cache
+C:\Users\HONG VINH\Source\Repos\NT106_QuanLyKhachSan2\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.SuggestedBindingRedirects.cache
+C:\Users\HONG VINH\Source\Repos\NT106_QuanLyKhachSan2\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fBillMgmt.resources
+C:\Users\HONG VINH\Source\Repos\NT106_QuanLyKhachSan2\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fAdmin.resources
+C:\Users\HONG VINH\Source\Repos\NT106_QuanLyKhachSan2\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fGuestMgmt.resources
+C:\Users\HONG VINH\Source\Repos\NT106_QuanLyKhachSan2\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fInformation.resources
+C:\Users\HONG VINH\Source\Repos\NT106_QuanLyKhachSan2\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fListRentalVoucher.resources
+C:\Users\HONG VINH\Source\Repos\NT106_QuanLyKhachSan2\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fRentalVoucher.resources
+C:\Users\HONG VINH\Source\Repos\NT106_QuanLyKhachSan2\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fLogin.resources
+C:\Users\HONG VINH\Source\Repos\NT106_QuanLyKhachSan2\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fLoadRoom.resources
+C:\Users\HONG VINH\Source\Repos\NT106_QuanLyKhachSan2\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.MainWindow.resources
+C:\Users\HONG VINH\Source\Repos\NT106_QuanLyKhachSan2\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Properties.Resources.resources
+C:\Users\HONG VINH\Source\Repos\NT106_QuanLyKhachSan2\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.GenerateResource.cache
+C:\Users\HONG VINH\Source\Repos\NT106_QuanLyKhachSan2\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CoreCompileInputs.cache
+C:\Users\HONG VINH\Source\Repos\NT106_QuanLyKhachSan2\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
+C:\Users\HONG VINH\Source\Repos\NT106_QuanLyKhachSan2\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
+C:\Users\HONG VINH\Source\Repos\NT106_QuanLyKhachSan2\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fNotice.resources

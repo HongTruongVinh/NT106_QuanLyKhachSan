@@ -115,7 +115,7 @@ namespace QuanLyKhachSan
         private void btn_Save_Click(object sender, EventArgs e)
         {
             //Nếu phòng đang có người thì không cho tạo phiếu thuê phòng mới
-            if((this.Tag as Room).Status == "1")
+            if(RoomDAO.Instance.IsAvailable((this.Tag as Room).ID) == false)
             {
                 MessageBox.Show("Phòng này đã có người");
                 return;
