@@ -15,6 +15,23 @@ namespace QuanLyKhachSan
         public fInformation()
         {
             InitializeComponent();
+
+            Load();
+        }
+
+        void Load()
+        {
+            lb_Save.Enabled = false;
+        }
+
+        private void btn_Edit_Click(object sender, EventArgs e)
+        {
+            lb_Save.Enabled = true;
+        }
+
+        private void btn_Cancel_Click(object sender, EventArgs e)
+        {
+            lb_Save.Enabled = false;
         }
     }
 }

@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3DE79A48-48FC-47AB-BCEB-57EA499CD119}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QuanLyKhachSan_CLient</RootNamespace>
+    <AssemblyName>QuanLyKhachSan-CLient</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\BillDAO.cs" />
+    <Compile Include="DAO\BillDetailsDAO.cs" />
+    <Compile Include="DAO\ClientDAO.cs" />
+    <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\RegulationDAO.cs" />
+    <Compile Include="DAO\RentalVoucherDAO.cs" />
+    <Compile Include="DAO\RoomDAO.cs" />
+    <Compile Include="DAO\TypeRoomDAO.cs" />
+    <Compile Include="DTO\Account.cs" />
+    <Compile Include="DTO\Bill.cs" />
+    <Compile Include="DTO\BillDetails.cs" />
+    <Compile Include="DTO\Client.cs" />
+    <Compile Include="DTO\InforRentalVoucher.cs" />
+    <Compile Include="DTO\RentalVoucher.cs" />
+    <Compile Include="DTO\Room.cs" />
+    <Compile Include="DTO\TypeRoom.cs" />
+    <Compile Include="fAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fAdmin.Designer.cs">
+      <DependentUpon>fAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fBillMgmt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fBillMgmt.Designer.cs">
+      <DependentUpon>fBillMgmt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fGuestMgmt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fGuestMgmt.Designer.cs">
+      <DependentUpon>fGuestMgmt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fInformation.Designer.cs">
+      <DependentUpon>fInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fListRentalVoucher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fListRentalVoucher.Designer.cs">
+      <DependentUpon>fListRentalVoucher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fLoadRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fLoadRoom.Designer.cs">
+      <DependentUpon>fLoadRoom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fLogin.Designer.cs">
+      <DependentUpon>fLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fNotice.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fNotice.Designer.cs">
+      <DependentUpon>fNotice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fRentalVoucher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fRentalVoucher.Designer.cs">
+      <DependentUpon>fRentalVoucher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="fAdmin.resx">
+      <DependentUpon>fAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fBillMgmt.resx">
+      <DependentUpon>fBillMgmt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fGuestMgmt.resx">
+      <DependentUpon>fGuestMgmt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fInformation.resx">
+      <DependentUpon>fInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fListRentalVoucher.resx">
+      <DependentUpon>fListRentalVoucher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fLoadRoom.resx">
+      <DependentUpon>fLoadRoom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fLogin.resx">
+      <DependentUpon>fLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fNotice.resx">
+      <DependentUpon>fNotice.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fRentalVoucher.resx">
+      <DependentUpon>fRentalVoucher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Database\.vs\Data.sql\v15\.ssms_suo" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferences.cache" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="obj\Debug\QuanLyKhachSan-CLient.csproj.AssemblyReference.cache" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database\QanLyKhachSan-Command.sql" />
+    <Content Include="Database\QanLyKhachSan.sql" />
+    <Content Include="Database\Ver1\QanLyKS -command.sql" />
+    <Content Include="Database\Ver1\QanLyKS.sql" />
+    <Content Include="Database\Ver2\QanLyKhachSan-Command.sql" />
+    <Content Include="Database\Ver2\QanLyKhachSan.sql" />
+    <Content Include="Image\exit-to-app_119178.png" />
+    <Content Include="Image\grade_119072.png" />
+    <Content Include="Image\ic_Star.png" />
+    <Content Include="Image\MainWindow\close.png" />
+    <Content Include="Image\MainWindow\help-circle-outline.png" />
+    <Content Include="Image\MainWindow\hotel-booking-gray.png" />
+    <Content Include="Image\MainWindow\hotel-customer-gray.png" />
+    <Content Include="Image\MainWindow\hotel-receipt-gray.png" />
+    <Content Include="Image\MainWindow\hotel-room-gray.png" />
+    <Content Include="Image\MainWindow\information-circle-outline.png" />
+    <Content Include="Image\MainWindow\log-out-outline 1.png" />
+    <Content Include="Image\MainWindow\menu-outline.png" />
+    <Content Include="Image\MainWindow\person-circle-outline.png" />
+    <Content Include="Image\MainWindow\shield-checkmark-outline.png" />
+    <Content Include="Image\person_118819.png" />
+    <None Include="Resources\shield-checkmark-outline.png" />
+    <None Include="Resources\person-circle-outline.png" />
+    <None Include="Resources\menu-outline.png" />
+    <None Include="Resources\log-out-outline 1.png" />
+    <None Include="Resources\information-circle-outline.png" />
+    <None Include="Resources\hotel-room-gray.png" />
+    <None Include="Resources\hotel-receipt-gray.png" />
+    <None Include="Resources\hotel-customer-gray.png" />
+    <None Include="Resources\hotel-booking-gray1.png" />
+    <None Include="Resources\hotel-booking-gray.png" />
+    <None Include="Resources\help-circle-outline.png" />
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+    <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
