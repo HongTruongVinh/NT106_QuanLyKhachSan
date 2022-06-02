@@ -221,7 +221,7 @@ namespace QuanLyKhachSan
             this.btn_Admin.Margin = new System.Windows.Forms.Padding(16, 8, 8, 8);
             this.btn_Admin.Name = "btn_Admin";
             this.btn_Admin.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btn_Admin.Size = new System.Drawing.Size(153, 40);
+            this.btn_Admin.Size = new System.Drawing.Size(160, 40);
             this.btn_Admin.TabIndex = 11;
             this.btn_Admin.Text = "    Quản trị viên";
             this.btn_Admin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -262,7 +262,7 @@ namespace QuanLyKhachSan
             this.btn_AccountInfo.Margin = new System.Windows.Forms.Padding(16, 8, 8, 8);
             this.btn_AccountInfo.Name = "btn_AccountInfo";
             this.btn_AccountInfo.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btn_AccountInfo.Size = new System.Drawing.Size(153, 40);
+            this.btn_AccountInfo.Size = new System.Drawing.Size(160, 40);
             this.btn_AccountInfo.TabIndex = 15;
             this.btn_AccountInfo.Text = "    Tài khoản";
             this.btn_AccountInfo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -285,7 +285,7 @@ namespace QuanLyKhachSan
             this.btn_SignOut.Margin = new System.Windows.Forms.Padding(16, 8, 8, 16);
             this.btn_SignOut.Name = "btn_SignOut";
             this.btn_SignOut.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btn_SignOut.Size = new System.Drawing.Size(153, 40);
+            this.btn_SignOut.Size = new System.Drawing.Size(160, 40);
             this.btn_SignOut.TabIndex = 12;
             this.btn_SignOut.Text = "    Đăng xuất";
             this.btn_SignOut.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -308,7 +308,7 @@ namespace QuanLyKhachSan
             this.btn_About.Margin = new System.Windows.Forms.Padding(16, 8, 8, 8);
             this.btn_About.Name = "btn_About";
             this.btn_About.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btn_About.Size = new System.Drawing.Size(153, 40);
+            this.btn_About.Size = new System.Drawing.Size(160, 40);
             this.btn_About.TabIndex = 14;
             this.btn_About.Text = "    Giới thiệu";
             this.btn_About.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -330,7 +330,7 @@ namespace QuanLyKhachSan
             this.btn_Help.Margin = new System.Windows.Forms.Padding(16, 8, 8, 8);
             this.btn_Help.Name = "btn_Help";
             this.btn_Help.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btn_Help.Size = new System.Drawing.Size(153, 40);
+            this.btn_Help.Size = new System.Drawing.Size(160, 40);
             this.btn_Help.TabIndex = 13;
             this.btn_Help.Text = "    Trợ giúp";
             this.btn_Help.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

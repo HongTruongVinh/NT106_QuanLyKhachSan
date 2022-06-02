@@ -395,7 +395,7 @@
             this.pn_TTKH.Controls.Add(this.btn_Xoa);
             this.pn_TTKH.Controls.Add(this.btn_Them);
             this.pn_TTKH.Location = new System.Drawing.Point(16, 15);
-            this.pn_TTKH.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.pn_TTKH.Margin = new System.Windows.Forms.Padding(5);
             this.pn_TTKH.Name = "pn_TTKH";
             this.pn_TTKH.Size = new System.Drawing.Size(519, 499);
             this.pn_TTKH.TabIndex = 22;
@@ -408,7 +408,7 @@
             this.pn_TimKiem.Controls.Add(this.pn_NhapTuKhoa);
             this.pn_TimKiem.Controls.Add(this.btn_TiemKiem);
             this.pn_TimKiem.Location = new System.Drawing.Point(557, 16);
-            this.pn_TimKiem.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.pn_TimKiem.Margin = new System.Windows.Forms.Padding(5);
             this.pn_TimKiem.Name = "pn_TimKiem";
             this.pn_TimKiem.Size = new System.Drawing.Size(730, 99);
             this.pn_TimKiem.TabIndex = 23;
@@ -443,7 +443,7 @@
             // 
             this.dgv_TTKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_TTKH.Location = new System.Drawing.Point(557, 137);
-            this.dgv_TTKH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgv_TTKH.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_TTKH.Name = "dgv_TTKH";
             this.dgv_TTKH.RowHeadersWidth = 51;
             this.dgv_TTKH.Size = new System.Drawing.Size(731, 378);

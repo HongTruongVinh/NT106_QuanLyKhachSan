@@ -16,16 +16,12 @@ namespace QuanLyKhachSan
         public fLogin()
         {
             InitializeComponent();
-
-            tb_UserName.Text = "admin";
-            tb_PassWord.Text = "0";
-
         }
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
-            string username = tb_UserName.Text;
-            string password = tb_PassWord.Text;
+            string username = tb_Username.Text;
+            string password = tb_Password.Text;
 
             if (AccountDAO.Instance.Login(username, password))
             {
@@ -40,12 +36,7 @@ namespace QuanLyKhachSan
             {
                 MessageBox.Show("Sai tài khoản hoặc mật khẩu");
             }
-
-        }
-
-        private void btn_Out_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
+            this.Close();
         }
     }
 }
