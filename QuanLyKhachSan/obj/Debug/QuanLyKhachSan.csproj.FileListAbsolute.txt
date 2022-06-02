@@ -56,3 +56,4 @@ C:\Users\Vasilias Da Nykta\Desktop\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanL
 C:\Users\Vasilias Da Nykta\Desktop\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CoreCompileInputs.cache
 C:\Users\Vasilias Da Nykta\Desktop\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
 C:\Users\Vasilias Da Nykta\Desktop\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
+C:\Users\Vasilias Da Nykta\Desktop\QuanLyKhachSan\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Form1.resources
