@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using QuanLyKhachSan_CLient.Network;
 
 namespace QuanLyKhachSan_CLient.Network
 {
@@ -34,5 +35,40 @@ namespace QuanLyKhachSan_CLient.Network
 
         public string Password { get => password; set => password = value; }
         public string DisplayName { get => displayName; set => displayName = value; }
+
+
+        public string SignUp(string name, string numberphone, string idPerson, string address)
+        {
+            string stringReturn = "";
+
+            byte[] bytes = TCPClient.Instance.GetDataFromCommand_SignUp(string.Format("SignUp {0} {1} {2} {3}", name, numberphone, idPerson, address));
+
+            string message = Encoding.UTF8.GetString(bytes);
+
+            string[] strings = message.Split(' ', '\0');
+
+            if (strings[0] == "Successfully")
+            {
+                stringReturn = "Đăng kí tài khoản khách hàng thành công";
+                return stringReturn;
+            }
+
+            if (strings[0] == "Error")
+            {
+                stringReturn = "Lỗi!\n";
+
+                if (strings[1] == "Exist")
+                {
+                    stringReturn += "SDT này đã có người đăng kí!\n";
+                }
+
+                if (strings[2] == "Exist")
+                {
+                    stringReturn += "CMND này đã có người đăng kí!\n";
+                }
+            }
+
+            return stringReturn;
+        }
     }
 }

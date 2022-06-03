@@ -142,5 +142,60 @@ namespace QuanLyKhachSan.DAO
         }
         #endregion
 
+        public bool IsExistNumberPhone(string numberphone)
+        {
+            string queryCheck = String.Format("SELECT * FROM dbo.KHACHHANG WHERE SDT = '{0}'", numberphone);
+            DataTable tableResual = DataProvider.Instance.ExecuteQuery(queryCheck);
+            if (tableResual.Rows.Count > 0)
+            {
+                return true;// Đã có người sử dụng SDT này 
+            }
+
+
+            queryCheck = String.Format("SELECT * FROM dbo.TAIKHOAN WHERE TenDangNhap = '{0}'", numberphone);
+            tableResual = DataProvider.Instance.ExecuteQuery(queryCheck);
+            if (tableResual.Rows.Count > 0)
+            {
+                return true;// Đã có người sử dụng SDT này để làm tài khoản đăng nhập
+            }
+
+            return false;
+        }
+
+        public bool IsExistIDPerson(string iDPerson)
+        {
+            string queryCheck = String.Format("SELECT * FROM dbo.KHACHHANG WHERE CMND = '{0}'", iDPerson);
+            DataTable tableResual = DataProvider.Instance.ExecuteQuery(queryCheck);
+            if (tableResual.Rows.Count > 0)
+            {
+                return true;// Đã có người sử dụng SDT này 
+            }
+
+            return false;
+        }
+
+        public bool InsertAccountCLient(string userName, string displayName, string password)
+        {
+            try
+            {
+                string query = string.Format("INSERT INTO dbo.TAIKHOAN ( TenDangNhap , TenHienThi , MatKhau , LoaiTaiKhoan ) VALUES ( '{0}' , '{1}' , '{2}' , 3 )", userName, displayName, password);
+
+                int success = DataProvider.Instance.ExecuteNonQuery(query);
+
+                if (success > 0)
+                {
+                    return true;// Them thanh cong
+                }
+                else
+                {
+                    return false;// Them khong thanh cong
+                }
+
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

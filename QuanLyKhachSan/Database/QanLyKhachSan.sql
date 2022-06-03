@@ -10,23 +10,22 @@ GO
 
 ---------------------------------------------------------------------------
 -- Phần tạo bảng
-
-
+--SELECT * FROM KHACHHANG
+--SELECT * FROM TAIKHOAN
 
 CREATE TABLE TAIKHOAN
 (
 	TenDangNhap NVARCHAR(100)  PRIMARY KEY,
 	TenHienThi NVARCHAR(100) NOT NULL,
 	MatKhau NVARCHAR(1000) NOT NULL DEFAULT 0,
-	LoaiTaiKhoan INT DEFAULT 0, check(LoaiTaiKhoan = 0 or LoaiTaiKhoan = 1) -- 0 là nhân viên, 1 là admin 
+	LoaiTaiKhoan INT DEFAULT 0, check(LoaiTaiKhoan = 0 or LoaiTaiKhoan = 1 or LoaiTaiKhoan = 3) -- 0 là loại TK của nhân viên, 1 là loại TK của admin , 3 là loại TK của khách hàng
 )
 GO
---SELECT * FROM TAIKHOAN
+
 CREATE TABLE THONGBAO
 (
 	MaThongBao INT IDENTITY PRIMARY KEY,
 	TenDangNhap NVARCHAR(100),
-	CMNDKhhHang  VARCHAR(15),
 	TieuDe NVARCHAR(1000) NOT NULL DEFAULT '',
 	NoiDung NVARCHAR(3000),
 
@@ -42,7 +41,7 @@ CREATE TABLE LOAIPHONG
 	DonGia	INT
 )
 GO
-SELECT Count(MaPhong) FROM dbo.PHONG WHERE TinhTrang = 0 AND MaPhong = 4
+
 CREATE TABLE PHONG
 (
 	MaPhong INT IDENTITY PRIMARY KEY,
@@ -70,8 +69,10 @@ CREATE TABLE KHACHHANG
 	MaKH INT IDENTITY PRIMARY KEY,
 	TenKhachHang NVARCHAR(50) NOT NULL,
 	CMND VARCHAR(15) NOT NULL,
-	SDT VARCHAR(15),
+	SDT VARCHAR(15)  NOT NULL,
 	DiaChi NVARCHAR(500)
+
+	--CONSTRAINT PK_Person PRIMARY KEY (MaKH, CMND, SDT)
 )
 GO
 
@@ -90,24 +91,12 @@ CREATE TABLE PHIEUTHUEPHONG
 	FOREIGN KEY (MaKH) REFERENCES dbo.KHACHHANG(MaKH)
 )
 GO
+--ALTER TABLE dbo.KHACHHANG ADD CONSTRAINT PK_Person PRIMARY KEY (CMND, SDT)
+--GO
 
 CREATE TABLE HOADON
 (
-	MaHD INT IDENTITY  PRIMARY KEY,
-	MaKH INT NOT NULL,
-	TriGia INT NOT NULL DEFAULT 0,
-	
-	--MaNhanVien INT
-
-	FOREIGN KEY (MaKH) REFERENCES dbo.KHACHHANG(MaKH)
-)
-GO
-
-
-CREATE TABLE CHITIETHOADON
-(
-	MaCTHD INT IDENTITY PRIMARY KEY,
-	MaHD INT NOT NULL ,
+	MaHD INT IDENTITY PRIMARY KEY,
 	MaPhong INT NOT NULL,
 	SoNgayThue Int NOT NULL,
 	ThanhTien Int NOT NULL DEFAULT 0,
@@ -115,7 +104,6 @@ CREATE TABLE CHITIETHOADON
 	DonGia INT NOT NULL DEFAULT 0,
 	TrangThai INT NOT NULL DEFAULT 0 --- 0 là chưa thanh toán, 1 là đã thanh toán,
 
-	FOREIGN KEY (MaHD) REFERENCES dbo.HOADON(MaHD),
 	FOREIGN KEY (MaPhong) REFERENCES dbo.PHONG(MaPhong)
 )
 GO
@@ -125,8 +113,8 @@ CREATE TABLE THAMSO
 	ID INT DEFAULT 1,
 	KhachToiDa Int,
 	DonGiaPhongCho Int,
-	PhuThuTuKhach FLOAT
-
+	PhuThuTuKhach FLOAT,
+	check(ID = 1)
 )
 GO
 
@@ -190,7 +178,7 @@ BEGIN
 END
 GO
 
-
+--ALTER TABLE dbo.KHACHHANG ADD CONSTRAINT PK_Person PRIMARY KEY (MaKH,CMND, SDT)
 
 
 
@@ -224,7 +212,7 @@ VALUES       	( N'Vinh',
 			  0
 			)
 GO
---USE QuanLyKS1
+
 INSERT INTO dbo.LOAIPHONG
 			(	
 				TenLoaiPhong,
@@ -329,27 +317,3 @@ USP_InsertClient
 @CMND='123',
 @SDT='123',
 @DiaChi=[Việt Nam]
-
-INSERT INTO dbo.HOADON
-			(	MaKH,
-				TriGia
-			)
-VALUES		(	1,
-				450000
-			)
-
-INSERT INTO dbo.CHITIETHOADON
-			(	MaHD,
-				MaPhong,
-				SoNgayThue,
-				ThanhTien,
-				NgayThanhToan,
-				DonGia
-			)
-VALUES		(	1,
-				1,
-				5,
-				150000,
-				GETDATE(),
-				150000
-			)

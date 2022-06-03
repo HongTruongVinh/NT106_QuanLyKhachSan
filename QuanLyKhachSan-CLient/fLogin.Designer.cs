@@ -36,8 +36,9 @@ namespace QuanLyKhachSan_CLient
             this.tb_PassWord = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btn_Out = new System.Windows.Forms.Button();
             this.btn_Login = new System.Windows.Forms.Button();
+            this.btn_SignUp = new System.Windows.Forms.Button();
+            this.btn_Out = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -100,6 +101,7 @@ namespace QuanLyKhachSan_CLient
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btn_SignUp);
             this.panel3.Controls.Add(this.btn_Out);
             this.panel3.Controls.Add(this.btn_Login);
             this.panel3.Location = new System.Drawing.Point(12, 162);
@@ -107,21 +109,10 @@ namespace QuanLyKhachSan_CLient
             this.panel3.Size = new System.Drawing.Size(523, 57);
             this.panel3.TabIndex = 2;
             // 
-            // btn_Out
-            // 
-            this.btn_Out.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Out.Location = new System.Drawing.Point(390, 0);
-            this.btn_Out.Name = "btn_Out";
-            this.btn_Out.Size = new System.Drawing.Size(130, 42);
-            this.btn_Out.TabIndex = 4;
-            this.btn_Out.Text = "Thoát";
-            this.btn_Out.UseVisualStyleBackColor = true;
-            this.btn_Out.Click += new System.EventHandler(this.btn_Out_Click);
-            // 
             // btn_Login
             // 
             this.btn_Login.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Login.Location = new System.Drawing.Point(241, 0);
+            this.btn_Login.Location = new System.Drawing.Point(190, 3);
             this.btn_Login.Name = "btn_Login";
             this.btn_Login.Size = new System.Drawing.Size(130, 42);
             this.btn_Login.TabIndex = 3;
@@ -129,11 +120,33 @@ namespace QuanLyKhachSan_CLient
             this.btn_Login.UseVisualStyleBackColor = true;
             this.btn_Login.Click += new System.EventHandler(this.btn_Login_Click);
             // 
+            // btn_SignUp
+            // 
+            this.btn_SignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_SignUp.Location = new System.Drawing.Point(20, 3);
+            this.btn_SignUp.Name = "btn_SignUp";
+            this.btn_SignUp.Size = new System.Drawing.Size(120, 42);
+            this.btn_SignUp.TabIndex = 5;
+            this.btn_SignUp.Text = "Đăng kí";
+            this.btn_SignUp.UseVisualStyleBackColor = true;
+            this.btn_SignUp.Click += new System.EventHandler(this.btn_SignUp_Click);
+            // 
+            // btn_Out
+            // 
+            this.btn_Out.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Out.Location = new System.Drawing.Point(376, 3);
+            this.btn_Out.Name = "btn_Out";
+            this.btn_Out.Size = new System.Drawing.Size(130, 42);
+            this.btn_Out.TabIndex = 4;
+            this.btn_Out.Text = "Thoát";
+            this.btn_Out.UseVisualStyleBackColor = true;
+            this.btn_Out.Click += new System.EventHandler(this.btn_Out_Click);
+            // 
             // fLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(548, 226);
+            this.ClientSize = new System.Drawing.Size(541, 226);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -158,7 +171,8 @@ namespace QuanLyKhachSan_CLient
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tb_UserName;
         private System.Windows.Forms.TextBox tb_PassWord;
-        private System.Windows.Forms.Button btn_Out;
         private System.Windows.Forms.Button btn_Login;
+        private System.Windows.Forms.Button btn_SignUp;
+        private System.Windows.Forms.Button btn_Out;
     }
 }

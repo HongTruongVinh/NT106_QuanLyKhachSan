@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyKhachSan_CLient.DAO;
 using QuanLyKhachSan_CLient.DTO;
+using QuanLyKhachSan_CLient.Network;
 
 namespace QuanLyKhachSan_CLient
 {
@@ -38,6 +39,8 @@ namespace QuanLyKhachSan_CLient
         public void LoadRoomList()
         {
             flp_LoadRooms.Controls.Clear();
+
+            //List<Room> roomList = (List<Room>)FormatData.Instance.DeserializeData(TCPClient.Instance.GetDataFromCommand("GetListRoom"));
 
             List<Room> roomList = RoomDAO.Instance.GetRoomList(); 
 
@@ -91,10 +94,22 @@ namespace QuanLyKhachSan_CLient
         #region Event
         private void Room_Click(object sender, EventArgs e)
         {
-            Button btn = (sender as Button);
-            Room thisRoom = (Room)btn.Tag;
-            fRentalVoucher fInforRoom = new fRentalVoucher(thisRoom, this);
-            fInforRoom.ShowDialog();
+            if (User.Instance.TypeUser == "Admin" || User.Instance.TypeUser == "Employee")
+            {
+                Button btn = (sender as Button);
+                Room thisRoom = (Room)btn.Tag;
+                fRentalVoucher fInforRoom = new fRentalVoucher(thisRoom, this);
+                fInforRoom.ShowDialog();
+            }
+            else
+            {
+                Button btn = (sender as Button);
+                Room thisRoom = (Room)btn.Tag;
+                if (thisRoom.Status== "có người")
+                {
+                    MessageBox.Show("Phòng này đã có người! Xin vui lòng đặt phòng khác.");
+                }
+            }
         }
 
         #endregion

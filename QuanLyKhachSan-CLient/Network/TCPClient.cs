@@ -183,5 +183,27 @@ namespace QuanLyKhachSan_CLient.Network
             tcpCLient.Close();
             clientThread.Abort();
         }
+
+        public byte[] GetDataFromCommand_SignUp(string command)
+        {
+            byte[] dataGet = new byte[1024 * 5000];
+
+            tcpCLient = new TcpClient();
+            IPAddress serverIP = IPAddress.Parse("127.0.0.1");
+            IPEndPoint iPEndPoint = new IPEndPoint(serverIP, SERVERPORT);
+
+            tcpCLient.Connect(iPEndPoint);// Mở kết nối tới server 
+            socketClient = tcpCLient.Client;// Lấy cổng kết nối để dùng 
+
+            byte[] dataSend = Encoding.ASCII.GetBytes(command);
+            socketClient.Send(dataSend);//Gui
+
+            socketClient.Receive(dataGet);//Nhan
+
+            socketClient.Close();
+            tcpCLient.Close();
+
+            return dataGet;
+        }
     }
 }

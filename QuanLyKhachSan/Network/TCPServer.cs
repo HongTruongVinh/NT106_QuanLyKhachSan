@@ -2,6 +2,7 @@
 using QuanLyKhachSan.DTO;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -57,10 +58,54 @@ namespace QuanLyKhachSan.Network
                     Socket _socketClient = _tcpClient.Client;
 
                     byte[] data = new byte[1024 * 500];
-                    _socketClient.Receive(data);
-                    string _login = Encoding.ASCII.GetString(data);
 
-                    string[] usernameAndpassword = _login.Split(' ', '\0');
+                    _socketClient.Receive(data);
+
+                    string messageFromTCPClient = Encoding.ASCII.GetString(data);
+
+                    if (messageFromTCPClient.Contains("SignUp"))
+                    {
+                        string[] strings = messageFromTCPClient.Split(' ', '\0');//SignUp {0} {1} {2} {3}", name, numberphone, idPerson, address
+
+                        string responseMessage = "Successfully";
+
+                        if (AccountDAO.Instance.IsExistIDPerson(strings[3]) || AccountDAO.Instance.IsExistNumberPhone(strings[2]) || AccountDAO.Instance.InsertAccountCLient(strings[2], strings[1], "0") == false)
+                        {
+                            responseMessage = "Error";
+
+                            if (AccountDAO.Instance.IsExistNumberPhone(strings[2]))
+                            {
+                                responseMessage += " Exist";
+                            }
+                            else
+                            {
+                                responseMessage += " Ok";
+                            }
+
+                            if (AccountDAO.Instance.IsExistIDPerson(strings[3]))
+                            {
+                                responseMessage += " Exist";
+                            }
+                            else
+                            {
+                                responseMessage += " Ok";
+                            }
+                        }
+                        else
+                        {
+                            responseMessage += " OK OK";
+
+                            AccountDAO.Instance.Insert(strings[2], strings[1], "3");
+                            ClientDAO.Instance.InsertLient(strings[1], Convert.ToInt32(strings[3]), strings[2], strings[4]);
+                        }
+
+
+                        byte[] signUpSuccessfully = Encoding.UTF8.GetBytes(responseMessage);
+                        _socketClient.Send(signUpSuccessfully);
+                        continue;
+                    }
+
+                    string[] usernameAndpassword = messageFromTCPClient.Split(' ', '\0');
 
                     if (AccountDAO.Instance.Login(usernameAndpassword[0], usernameAndpassword[1]))// đăng nhập thành công 
                     {
@@ -119,17 +164,19 @@ namespace QuanLyKhachSan.Network
                     newSocket.Receive(data);
 
                     string message = Encoding.UTF8.GetString(data);
+                    string xxx = Encoding.UTF8.GetString(data);
                     string[] msg = message.Split('\0');
 
 
                     switch (msg[0])
                     {
-                        case "Login":
-                            byte[] dataHello1 = new byte[1024 * 5000];
-                            dataHello1 = Encoding.UTF8.GetBytes("Hello " + username);
+                        case "GetListRoom":
+                            byte[] listRoom = new byte[1024 * 5000];
 
+                            DataTable roomList = RoomDAO.Instance.ClientGetRoomList();
+                            listRoom = FormatData.Instance.SerializeData(roomList);
 
-                            newSocket.Send(dataHello1);
+                            newSocket.Send(listRoom);
 
                             newSocket.Close();
                             tcpClient1.Close();
@@ -150,7 +197,7 @@ namespace QuanLyKhachSan.Network
 
                         case "GetDataTable":
 
-                            newSocket.Send(FormatData.Instance.SerializeData(FormatData.Instance.getdata()));
+                            //newSocket.Send(FormatData.Instance.SerializeData(FormatData.Instance.getdata()));
 
                             newSocket.Close();
                             tcpClient1.Close();

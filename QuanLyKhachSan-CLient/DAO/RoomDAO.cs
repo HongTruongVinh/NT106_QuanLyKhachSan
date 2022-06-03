@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using QuanLyKhachSan_CLient.DTO;
+using QuanLyKhachSan_CLient.Network;
 
 namespace QuanLyKhachSan_CLient.DAO
 {
@@ -31,7 +32,7 @@ namespace QuanLyKhachSan_CLient.DAO
         {
             List<DTO.Room> roomList = new List<DTO.Room>();
 
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT MaPhong as id, TenPhong as name, TinhTrang as status, TenLoaiPhong as type, DonGia as price, GhiChu note FROM dbo.PHONG p, dbo.LOAIPHONG lp WHERE p.MaLoaiPhong = lp.MaLoaiPhong");
+            DataTable data = (DataTable)FormatData.Instance.DeserializeData(TCPClient.Instance.GetDataFromCommand("GetListRoom"));
 
             foreach (DataRow row in data.Rows)
             {
@@ -48,7 +49,7 @@ namespace QuanLyKhachSan_CLient.DAO
         /// <returns></returns>
         public DataTable GetRoomList(string TiengViet)
         {
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT MaPhong as [Mã phòng], TenPhong as [Tên phòng], TinhTrang as [Tình trạng], TenLoaiPhong as [Loại phòng], p.MaLoaiPhong [Mã loại phòng], GhiChu as [Ghi chú] FROM dbo.PHONG p, dbo.LOAIPHONG lp WHERE p.MaLoaiPhong = lp.MaLoaiPhong");
+            DataTable data = (DataTable)FormatData.Instance.DeserializeData(TCPClient.Instance.GetDataFromCommand("GetListRoom"));
 
             return data;
         }

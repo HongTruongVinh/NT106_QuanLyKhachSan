@@ -18,7 +18,7 @@ namespace QuanLyKhachSan_CLient
         {
             InitializeComponent();
 
-            tb_UserName.Text = "hai";
+            tb_UserName.Text = "Vinh";
             tb_PassWord.Text = "1";
         }
 
@@ -46,6 +46,12 @@ namespace QuanLyKhachSan_CLient
         private void btn_Out_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btn_SignUp_Click(object sender, EventArgs e)
+        {
+            fClientSignUp signUp = new fClientSignUp();
+            signUp.ShowDialog();
         }
     }
 }

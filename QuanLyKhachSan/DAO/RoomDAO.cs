@@ -154,5 +154,16 @@ namespace QuanLyKhachSan.DAO
                 return false;
             }
         }
+
+        /// <summary>
+        /// Trả về DataTable cho Client yêu cầu
+        /// </summary>
+        /// <returns></returns>
+        public DataTable ClientGetRoomList()
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT MaPhong as id, TenPhong as name, TinhTrang as status, TenLoaiPhong as type, DonGia as price, GhiChu note FROM dbo.PHONG p, dbo.LOAIPHONG lp WHERE p.MaLoaiPhong = lp.MaLoaiPhong");
+
+            return data;
+        }
     }
 }

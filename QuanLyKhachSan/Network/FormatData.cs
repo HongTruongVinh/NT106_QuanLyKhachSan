@@ -60,32 +60,5 @@ namespace QuanLyKhachSan.Network
                 return null;
             }
         }
-
-
-
-        /*Ở đây tôi tạo 1 bảng dữ liệu thử.
- Bạn có thể kết nối csdl và load dữ liệu lên*/
-        public DataTable getdata()
-        {
-            DataTable dt = new DataTable();
-            DataRow dr;
-
-            dt.Columns.Add(new DataColumn("IntegerValue", typeof(Int32)));
-            dt.Columns.Add(new DataColumn("StringValue", typeof(string)));
-            dt.Columns.Add(new DataColumn("DateTimeValue", typeof(DateTime)));
-            dt.Columns.Add(new DataColumn("BooleanValue", typeof(bool)));
-
-            for (int i = 1; i <= 1000; i++)
-            {
-                dr = dt.NewRow();
-                dr[0] = i;
-                dr[1] = "Item " + i.ToString();
-                dr[2] = DateTime.Now;
-                dr[3] = (i % 2 != 0) ? true : false;
-
-                dt.Rows.Add(dr);
-            }
-            return dt;
-        }
     }
 }
