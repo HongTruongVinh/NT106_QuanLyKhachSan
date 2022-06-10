@@ -51,6 +51,7 @@
     <Compile Include="DAO\BillDetailsDAO.cs" />
     <Compile Include="DAO\ClientDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\NoticeDAO.cs" />
     <Compile Include="DAO\RegulationDAO.cs" />
     <Compile Include="DAO\RentalVoucherDAO.cs" />
     <Compile Include="DAO\RoomDAO.cs" />

@@ -14,6 +14,15 @@ namespace QuanLyKhachSan
 {
     public partial class fNotice : Form
     {
+        BindingSource bindingNotice = new BindingSource();
+
+        void AddNoticeBinding()
+        {
+            tb_Subject.DataBindings.Add(new Binding("Text", dgv_ListNotice.DataSource, "TieuDe", true, DataSourceUpdateMode.Never));
+            rtb_Content.DataBindings.Add(new Binding("Text", dgv_ListNotice.DataSource, "NoiDung", true, DataSourceUpdateMode.Never));
+            lb_Username.DataBindings.Add(new Binding("Text", dgv_ListNotice.DataSource, "TenDangNhap", true, DataSourceUpdateMode.Never));
+        }
+
         public fNotice()
         {
             InitializeComponent();
@@ -27,9 +36,14 @@ namespace QuanLyKhachSan
             dgv_Client.AllowUserToAddRows = false;
             dgv_Emloyee.AllowUserToAddRows = false;
 
+
+            dgv_ListNotice.DataSource = bindingNotice;
+
             LoadListNotice();
             LoadListAccountEmployee();
             LoadListAccountClient();
+
+            AddNoticeBinding();
         }
 
         void LoadListNotice()
@@ -39,8 +53,11 @@ namespace QuanLyKhachSan
 
         private void btn_AddNotice_Click(object sender, EventArgs e)
         {
-            if (tb_Subject.Text != "")
+
+            if (tb_Subject.Text != "" && lb_Username.Text.Contains(":"))
             {
+                lb_Username.Text = "Tiêu đề:";
+
                 string message = "Bạn có muốn xóa thông báo này không?";
                 string title = "Thông báo";
                 MessageBoxButtons buttons = MessageBoxButtons.YesNo;
@@ -60,6 +77,8 @@ namespace QuanLyKhachSan
             }
             else
             {
+                lb_Username.Text = "Tiêu đề:";
+
                 tb_Subject.ReadOnly = false;
                 rtb_Content.ReadOnly = false;
 
@@ -135,25 +154,6 @@ namespace QuanLyKhachSan
             rtb_Content.Text = "";
 
             #endregion
-
-            //if (tb_Username.Text == "All")
-            //{
-            //    int success = NoticeDAO.Instance.InsertForAllAccount(tb_Subject.Text, rtb_Content.Text);
-            //    MessageBox.Show("Đã gửi cho " + success + " người");
-            //    LoadListNotice();
-            //    return ;
-            //}
-
-            //if (NoticeDAO.Instance.Insert(Name, tb_Subject.Text, rtb_Content.Text))
-            //{
-            //    MessageBox.Show("Thêm thành công");
-            //    LoadListNotice();
-
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Lỗi!!! Thêm không thành công");
-            //}
         }
 
         #region Ngay10/06

@@ -149,5 +149,11 @@ namespace QuanLyKhachSan_CLient
             fListRentalVoucher fListRentalVoucher = new fListRentalVoucher();
             fListRentalVoucher.ShowDialog();
         }
+
+        private void btn_Notice_Click(object sender, EventArgs e)
+        {
+            fNotice fNotice = new fNotice();
+            fNotice.ShowDialog();
+        }
     }
 }

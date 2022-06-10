@@ -165,11 +165,12 @@ namespace QuanLyKhachSan.Network
 
                     string message = Encoding.UTF8.GetString(data);
                     string xxx = Encoding.UTF8.GetString(data);
-                    string[] msg = message.Split('\0');
+                    string[] msg = message.Split('\0', ' ');
 
 
                     switch (msg[0])
                     {
+                        #region fListRoom
                         case "GetListRoom":
                             byte[] listRoom = new byte[1024 * 5000];
 
@@ -182,6 +183,7 @@ namespace QuanLyKhachSan.Network
                             tcpClient1.Close();
 
                             break;
+                        #endregion
 
                         case "GetMyUsername":
                             byte[] dataHello = new byte[1024 * 5000];
@@ -194,6 +196,21 @@ namespace QuanLyKhachSan.Network
                             tcpClient1.Close();
 
                             break;
+
+                        #region fNotice
+                        case "GetListNoticeFromUsername":
+                            byte[] dataGetListNoticeFromUsername = new byte[1024 * 5000];
+
+                            DataTable GetListNoticeFromUsername = NoticeDAO.Instance.GetListNoticeFromUsername(msg[1]);
+                            dataGetListNoticeFromUsername = FormatData.Instance.SerializeData(GetListNoticeFromUsername);
+
+                            newSocket.Send(dataGetListNoticeFromUsername);
+
+                            newSocket.Close();
+                            tcpClient1.Close();
+
+                            break;
+                        #endregion
 
                         case "GetDataTable":
 

@@ -44,6 +44,7 @@ namespace QuanLyKhachSan_CLient
             this.btn_Booking = new System.Windows.Forms.Button();
             this.pn_MenuOnWD = new System.Windows.Forms.Panel();
             this.btn_Menu = new System.Windows.Forms.Button();
+            this.btn_Notice = new System.Windows.Forms.Button();
             this.pn_Menu.SuspendLayout();
             this.pn_Window.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -53,6 +54,7 @@ namespace QuanLyKhachSan_CLient
             // pn_Menu
             // 
             this.pn_Menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(11)))), ((int)(((byte)(10)))));
+            this.pn_Menu.Controls.Add(this.btn_Notice);
             this.pn_Menu.Controls.Add(this.btn_AccountInfo);
             this.pn_Menu.Controls.Add(this.btn_SignOut);
             this.pn_Menu.Controls.Add(this.btn_Help);
@@ -294,6 +296,24 @@ namespace QuanLyKhachSan_CLient
             this.btn_Menu.UseVisualStyleBackColor = false;
             this.btn_Menu.Click += new System.EventHandler(this.btn_Menu_Click);
             // 
+            // btn_Notice
+            // 
+            this.btn_Notice.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Notice.FlatAppearance.BorderSize = 0;
+            this.btn_Notice.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(160)))), ((int)(((byte)(90)))));
+            this.btn_Notice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Notice.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Notice.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_Notice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Notice.Location = new System.Drawing.Point(32, 58);
+            this.btn_Notice.Name = "btn_Notice";
+            this.btn_Notice.Size = new System.Drawing.Size(120, 54);
+            this.btn_Notice.TabIndex = 17;
+            this.btn_Notice.Text = "Thông báo ";
+            this.btn_Notice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Notice.UseVisualStyleBackColor = false;
+            this.btn_Notice.Click += new System.EventHandler(this.btn_Notice_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -331,6 +351,7 @@ namespace QuanLyKhachSan_CLient
         private System.Windows.Forms.Button btn_About;
         private System.Windows.Forms.Button btn_Help;
         private System.Windows.Forms.Button btn_Menu;
+        private System.Windows.Forms.Button btn_Notice;
     }
 }
 

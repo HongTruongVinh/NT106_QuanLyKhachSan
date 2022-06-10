@@ -1,4 +1,5 @@
-﻿using QuanLyKhachSan.DTO;
+﻿using QuanLyKhachSan_CLient.DTO;
+using QuanLyKhachSan_CLient.Network;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -6,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace QuanLyKhachSan.DAO
+namespace QuanLyKhachSan_CLient.DAO
 {
     public class NoticeDAO
     {
@@ -31,26 +32,9 @@ namespace QuanLyKhachSan.DAO
             return data;
         }
 
-        public List<Notice> GetListNotice()
-        {
-            List<Notice> list = new List<Notice>();
-
-            DataTable data = GetDataTableNotice();
-
-            foreach (DataRow row in data.Rows)
-            {
-                Notice account = new Notice(row);
-
-                list.Add(account);
-            }
-
-            return list;
-        }
-
         public DataTable GetListNoticeFromUsername(string username)
         {
-            string query = string.Format("SELECT NgayThongBao, TenDangNhap, TieuDe, NoiDung, MaThongBao FROM dbo.THONGBAO WHERE TenDangNhap = '{0}'", username);
-            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            DataTable data = (DataTable)FormatData.Instance.DeserializeData(TCPClient.Instance.GetDataFromCommand("GetListNoticeFromUsername " + username));
             return data;
         }
 
