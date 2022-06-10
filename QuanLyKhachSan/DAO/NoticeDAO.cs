@@ -26,7 +26,7 @@ namespace QuanLyKhachSan.DAO
 
         public DataTable GetDataTableNotice()
         {
-            string query = "SELECT * FROM dbo.THONGBAO";
+            string query = "SELECT NgayThongBao, TenDangNhap, TieuDe, NoiDung, MaThongBao FROM dbo.THONGBAO";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             return data;
         }
@@ -58,7 +58,9 @@ namespace QuanLyKhachSan.DAO
         {
             try
             {
-                string query = string.Format("INSERT INTO dbo.THONGBAO ( TenDangNhap , TieuDe , NoiDung) VALUES ( '{0}' , '{1}' , '{2}')", username, subject, content);
+                string toDay = string.Format("{0}/{1}/{2}", DateTime.Now.Day, DateTime.Now.Month, DateTime.Now.Year);
+
+                string query = string.Format("INSERT INTO dbo.THONGBAO ( TenDangNhap , TieuDe , NoiDung, NgayThongBao) VALUES ( '{0}' , '{1}' , '{2}', '{3}')", username, subject, content, toDay);
 
                 int success = DataProvider.Instance.ExecuteNonQuery(query);
 
@@ -86,7 +88,7 @@ namespace QuanLyKhachSan.DAO
 
             for (int i = 0; i < listAccount.Count; i++)
             {
-                string query = string.Format("INSERT INTO dbo.THONGBAO ( TenDangNhap , TieuDe , NoiDung) VALUES ( '{0}' , '{1}' , '{2}')", listAccount[i].UserName, subject, content);
+                string query = string.Format("INSERT INTO dbo.THONGBAO ( TenDangNhap , TieuDe , NoiDung , NgayThongBao ) VALUES ( '{0}' , '{1}' , '{2}')", listAccount[i].UserName, subject, content, DateTime.Now);
 
                 int done = DataProvider.Instance.ExecuteNonQuery(query);
 
@@ -99,7 +101,7 @@ namespace QuanLyKhachSan.DAO
             return success;
         }
 
-        public bool Delete(int id)
+        public bool DeleteByID(int id)
         {
             try
             {
@@ -122,6 +124,54 @@ namespace QuanLyKhachSan.DAO
                 return false;
             }
         }
+
+        public bool DeleteBySubjectAndContent(string subject, string content)
+        {
+            try
+            {
+                string query = string.Format("DELETE dbo.THONGBAO WHERE TieuDe = '{0}' AND NoiDung = '{1}'", subject, content);
+
+                int success = DataProvider.Instance.ExecuteNonQuery(query);
+
+                if (success > 0)
+                {
+                    return true;//Xoa thanh cong
+                }
+                else
+                {
+                    return false;//Xoa khong thanh cong
+                }
+
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        #region Ngay10/06
+        public int InsertForListAcount(List<string> listAccountReciever, string subject = "", string content = "")
+        {
+            int success = 0;
+
+            foreach (var item in listAccountReciever)
+            {
+                try
+                {
+                    if (Insert(item, subject, content))
+                    {
+                        success++;
+                    }
+                }
+                catch
+                {
+
+                }
+            }
+
+            return success;
+        }
+        #endregion
 
     }
 }

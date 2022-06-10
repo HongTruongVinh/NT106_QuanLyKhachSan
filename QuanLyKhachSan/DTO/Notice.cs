@@ -29,8 +29,6 @@ namespace QuanLyKhachSan.DTO
         public Notice(DataRow row)
         {
             this.Id = (int)row["MaThongBao"];
-            //this.Id = Convert.ToInt32(_id);
-
             this.Username = (string)row["TenDangNhap"].ToString();
             this.Subject = (string)row["TieuDe"].ToString();
             this.Content = (string)row["NoiDung"].ToString();

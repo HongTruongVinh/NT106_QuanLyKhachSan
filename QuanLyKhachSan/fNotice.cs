@@ -18,35 +18,23 @@ namespace QuanLyKhachSan
         {
             InitializeComponent();
 
+            this.Width = 800;
+            pn_ListAccount.Hide();
+
+            tb_Subject.ReadOnly = true;
+            rtb_Content.ReadOnly = true;
+
+            dgv_Client.AllowUserToAddRows = false;
+            dgv_Emloyee.AllowUserToAddRows = false;
+
             LoadListNotice();
+            LoadListAccountEmployee();
+            LoadListAccountClient();
         }
 
         void LoadListNotice()
         {
-            tb_Username.ReadOnly = true;
-            tb_Subject.ReadOnly = true;
-            rtb_Content.ReadOnly = true;
-
-            lv_Show.Clear(); 
-            lv_Show.Columns.Add("Tài khoản", 100);
-            lv_Show.Columns.Add("Tiêu đề", 150);
-            lv_Show.Columns.Add("Nội dung", 300);
-            lv_Show.View = View.Details;
-
-            List<Notice> noticeList = NoticeDAO.Instance.GetListNotice();
-
-            for (int i = noticeList.Count - 1; i > 0; i--)
-            {
-                ListViewItem name = new ListViewItem(noticeList[i].Username);
-
-                ListViewItem.ListViewSubItem from = new ListViewItem.ListViewSubItem(name, noticeList[i].Subject);
-                name.SubItems.Add(from);
-
-                ListViewItem.ListViewSubItem date = new ListViewItem.ListViewSubItem(name, noticeList[i].Content);
-                name.SubItems.Add(date);
-
-                lv_Show.Items.Add(name);
-            }
+            dgv_ListNotice.DataSource = NoticeDAO.Instance.GetDataTableNotice();
         }
 
         private void btn_AddNotice_Click(object sender, EventArgs e)
@@ -59,27 +47,30 @@ namespace QuanLyKhachSan
                 DialogResult result = MessageBox.Show(message, title, buttons);
                 if (result == DialogResult.Yes)
                 {
-                    this.Close();
-                }
-                else
-                {
-                    tb_Username.ReadOnly = false;
                     tb_Subject.ReadOnly = false;
                     rtb_Content.ReadOnly = false;
 
-                    tb_Username.Text = "All";
                     tb_Subject.Text = "";
                     rtb_Content.Text = "";
                 }
+                else
+                {
+                    
+                }
+            }
+            else
+            {
+                tb_Subject.ReadOnly = false;
+                rtb_Content.ReadOnly = false;
+
+                tb_Subject.Text = "";
+                rtb_Content.Text = "";
+                this.Width = 1250;
+                pn_ListAccount.Show();
             }
         }
 
-        private void lv_Show_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btn_Save_Click(object sender, EventArgs e)
+        private void btn_Send_Click(object sender, EventArgs e)
         {
             if (tb_Subject.Text == "" || rtb_Content.Text == "")
             {
@@ -87,23 +78,123 @@ namespace QuanLyKhachSan
                 return;
             }
 
-            if(tb_Username.Text == "All")
+            #region Ngay10/06
+            List<string> listAccountChecked = new List<string>();
+            for (int i = 0; i < dgv_Emloyee.Rows.Count; i++)
             {
-                int success = NoticeDAO.Instance.InsertForAllAccount(tb_Subject.Text, rtb_Content.Text);
-                MessageBox.Show("Đã gửi cho " + success + " người");
-                return ;
+                bool isChecked = false;
+
+                try
+                {
+                    isChecked = (bool)dgv_Emloyee.Rows[i].Cells["BooleanValue"].Value;
+                }
+                catch
+                {
+
+                }
+
+                if (isChecked)
+                {
+                    listAccountChecked.Add((string)dgv_Emloyee.Rows[i].Cells["TenDangNhap"].Value);
+                }
             }
 
-            if (NoticeDAO.Instance.Insert(Name, tb_Subject.Text, rtb_Content.Text))
+            for (int i = 0; i < dgv_Client.Rows.Count; i++)
             {
-                MessageBox.Show("Thêm thành công");
-                LoadListNotice();
+                bool isChecked = false;
+
+                try
+                {
+                    isChecked = (bool)dgv_Client.Rows[i].Cells["BooleanValue"].Value;
+                }
+                catch
+                {
+
+                }
                 
+                if (isChecked)
+                {
+                    listAccountChecked.Add((string)dgv_Client.Rows[i].Cells["TenDangNhap"].Value);
+                }
+            }
+
+            if (listAccountChecked.Count==0)
+            {
+                MessageBox.Show("Hãy chọn ít nhất 1 người để gửi!");
+                return;
+            }
+
+            int success = NoticeDAO.Instance.InsertForListAcount(listAccountChecked, tb_Subject.Text, rtb_Content.Text);
+            MessageBox.Show("Đã gửi cho " + success + " người");
+
+            LoadListAccountClient();
+            LoadListAccountEmployee();
+            LoadListNotice();
+
+            tb_Subject.Text = "";
+            rtb_Content.Text = "";
+
+            #endregion
+
+            //if (tb_Username.Text == "All")
+            //{
+            //    int success = NoticeDAO.Instance.InsertForAllAccount(tb_Subject.Text, rtb_Content.Text);
+            //    MessageBox.Show("Đã gửi cho " + success + " người");
+            //    LoadListNotice();
+            //    return ;
+            //}
+
+            //if (NoticeDAO.Instance.Insert(Name, tb_Subject.Text, rtb_Content.Text))
+            //{
+            //    MessageBox.Show("Thêm thành công");
+            //    LoadListNotice();
+
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Lỗi!!! Thêm không thành công");
+            //}
+        }
+
+        #region Ngay10/06
+        void LoadListAccountEmployee()
+        {
+            dgv_Emloyee.DataSource = AccountDAO.Instance.GetListAccountEmployee();
+        }
+
+        void LoadListAccountClient()
+        {
+            dgv_Client.DataSource = AccountDAO.Instance.GetListAccountClient();
+        }
+        private void btn_Delete_Click(object sender, EventArgs e)
+        {
+            string message = "Bạn có muốn xóa những thông báo này?";
+            string title = "Thông báo";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons);
+            if (result == DialogResult.Yes)
+            {
+                int success = 0;
+                for (int i = 0; i < dgv_ListNotice.SelectedCells.Count; i++)
+                {
+                    int id = (int)dgv_ListNotice.SelectedCells[i].OwningRow.Cells["MaThongBao"].Value;
+
+                    if (NoticeDAO.Instance.DeleteByID(id))
+                    {
+                        success++;
+                    }
+                }
+
+                MessageBox.Show("Đã xóa " + success + " thông báo");
+
+                LoadListNotice();
             }
             else
             {
-                MessageBox.Show("Lỗi!!! Thêm không thành công");
+
             }
         }
+        #endregion
+
     }
 }

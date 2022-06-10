@@ -32,27 +32,35 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tb_Subject = new System.Windows.Forms.TextBox();
             this.rtb_Content = new System.Windows.Forms.RichTextBox();
-            this.lv_Show = new System.Windows.Forms.ListView();
-            this.btn_Save = new System.Windows.Forms.Button();
-            this.tb_UsernameFine = new System.Windows.Forms.TextBox();
-            this.btn_EditAccount = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pn_ListAccount = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.dgv_Emloyee = new System.Windows.Forms.DataGridView();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.dgv_Client = new System.Windows.Forms.DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.btn_Delete = new System.Windows.Forms.Button();
             this.btn_AddNotice = new System.Windows.Forms.Button();
-            this.tb_Username = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.btn_Send = new System.Windows.Forms.Button();
+            this.dgv_ListNotice = new System.Windows.Forms.DataGridView();
             this.panel21.SuspendLayout();
+            this.pn_ListAccount.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Emloyee)).BeginInit();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Client)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ListNotice)).BeginInit();
             this.SuspendLayout();
             // 
             // panel21
             // 
-            this.panel21.Controls.Add(this.btn_Save);
-            this.panel21.Controls.Add(this.tb_UsernameFine);
-            this.panel21.Controls.Add(this.btn_EditAccount);
-            this.panel21.Controls.Add(this.btn_Delete);
+            this.panel21.Controls.Add(this.btn_Send);
             this.panel21.Controls.Add(this.btn_AddNotice);
-            this.panel21.Location = new System.Drawing.Point(549, 7);
+            this.panel21.Controls.Add(this.btn_Delete);
+            this.panel21.Location = new System.Drawing.Point(13, 87);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(468, 125);
+            this.panel21.Size = new System.Drawing.Size(1005, 45);
             this.panel21.TabIndex = 30;
             // 
             // label1
@@ -88,102 +96,149 @@
             this.rtb_Content.TabIndex = 27;
             this.rtb_Content.Text = "";
             // 
-            // lv_Show
-            // 
-            this.lv_Show.HideSelection = false;
-            this.lv_Show.Location = new System.Drawing.Point(13, 138);
-            this.lv_Show.Name = "lv_Show";
-            this.lv_Show.Size = new System.Drawing.Size(366, 610);
-            this.lv_Show.TabIndex = 26;
-            this.lv_Show.UseCompatibleStateImageBehavior = false;
-            this.lv_Show.SelectedIndexChanged += new System.EventHandler(this.lv_Show_SelectedIndexChanged);
-            // 
-            // btn_Save
-            // 
-            this.btn_Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Save.Location = new System.Drawing.Point(185, 7);
-            this.btn_Save.Name = "btn_Save";
-            this.btn_Save.Size = new System.Drawing.Size(95, 47);
-            this.btn_Save.TabIndex = 9;
-            this.btn_Save.Text = "Lưu";
-            this.btn_Save.UseVisualStyleBackColor = true;
-            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
-            // 
-            // tb_UsernameFine
-            // 
-            this.tb_UsernameFine.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_UsernameFine.Location = new System.Drawing.Point(26, 81);
-            this.tb_UsernameFine.Name = "tb_UsernameFine";
-            this.tb_UsernameFine.Size = new System.Drawing.Size(315, 27);
-            this.tb_UsernameFine.TabIndex = 8;
-            this.tb_UsernameFine.Text = "Nhập tên tài khoản";
-            // 
-            // btn_EditAccount
-            // 
-            this.btn_EditAccount.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_EditAccount.Location = new System.Drawing.Point(352, 71);
-            this.btn_EditAccount.Name = "btn_EditAccount";
-            this.btn_EditAccount.Size = new System.Drawing.Size(90, 47);
-            this.btn_EditAccount.TabIndex = 7;
-            this.btn_EditAccount.Text = "Tìm";
-            this.btn_EditAccount.UseVisualStyleBackColor = true;
-            // 
-            // btn_Delete
-            // 
-            this.btn_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Delete.Location = new System.Drawing.Point(347, 7);
-            this.btn_Delete.Name = "btn_Delete";
-            this.btn_Delete.Size = new System.Drawing.Size(95, 47);
-            this.btn_Delete.TabIndex = 6;
-            this.btn_Delete.Text = "Xóa";
-            this.btn_Delete.UseVisualStyleBackColor = true;
-            // 
-            // btn_AddNotice
-            // 
-            this.btn_AddNotice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_AddNotice.Location = new System.Drawing.Point(26, 7);
-            this.btn_AddNotice.Name = "btn_AddNotice";
-            this.btn_AddNotice.Size = new System.Drawing.Size(92, 47);
-            this.btn_AddNotice.TabIndex = 5;
-            this.btn_AddNotice.Text = "Thêm";
-            this.btn_AddNotice.UseVisualStyleBackColor = true;
-            this.btn_AddNotice.Click += new System.EventHandler(this.btn_AddNotice_Click);
-            // 
-            // tb_Username
-            // 
-            this.tb_Username.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Username.Location = new System.Drawing.Point(519, 138);
-            this.tb_Username.Name = "tb_Username";
-            this.tb_Username.Size = new System.Drawing.Size(498, 27);
-            this.tb_Username.TabIndex = 10;
-            this.tb_Username.Text = "All";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(414, 141);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 20);
+            this.label2.Size = new System.Drawing.Size(69, 20);
             this.label2.TabIndex = 31;
-            this.label2.Text = "Tài khoản:";
+            this.label2.Text = "Tiêu đề:";
+            // 
+            // pn_ListAccount
+            // 
+            this.pn_ListAccount.Controls.Add(this.panel3);
+            this.pn_ListAccount.Controls.Add(this.panel2);
+            this.pn_ListAccount.Location = new System.Drawing.Point(1024, 138);
+            this.pn_ListAccount.Name = "pn_ListAccount";
+            this.pn_ListAccount.Size = new System.Drawing.Size(622, 610);
+            this.pn_ListAccount.TabIndex = 32;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.dgv_Emloyee);
+            this.panel2.Location = new System.Drawing.Point(4, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(298, 604);
+            this.panel2.TabIndex = 0;
+            // 
+            // dgv_Emloyee
+            // 
+            this.dgv_Emloyee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Emloyee.Location = new System.Drawing.Point(3, 27);
+            this.dgv_Emloyee.Name = "dgv_Emloyee";
+            this.dgv_Emloyee.RowHeadersWidth = 51;
+            this.dgv_Emloyee.RowTemplate.Height = 24;
+            this.dgv_Emloyee.Size = new System.Drawing.Size(292, 577);
+            this.dgv_Emloyee.TabIndex = 33;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.label4);
+            this.panel3.Controls.Add(this.dgv_Client);
+            this.panel3.Location = new System.Drawing.Point(321, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(298, 604);
+            this.panel3.TabIndex = 34;
+            // 
+            // dgv_Client
+            // 
+            this.dgv_Client.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_Client.Location = new System.Drawing.Point(3, 27);
+            this.dgv_Client.Name = "dgv_Client";
+            this.dgv_Client.RowHeadersWidth = 51;
+            this.dgv_Client.RowTemplate.Height = 24;
+            this.dgv_Client.Size = new System.Drawing.Size(292, 577);
+            this.dgv_Client.TabIndex = 33;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 4);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(207, 20);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "Danh sách nhân viên nhận";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(3, 4);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(221, 20);
+            this.label4.TabIndex = 34;
+            this.label4.Text = "Danh sách khách hàng nhận";
+            // 
+            // btn_Delete
+            // 
+            this.btn_Delete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Delete.Location = new System.Drawing.Point(3, 1);
+            this.btn_Delete.Name = "btn_Delete";
+            this.btn_Delete.Size = new System.Drawing.Size(366, 44);
+            this.btn_Delete.TabIndex = 12;
+            this.btn_Delete.Text = "Xóa những thông báo đã chọn";
+            this.btn_Delete.UseVisualStyleBackColor = true;
+            this.btn_Delete.Click += new System.EventHandler(this.btn_Delete_Click);
+            // 
+            // btn_AddNotice
+            // 
+            this.btn_AddNotice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_AddNotice.Location = new System.Drawing.Point(396, 1);
+            this.btn_AddNotice.Name = "btn_AddNotice";
+            this.btn_AddNotice.Size = new System.Drawing.Size(205, 44);
+            this.btn_AddNotice.TabIndex = 13;
+            this.btn_AddNotice.Text = "Tạo thông báo mới";
+            this.btn_AddNotice.UseVisualStyleBackColor = true;
+            this.btn_AddNotice.Click += new System.EventHandler(this.btn_AddNotice_Click);
+            // 
+            // btn_Send
+            // 
+            this.btn_Send.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Send.Location = new System.Drawing.Point(876, 1);
+            this.btn_Send.Name = "btn_Send";
+            this.btn_Send.Size = new System.Drawing.Size(97, 44);
+            this.btn_Send.TabIndex = 14;
+            this.btn_Send.Text = "Gửi";
+            this.btn_Send.UseVisualStyleBackColor = true;
+            this.btn_Send.Click += new System.EventHandler(this.btn_Send_Click);
+            // 
+            // dgv_ListNotice
+            // 
+            this.dgv_ListNotice.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_ListNotice.Location = new System.Drawing.Point(12, 138);
+            this.dgv_ListNotice.Name = "dgv_ListNotice";
+            this.dgv_ListNotice.RowHeadersWidth = 51;
+            this.dgv_ListNotice.RowTemplate.Height = 24;
+            this.dgv_ListNotice.Size = new System.Drawing.Size(370, 607);
+            this.dgv_ListNotice.TabIndex = 34;
             // 
             // fNotice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1056, 760);
+            this.ClientSize = new System.Drawing.Size(1658, 760);
+            this.Controls.Add(this.dgv_ListNotice);
+            this.Controls.Add(this.pn_ListAccount);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.tb_Username);
             this.Controls.Add(this.panel21);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tb_Subject);
             this.Controls.Add(this.rtb_Content);
-            this.Controls.Add(this.lv_Show);
             this.Name = "fNotice";
             this.Text = "fNotice";
             this.panel21.ResumeLayout(false);
-            this.panel21.PerformLayout();
+            this.pn_ListAccount.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Emloyee)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_Client)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ListNotice)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -195,13 +250,17 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tb_Subject;
         private System.Windows.Forms.RichTextBox rtb_Content;
-        private System.Windows.Forms.ListView lv_Show;
-        private System.Windows.Forms.Button btn_Save;
-        private System.Windows.Forms.TextBox tb_UsernameFine;
-        private System.Windows.Forms.Button btn_EditAccount;
-        private System.Windows.Forms.Button btn_Delete;
-        private System.Windows.Forms.Button btn_AddNotice;
-        private System.Windows.Forms.TextBox tb_Username;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel pn_ListAccount;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridView dgv_Client;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView dgv_Emloyee;
+        private System.Windows.Forms.Button btn_Send;
+        private System.Windows.Forms.Button btn_AddNotice;
+        private System.Windows.Forms.Button btn_Delete;
+        private System.Windows.Forms.DataGridView dgv_ListNotice;
     }
 }

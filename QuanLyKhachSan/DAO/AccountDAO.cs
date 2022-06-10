@@ -197,5 +197,25 @@ namespace QuanLyKhachSan.DAO
                 return false;
             }
         }
+
+        #region Ngay06/10
+        public DataTable GetListAccountEmployee()
+        {
+            string query = "SELECT TenHienThi, TenDangNhap FROM dbo.TAIKHOAN WHERE LoaiTaiKhoan = 0";
+            DataTable table = new DataTable();
+            table.Columns.Add(new DataColumn("BooleanValue", typeof(bool)));
+            table.Merge(DataProvider.Instance.ExecuteQuery(query));
+            return table;
+        }
+
+        public DataTable GetListAccountClient()
+        {
+            string query = "SELECT TenHienThi, TenDangNhap FROM dbo.TAIKHOAN WHERE LoaiTaiKhoan = 3";
+            DataTable table = new DataTable();
+            table.Columns.Add(new DataColumn("BooleanValue", typeof(bool)));
+            table.Merge(DataProvider.Instance.ExecuteQuery(query));
+            return table;
+        }
+        #endregion
     }
 }

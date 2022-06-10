@@ -40,8 +40,6 @@ namespace QuanLyKhachSan_CLient
         {
             flp_LoadRooms.Controls.Clear();
 
-            //List<Room> roomList = (List<Room>)FormatData.Instance.DeserializeData(TCPClient.Instance.GetDataFromCommand("GetListRoom"));
-
             List<Room> roomList = RoomDAO.Instance.GetRoomList(); 
 
             foreach (Room room in roomList)
