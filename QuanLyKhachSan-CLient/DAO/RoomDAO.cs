@@ -133,14 +133,18 @@ namespace QuanLyKhachSan_CLient.DAO
             }
         }
 
+        #region Ngay 11/06
         public bool IsAvailable(int idRoom)
         {
             try
             {
-                string queryCheck = "SELECT * FROM dbo.PHONG WHERE TinhTrang = 0 AND MaPhong = " + idRoom;
-                int count = (DataProvider.Instance.ExecuteQuery(queryCheck) as DataTable).Rows.Count;
+                byte[] bytes = TCPClient.Instance.GetDataFromCommand(string.Format("AvailableRoom {0}", idRoom));
 
-                if (count > 0)
+                string message = Encoding.UTF8.GetString(bytes);
+
+                string[] msg = message.Split('\0');
+
+                if (msg[0] == "Available")
                 {
                     return true;
                 }
@@ -155,5 +159,25 @@ namespace QuanLyKhachSan_CLient.DAO
                 return false;
             }
         }
+
+        public bool OrderRoom(int idRoom, int countPeople, int typeClient, string name, string idPerson, string numberphone, string address)
+        {
+            byte[] bytes = TCPClient.Instance.GetDataFromCommand_SignUp(string.Format("OderRoom {0} {1} {2} {3} {4} {5}", countPeople, typeClient, name, idPerson, numberphone, address));
+
+            string message = Encoding.UTF8.GetString(bytes);
+
+            string[] msg = message.Split('\0');
+
+            if (msg[0] == "SucessOderRoom")
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        #endregion
     }
 }

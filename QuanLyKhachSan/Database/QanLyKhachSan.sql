@@ -10,6 +10,7 @@ GO
 
 ---------------------------------------------------------------------------
 -- Phần tạo bảng
+--SELECT * FROM PHONG
 --SELECT * FROM KHACHHANG
 --SELECT * FROM TAIKHOAN
 --SELECT TIEUDE, NOIDUNG FROM THONGBAO GROUP BY TIEUDE, NOIDUNG

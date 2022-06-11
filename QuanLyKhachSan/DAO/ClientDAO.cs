@@ -181,5 +181,12 @@ namespace QuanLyKhachSan.DAO
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             return data;
         }
+
+        public Client ClientGetInfor(int idPerson)
+        {
+            Client client = ClientDAO.instance.GetClientByIDPerson(idPerson);
+            return client;
+        }
+
     }
 }

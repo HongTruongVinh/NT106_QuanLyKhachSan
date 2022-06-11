@@ -1,4 +1,5 @@
-﻿using QuanLyKhachSan.Network;
+﻿using QuanLyKhachSan.DAO;
+using QuanLyKhachSan.Network;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,6 +36,8 @@ namespace QuanLyKhachSan
 
             ToolTip toolTip = new ToolTip();
             toolTip.SetToolTip(btn_Menu, "Tùy chọn");
+
+            RegulationDAO.Instance.Create();
 
             TCPServer.Instance.TCPServerStart();
 

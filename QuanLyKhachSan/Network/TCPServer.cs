@@ -183,14 +183,55 @@ namespace QuanLyKhachSan.Network
                             tcpClient1.Close();
 
                             break;
+
+                        case "AvailableRoom":
+                            byte[] bytesAvailableRoom = new byte[1024 * 5000];
+
+                            if (RoomDAO.Instance.IsAvailable(Int32.Parse(msg[1])))
+                            {
+                                bytesAvailableRoom = Encoding.UTF8.GetBytes("Available");
+                            }
+                            else
+                            {
+                                bytesAvailableRoom = Encoding.UTF8.GetBytes("IsNotAvailable");
+                            }
+
+                            newSocket.Send(bytesAvailableRoom);
+
+                            newSocket.Close();
+                            tcpClient1.Close();
+
+                            break;
+
+                        case "OrderRoom":
+                            byte[] bytesSucessOderRoom = new byte[1024 * 5000];
+
+                            if (RoomDAO.Instance.IsAvailable(Int32.Parse(msg[1])) && RentalVoucherDAO.Instance.InserRentalVoucherFromClient(Int32.Parse(msg[1]), Int32.Parse(msg[2]), Int32.Parse(msg[3]), msg[4], msg[5], msg[6], msg[7]))
+                            {
+                                bytesSucessOderRoom = Encoding.UTF8.GetBytes("OderRoomSuccessfully");
+                            }
+                            else
+                            {
+                                bytesSucessOderRoom = Encoding.UTF8.GetBytes("OderRoomFail");
+                            }
+
+                            newSocket.Send(bytesSucessOderRoom);
+
+                            newSocket.Close();
+                            tcpClient1.Close();
+
+                            break;
                         #endregion
 
-                        case "GetMyUsername":
-                            byte[] dataHello = new byte[1024 * 5000];
-                            dataHello = Encoding.UTF8.GetBytes("Hello " + username);
+                        case "ClientGetInfor":
+                            Client client = ClientDAO.Instance.ClientGetInfor(Int32.Parse(msg[1]));
+                            string inforClient = string.Format("{0} {1} {2} {3}", client.ID, client.Name, client.NumberPhone, client.Address);
+
+                            byte[] bytesInforClient = new byte[1024 * 5000];
+                            bytesInforClient = Encoding.UTF8.GetBytes(inforClient);
 
 
-                            newSocket.Send(dataHello);
+                            newSocket.Send(bytesInforClient);
 
                             newSocket.Close();
                             tcpClient1.Close();
@@ -201,7 +242,7 @@ namespace QuanLyKhachSan.Network
                         case "GetListNoticeFromUsername":
                             byte[] dataGetListNoticeFromUsername = new byte[1024 * 5000];
 
-                            DataTable GetListNoticeFromUsername = NoticeDAO.Instance.GetListNoticeFromUsername(msg[1]);
+                            DataTable GetListNoticeFromUsername = NoticeDAO.Instance.GetListNoticeFromUsername(username);
                             dataGetListNoticeFromUsername = FormatData.Instance.SerializeData(GetListNoticeFromUsername);
 
                             newSocket.Send(dataGetListNoticeFromUsername);
@@ -212,9 +253,15 @@ namespace QuanLyKhachSan.Network
                             break;
                         #endregion
 
-                        case "GetDataTable":
+                        case "GetRegulations":
 
-                            //newSocket.Send(FormatData.Instance.SerializeData(FormatData.Instance.getdata()));
+                            byte[] byteDataGetRegulations = new byte[1024 * 5000];
+
+                            string DataGetRegulations = string.Format("{0} {1} {2}", RegulationDAO.Instance.SoKhachToiDa, RegulationDAO.Instance.DonGiaPhongCho, RegulationDAO.Instance.PhuThuTuKhach);
+
+                            byteDataGetRegulations = Encoding.UTF8.GetBytes(DataGetRegulations);
+
+                            newSocket.Send(byteDataGetRegulations);
 
                             newSocket.Close();
                             tcpClient1.Close();

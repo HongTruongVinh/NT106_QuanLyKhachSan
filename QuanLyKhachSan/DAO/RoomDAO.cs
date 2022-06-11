@@ -165,5 +165,6 @@ namespace QuanLyKhachSan.DAO
 
             return data;
         }
+
     }
 }

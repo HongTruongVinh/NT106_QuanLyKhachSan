@@ -49,7 +49,7 @@ namespace QuanLyKhachSan.DAO
 
         public DataTable GetListNoticeFromUsername(string username)
         {
-            string query = string.Format("SELECT NgayThongBao, TenDangNhap, TieuDe, NoiDung, MaThongBao FROM dbo.THONGBAO WHERE TenDangNhap = '{0}'", username);
+            string query = string.Format("SELECT NgayThongBao, TieuDe, NoiDung, MaThongBao FROM dbo.THONGBAO WHERE TenDangNhap = '{0}'", username);
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             return data;
         }

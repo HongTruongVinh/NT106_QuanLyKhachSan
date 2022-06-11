@@ -15,14 +15,19 @@ namespace QuanLyKhachSan_CLient
 {
     public partial class fLoadRoom : Form
     {
+        Timer timeToReload;
+
         public fLoadRoom()
         {
             InitializeComponent();
+
+            this.FormClosing += FLoadRoom_FormClosing;
 
             SetDefulControl();
 
             LoadRoomList();
         }
+
 
         void SetDefulControl()
         {
@@ -31,10 +36,20 @@ namespace QuanLyKhachSan_CLient
             lb_TypeC.BackColor = Color.Aqua;
             lb_Ordered.BackColor = Color.LightPink;
 
-            
+            timeToReload = new Timer();
+            timeToReload.Tick += TimeToReload_Tick;
+            timeToReload.Interval = 10000; // 10s Reload 1 lần 
+            //timeToReload.Start();
+        }
+
+        private void TimeToReload_Tick(object sender, EventArgs e)
+        {
+            LoadRoomList();
         }
 
         #region Method
+
+
 
         public void LoadRoomList()
         {
@@ -97,16 +112,22 @@ namespace QuanLyKhachSan_CLient
                 Button btn = (sender as Button);
                 Room thisRoom = (Room)btn.Tag;
                 fRentalVoucher fInforRoom = new fRentalVoucher(thisRoom, this);
-                fInforRoom.ShowDialog();
+                fInforRoom.Show();
             }
-            else
+            else if(User.Instance.TypeUser == "Client")
             {
                 Button btn = (sender as Button);
                 Room thisRoom = (Room)btn.Tag;
-                if (thisRoom.Status== "có người")
+                if (thisRoom.Status== "1")
                 {
-                    MessageBox.Show("Phòng này đã có người! Xin vui lòng đặt phòng khác.");
+                    MessageBox.Show("Phòng này đã có người! Xin vui lòng đặt phòng khác."); return;
                 }
+                else
+                {
+                    fRentalVoucher fInforRoom = new fRentalVoucher(thisRoom, this);
+                    fInforRoom.Show();
+                }
+                
             }
         }
 
@@ -117,5 +138,14 @@ namespace QuanLyKhachSan_CLient
             this.Close();
         }
 
+        private void FLoadRoom_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            timeToReload.Stop();
+        }
+
+        private void lb_Reload_Click(object sender, EventArgs e)
+        {
+            LoadRoomList();
+        }
     }
 }

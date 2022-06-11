@@ -20,8 +20,29 @@ namespace QuanLyKhachSan_CLient
 
         private void btn_SignUp_Click(object sender, EventArgs e)
         {
+            if(tb_IDPerson.Text == "" || tb_NameCLient.Text==""|| tb_NumberPhone.Text==""|| tb_Address.Text == "")
+            {
+                MessageBox.Show("Hãy nhập đủ thông tin");return;
+            }
+
             MessageBox.Show(User.Instance.SignUp(tb_NameCLient.Text, tb_NumberPhone.Text, tb_IDPerson.Text, tb_Address.Text));
             this.Close();
+        }
+
+        private void tb_NumberPhone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled= true;
+            }
+        }
+
+        private void tb_IDPerson_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

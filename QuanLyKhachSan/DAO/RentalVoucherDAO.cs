@@ -131,5 +131,40 @@ namespace QuanLyKhachSan.DAO
         }
 
         #endregion
+
+
+        #region Ngay 11/06
+        public bool InserRentalVoucherFromClient(int idRoom, int countPeople, int typeClient, string name, string idPerson, string numberphone, string address)
+        {
+            try
+            {
+                Client client = ClientDAO.Instance.GetClientByIDPerson(Int32.Parse(idPerson));
+
+                if (client != null)
+                {
+                    if (InsertRentalVoucher(idRoom, client.ID, typeClient, countPeople))
+                    {
+                        RoomDAO.Instance.UpdateStatusRoom(idRoom, 1);
+                    }
+
+                }
+                else if (client == null)
+                {
+                    if (ClientDAO.Instance.InsertLient(name, Int32.Parse(idPerson), numberphone, address) && InsertRentalVoucher(idRoom, client.ID, typeClient, countPeople))
+                    {
+                        RoomDAO.Instance.UpdateStatusRoom(idRoom, 1);
+                    }
+
+                }
+
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        #endregion
+
     }
 }

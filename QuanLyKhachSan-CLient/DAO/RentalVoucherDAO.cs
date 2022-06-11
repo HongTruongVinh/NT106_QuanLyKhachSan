@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using QuanLyKhachSan_CLient.DTO;
+using QuanLyKhachSan_CLient.Network;
 
 namespace QuanLyKhachSan_CLient.DAO
 {
@@ -131,5 +132,36 @@ namespace QuanLyKhachSan_CLient.DAO
         }
 
         #endregion
+
+        #region Ngay 11/06
+        public bool InserRentalVoucherFromClient(int idRoom, int countPeople, int typeClient, string name, string idPerson, string numberphone, string address)
+        {
+            try
+            {
+                byte[] bytes = TCPClient.Instance.GetDataFromCommand(string.Format("OrderRoom {0} {1} {2} {3} {4} {5} {6}", idRoom, countPeople, typeClient, name, numberphone, idPerson, address));
+
+                string message = Encoding.UTF8.GetString(bytes);
+
+                string[] strings = message.Split(' ', '\0');
+
+                if (strings[0] == "OderRoomSuccessfully")
+                {
+                    return true;
+                }
+
+                if (strings[0] == "OderRoomFail")
+                {
+                    return false;
+                }
+
+                return false;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        #endregion
+
     }
 }

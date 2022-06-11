@@ -29,13 +29,18 @@ namespace QuanLyKhachSan_CLient.Network
         private string displayName;
         private string typeUser;
 
+        private string iD;
+        private string address;
+        private string phoneNumber;
 
         public string TypeUser { get => typeUser; set => typeUser = value; }
         public string UserName { get { return userName; } set { userName = value; } }
 
         public string Password { get => password; set => password = value; }
         public string DisplayName { get => displayName; set => displayName = value; }
-
+        public string Address { get => address; set => address = value; }
+        public string PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
+        public string ID { get => iD; set => iD = value; }
 
         public string SignUp(string name, string numberphone, string idPerson, string address)
         {

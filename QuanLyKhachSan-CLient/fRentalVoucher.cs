@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyKhachSan_CLient.DAO;
 using QuanLyKhachSan_CLient.DTO;
+using QuanLyKhachSan_CLient.Network;
 
 namespace QuanLyKhachSan_CLient
 {
@@ -27,6 +28,8 @@ namespace QuanLyKhachSan_CLient
         {
             InitializeComponent();
 
+            tb_DateStart.Text = string.Format("{0}/{1}/{2}", DateTime.Now.Day, DateTime.Now.Month, DateTime.Now.Year);
+
             cbb_TypeClient.DropDownStyle = ComboBoxStyle.DropDownList;
             cbb_TypeClient.SelectedIndex = 1;
 
@@ -39,6 +42,14 @@ namespace QuanLyKhachSan_CLient
             if (tb_IDPerson.Text == "")
             {
                 btn_Edit.Enabled = false;
+            }
+
+            if (User.Instance.TypeUser == "Client")
+            {
+                tb_IDPerson.Text = User.Instance.UserName;
+                tb_NameCLient.Text = User.Instance.DisplayName;
+                tb_Address.Text = User.Instance.Address;
+                tb_NumberPhone.Text = User.Instance.PhoneNumber;
             }
         }
 
@@ -61,12 +72,12 @@ namespace QuanLyKhachSan_CLient
 
         void LoadCLientInfor(int idClient)
         {
-            Client client = ClientDAO.Instance.GetClientByID(idClient);
-            tb_IDClient.Text = client.ID.ToString();
-            tb_IDPerson.Text = client.IDPerson.ToString();
-            tb_NameCLient.Text = client.Name;
-            tb_Address.Text = client.Address;
-            tb_NumberPhone.Text = client.NumberPhone;
+            //Client client = ClientDAO.Instance.GetClientByID(idClient);
+            //tb_IDClient.Text = client.ID.ToString();
+            //tb_IDPerson.Text = client.IDPerson.ToString();
+            //tb_NameCLient.Text = client.Name;
+            //tb_Address.Text = client.Address;
+            //tb_NumberPhone.Text = client.NumberPhone;
         }
 
         void LoadRoomInfor(Room room)
@@ -122,49 +133,62 @@ namespace QuanLyKhachSan_CLient
             }
 
             int countPeople = Convert.ToInt32(tb_NumberPeople.Text);
-            int maxCount = RegulationDAO.Instance.GetMaxCountPeople();
+            int typeClient = cbb_TypeClient.SelectedIndex == 1 ? 1 : 2;
 
+
+
+            int maxCount = RegulationsDAO.Instance.SoKhachToiDa;
             if (maxCount < countPeople)
             {
                 MessageBox.Show("Số người không được vượt quá "+ maxCount);
                 return;
             }
 
-            #region kiểm tra và Inser CLient trước
-            int idPerson = 0;
-            idPerson = int.Parse(tb_IDPerson.Text);
-            Client client = ClientDAO.Instance.GetClientByIDPerson(idPerson);
 
-            if (client == null)
+            if (RentalVoucherDAO.Instance.InserRentalVoucherFromClient((this.Tag as Room).ID, countPeople, typeClient, tb_NameCLient.Text, tb_IDPerson.Text, tb_NumberPhone.Text, tb_Address.Text))
             {
-                // Nếu client chưa tồn tại thì Insert client mới
-                if (ClientDAO.Instance.InsertLient(tb_NameCLient.Text, idPerson, tb_NumberPhone.Text, tb_Address.Text))
-                {
-                    client = ClientDAO.Instance.GetClientByIDPerson(idPerson);
-                }
-                else
-                {
-                    MessageBox.Show("Isert CLient bị lỗi!");
-                    return;
-                }
-            }
-            #endregion
-
-            #region sau đó Insert phiếu thuê phòng mới 
-            
-            if (RentalVoucherDAO.Instance.InsertRentalVoucher((this.Tag as Room).ID, client.ID, cbb_TypeClient.SelectedIndex == 1 ? 1: 2, countPeople))
-            {
-                RoomDAO.Instance.UpdateStatusRoom((this.Tag as Room).ID, 1);
-                MessageBox.Show("Thêm phiếu thuê phòng mới thành công!");
+                MessageBox.Show("Thuê phòng thành công");
             }
             else
             {
-                MessageBox.Show("!!!Thêm phiếu thuê phòng mới không thành công!!!");
+                MessageBox.Show("Lỗi! Thuê phòng không thành công");
             }
-            #endregion
 
-            LoadInforRentalVoucher(this.Tag as Room);
-            fLoadRoom.LoadRoomList();
+            //#region kiểm tra và Inser CLient trước
+            //int idPerson = 0;
+            //idPerson = int.Parse(tb_IDPerson.Text);
+            //Client client = ClientDAO.Instance.GetClientByIDPerson(idPerson);
+
+            //if (client == null)
+            //{
+            //    // Nếu client chưa tồn tại thì Insert client mới
+            //    if (ClientDAO.Instance.InsertLient(tb_NameCLient.Text, idPerson, tb_NumberPhone.Text, tb_Address.Text))
+            //    {
+            //        client = ClientDAO.Instance.GetClientByIDPerson(idPerson);
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Isert CLient bị lỗi!");
+            //        return;
+            //    }
+            //}
+            //#endregion
+
+            //#region sau đó Insert phiếu thuê phòng mới 
+            
+            //if (RentalVoucherDAO.Instance.InsertRentalVoucher((this.Tag as Room).ID, client.ID, cbb_TypeClient.SelectedIndex == 1 ? 1: 2, countPeople))
+            //{
+            //    RoomDAO.Instance.UpdateStatusRoom((this.Tag as Room).ID, 1);
+            //    MessageBox.Show("Thêm phiếu thuê phòng mới thành công!");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("!!!Thêm phiếu thuê phòng mới không thành công!!!");
+            //}
+            //#endregion
+
+            //LoadInforRentalVoucher(this.Tag as Room);
+            //fLoadRoom.LoadRoomList();
         }
 
         private void btn_Edit_Click(object sender, EventArgs e)

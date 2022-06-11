@@ -213,6 +213,7 @@ namespace QuanLyKhachSan
 
         private void btn_Delete_Click(object sender, EventArgs e)
         {
+
             if(tb_IDClient.Text == "" || tb_IDRentalVoucher.Text == "")
             {
                 MessageBox.Show("Không có phiếu thuê phòng nào để xóa");

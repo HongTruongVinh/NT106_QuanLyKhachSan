@@ -1,4 +1,5 @@
-﻿using QuanLyKhachSan_CLient.Network;
+﻿using QuanLyKhachSan_CLient.DAO;
+using QuanLyKhachSan_CLient.Network;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,6 +33,13 @@ namespace QuanLyKhachSan_CLient
             pn_Window.Location = new Point(12, 13);
             pn_Window.Size = new Size(2000, 2000);
             pn_MenuOnWD.Size = new Size(pn_MenuOnWD.Width, 1000);
+
+            GetRegulations();
+
+            if (User.Instance.TypeUser == "Client")
+            {
+                ClientGetInfor();
+            }
 
             ToolTip toolTip = new ToolTip();
             toolTip.SetToolTip(btn_Menu, "Tùy chọn");
@@ -154,6 +162,35 @@ namespace QuanLyKhachSan_CLient
         {
             fNotice fNotice = new fNotice();
             fNotice.ShowDialog();
+        }
+
+        private void GetRegulations()
+        {
+            byte[] bytes = TCPClient.Instance.GetDataFromCommand(string.Format("GetRegulations"));
+
+            string message = Encoding.UTF8.GetString(bytes);
+
+            string[] strings = message.Split(' ', '\0');
+
+            RegulationsDAO.Instance.SoKhachToiDa = Int32.Parse(strings[0]);
+            RegulationsDAO.Instance.DonGiaPhongCho = Int32.Parse(strings[1]);
+            RegulationsDAO.Instance.PhuThuTuKhach = float.Parse(strings[2]);
+
+        }
+
+        private void ClientGetInfor()
+        {
+            byte[] bytes = TCPClient.Instance.GetDataFromCommand(string.Format("ClientGetInfor " + User.Instance.UserName));
+
+            string message = Encoding.UTF8.GetString(bytes);
+
+            string[] strings = message.Split(' ', '\0');
+
+            User.Instance.ID = strings[0];
+            User.Instance.DisplayName = strings[1];
+            User.Instance.PhoneNumber = strings[2];
+            User.Instance.Address = strings[3];
+
         }
     }
 }

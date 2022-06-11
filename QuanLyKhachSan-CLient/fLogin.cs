@@ -18,8 +18,10 @@ namespace QuanLyKhachSan_CLient
         {
             InitializeComponent();
 
-            tb_UserName.Text = "Vinh";
-            tb_PassWord.Text = "1";
+            //tb_UserName.Text = "Vinh";
+            //tb_PassWord.Text = "1";
+            tb_UserName.Text = "333";
+            tb_PassWord.Text = "0";
         }
 
         private void btn_Login_Click(object sender, EventArgs e)
@@ -53,5 +55,6 @@ namespace QuanLyKhachSan_CLient
             fClientSignUp signUp = new fClientSignUp();
             signUp.ShowDialog();
         }
+
     }
 }

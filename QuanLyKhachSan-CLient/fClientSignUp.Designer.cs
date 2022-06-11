@@ -30,11 +30,9 @@
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tb_Notice = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_SignUp = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.tb_IDClient = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
             this.tb_Address = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
@@ -48,10 +46,8 @@
             this.panel21 = new System.Windows.Forms.Panel();
             this.tb_NameCLient = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panel19.SuspendLayout();
@@ -63,7 +59,6 @@
             this.panel2.BackColor = System.Drawing.Color.Linen;
             this.panel2.Controls.Add(this.panel1);
             this.panel2.Controls.Add(this.btn_SignUp);
-            this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.panel16);
             this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.panel18);
@@ -77,13 +72,25 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.tb_Notice);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(43, 334);
+            this.panel1.Location = new System.Drawing.Point(46, 285);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(446, 92);
             this.panel1.TabIndex = 15;
+            // 
+            // tb_Notice
+            // 
+            this.tb_Notice.Enabled = false;
+            this.tb_Notice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Notice.Location = new System.Drawing.Point(4, 2);
+            this.tb_Notice.Multiline = true;
+            this.tb_Notice.Name = "tb_Notice";
+            this.tb_Notice.Size = new System.Drawing.Size(439, 87);
+            this.tb_Notice.TabIndex = 1;
+            this.tb_Notice.Text = "Mật khẩu của khách hàng được tạo tự động là \"3\" và không thể thay đổi và tài khoả" +
+    "n là số CMND";
             // 
             // label1
             // 
@@ -105,41 +112,11 @@
             this.btn_SignUp.UseVisualStyleBackColor = true;
             this.btn_SignUp.Click += new System.EventHandler(this.btn_SignUp_Click);
             // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.tb_IDClient);
-            this.panel5.Controls.Add(this.label6);
-            this.panel5.Location = new System.Drawing.Point(43, 85);
-            this.panel5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(446, 44);
-            this.panel5.TabIndex = 17;
-            // 
-            // tb_IDClient
-            // 
-            this.tb_IDClient.Enabled = false;
-            this.tb_IDClient.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_IDClient.Location = new System.Drawing.Point(92, 11);
-            this.tb_IDClient.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tb_IDClient.Name = "tb_IDClient";
-            this.tb_IDClient.Size = new System.Drawing.Size(249, 27);
-            this.tb_IDClient.TabIndex = 1;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(3, 10);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 25);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "Mã KH:";
-            // 
             // panel16
             // 
             this.panel16.Controls.Add(this.tb_Address);
             this.panel16.Controls.Add(this.label14);
-            this.panel16.Location = new System.Drawing.Point(43, 286);
+            this.panel16.Location = new System.Drawing.Point(46, 237);
             this.panel16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel16.Name = "panel16";
             this.panel16.Size = new System.Drawing.Size(446, 44);
@@ -178,7 +155,7 @@
             // 
             this.panel18.Controls.Add(this.tb_IDPerson);
             this.panel18.Controls.Add(this.label17);
-            this.panel18.Location = new System.Drawing.Point(43, 235);
+            this.panel18.Location = new System.Drawing.Point(46, 186);
             this.panel18.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(446, 44);
@@ -192,6 +169,7 @@
             this.tb_IDPerson.Name = "tb_IDPerson";
             this.tb_IDPerson.Size = new System.Drawing.Size(249, 27);
             this.tb_IDPerson.TabIndex = 3;
+            this.tb_IDPerson.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_IDPerson_KeyPress);
             // 
             // label17
             // 
@@ -207,7 +185,7 @@
             // 
             this.panel19.Controls.Add(this.tb_NumberPhone);
             this.panel19.Controls.Add(this.label18);
-            this.panel19.Location = new System.Drawing.Point(43, 185);
+            this.panel19.Location = new System.Drawing.Point(46, 136);
             this.panel19.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel19.Name = "panel19";
             this.panel19.Size = new System.Drawing.Size(446, 44);
@@ -221,6 +199,7 @@
             this.tb_NumberPhone.Name = "tb_NumberPhone";
             this.tb_NumberPhone.Size = new System.Drawing.Size(249, 27);
             this.tb_NumberPhone.TabIndex = 2;
+            this.tb_NumberPhone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_NumberPhone_KeyPress);
             // 
             // label18
             // 
@@ -236,7 +215,7 @@
             // 
             this.panel21.Controls.Add(this.tb_NameCLient);
             this.panel21.Controls.Add(this.label20);
-            this.panel21.Location = new System.Drawing.Point(43, 135);
+            this.panel21.Location = new System.Drawing.Point(46, 86);
             this.panel21.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel21.Name = "panel21";
             this.panel21.Size = new System.Drawing.Size(446, 44);
@@ -261,17 +240,6 @@
             this.label20.TabIndex = 0;
             this.label20.Text = "Họ Tên*:";
             // 
-            // textBox1
-            // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(4, 2);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(439, 87);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "Mật khẩu của khách hàng được tạo tự động là \"3\" và không thể thay đổi";
-            // 
             // fClientSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -284,8 +252,6 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.panel16.ResumeLayout(false);
             this.panel16.PerformLayout();
             this.panel18.ResumeLayout(false);
@@ -302,9 +268,6 @@
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btn_SignUp;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox tb_IDClient;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel16;
         private System.Windows.Forms.TextBox tb_Address;
         private System.Windows.Forms.Label label14;
@@ -320,6 +283,6 @@
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tb_Notice;
     }
 }
