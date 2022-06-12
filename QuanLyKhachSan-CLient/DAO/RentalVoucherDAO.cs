@@ -72,9 +72,9 @@ namespace QuanLyKhachSan_CLient.DAO
 
         public DataTable ListRentalVoucherUnCheckOut(string TiengViet)
         {
-            string query = "SELECT TenPhong 'Phòng', NgayBatDau 'Ngày bắt đầu',TenKhachHang 'Khách hàng', lkh.MaLoaiKH 'Loại khách', SoLuongKhach 'Số khách', SDT , DiaChi 'Địa chỉ', CMND, ptp.MaKH MaKH, ptp.MaPhieu, p.MaPhong   FROM dbo.PHIEUTHUEPHONG ptp, dbo.PHONG p, dbo.KHACHHANG kh, dbo.LOAIKHACHHANG lkh WHERE p.TinhTrang = 1 AND ptp.MaPhong = p.MaPhong AND ptp.MaKH = kh.MaKH AND ptp.MaLoaiKH = lkh.MaLoaiKH";
+            string query = string.Format("GetListRentalVoucherUnCheckOut");
 
-            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            DataTable data = (DataTable)FormatData.Instance.DeserializeData(TCPClient.Instance.GetDataFromCommand(query));
 
             return data;
         }

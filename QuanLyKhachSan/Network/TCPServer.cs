@@ -347,6 +347,25 @@ namespace QuanLyKhachSan.Network
                             threadBeKill.Abort();
                             clientConnecting = false;
                             break;
+
+                        case "GetListRentalVoucherUnCheckOut":
+                            byte[] bytesGetListRentalVoucherUnCheckOut = new byte[1024 * 5000];
+
+                            //int idClient = Int32.Parse(msg[1]);
+
+                            DataTable dataGetListRentalVoucherUnCheckOut = RentalVoucherDAO.Instance.ListRentalVoucherUnCheckOut("TV");
+
+                            if (dataGetListRentalVoucherUnCheckOut != null)
+                            {
+                                bytesGetListRentalVoucherUnCheckOut = FormatData.Instance.SerializeData(dataGetListRentalVoucherUnCheckOut);
+                            }
+
+                            newSocket.Send(bytesGetListRentalVoucherUnCheckOut);
+
+                            newSocket.Close();
+                            tcpClient1.Close();
+
+                            break;
                     }
                 }
                 catch
