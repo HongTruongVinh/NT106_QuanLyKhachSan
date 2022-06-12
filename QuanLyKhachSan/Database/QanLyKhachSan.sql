@@ -274,7 +274,7 @@ INSERT INTO dbo.TAIKHOAN
 			)
 VALUES       	( N'Vinh',
 			  N'Vinh',
-			  N'1',
+			  N'0',
 			  0
 			)
 GO

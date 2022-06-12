@@ -166,7 +166,11 @@ namespace QuanLyKhachSan.DAO
                 }
                 else if (client == null)
                 {
-                    if (ClientDAO.Instance.InsertLient(name, Int32.Parse(idPerson), numberphone, address) && InsertRentalVoucher(idRoom, client.ID, typeClient, countPeople))
+                    ClientDAO.Instance.InsertLient(name, Int32.Parse(idPerson), numberphone, address);
+
+                    client = ClientDAO.Instance.GetClientByIDPerson(Int32.Parse(idPerson));
+
+                    if (InsertRentalVoucher(idRoom, client.ID, typeClient, countPeople))
                     {
                         RoomDAO.Instance.UpdateStatusRoom(idRoom, 1);
                     }
