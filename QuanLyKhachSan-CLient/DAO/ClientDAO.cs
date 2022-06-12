@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using QuanLyKhachSan_CLient.DTO;
+using QuanLyKhachSan_CLient.Network;
 
 namespace QuanLyKhachSan_CLient.DAO
 {
@@ -31,8 +32,11 @@ namespace QuanLyKhachSan_CLient.DAO
         /// <returns></returns>
         public Client GetClientByID(int id)
         {
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT MaKH id, TenKhachHang name, CMND idPerson, DiaChi address, SDT numberPhone " +
-                                                                "FROM KHACHHANG " + " WHERE MaKH = '" + id + "'");
+            string query = string.Format("GetClientByID {0}", id);
+
+            DataTable data = (DataTable)FormatData.Instance.DeserializeData(TCPClient.Instance.GetDataFromCommand(query));
+
+            if (data == null) return null;
 
             if (data.Rows.Count > 0)
             {

@@ -46,10 +46,11 @@ namespace QuanLyKhachSan_CLient.DAO
 
         public RentalVoucher GetUnCheckRentalVoucherByRoomID(int id)
         {
-            string query = "SELECT MaPhieu id, MaPhong roomID, ptp.MaKH clientID, NgayBatDau dateTimeCheckIn, NgayKetThuc dateTimeCheckOut, SoLuongKhach countPeople , TenLoaiKH typeCLient, HeSoPhuThu dependencyFactor"
-                            + " FROM dbo.PHIEUTHUEPHONG ptp, dbo.LOAIKHACHHANG lkh WHERE ptp.MaLoaiKH = lkh.MaLoaiKH AND  MaPhong = '" + id +"'";
+            string query = string.Format("GetUnCheckRentalVoucherByRoomID {0}", id);
 
-            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            DataTable data = (DataTable)FormatData.Instance.DeserializeData(TCPClient.Instance.GetDataFromCommand(query));
+
+            if (data == null) return null;
 
             if (data.Rows.Count > 0)
             {

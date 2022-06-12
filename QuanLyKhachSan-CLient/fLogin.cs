@@ -20,7 +20,7 @@ namespace QuanLyKhachSan_CLient
 
             //tb_UserName.Text = "Vinh";
             //tb_PassWord.Text = "1";
-            tb_UserName.Text = "333";
+            tb_UserName.Text = "Vinh";
             tb_PassWord.Text = "0";
         }
 

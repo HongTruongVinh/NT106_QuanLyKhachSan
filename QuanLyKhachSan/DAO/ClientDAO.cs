@@ -43,6 +43,21 @@ namespace QuanLyKhachSan.DAO
             return null;
         }
 
+        public DataTable GetClientByID_DataTable(int id)
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT MaKH id, TenKhachHang name, CMND idPerson, DiaChi address, SDT numberPhone " +
+                                                                "FROM KHACHHANG " + " WHERE MaKH = '" + id + "'");
+
+            if(data==null) return null;
+
+            if (data.Rows.Count > 0)
+            {
+                return data;
+            }
+
+            return null;
+        }
+
 
         /// <summary>
         /// Lấy ra khách hàng bằng CMND

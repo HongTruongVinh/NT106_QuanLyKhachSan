@@ -299,6 +299,44 @@ namespace QuanLyKhachSan.Network
 
                             break;
 
+                        case "GetUnCheckRentalVoucherByRoomID":
+                            byte[] bytesGetUnCheckRentalVoucherByRoomID = new byte[1024 * 5000];
+
+                            int idRentalVoucher = Int32.Parse(msg[1]);
+
+                            DataTable dataGetUnCheckRentalVoucherByRoomID = RentalVoucherDAO.Instance.GetUnCheckRentalVoucherByRoomID_DataTable(idRentalVoucher);
+
+                            if(dataGetUnCheckRentalVoucherByRoomID != null)
+                            {
+                                bytesGetUnCheckRentalVoucherByRoomID = FormatData.Instance.SerializeData(dataGetUnCheckRentalVoucherByRoomID);
+                            }
+
+                            newSocket.Send(bytesGetUnCheckRentalVoucherByRoomID);
+
+                            newSocket.Close();
+                            tcpClient1.Close();
+
+                            break;
+
+                        case "GetClientByID":
+                            byte[] bytesGetClientByID = new byte[1024 * 5000];
+
+                            int idClient = Int32.Parse(msg[1]);
+
+                            DataTable dataGetClientByID = ClientDAO.Instance.GetClientByID_DataTable(idClient);
+
+                            if (dataGetClientByID != null)
+                            {
+                                bytesGetClientByID = FormatData.Instance.SerializeData(dataGetClientByID);
+                            }
+
+                            newSocket.Send(bytesGetClientByID);
+
+                            newSocket.Close();
+                            tcpClient1.Close();
+
+                            break;
+
                         case "EXIT":
                             newSocket.Close();
                             tcpClient1.Close();

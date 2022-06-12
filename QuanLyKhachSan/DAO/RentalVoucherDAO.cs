@@ -59,6 +59,21 @@ namespace QuanLyKhachSan.DAO
             return null;
         }
 
+        public DataTable GetUnCheckRentalVoucherByRoomID_DataTable(int id)
+        {
+            string query = "SELECT MaPhieu id, MaPhong roomID, ptp.MaKH clientID, NgayBatDau dateTimeCheckIn, NgayKetThuc dateTimeCheckOut, SoLuongKhach countPeople , TenLoaiKH typeCLient, HeSoPhuThu dependencyFactor"
+                            + " FROM dbo.PHIEUTHUEPHONG ptp, dbo.LOAIKHACHHANG lkh WHERE ptp.MaLoaiKH = lkh.MaLoaiKH AND  MaPhong = '" + id + "'";
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            if (data.Rows.Count > 0)
+            {
+                return data;
+            }
+
+            return null;
+        }
+
         public DataTable ListRentalVoucherUnCheckOut()
         {
             string query = "SELECT ptp.MaKH clientID, p.MaPhong roomID, TenPhong roomName, TenKhachHang nameClient, SDT numberPhone, DiaChi adsress, CMND, lkh.MaLoaiKH typeClient, SoLuongKhach  FROM dbo.PHIEUTHUEPHONG ptp, dbo.PHONG p, dbo.KHACHHANG kh, dbo.LOAIKHACHHANG lkh WHERE p.TinhTrang = 1 AND ptp.MaPhong = p.MaPhong AND ptp.MaKH = kh.MaKH AND ptp.MaLoaiKH = lkh.MaLoaiKH";

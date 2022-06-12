@@ -31,7 +31,7 @@ namespace QuanLyKhachSan_CLient
             tb_DateStart.Text = string.Format("{0}/{1}/{2}", DateTime.Now.Day, DateTime.Now.Month, DateTime.Now.Year);
 
             cbb_TypeClient.DropDownStyle = ComboBoxStyle.DropDownList;
-            cbb_TypeClient.SelectedIndex = 1;
+            cbb_TypeClient.SelectedIndex = 0;
 
             this.Tag = room;
 
@@ -42,14 +42,6 @@ namespace QuanLyKhachSan_CLient
             if (tb_IDPerson.Text == "")
             {
                 btn_Edit.Enabled = false;
-            }
-
-            if (User.Instance.TypeUser == "Client")
-            {
-                tb_IDPerson.Text = User.Instance.UserName;
-                tb_NameCLient.Text = User.Instance.DisplayName;
-                tb_Address.Text = User.Instance.Address;
-                tb_NumberPhone.Text = User.Instance.PhoneNumber;
             }
         }
 
@@ -64,20 +56,34 @@ namespace QuanLyKhachSan_CLient
                 return;
             }
 
-            LoadCLientInfor(rentalVoucher.ClientID);
+            
+            if (User.Instance.TypeUser == "Client")
+            {
+                tb_IDPerson.Text = User.Instance.UserName;
+                tb_NameCLient.Text = User.Instance.DisplayName;
+                tb_Address.Text = User.Instance.Address;
+                tb_NumberPhone.Text = User.Instance.PhoneNumber;
+            }
+            else
+            {
+                //Nếu là nhân viên sẽ load thông tin KH đã đặt phòng này 
+                LoadCLientInfor(rentalVoucher.ClientID);
+            }
 
-            LoadRentalVoucherInfor(room.ID);
-
+            if (room.Status == "1")
+            {
+                LoadRentalVoucherInfor(room.ID);
+            }
         }
 
         void LoadCLientInfor(int idClient)
         {
-            //Client client = ClientDAO.Instance.GetClientByID(idClient);
-            //tb_IDClient.Text = client.ID.ToString();
-            //tb_IDPerson.Text = client.IDPerson.ToString();
-            //tb_NameCLient.Text = client.Name;
-            //tb_Address.Text = client.Address;
-            //tb_NumberPhone.Text = client.NumberPhone;
+            Client client = ClientDAO.Instance.GetClientByID(idClient);
+            tb_IDClient.Text = client.ID.ToString();
+            tb_IDPerson.Text = client.IDPerson.ToString();
+            tb_NameCLient.Text = client.Name;
+            tb_Address.Text = client.Address;
+            tb_NumberPhone.Text = client.NumberPhone;
         }
 
         void LoadRoomInfor(Room room)
@@ -101,7 +107,7 @@ namespace QuanLyKhachSan_CLient
 
         void LoadRentalVoucherInfor(int idRoom)
         {
-            RentalVoucher rentalVoucher = RentalVoucherDAO.Instance.GetUnCheckRentalVoucherByRoomID(idRoom);
+            //RentalVoucher rentalVoucher = RentalVoucherDAO.Instance.GetUnCheckRentalVoucherByRoomID(idRoom);
 
             tb_IDRentalVoucher.Text = rentalVoucher.ID.ToString();
             tb_NumberPeople.Text = rentalVoucher.NumberPeople.ToString();
