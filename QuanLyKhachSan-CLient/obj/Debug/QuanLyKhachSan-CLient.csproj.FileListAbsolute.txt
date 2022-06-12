@@ -19,3 +19,4 @@ C:\Users\HONG VINH\source\repos\NT106_QuanLyKhachSan2\QuanLyKhachSan-CLient\bin\
 C:\Users\HONG VINH\source\repos\NT106_QuanLyKhachSan2\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan-CLient.exe
 C:\Users\HONG VINH\source\repos\NT106_QuanLyKhachSan2\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan-CLient.pdb
 C:\Users\HONG VINH\source\repos\NT106_QuanLyKhachSan2\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan_CLient.fClientSignUp.resources
+C:\Users\HONG VINH\source\repos\NT106_QuanLyKhachSan2\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan_CLient.fListOrderedRoom.resources

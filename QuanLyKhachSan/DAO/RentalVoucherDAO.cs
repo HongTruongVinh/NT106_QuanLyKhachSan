@@ -166,5 +166,25 @@ namespace QuanLyKhachSan.DAO
         }
         #endregion
 
+        #region Ngay 12/06
+        public bool ClientDeleteRoomOrdered(string username, string idRoom)
+        {
+            DataTable tableClient = DataProvider.Instance.ExecuteQuery("SELECT kh.MaKH id, CMND idPerson, TenKhachHang name, SDT numberPhone, DiaChi address  FROM dbo.KHACHHANG kh WHERE kh.CMND = " + username);
+            Client client = new Client(tableClient.Rows[0]);
+
+            string query = string.Format("DELETE dbo.PHIEUTHUEPHONG WHERE MaKH = {0} AND MaPhong = {1}", client.ID, idRoom);
+
+            int success = 0;
+
+            success = DataProvider.Instance.ExecuteNonQuery(query);
+
+            if(success > 0)
+            {
+                RoomDAO.Instance.UpdateStatusRoom(Int32.Parse(idRoom), 0);
+            }
+
+            return success > 0;
+        }
+        #endregion
     }
 }

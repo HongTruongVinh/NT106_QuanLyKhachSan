@@ -31,6 +31,7 @@ namespace QuanLyKhachSan_CLient
         {
             this.pn_Backgound = new System.Windows.Forms.Panel();
             this.pn_ControlBar = new System.Windows.Forms.Panel();
+            this.lb_Reload = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lb_Ordered = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -42,7 +43,7 @@ namespace QuanLyKhachSan_CLient
             this.btn_Close = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.flp_LoadRooms = new System.Windows.Forms.FlowLayoutPanel();
-            this.lb_Reload = new System.Windows.Forms.Label();
+            this.btn_ListRoomOdered = new System.Windows.Forms.Label();
             this.pn_Backgound.SuspendLayout();
             this.pn_ControlBar.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -61,6 +62,7 @@ namespace QuanLyKhachSan_CLient
             // pn_ControlBar
             // 
             this.pn_ControlBar.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.pn_ControlBar.Controls.Add(this.btn_ListRoomOdered);
             this.pn_ControlBar.Controls.Add(this.lb_Reload);
             this.pn_ControlBar.Controls.Add(this.label7);
             this.pn_ControlBar.Controls.Add(this.lb_Ordered);
@@ -75,6 +77,19 @@ namespace QuanLyKhachSan_CLient
             this.pn_ControlBar.Name = "pn_ControlBar";
             this.pn_ControlBar.Size = new System.Drawing.Size(1217, 36);
             this.pn_ControlBar.TabIndex = 5;
+            // 
+            // lb_Reload
+            // 
+            this.lb_Reload.AutoSize = true;
+            this.lb_Reload.BackColor = System.Drawing.Color.LemonChiffon;
+            this.lb_Reload.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Reload.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lb_Reload.Location = new System.Drawing.Point(1141, -1);
+            this.lb_Reload.Name = "lb_Reload";
+            this.lb_Reload.Size = new System.Drawing.Size(25, 25);
+            this.lb_Reload.TabIndex = 14;
+            this.lb_Reload.Text = "⟳";
+            this.lb_Reload.Click += new System.EventHandler(this.lb_Reload_Click);
             // 
             // label7
             // 
@@ -205,18 +220,18 @@ namespace QuanLyKhachSan_CLient
             this.flp_LoadRooms.Size = new System.Drawing.Size(1180, 588);
             this.flp_LoadRooms.TabIndex = 7;
             // 
-            // lb_Reload
+            // btn_ListRoomOdered
             // 
-            this.lb_Reload.AutoSize = true;
-            this.lb_Reload.BackColor = System.Drawing.Color.LemonChiffon;
-            this.lb_Reload.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_Reload.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lb_Reload.Location = new System.Drawing.Point(1141, -1);
-            this.lb_Reload.Name = "lb_Reload";
-            this.lb_Reload.Size = new System.Drawing.Size(25, 25);
-            this.lb_Reload.TabIndex = 14;
-            this.lb_Reload.Text = "⟳";
-            this.lb_Reload.Click += new System.EventHandler(this.lb_Reload_Click);
+            this.btn_ListRoomOdered.AutoSize = true;
+            this.btn_ListRoomOdered.BackColor = System.Drawing.Color.LemonChiffon;
+            this.btn_ListRoomOdered.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ListRoomOdered.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_ListRoomOdered.Location = new System.Drawing.Point(999, 3);
+            this.btn_ListRoomOdered.Name = "btn_ListRoomOdered";
+            this.btn_ListRoomOdered.Size = new System.Drawing.Size(107, 20);
+            this.btn_ListRoomOdered.TabIndex = 15;
+            this.btn_ListRoomOdered.Text = "Phòng đã đặt";
+            this.btn_ListRoomOdered.Click += new System.EventHandler(this.btn_ListRoomOdered_Click);
             // 
             // fLoadRoom
             // 
@@ -253,5 +268,6 @@ namespace QuanLyKhachSan_CLient
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flp_LoadRooms;
         private System.Windows.Forms.Label lb_Reload;
+        private System.Windows.Forms.Label btn_ListRoomOdered;
     }
 }

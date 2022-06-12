@@ -94,6 +94,12 @@
     <Compile Include="fInformation.Designer.cs">
       <DependentUpon>fInformation.cs</DependentUpon>
     </Compile>
+    <Compile Include="fListOrderedRoom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fListOrderedRoom.Designer.cs">
+      <DependentUpon>fListOrderedRoom.cs</DependentUpon>
+    </Compile>
     <Compile Include="fListRentalVoucher.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fInformation.resx">
       <DependentUpon>fInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fListOrderedRoom.resx">
+      <DependentUpon>fListOrderedRoom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fListRentalVoucher.resx">
       <DependentUpon>fListRentalVoucher.cs</DependentUpon>

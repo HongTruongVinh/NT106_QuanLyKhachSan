@@ -147,5 +147,14 @@ namespace QuanLyKhachSan_CLient
         {
             LoadRoomList();
         }
+
+        private void btn_ListRoomOdered_Click(object sender, EventArgs e)
+        {
+            if(User.Instance.TypeUser == "Client")
+            {
+                fListOrderedRoom fListOrderedRoom = new fListOrderedRoom(this);
+                fListOrderedRoom.ShowDialog();
+            }
+        }
     }
 }

@@ -179,5 +179,27 @@ namespace QuanLyKhachSan_CLient.DAO
         }
 
         #endregion
+
+        #region Ngay 12/06
+        public DataTable ListRoomOrdered(string username)
+        {
+            string query = string.Format("GetListOrderedRoom {0}", username);
+
+            DataTable data = (DataTable)FormatData.Instance.DeserializeData(TCPClient.Instance.GetDataFromCommand(query));
+
+            return data;
+        }
+
+        public DataTable DeleteRoomOrdered(string username, int idRoom)
+        {
+            string query = string.Format("GetListOrderedRoom {0} {1}", username, idRoom);
+
+            DataTable data = (DataTable)FormatData.Instance.DeserializeData(TCPClient.Instance.GetDataFromCommand(query));
+
+            return data;
+        }
+
+        #endregion
+
     }
 }

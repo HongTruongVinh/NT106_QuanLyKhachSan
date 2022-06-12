@@ -163,5 +163,36 @@ namespace QuanLyKhachSan_CLient.DAO
         }
         #endregion
 
+        #region Ngay 12/06
+        public bool ClientDeleteRoomOrdered(string username, string idRoom)
+        {
+            try
+            {
+                string query = string.Format("DeleteRoomOrdered {0} {1}", username, idRoom);
+
+                byte[] bytes = TCPClient.Instance.GetDataFromCommand(query);
+
+                string message = Encoding.UTF8.GetString(bytes);
+
+                string[] strings = message.Split(' ', '\0');
+
+                if (strings[0] == "success")
+                {
+                    return true;
+                }
+
+                if (strings[0] == "fail")
+                {
+                    return false;
+                }
+
+                return false;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        #endregion
     }
 }

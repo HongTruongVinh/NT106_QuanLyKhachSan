@@ -23,7 +23,7 @@ CREATE TABLE TAIKHOAN
 	LoaiTaiKhoan INT DEFAULT 0, check(LoaiTaiKhoan = 0 or LoaiTaiKhoan = 1 or LoaiTaiKhoan = 3) -- 0 là loại TK của nhân viên, 1 là loại TK của admin , 3 là loại TK của khách hàng
 )
 GO
-
+--UPDATE dbo.TAIKHOAN SET MatKhau = '0' WHERE TenDangNhap = 'Vinh'
 CREATE TABLE THONGBAO
 (
 	MaThongBao INT IDENTITY PRIMARY KEY,
@@ -57,7 +57,7 @@ CREATE TABLE PHONG
 	FOREIGN KEY (MaLoaiPhong) REFERENCES dbo.LOAIPHONG(MaLoaiPhong)
 )
 GO
-
+--SELECT p.MaPhong, p.TenPhong, p.GhiChu, kh.TenKhachHang FROM PHONG p, PHIEUTHUEPHONG ptp, KHACHHANG kh WHERE ptp.MaKH = kh.MaKH AND ptp.MaPhong = p.MaPhong AND kh.MaKH = 7
 CREATE TABLE LOAIKHACHHANG
 (
 	MaLoaiKH INT IDENTITY PRIMARY KEY,  --1 la NoiDia, 2 la NuocNgoai
@@ -65,7 +65,7 @@ CREATE TABLE LOAIKHACHHANG
 	HeSoPhuThu FLOAT
 )
 GO
-
+--UPDATE dbo.PHONG SET TinhTrang = 0 WHERE MaPhong = 4
 CREATE TABLE KHACHHANG
 (
 	MaKH INT IDENTITY PRIMARY KEY,

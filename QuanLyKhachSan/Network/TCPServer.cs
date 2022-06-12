@@ -267,9 +267,38 @@ namespace QuanLyKhachSan.Network
                             tcpClient1.Close();
                             break;
 
-                        case "MainWindow":
+                        case "GetListOrderedRoom":
+                            byte[] bytesGetListOrderedRoom = new byte[1024 * 5000];
+
+                            DataTable listOrderedRoom = RoomDAO.Instance.GetListOrderedRoomOfClient(msg[1]);
+                            bytesGetListOrderedRoom = FormatData.Instance.SerializeData(listOrderedRoom);
+
+                            newSocket.Send(bytesGetListOrderedRoom);
+
+                            newSocket.Close();
+                            tcpClient1.Close();
 
                             break;
+
+                        case "DeleteRoomOrdered":
+                            byte[] resualtDeleteRoomOrder = new byte[1024 * 5000];
+
+                            string bytesResualtDeleteRoomOrder = "fail";
+
+                            if(RentalVoucherDAO.Instance.ClientDeleteRoomOrdered(msg[1], msg[2]))
+                            {
+                                bytesResualtDeleteRoomOrder = "success";
+                            }
+
+                            resualtDeleteRoomOrder = Encoding.UTF8.GetBytes(bytesResualtDeleteRoomOrder);
+
+                            newSocket.Send(resualtDeleteRoomOrder);
+
+                            newSocket.Close();
+                            tcpClient1.Close();
+
+                            break;
+
                         case "EXIT":
                             newSocket.Close();
                             tcpClient1.Close();
