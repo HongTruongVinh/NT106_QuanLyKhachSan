@@ -61,5 +61,44 @@ namespace QuanLyKhachSan.DAO
         public int SoKhachToiDa { get => soKhachToiDa; set => soKhachToiDa = value; }
         public int DonGiaPhongCho { get => donGiaPhongCho; set => donGiaPhongCho = value; }
         public float PhuThuTuKhach { get => phuThuTuKhach; set => phuThuTuKhach = value; }
+
+
+        public DataTable GetListParameter()
+        {
+            string query = "SELECT * FROM THAMSO";
+            return DataProvider.Instance.ExecuteQuery(query);
+        }
+
+        public bool Update_KhachToiDa(int KhachToiDa)
+        {
+            string query = string.Format("UPDATE dbo.THAMSO SET KhachToiDa = {0}", KhachToiDa);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+
+        public bool Update_DonGiaPhongCho(int DonGiaPhongCho)
+        {
+            string query = string.Format("UPDATE dbo.THAMSO SET DonGiaPhongCho = {0}", DonGiaPhongCho);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+
+        public bool Update_PhuThuTuKhach(float PhuThuTuKhach)
+        {
+            string query = string.Format("UPDATE dbo.THAMSO SET PhuThuTuKhach = {0}", PhuThuTuKhach);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+
+        public bool Update_PhuThuTuKhachNuocNgoai(float PhuThuTuKhachNuocNgoai)
+        {
+            string query = string.Format("UPDATE dbo.THAMSO SET PhuThuTuKhachNuocNgoai = {0}", PhuThuTuKhachNuocNgoai);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
     }
 }

@@ -40,9 +40,23 @@ namespace QuanLyKhachSan.DAO
         //}
 
         //Chua tao USP_GetListBillByDate trong database
-        public DataTable GetBillListByDate(DateTime checkIn, DateTime checkOut)
+
+        public DataTable TurnoverByYear(int year)
         {
-            return DataProvider.Instance.ExecuteQuery("exec USP_GetListBillByDate @checkIn, @checkOut", new object[] { checkIn, checkOut });
+            string query = "EXEC USP_GetListBillByYear @year";
+            return (DataTable)DataProvider.Instance.ExecuteQuery(query, new object[] { year });
+        }
+
+        public object GetAmountBillMoney(int year)
+        {
+            string query = string.Format("SELECT SUM(ThanhTien) FROM HOADON WHERE YEAR(NgayThanhToan) = {0}", year);
+            return DataProvider.Instance.ExecuteScalar(query);
+        }
+
+        public DataTable GetChartByYear(int year)
+        {
+            string query = string.Format("EXEC USP_GetListBillByYear @year");
+            return (DataTable)DataProvider.Instance.ExecuteQuery(query, new object[] { year });
         }
     }
 }

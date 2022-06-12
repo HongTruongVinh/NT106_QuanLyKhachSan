@@ -116,9 +116,26 @@ CREATE TABLE THAMSO
 	KhachToiDa Int,
 	DonGiaPhongCho Int,
 	PhuThuTuKhach FLOAT,
+	PhuThuTuKhachNuocNgoai FLOAT DEFAULT 0,
 	check(ID = 1)
 )
 GO
+--drop table THAMSO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ----------------------------------------------------------------------------
 --Phần tạo PROC
@@ -169,6 +186,38 @@ VALUES		(
 			)
 END
 GO
+
+---Proc lấy danh sách bill theo năm---
+CREATE PROC USP_GetListBillByYear 
+@year INT
+AS
+BEGIN
+	SELECT MONTH(NgayThanhToan) AS 'THANG', COUNT(MaHD) 'SỐ HÓA ĐƠN', SUM(ThanhTien) AS 'DOANH THU'
+	FROM HOADON
+	WHERE	TrangThai = 1 AND
+			YEAR(NgayThanhToan) = @year
+	GROUP BY MONTH(NgayThanhToan)
+END
+GO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ---------------------------------------------------------------------------
 -- Phần tạo rằng buộc 
 --rằng buộc đăng nhập
@@ -184,10 +233,25 @@ GO
 
 
 
----------------------------------------------------------------------------
--- Phần thêm dữ liệu
 
-INSERT INTO dbo.THAMSO (KhachToiDa, DonGiaPhongCho, PhuThuTuKhach) VALUES (3, 2, 0.25) 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------------
+-- Phần thêm dữ liệu 
 
 INSERT INTO dbo.TAIKHOAN
 			( TenDangNhap,
@@ -319,3 +383,100 @@ USP_InsertClient
 @CMND='123',
 @SDT='123',
 @DiaChi=[Việt Nam]
+
+INSERT INTO dbo.HOADON
+(
+	MaPhong,
+	SoNgayThue,
+	ThanhTien,
+	NgayThanhToan,
+	DonGia,
+	TrangThai
+)
+VALUES
+(
+	1,
+	2,
+	10000,
+	'20221001',
+	1000,
+	1
+)
+GO
+
+INSERT INTO dbo.HOADON
+(
+	MaPhong,
+	SoNgayThue,
+	ThanhTien,
+	NgayThanhToan,
+	DonGia,
+	TrangThai
+)
+VALUES
+(
+	2,
+	2,
+	20000,
+	'20220501',
+	2000,
+	1
+)
+GO
+
+INSERT INTO dbo.HOADON
+(
+	MaPhong,
+	SoNgayThue,
+	ThanhTien,
+	NgayThanhToan,
+	DonGia,
+	TrangThai
+)
+VALUES
+(
+	1,
+	2,
+	10000,
+	'20160710',
+	1000,
+	1
+)
+GO
+
+INSERT INTO dbo.HOADON
+(
+	MaPhong,
+	SoNgayThue,
+	ThanhTien,
+	NgayThanhToan,
+	DonGia,
+	TrangThai
+)
+VALUES
+(
+	3,
+	2,
+	30000,
+	'20160520',
+	1000,
+	1
+)
+GO
+
+INSERT INTO THAMSO
+(
+	ID,
+	KhachToiDa,
+	DonGiaPhongCho,
+	PhuThuTuKhach,
+	PhuThuTuKhachNuocNgoai
+)
+VALUES
+(
+	1,
+	3,
+	2,
+	1,
+	1.5
+)

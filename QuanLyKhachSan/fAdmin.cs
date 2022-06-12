@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyKhachSan.DAO;
 using QuanLyKhachSan.DTO;
+using System.Data;
 
 namespace QuanLyKhachSan
 {
@@ -34,11 +35,6 @@ namespace QuanLyKhachSan
             dgv_TypeRoom.DataSource = listTypeRoom;
 
             cbb_TypeRoom.DropDownStyle = ComboBoxStyle.DropDownList;
-
-            nud_MaxPeople.Maximum = 10;
-            nud_MaxPeople.Minimum = 1;
-            nud_PriceForCountCLient.Maximum = 10;
-            nud_PriceForCountCLient.Minimum = 1;
         }
 
         void Load()
@@ -52,7 +48,9 @@ namespace QuanLyKhachSan
 
             AddRoomBinding();
             AddTypeRoomBinding();
-            LoadDateTimePickerBill();
+
+            LoadListYear();
+            LoadDefaultData();
         }
 
         void AddRoomBinding()
@@ -113,17 +111,147 @@ namespace QuanLyKhachSan
             cb.DisplayMember = "name";
         }
 
-        void LoadListBillByDate(DateTime checkIn, DateTime checkOut)
+        /*DOANH THU VÀ BIỂU ĐỒ*/
+        void LoadListYear()
         {
-            dtgvBill.DataSource = BillDAO.Instance.GetBillListByDate(checkIn, checkOut);
+            for (int i = 2015; i <= DateTime.Now.Year; i++)
+            {
+                cmbYear.Items.Add(i);
+            }
+
+            cmbYear.SelectedItem = DateTime.Now.Year;
         }
 
-        void LoadDateTimePickerBill()
+        void ShowTurnoverByYear()
         {
-            DateTime today = DateTime.Now;
-            dtpkFromDate.Value = new DateTime(today.Year, today.Month, 1);
-            dtpkToDate.Value = dtpkFromDate.Value.AddMonths(1).AddDays(-1);
-        } 
+            dtgvBill.DataSource = BillDAO.Instance.TurnoverByYear((int)cmbYear.SelectedItem);
+        }
+
+        void ShowAmountBillMoney()
+        {
+            txbAmount.Text = BillDAO.Instance.GetAmountBillMoney((int)cmbYear.SelectedItem).ToString();
+        }
+
+
+        /*ĐIỀU CHỈNH ĐIỀU KHOẢN*/
+
+
+        private void LoadDefaultData()
+        {
+            DataRow data = null;
+            data = RegulationDAO.Instance.GetListParameter().Rows[0];
+            txbMaxCustomerPerRoom.Text = data["KhachToiDa"].ToString();
+            txbBasePrice.Text = data["DonGiaPhongCho"].ToString();
+            tb_Surcharge.Text = data["PhuThuTuKhach"].ToString();
+            tb_SurchargeForeign.Text = data["PhuThuTuKhachNuocNgoai"].ToString();
+        }
+
+        private void checkInt(string dataIn, out int dataOut)
+        {
+            dataOut = 0;
+            if (dataIn != "")
+            {
+                if (!Int32.TryParse(dataIn, out dataOut))
+                {
+                    MessageBox.Show("Vui lòng chỉ nhập số!");
+                    return;
+                }
+
+                if (dataOut < 0)
+                {
+                    MessageBox.Show("Vui lòng nhập số nguyên dương!");
+                    return;
+                }
+            }
+        }
+
+        private void checkFloat(string dataIn, out float dataOut)
+        {
+            dataOut = 0;
+            if (dataIn != "")
+            {
+                if (!float.TryParse(dataIn, out dataOut))
+                {
+                    MessageBox.Show("Vui lòng chỉ nhập số!");
+                    return;
+                }
+
+                if (dataOut < 0)
+                {
+                    MessageBox.Show("Vui lòng nhập số dương!");
+                    return;
+                }
+            }
+        }
+
+        private void Update_KhachToiDa()
+        {
+            if (txbMaxCustomerPerRoom.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập dữ liệu vào ô 'Số khách tối đa cho mỗi phòng'!");
+            }
+            else
+            {
+                int result;
+                checkInt(txbMaxCustomerPerRoom.Text, out result);
+                if (RegulationDAO.Instance.Update_KhachToiDa(result))
+                    MessageBox.Show("Cập nhật Số khách tối đa mỗi phòng thành công!");
+                else
+                    MessageBox.Show("Cập nhật Số khách tối đa mỗi phòng thất bại!");
+            }
+
+        }
+
+        private void Update_DonGiaPhongCho()
+        {
+            if (txbBasePrice.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập dữ liệu vào ô 'Đơn giá phòng trọ'!");
+            }
+            else
+            {
+                int result;
+                checkInt(txbBasePrice.Text, out result);
+                if (RegulationDAO.Instance.Update_DonGiaPhongCho(result))
+                    MessageBox.Show("Cập nhật Đơn giá phòng trọ thành công!");
+                else
+                    MessageBox.Show("Cập nhật Đơn giá phòng trọ thất bại!");
+            }
+        }
+
+        private void Update_PhuThuTuKhach()
+        {
+            if (tb_Surcharge.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập dữ liệu vào ô 'Phụ thu từ khách'!");
+            }
+            else
+            {
+                float result;
+                checkFloat(tb_Surcharge.Text, out result);
+                if (RegulationDAO.Instance.Update_PhuThuTuKhach(result))
+                    MessageBox.Show("Cập nhật Phụ thu từ khách thành công!");
+                else
+                    MessageBox.Show("Cập nhật Phụ thu từ khách thất bại!");
+            }
+        }
+
+        private void Update_PhuThuTuKhachNuocNgoai()
+        {
+            if (tb_SurchargeForeign.Text == "")
+            {
+                MessageBox.Show("Vui lòng nhập dữ liệu vào ô 'Phụ thu từ khách nước ngoài'!");
+            }
+            else
+            {
+                float result;
+                checkFloat(tb_SurchargeForeign.Text, out result);
+                if (RegulationDAO.Instance.Update_PhuThuTuKhachNuocNgoai(result))
+                    MessageBox.Show("Cập nhật Phụ thu từ khách nước ngoài thành công!");
+                else
+                    MessageBox.Show("Cập nhật Phụ thu từ khách nước ngoài thất bại!");
+            }
+        }
         #endregion
 
         #region events
@@ -295,7 +423,12 @@ namespace QuanLyKhachSan
 
         private void tb_Surcharge_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
             }
@@ -303,17 +436,49 @@ namespace QuanLyKhachSan
 
         private void tb_SurchargeForeign_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != '.'))
+            {
+                e.Handled = true;
+            }
+
+            if ((e.KeyChar == '.') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
                 e.Handled = true;
             }
         }
 
-        private void btnViewBill_Click(object sender, EventArgs e)
+        //DOANH THU VÀ BIỂU ĐỒ
+        private void cmbYear_SelectedValueChanged(object sender, EventArgs e)
         {
-            
-            LoadListBillByDate(dtpkFromDate.Value, dtpkToDate.Value);
+            ShowTurnoverByYear();
+            ShowAmountBillMoney();
+
+            this.CmbYear = (int)cmbYear.SelectedItem;
         }
+
+        private void btnShowChart_Click(object sender, EventArgs e)
+        {
+            fChart f = new fChart(this);
+            f.ShowDialog();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Update_KhachToiDa();
+                Update_DonGiaPhongCho();
+                Update_PhuThuTuKhach();
+                Update_PhuThuTuKhachNuocNgoai();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            LoadDefaultData();
+        }
+        //ĐIỀU CHỈNH ĐIỀU KHOẢN
         #endregion
 
         #region Them xoa sua account
@@ -357,7 +522,19 @@ namespace QuanLyKhachSan
             }
         }
 
+
+
         #endregion
 
+
+        #region GETSET FUNCTION
+        public int CmbYear
+        {
+            get { if (cmbYear.SelectedItem == null) return 0; return (int)cmbYear.SelectedItem; }
+            set { cmbYear.SelectedItem = value; }
+        }
+
+
+        #endregion
     }
 }

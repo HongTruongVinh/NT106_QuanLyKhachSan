@@ -76,3 +76,24 @@ C:\Users\HONG VINH\Source\Repos\NT106_QuanLyKhachSan2\QuanLyKhachSan\obj\Debug\Q
 C:\Users\HONG VINH\Source\Repos\NT106_QuanLyKhachSan2\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
 C:\Users\HONG VINH\Source\Repos\NT106_QuanLyKhachSan2\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fNotice.resources
 F:\ProgLang\C#\Winforms\NT106.M21\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fNotice.resources
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe.config
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.pdb
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.AssemblyReference.cache
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.SuggestedBindingRedirects.cache
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fBillMgmt.resources
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fAdmin.resources
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fChart.resources
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fGuestMgmt.resources
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fInformation.resources
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fListRentalVoucher.resources
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fNotice.resources
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fRentalVoucher.resources
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fLogin.resources
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fLoadRoom.resources
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.MainWindow.resources
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Properties.Resources.resources
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.GenerateResource.cache
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CoreCompileInputs.cache
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb

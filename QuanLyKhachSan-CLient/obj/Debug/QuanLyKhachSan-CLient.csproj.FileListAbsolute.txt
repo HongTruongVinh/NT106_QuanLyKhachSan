@@ -20,3 +20,25 @@ C:\Users\HONG VINH\source\repos\NT106_QuanLyKhachSan2\QuanLyKhachSan-CLient\obj\
 C:\Users\HONG VINH\source\repos\NT106_QuanLyKhachSan2\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan-CLient.pdb
 C:\Users\HONG VINH\source\repos\NT106_QuanLyKhachSan2\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan_CLient.fClientSignUp.resources
 C:\Users\HONG VINH\source\repos\NT106_QuanLyKhachSan2\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan_CLient.fListOrderedRoom.resources
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan-CLient\bin\Debug\QuanLyKhachSan-CLient.exe.config
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan-CLient\bin\Debug\QuanLyKhachSan-CLient.exe
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan-CLient\bin\Debug\QuanLyKhachSan-CLient.pdb
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan-CLient.csproj.AssemblyReference.cache
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan-CLient.csproj.SuggestedBindingRedirects.cache
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan_CLient.fAdmin.resources
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan_CLient.fBillMgmt.resources
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan_CLient.fClientSignUp.resources
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan_CLient.fGuestMgmt.resources
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan_CLient.fInformation.resources
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan_CLient.fListOrderedRoom.resources
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan_CLient.fListRentalVoucher.resources
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan_CLient.fLoadRoom.resources
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan_CLient.fLogin.resources
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan_CLient.fNotice.resources
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan_CLient.fRentalVoucher.resources
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan_CLient.MainWindow.resources
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan_CLient.Properties.Resources.resources
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan-CLient.csproj.GenerateResource.cache
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan-CLient.csproj.CoreCompileInputs.cache
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan-CLient.exe
+F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan-CLient.pdb
