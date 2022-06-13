@@ -20,12 +20,19 @@ namespace QuanLyKhachSan_CLient
 
         private void btn_SignUp_Click(object sender, EventArgs e)
         {
-            if(tb_IDPerson.Text == "" || tb_NameCLient.Text==""|| tb_NumberPhone.Text==""|| tb_Address.Text == "")
+            if (tb_Password.Text != tb_Repassword.Text)
+            {
+                MessageBox.Show("Nhập lại mật khẩu không khớp!"); return;
+            }
+
+            if(tb_IDPerson.Text == "" || tb_NameCLient.Text==""|| tb_NumberPhone.Text==""|| tb_Address.Text == "" || tb_Password.Text == ""|| tb_Repassword.Text == "")
             {
                 MessageBox.Show("Hãy nhập đủ thông tin");return;
             }
 
-            MessageBox.Show(User.Instance.SignUp(tb_NameCLient.Text, tb_NumberPhone.Text, tb_IDPerson.Text, tb_Address.Text));
+            string newPassword = fLogin.MD5(tb_Password.Text);
+
+            MessageBox.Show(User.Instance.SignUp(tb_NameCLient.Text, tb_NumberPhone.Text, tb_IDPerson.Text, tb_Address.Text, newPassword));
             this.Close();
         }
 

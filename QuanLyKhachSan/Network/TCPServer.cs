@@ -69,7 +69,7 @@ namespace QuanLyKhachSan.Network
 
                         string responseMessage = "Successfully";
 
-                        if (AccountDAO.Instance.IsExistIDPerson(strings[3]) || AccountDAO.Instance.IsExistNumberPhone(strings[2]) || AccountDAO.Instance.InsertAccountCLient(strings[2], strings[1], "0") == false)
+                        if (AccountDAO.Instance.IsExistIDPerson(strings[3]) || AccountDAO.Instance.IsExistNumberPhone(strings[2]) || AccountDAO.Instance.InsertAccountCLient(strings[2], strings[1], strings[5]) == false)
                         {
                             responseMessage = "Error";
 
@@ -95,7 +95,7 @@ namespace QuanLyKhachSan.Network
                         {
                             responseMessage += " OK OK";
 
-                            AccountDAO.Instance.Insert(strings[2], strings[1], "3");
+                            //AccountDAO.Instance.Insert(strings[2], strings[1], strings[5]);
                             ClientDAO.Instance.InsertLient(strings[1], Convert.ToInt32(strings[3]), strings[2], strings[4]);
                         }
 

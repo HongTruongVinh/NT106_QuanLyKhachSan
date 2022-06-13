@@ -42,11 +42,11 @@ namespace QuanLyKhachSan_CLient.Network
         public string PhoneNumber { get => phoneNumber; set => phoneNumber = value; }
         public string ID { get => iD; set => iD = value; }
 
-        public string SignUp(string name, string numberphone, string idPerson, string address)
+        public string SignUp(string name, string numberphone, string idPerson, string address, string password)
         {
             string stringReturn = "";
 
-            byte[] bytes = TCPClient.Instance.GetDataFromCommand_SignUp(string.Format("SignUp {0} {1} {2} {3}", name, numberphone, idPerson, address));
+            byte[] bytes = TCPClient.Instance.GetDataFromCommand_SignUp(string.Format("SignUp {0} {1} {2} {3} {4}", name, numberphone, idPerson, address, password));
 
             string message = Encoding.UTF8.GetString(bytes);
 

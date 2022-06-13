@@ -24,12 +24,25 @@ namespace QuanLyKhachSan_CLient
             tb_PassWord.Text = "0";
         }
 
+        public static string MD5(string s)
+        {
+            StringBuilder builder = new StringBuilder();
+
+            using (var provider = System.Security.Cryptography.MD5.Create())
+            {
+                foreach (byte b in provider.ComputeHash(Encoding.UTF8.GetBytes(s)))
+                    builder.Append(b.ToString("x2").ToLower());
+            }
+            
+            return builder.ToString();
+        }
+
         private void btn_Login_Click(object sender, EventArgs e)
         {
             string username = tb_UserName.Text;
-            string password = tb_PassWord.Text;
+            string stringPassword = MD5(tb_PassWord.Text);
 
-            if (TCPClient.Instance.Login(username, password))
+            if (TCPClient.Instance.Login(username, stringPassword))
             {
                 this.Hide();
 

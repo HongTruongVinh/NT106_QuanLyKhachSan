@@ -261,7 +261,7 @@ INSERT INTO dbo.TAIKHOAN
 			)
 VALUES       	( N'admin',
 			  N'admin',
-			  N'0',
+			  N'c4ca4238a0b923820dcc509a6f75849b',
 			  1 -- MÌNH CẦN MỘT TÀI KHOẢN ADMIN ĐỂ TEST
 			)
 GO
@@ -274,7 +274,7 @@ INSERT INTO dbo.TAIKHOAN
 			)
 VALUES       	( N'Vinh',
 			  N'Vinh',
-			  N'0',
+			  N'cfcd208495d565ef66e7dff9f98764da',
 			  0
 			)
 GO
