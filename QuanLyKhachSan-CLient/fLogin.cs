@@ -21,7 +21,7 @@ namespace QuanLyKhachSan_CLient
             //tb_UserName.Text = "Vinh";
             //tb_PassWord.Text = "1";
             tb_UserName.Text = "Vinh";
-            tb_PassWord.Text = "0";
+            tb_PassWord.Text = "1";
         }
 
         private void btn_Login_Click(object sender, EventArgs e)

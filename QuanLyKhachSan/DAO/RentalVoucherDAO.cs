@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -132,18 +133,27 @@ namespace QuanLyKhachSan.DAO
         //hàm Delete
         public bool DeleteRentalVoucher(int idRentalVoucher, int idClient)
         {
-            try
-            {
-                string query = "DELETE dbo.PHIEUTHUEPHONG WHERE MaPhieu = " + idRentalVoucher +" AND MaKH =" + idClient;
+            string query = "DELETE dbo.PHIEUTHUEPHONG WHERE MaPhieu = " + idRentalVoucher + " AND MaKH =" + idClient;
 
-                DataProvider.Instance.ExecuteNonQuery(query);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
 
-                return true;
-            }
-            catch
+            return result > 0;
+        }
+
+        public RentalVoucher GetUnCheckRentalVoucherByID(int id)
+        {
+            string query = "SELECT MaPhieu id, MaPhong roomID, ptp.MaKH clientID, NgayBatDau dateTimeCheckIn, NgayKetThuc dateTimeCheckOut, SoLuongKhach countPeople , TenLoaiKH typeCLient, HeSoPhuThu dependencyFactor"
+                            + " FROM dbo.PHIEUTHUEPHONG ptp, dbo.LOAIKHACHHANG lkh WHERE ptp.MaLoaiKH = lkh.MaLoaiKH AND  MaPhieu = '" + id + "'";
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            if (data.Rows.Count > 0)
             {
-                return false;
+                RentalVoucher rentalVoucher = new RentalVoucher(data.Rows[0]);
+                return rentalVoucher;
             }
+
+            return null;
         }
 
         #endregion

@@ -16,6 +16,8 @@ namespace QuanLyKhachSan
     {
         BindingSource listRentalVoucher = new BindingSource();
 
+        RentalVoucher rentalVoucher;
+
         public fListRentalVoucher()
         {
             InitializeComponent();
@@ -23,6 +25,18 @@ namespace QuanLyKhachSan
             Load();
         }
 
+        
+
+        void SetDefaultControls()
+        {
+            dgv_ListRentalVoucher.DataSource =listRentalVoucher;
+
+            this.Size = new Size(1280, 690);
+
+            cbb_TypeClient.DropDownStyle = ComboBoxStyle.DropDownList;
+        }
+
+        #region FUNCTION
         void Load()
         {
 
@@ -32,15 +46,6 @@ namespace QuanLyKhachSan
 
 
             AddBinding();
-        }
-
-        void SetDefaultControls()
-        {
-            dgv_ListRentalVoucher.DataSource =listRentalVoucher;
-
-            this.Size = new Size(1280, 690);
-
-            cbb_TypeClient.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         void AddBinding()
@@ -63,7 +68,15 @@ namespace QuanLyKhachSan
             dgv_ListRentalVoucher.DataSource = RentalVoucherDAO.Instance.ListRentalVoucherUnCheckOut("TiengViet");
 
         }
+        
+        // SỬA PHIẾU ĐẶT CHỖ
+        void LoadRentalVoucher(int MaPhieu)
+        {
+            rentalVoucher = RentalVoucherDAO.Instance.GetUnCheckRentalVoucherByID(MaPhieu);
+        }
+        #endregion
 
+        #region EVENTS
         private void btn_DeleteRV_Click(object sender, EventArgs e)
         {
             var result = MessageBox.Show("Bạn có chắc muốn XÓA?", "Thông báo", MessageBoxButtons.YesNo);
@@ -71,7 +84,7 @@ namespace QuanLyKhachSan
             if (result == DialogResult.No)
             {
                 return;
-            }
+            }   
 
             int idRV = Convert.ToInt32(tb_IdRentalVoucher.Text);
             int idClient = Convert.ToInt32(tb_IdClient.Text);
@@ -117,5 +130,53 @@ namespace QuanLyKhachSan
                 }
             }
         }
+
+        private void btn_EditRV_Click(object sender, EventArgs e)
+        {
+            var result = MessageBox.Show("Bạn có chắc muốn sửa?", "Thông báo", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.No)
+            {
+                return;
+            }
+
+            try
+            {
+                int maPhieu = Int32.Parse(tb_IdRentalVoucher.Text);
+                LoadRentalVoucher(maPhieu);
+                Client cLient = ClientDAO.Instance.GetClientByID(rentalVoucher.ClientID);
+
+
+                cLient.Name = tb_NameClient.Text;
+                cLient.IDPerson = Convert.ToInt32(tb_IdPerson.Text);
+                cLient.NumberPhone = tb_NumberPhone.Text;
+                cLient.Address = tb_Address.Text;
+
+                int idTypeClient = -1;
+
+                switch (cbb_TypeClient.SelectedIndex)
+                {
+                    case 1:
+                        idTypeClient = 2;
+                        break;
+                    default:
+                        idTypeClient = 1;
+                        break;
+                }
+
+                int countPeople = Convert.ToInt32(tb_CountClient.Text);
+
+                RentalVoucherDAO.Instance.UpdateRentalVoucher(rentalVoucher.ID, idTypeClient, countPeople, cLient);
+
+                MessageBox.Show("Sửa thông tin phiếu thuê phòng thành công!");
+                LoadInforRentalVoucher();
+
+            }
+            catch
+            {
+                MessageBox.Show("!!!Lỗi sửa thông tin phiếu thuê phòng không thành công!!!");
+            }
+        }
+        #endregion
     }
 }

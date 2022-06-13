@@ -118,3 +118,4 @@ C:\Users\HONG VINH\Source\Repos\NT106_QuanLyKhachSan3\QuanLyKhachSan\obj\Debug\Q
 C:\Users\HONG VINH\Source\Repos\NT106_QuanLyKhachSan3\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CoreCompileInputs.cache
 C:\Users\HONG VINH\Source\Repos\NT106_QuanLyKhachSan3\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
 C:\Users\HONG VINH\Source\Repos\NT106_QuanLyKhachSan3\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
+F:\ProgLang\C#\Winforms\NT106.M21\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fChart.resources

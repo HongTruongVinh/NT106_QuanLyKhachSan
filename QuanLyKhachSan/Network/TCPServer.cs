@@ -366,6 +366,44 @@ namespace QuanLyKhachSan.Network
                             tcpClient1.Close();
 
                             break;
+
+                        case "DeleteRentalVoucher":
+                            byte[] resultDeleteRentalVoucher = new byte[1024 * 5000];
+
+                            string bytesresultDeleteRentalVoucher = "fail";
+
+                            if (RentalVoucherDAO.Instance.DeleteRentalVoucher(Int32.Parse(msg[1]), Int32.Parse(msg[2])))
+                            {
+                                bytesresultDeleteRentalVoucher = "success";
+                            }
+
+                            resultDeleteRentalVoucher = Encoding.UTF8.GetBytes(bytesresultDeleteRentalVoucher);
+
+                            newSocket.Send(resultDeleteRentalVoucher);
+
+                            newSocket.Close();
+                            tcpClient1.Close();
+
+                            break;
+
+                        case "UpdateStatusRoom":
+                            byte[] resultUpdateStatusRoom = new byte[1024 * 5000];
+
+                            string bytesresultUpdateStatusRoom = "fail";
+
+                            if (RoomDAO.Instance.UpdateStatusRoom(Int32.Parse(msg[1]), 0))
+                            {
+                                bytesresultUpdateStatusRoom = "success";
+                            }
+
+                            resultUpdateStatusRoom = Encoding.UTF8.GetBytes(bytesresultUpdateStatusRoom);
+
+                            newSocket.Send(resultUpdateStatusRoom);
+
+                            newSocket.Close();
+                            tcpClient1.Close();
+
+                            break;
                     }
                 }
                 catch

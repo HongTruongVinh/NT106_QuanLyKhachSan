@@ -106,9 +106,9 @@ namespace QuanLyKhachSan.DAO
             }
             catch
             {
-
+                return false;
             }
-            return false;
+            
         }
         #endregion
 

@@ -120,13 +120,21 @@ namespace QuanLyKhachSan_CLient.DAO
         {
             try
             {
-                string query = "DELETE dbo.PHIEUTHUEPHONG WHERE MaPhieu = " + idRentalVoucher +" AND MaKH =" + idClient;
+                string query = String.Format("DeleteRentalVoucher {0} {1}", idRentalVoucher, idClient);
 
-                DataProvider.Instance.ExecuteNonQuery(query);
+                byte[] bytes = TCPClient.Instance.GetDataFromCommand(query);
+                string message = Encoding.UTF8.GetString(bytes);
 
-                return true;
+                string[] strings = message.Split(' ', '\0');
+
+                if (strings[0] == "success")
+                {
+                    return true;
+                }
+
+                return false;
             }
-            catch
+            catch 
             {
                 return false;
             }

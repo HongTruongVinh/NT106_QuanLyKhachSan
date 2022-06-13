@@ -30,7 +30,7 @@ namespace QuanLyKhachSan.DTO
 
             string _roomID = (string)row["roomID"].ToString();
             this.RoomID = Int32.Parse(_roomID);
-
+            
             this.DateTimeCheckIn = (DateTime?)row["dateTimeCheckIn"];
 
             try

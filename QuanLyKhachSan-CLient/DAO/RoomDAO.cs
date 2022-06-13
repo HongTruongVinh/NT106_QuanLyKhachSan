@@ -64,11 +64,17 @@ namespace QuanLyKhachSan_CLient.DAO
         {
             try
             {
-                string query = "UPDATE dbo.PHONG SET TinhTrang = " + status + " WHERE MaPhong = " + roomID;
+                string query = string.Format("UpdateStatusRoom {0} {1}", roomID, status);
 
-                DataProvider.Instance.ExecuteNonQuery(query);
+                byte[] bytes = TCPClient.Instance.GetDataFromCommand(query);
 
-                return true;
+                string message = Encoding.UTF8.GetString(bytes);
+
+                string[] strings = message.Split(' ', '\0');
+
+                if (strings[0] == "success")
+                    return true;
+                return false;
             }
             catch
             {
