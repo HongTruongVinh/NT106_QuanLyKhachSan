@@ -64,75 +64,51 @@
     <Compile Include="DTO\RentalVoucher.cs" />
     <Compile Include="DTO\Room.cs" />
     <Compile Include="DTO\TypeRoom.cs" />
-    <Compile Include="fAdmin.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="fAdmin.cs" />
     <Compile Include="fAdmin.Designer.cs">
       <DependentUpon>fAdmin.cs</DependentUpon>
     </Compile>
-    <Compile Include="fBillMgmt.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="fBillMgmt.cs" />
     <Compile Include="fBillMgmt.Designer.cs">
       <DependentUpon>fBillMgmt.cs</DependentUpon>
     </Compile>
-    <Compile Include="fClientSignUp.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="fClientSignUp.cs" />
     <Compile Include="fClientSignUp.Designer.cs">
       <DependentUpon>fClientSignUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="fGuestMgmt.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="fGuestMgmt.cs" />
     <Compile Include="fGuestMgmt.Designer.cs">
       <DependentUpon>fGuestMgmt.cs</DependentUpon>
     </Compile>
-    <Compile Include="fInformation.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="fInformation.cs" />
     <Compile Include="fInformation.Designer.cs">
       <DependentUpon>fInformation.cs</DependentUpon>
     </Compile>
-    <Compile Include="fListOrderedRoom.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="fListOrderedRoom.cs" />
     <Compile Include="fListOrderedRoom.Designer.cs">
       <DependentUpon>fListOrderedRoom.cs</DependentUpon>
     </Compile>
-    <Compile Include="fListRentalVoucher.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="fListRentalVoucher.cs" />
     <Compile Include="fListRentalVoucher.Designer.cs">
       <DependentUpon>fListRentalVoucher.cs</DependentUpon>
     </Compile>
-    <Compile Include="fLoadRoom.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="fLoadRoom.cs" />
     <Compile Include="fLoadRoom.Designer.cs">
       <DependentUpon>fLoadRoom.cs</DependentUpon>
     </Compile>
-    <Compile Include="fLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="fLogin.cs" />
     <Compile Include="fLogin.Designer.cs">
       <DependentUpon>fLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="fNotice.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="fNotice.cs" />
     <Compile Include="fNotice.Designer.cs">
       <DependentUpon>fNotice.cs</DependentUpon>
     </Compile>
-    <Compile Include="fRentalVoucher.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="fRentalVoucher.cs" />
     <Compile Include="fRentalVoucher.Designer.cs">
       <DependentUpon>fRentalVoucher.cs</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="MainWindow.cs" />
     <Compile Include="MainWindow.Designer.cs">
       <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>

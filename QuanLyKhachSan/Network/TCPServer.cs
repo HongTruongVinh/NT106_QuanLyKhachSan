@@ -366,6 +366,120 @@ namespace QuanLyKhachSan.Network
                             tcpClient1.Close();
 
                             break;
+
+                        case "GetCustomerByCategoryID":
+                            byte[] bytesGetCustomerByCategoryID = new byte[1024 * 5000];
+
+                            int id = Int32.Parse(msg[1]);
+
+                            List<Client> listclient = ClientDAO.Instance.GetCustomerByCategoryID(id);
+                            bytesGetCustomerByCategoryID = FormatData.Instance.SerializeData(listclient);
+
+                            newSocket.Send(bytesGetCustomerByCategoryID);
+
+                            newSocket.Close();
+                            tcpClient1.Close();
+
+                            break;
+
+
+                        case "GetListClient":
+                            byte[] bytesGetListClient = new byte[1024 * 5000];
+
+                            List<Client> listclient1 = ClientDAO.Instance.GetListClient();
+                            bytesGetListClient = FormatData.Instance.SerializeData(listclient1);
+
+                            newSocket.Send(bytesGetListClient);
+
+                            newSocket.Close();
+                            tcpClient1.Close();
+
+                            break;
+
+                        case "InsertClient":
+                            byte[] resualtInsertClient = new byte[1024 * 5000];
+
+                            string bytesResualtInsertClient = "fail";
+
+                         
+                            string hoten = msg[1];
+                            string sdt = msg[2];
+                            string cmnd = msg[3];
+                            string diachi = msg[4];
+
+                            if (ClientDAO.Instance.InsertClient(hoten, sdt, cmnd, diachi))
+                            {
+                                bytesResualtInsertClient = "success";
+                            }
+
+                            resualtInsertClient = Encoding.UTF8.GetBytes(bytesResualtInsertClient);
+
+                            newSocket.Send(resualtInsertClient);
+
+                            newSocket.Close();
+                            tcpClient1.Close();
+
+                            break;
+                        case "UpdateClient":
+                            byte[] resualtUpdateClient = new byte[1024 * 5000];
+
+                            string bytesResualtUpdateClient = "fail";
+
+                            int makhachhang = Int32.Parse(msg[1]);
+                            string hoten1 = msg[2];
+                            string sdt1 = msg[3];
+                            string cmnd1 = msg[4];
+                            string diachi1 = msg[5];
+                            if (ClientDAO.Instance.UpdateClient(makhachhang,hoten1,sdt1,cmnd1,diachi1))
+                            {
+                                bytesResualtUpdateClient = "success";
+                            }
+
+                            resualtUpdateClient = Encoding.UTF8.GetBytes(bytesResualtUpdateClient);
+
+                            newSocket.Send(resualtUpdateClient);
+
+                            newSocket.Close();
+                            tcpClient1.Close();
+
+                            break;
+
+                        case "DeleteClient":
+                            byte[] resualtDeleteClient = new byte[1024 * 5000];
+
+                            string bytesResualtDeleteClient = "fail";
+
+                            int id1 = Int32.Parse(msg[1]);
+
+                            if (ClientDAO.Instance.DeleteClient(id1))
+                            {
+                                bytesResualtDeleteClient = "success";
+                            }
+
+                            resualtDeleteClient = Encoding.UTF8.GetBytes(bytesResualtDeleteClient);
+
+                            newSocket.Send(resualtDeleteClient);
+
+                            newSocket.Close();
+                            tcpClient1.Close();
+
+                            break;
+
+                        case "GetGuestByBillID":
+                            byte[] bytesGetGuestByBillID = new byte[1024 * 5000];
+
+                            int id3 = Int32.Parse(msg[1]);
+
+                            DataTable listclient2 = ClientDAO.Instance.GetGuestByBillID(id3);
+                            bytesGetGuestByBillID = FormatData.Instance.SerializeData(listclient2);
+
+                            newSocket.Send(bytesGetGuestByBillID);
+
+                            newSocket.Close();
+                            tcpClient1.Close();
+
+                            break;
+
                     }
                 }
                 catch
