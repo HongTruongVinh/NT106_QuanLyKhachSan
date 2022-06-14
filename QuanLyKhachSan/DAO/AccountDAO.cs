@@ -65,7 +65,7 @@ namespace QuanLyKhachSan.DAO
 
 
         #region Phần thêm xóa sửa Account
-        public bool Insert(string userName, string displayName, string password)
+        public bool Insert(string userName, string displayName, string passwordBeMD5)
         {
             try
             {
@@ -76,7 +76,7 @@ namespace QuanLyKhachSan.DAO
                     return false;// Kiểm tra nếu đã có người đặt username này thì không thể tạo thêm tài khoản 
                 }
 
-                string query = string.Format("INSERT INTO dbo.TAIKHOAN ( TenDangNhap , TenHienThi , MatKhau , LoaiTaiKhoan ) VALUES ( '{0}' , '{1}' , '{2}' , 0 )", userName, displayName, password);
+                string query = string.Format("INSERT INTO dbo.TAIKHOAN ( TenDangNhap , TenHienThi , MatKhau , LoaiTaiKhoan ) VALUES ( '{0}' , '{1}' , '{2}' , 0 )", userName, displayName, passwordBeMD5);
 
                 int success = DataProvider.Instance.ExecuteNonQuery(query);
 
@@ -96,10 +96,14 @@ namespace QuanLyKhachSan.DAO
             }
         }
 
-        public bool Delete(string userName)
+        public bool DeleteAccEmployee(string userName)
         {
             try
             {
+                // Xóa thông báo chứa username này trước
+                bool deleteNotice = NoticeDAO.Instance.DeleteByUsername(userName);
+                if (!deleteNotice) return false;
+
                 string query = string.Format("DELETE dbo.TAIKHOAN WHERE TenDangNhap = '{0}' ", userName);
 
                 int success = DataProvider.Instance.ExecuteNonQuery(query);
@@ -120,11 +124,84 @@ namespace QuanLyKhachSan.DAO
             }
         }
 
-        public bool ResetPassword(string userName, string newPassword)
+        public int DeleteListAccEmployee(List<string> listAccEmployee)
+        {
+            int success = 0;
+
+            foreach (var item in listAccEmployee)
+            {
+                try
+                {
+                    if (DeleteAccEmployee(item))
+                    {
+                        success++;
+                    }
+                }
+                catch
+                {
+
+                }
+            }
+
+            return success;
+        }
+
+        public bool DeleteAccClient(string userName)
         {
             try
             {
-                string query = string.Format("UPDATE dbo.TAIKHOAN SET MatKhau = {0} WHERE MaPhong = {1}", newPassword, userName);
+                // Xóa thông báo chứa username này trước
+                bool deleteNotice = NoticeDAO.Instance.DeleteByUsername(userName);
+                if(!deleteNotice)return false;
+
+                //xóa TK đăng nhập 
+                string query = string.Format("DELETE dbo.TAIKHOAN WHERE TenDangNhap = '{0}' ", userName);
+
+                int success = DataProvider.Instance.ExecuteNonQuery(query);
+
+                if (success > 0)
+                {
+                    return true;//Xoa thanh cong
+                }
+                else
+                {
+                    return false;//Xoa khong thanh cong
+                }
+
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        public int DeleteListAccClient(List<string> listAccClient)
+        {
+            int success = 0;
+
+            foreach (var item in listAccClient)
+            {
+                try
+                {
+                    if (DeleteAccClient(item))
+                    {
+                        success++;
+                    }
+                }
+                catch
+                {
+
+                }
+            }
+
+            return success;
+        }
+
+        public bool ResetPassword(string userName, string newPasswordBeMD5)
+        {
+            try
+            {
+                string query = string.Format("UPDATE dbo.TAIKHOAN SET MatKhau = '{0}' WHERE TenDangNhap = '{1}'", newPasswordBeMD5, userName);
 
                 if(DataProvider.Instance.ExecuteNonQuery(query) > 0)
                 {

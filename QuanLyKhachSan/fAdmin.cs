@@ -30,6 +30,13 @@ namespace QuanLyKhachSan
         #region methods
         void SetDefaultControls()
         {
+            dgv_ListAccClient.AllowUserToAddRows= false;
+            dgv_ListAccClient.ReadOnly = false;
+            dgv_ListAccEmployee.AllowUserToAddRows = false;
+            dgv_ListAccEmployee.ReadOnly = false;
+
+            pn_AddAccEmployee.Hide();
+
             dgv_Room.DataSource = listRoom;
 
             dgv_TypeRoom.DataSource = listTypeRoom;
@@ -40,7 +47,8 @@ namespace QuanLyKhachSan
         void Load()
         {
 
-            LoadAccountList();
+            LoadAccountListEmployee();
+            LoadAccountListClient();
             LoadRoomList();
             LoadCategoryRoom();
             LoadCategoryRoomIntoCBB(cbb_TypeRoom);
@@ -67,15 +75,31 @@ namespace QuanLyKhachSan
             tb_PriceTypeRoom.DataBindings.Add(new Binding("Text", dgv_TypeRoom.DataSource, "Đơn giá", true, DataSourceUpdateMode.Never));
         }
 
-        void LoadAccountList()
+        void LoadAccountListEmployee()
         {
             try
             {
-                dgv_Account.DataSource = AccountDAO.Instance.GetListAccount();
+                dgv_ListAccEmployee.DataSource = AccountDAO.Instance.GetListAccountEmployee();
+                dgv_ListAccEmployee.Columns[1].ReadOnly = true;
+                dgv_ListAccEmployee.Columns[2].ReadOnly = true;
             }
             catch
             {
-                MessageBox.Show("!!!Không thể hiển thị danh sách tài khoản!!!");
+                MessageBox.Show("!!!Không thể hiển thị danh sách tài khoản nhân viên!!!");
+            }
+        }
+
+        void LoadAccountListClient()
+        {
+            try
+            {
+                dgv_ListAccClient.DataSource = AccountDAO.Instance.GetListAccountClient();
+                dgv_ListAccClient.Columns[1].ReadOnly = true;
+                dgv_ListAccClient.Columns[2].ReadOnly = true;
+            }
+            catch
+            {
+                MessageBox.Show("!!!Không thể hiển thị danh sách tài khoản KH!!!");
             }
         }
 
@@ -481,8 +505,12 @@ namespace QuanLyKhachSan
         //ĐIỀU CHỈNH ĐIỀU KHOẢN
         #endregion
 
-        #region Them xoa sua account
+        #region Them xoa sua account Employee
         private void btn_AddAccount_Click(object sender, EventArgs e)
+        {
+            pn_AddAccEmployee.Show();
+        }
+        private void btn_SaveAccEmployee_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(tb_UserName.Text) || String.IsNullOrEmpty(tb_DisplayName.Text) || String.IsNullOrEmpty(tb_Password.Text))
             {
@@ -490,29 +518,156 @@ namespace QuanLyKhachSan
                 return;
             }
 
-            if (AccountDAO.Instance.Insert(tb_UserName.Text, tb_DisplayName.Text, tb_Password.Text))
+            string newPassword = fLogin.MD5(tb_Password.Text);
+
+            if (AccountDAO.Instance.Insert(tb_UserName.Text, tb_DisplayName.Text, newPassword))
             {
                 MessageBox.Show("Thêm tài khoản thành công");
+                LoadAccountListEmployee();
             }
             else
             {
                 MessageBox.Show("Lỗi!!! Thêm tài khoản không thành công");
             }
+
+            pn_AddAccEmployee.Hide();
         }
         private void btn_DeleteAccount_Click(object sender, EventArgs e)
         {
-            if (AccountDAO.Instance.Delete(tb_UserName.Text))
+            string message = "Bạn có muốn xóa không?";
+            string title = "Thông báo";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons);
+            if (result != DialogResult.Yes)
             {
-                MessageBox.Show("Xóa tài khoản thành công");
+                return;
             }
-            else
+
+            List<string> listAccountChecked = new List<string>();
+            for (int i = 0; i < dgv_ListAccEmployee.Rows.Count; i++)
             {
-                MessageBox.Show("Lỗi!!! Xóa tài khoản không thành công");
+                bool isChecked = false;
+
+                try
+                {
+                    isChecked = (bool)dgv_ListAccEmployee.Rows[i].Cells["BooleanValue"].Value;
+                }
+                catch
+                {
+
+                }
+
+                if (isChecked)
+                {
+                    listAccountChecked.Add((string)dgv_ListAccEmployee.Rows[i].Cells["TenDangNhap"].Value);
+                }
             }
+
+            for (int i = 0; i < dgv_ListAccEmployee.Rows.Count; i++)
+            {
+                bool isChecked = false;
+
+                try
+                {
+                    isChecked = (bool)dgv_ListAccEmployee.Rows[i].Cells["BooleanValue"].Value;
+                }
+                catch
+                {
+
+                }
+
+                if (isChecked)
+                {
+                    listAccountChecked.Add((string)dgv_ListAccEmployee.Rows[i].Cells["TenDangNhap"].Value);
+                }
+            }
+
+            if (listAccountChecked.Count == 0)
+            {
+                MessageBox.Show("Hãy chọn ít nhất 1 người để xóa!");
+                return;
+            }
+
+            int success = AccountDAO.Instance.DeleteListAccEmployee(listAccountChecked);
+            MessageBox.Show("Đã xóa " + success + " tài khoản nhân viên");
+            LoadAccountListEmployee();
         }
         private void btn_ResetAccount_Click(object sender, EventArgs e)
         {
-            if (AccountDAO.Instance.ResetPassword(tb_UserName.Text, "1"))
+            string message = "Bạn có muốn reset không?";
+            string title = "Thông báo";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons);
+            if (result != DialogResult.Yes)
+            {
+                return;
+            }
+
+            List<string> listAccountChecked = new List<string>();
+            for (int i = 0; i < dgv_ListAccEmployee.Rows.Count; i++)
+            {
+                bool isChecked = false;
+
+                try
+                {
+                    isChecked = (bool)dgv_ListAccEmployee.Rows[i].Cells["BooleanValue"].Value;
+                }
+                catch
+                {
+
+                }
+
+                if (isChecked)
+                {
+                    listAccountChecked.Add((string)dgv_ListAccEmployee.Rows[i].Cells["TenDangNhap"].Value);
+                }
+            }
+
+            for (int i = 0; i < dgv_ListAccEmployee.Rows.Count; i++)
+            {
+                bool isChecked = false;
+
+                try
+                {
+                    isChecked = (bool)dgv_ListAccEmployee.Rows[i].Cells["BooleanValue"].Value;
+                }
+                catch
+                {
+
+                }
+
+                if (isChecked)
+                {
+                    listAccountChecked.Add((string)dgv_ListAccEmployee.Rows[i].Cells["TenDangNhap"].Value);
+                }
+            }
+
+            if (listAccountChecked.Count == 0)
+            {
+                MessageBox.Show("Hãy chọn 1 người để reset!");
+                return;
+            }
+
+            for (int i = 0; i < listAccountChecked.Count; i++)
+            {
+                for (int j = i + 1; j < listAccountChecked.Count; j++)
+                {
+                    if (listAccountChecked[j] == listAccountChecked[i])
+                    {
+                        listAccountChecked.RemoveAt(j);
+                    }
+                }
+            }
+
+            if (listAccountChecked.Count > 1)
+            {
+                MessageBox.Show("Chỉ được chọn 1 người để reset!");
+                return;
+            }
+
+            string newPassword = fLogin.MD5("0");
+
+            if (AccountDAO.Instance.ResetPassword(listAccountChecked[0], newPassword))
             {
                 MessageBox.Show("Reset mật khẩu thành công");
             }
@@ -521,8 +676,6 @@ namespace QuanLyKhachSan
                 MessageBox.Show("Lỗi!!! Reset mật khẩu không thành công");
             }
         }
-
-
 
         #endregion
 
@@ -536,5 +689,153 @@ namespace QuanLyKhachSan
 
 
         #endregion
+
+        
+
+        private void btn_Delete_AccClient_Click(object sender, EventArgs e)
+        {
+            string message = "Bạn có muốn xóa không?";
+            string title = "Thông báo";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons);
+            if (result != DialogResult.Yes)
+            {
+                return;
+            }
+
+            List<string> listAccountChecked = new List<string>();
+            for (int i = 0; i < dgv_ListAccClient.Rows.Count; i++)
+            {
+                bool isChecked = false;
+
+                try
+                {
+                    isChecked = (bool)dgv_ListAccClient.Rows[i].Cells["BooleanValue"].Value;
+                }
+                catch
+                {
+
+                }
+
+                if (isChecked)
+                {
+                    listAccountChecked.Add((string)dgv_ListAccClient.Rows[i].Cells["TenDangNhap"].Value);
+                }
+            }
+
+            for (int i = 0; i < dgv_ListAccClient.Rows.Count; i++)
+            {
+                bool isChecked = false;
+
+                try
+                {
+                    isChecked = (bool)dgv_ListAccClient.Rows[i].Cells["BooleanValue"].Value;
+                }
+                catch
+                {
+
+                }
+
+                if (isChecked)
+                {
+                    listAccountChecked.Add((string)dgv_ListAccClient.Rows[i].Cells["TenDangNhap"].Value);
+                }
+            }
+
+            if (listAccountChecked.Count == 0)
+            {
+                MessageBox.Show("Hãy chọn ít nhất 1 tài khoản để xóa!");
+                return;
+            }
+
+            int success = AccountDAO.Instance.DeleteListAccEmployee(listAccountChecked);
+            MessageBox.Show("Đã xóa " + success + " tài khoản khách hàng");
+            LoadAccountListClient();
+        }
+
+        private void btn_ResetAccClient_Click(object sender, EventArgs e)
+        {
+            string message = "Bạn có muốn reset không?";
+            string title = "Thông báo";
+            MessageBoxButtons buttons = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show(message, title, buttons);
+            if (result != DialogResult.Yes)
+            {
+                return;
+            }
+
+            List<string> listAccountChecked = new List<string>();
+            for (int i = 0; i < dgv_ListAccClient.Rows.Count; i++)
+            {
+                bool isChecked = false;
+
+                try
+                {
+                    isChecked = (bool)dgv_ListAccClient.Rows[i].Cells["BooleanValue"].Value;
+                }
+                catch
+                {
+
+                }
+
+                if (isChecked)
+                {
+                    listAccountChecked.Add((string)dgv_ListAccClient.Rows[i].Cells["TenDangNhap"].Value);
+                }
+            }
+
+            for (int i = 0; i < dgv_ListAccClient.Rows.Count; i++)
+            {
+                bool isChecked = false;
+
+                try
+                {
+                    isChecked = (bool)dgv_ListAccClient.Rows[i].Cells["BooleanValue"].Value;
+                }
+                catch
+                {
+
+                }
+
+                if (isChecked)
+                {
+                    listAccountChecked.Add((string)dgv_ListAccClient.Rows[i].Cells["TenDangNhap"].Value);
+                }
+            }
+
+            if (listAccountChecked.Count == 0)
+            {
+                MessageBox.Show("Hãy chọn 1 người để reset!");
+                return;
+            }
+
+            for (int i = 0; i < listAccountChecked.Count; i++)
+            {
+                for (int j = i + 1; j < listAccountChecked.Count; j++)
+                {
+                    if (listAccountChecked[j] == listAccountChecked[i])
+                    {
+                        listAccountChecked.RemoveAt(j);
+                    }
+                }
+            }
+
+            if (listAccountChecked.Count > 1)
+            {
+                MessageBox.Show("Chỉ được chọn 1 người để reset!");
+                return;
+            }
+
+            string newPassword = fLogin.MD5("0");
+
+            if (AccountDAO.Instance.ResetPassword(listAccountChecked[0], newPassword))
+            {
+                MessageBox.Show("Reset mật khẩu thành công");
+            }
+            else
+            {
+                MessageBox.Show("Lỗi!!! Reset mật khẩu không thành công");
+            }
+        }
     }
 }

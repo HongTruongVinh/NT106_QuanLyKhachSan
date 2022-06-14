@@ -66,6 +66,8 @@ namespace QuanLyKhachSan
                 {
                     tb_Subject.ReadOnly = false;
                     rtb_Content.ReadOnly = false;
+                    tb_Subject.Enabled = true;
+                    rtb_Content.Enabled = true;
 
                     tb_Subject.Text = "";
                     rtb_Content.Text = "";
@@ -81,6 +83,8 @@ namespace QuanLyKhachSan
 
                 tb_Subject.ReadOnly = false;
                 rtb_Content.ReadOnly = false;
+                tb_Subject.Enabled = true;
+                rtb_Content.Enabled = true;
 
                 tb_Subject.Text = "";
                 rtb_Content.Text = "";
@@ -149,6 +153,10 @@ namespace QuanLyKhachSan
             LoadListAccountClient();
             LoadListAccountEmployee();
             LoadListNotice();
+
+
+            tb_Subject.Enabled = false;
+            rtb_Content.Enabled = false;
 
             tb_Subject.Text = "";
             rtb_Content.Text = "";

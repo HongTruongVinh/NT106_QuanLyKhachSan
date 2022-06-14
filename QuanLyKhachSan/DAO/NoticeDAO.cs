@@ -173,5 +173,29 @@ namespace QuanLyKhachSan.DAO
         }
         #endregion
 
+
+        public bool DeleteByUsername(string username)
+        {
+            try
+            {
+                string query = string.Format("DELETE dbo.THONGBAO WHERE TenDangNhap = '{0}'", username);
+
+                int success = DataProvider.Instance.ExecuteNonQuery(query);
+
+                if (success > 0)
+                {
+                    return true;//Xoa thanh cong
+                }
+                else
+                {
+                    return false;//Xoa khong thanh cong
+                }
+
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

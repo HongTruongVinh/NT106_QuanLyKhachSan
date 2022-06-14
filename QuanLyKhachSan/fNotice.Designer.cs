@@ -110,21 +110,21 @@
             // tb_Subject
             // 
             this.tb_Subject.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tb_Subject.Enabled = false;
             this.tb_Subject.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_Subject.ForeColor = System.Drawing.SystemColors.WindowText;
             this.tb_Subject.Location = new System.Drawing.Point(409, 171);
             this.tb_Subject.Multiline = true;
             this.tb_Subject.Name = "tb_Subject";
-            this.tb_Subject.ReadOnly = true;
             this.tb_Subject.Size = new System.Drawing.Size(608, 86);
             this.tb_Subject.TabIndex = 28;
             // 
             // rtb_Content
             // 
             this.rtb_Content.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.rtb_Content.Enabled = false;
             this.rtb_Content.Location = new System.Drawing.Point(409, 263);
             this.rtb_Content.Name = "rtb_Content";
-            this.rtb_Content.ReadOnly = true;
             this.rtb_Content.Size = new System.Drawing.Size(608, 485);
             this.rtb_Content.TabIndex = 27;
             this.rtb_Content.Text = "";
