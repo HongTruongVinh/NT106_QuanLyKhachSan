@@ -32,7 +32,7 @@ namespace QuanLyKhachSan.DAO
         /// <returns></returns>
         public int GetUnCheckRentalVoucherIDByRoomID(int id)
         {
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.PHIEUTHUEPHONG WHERE MaPhong = '"+ id +"'");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.PHIEUTHUEPHONG WHERE MaPhong = '" + id + "'");
 
             if (data.Rows.Count > 0)
             {
@@ -46,7 +46,7 @@ namespace QuanLyKhachSan.DAO
         public RentalVoucher GetUnCheckRentalVoucherByRoomID(int id)
         {
             string query = "SELECT MaPhieu id, MaPhong roomID, ptp.MaKH clientID, NgayBatDau dateTimeCheckIn, NgayKetThuc dateTimeCheckOut, SoLuongKhach countPeople , TenLoaiKH typeCLient, HeSoPhuThu dependencyFactor"
-                            + " FROM dbo.PHIEUTHUEPHONG ptp, dbo.LOAIKHACHHANG lkh WHERE ptp.MaLoaiKH = lkh.MaLoaiKH AND  MaPhong = '" + id +"'";
+                            + " FROM dbo.PHIEUTHUEPHONG ptp, dbo.LOAIKHACHHANG lkh WHERE ptp.MaLoaiKH = lkh.MaLoaiKH AND  MaPhong = '" + id + "'";
 
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
@@ -98,7 +98,7 @@ namespace QuanLyKhachSan.DAO
         #region các hàm Insert dữ liệu
         public bool InsertRentalVoucher(int idRoom, int idClient, int idTypeClient, int countPeople)
         {
-            
+
             try
             {
                 DataProvider.Instance.ExecuteNonQuery("USP_InsertRentalVoucher @idRoom , @idClient , @MaLoaiKH , @countPeople", new object[] { idRoom, idClient, idTypeClient, countPeople });
@@ -111,13 +111,13 @@ namespace QuanLyKhachSan.DAO
             }
         }
 
-        public bool UpdateRentalVoucher(int idRentalVoucher, int idTypeClient,int countPeople, Client client)
+        public bool UpdateRentalVoucher(int idRentalVoucher, int idTypeClient, int countPeople, Client client)
         {
             try
             {
                 ClientDAO.Instance.UpdateLient(client.ID, client.Name, client.IDPerson, client.NumberPhone, client.Address);
 
-                string query = string.Format("UPDATE dbo.PHIEUTHUEPHONG SET SoLuongKhach = {0}, MaLoaiKH = {1} WHERE MaPhieu = {2}",countPeople, idTypeClient, idRentalVoucher);
+                string query = string.Format("UPDATE dbo.PHIEUTHUEPHONG SET SoLuongKhach = {0}, MaLoaiKH = {1} WHERE MaPhieu = {2}", countPeople, idTypeClient, idRentalVoucher);
 
                 DataProvider.Instance.ExecuteNonQuery(query);
 
@@ -134,7 +134,7 @@ namespace QuanLyKhachSan.DAO
         {
             try
             {
-                string query = "DELETE dbo.PHIEUTHUEPHONG WHERE MaPhieu = " + idRentalVoucher +" AND MaKH =" + idClient;
+                string query = "DELETE dbo.PHIEUTHUEPHONG WHERE MaPhieu = " + idRentalVoucher + " AND MaKH =" + idClient;
 
                 DataProvider.Instance.ExecuteNonQuery(query);
 
@@ -144,6 +144,23 @@ namespace QuanLyKhachSan.DAO
             {
                 return false;
             }
+        }
+
+        public DataTable getReservations()
+        {
+            string query = @"
+                    SELECT MaPhieu AS 'Mã phiếu',
+                        NgayBatDau AS 'Ngày bắt đầu',
+                        SoLuongKhach AS 'Số lượng khách',
+                        MaPhong AS 'Mã phòng',
+                        MaKH AS 'Mã khách hàng',
+                        NgayKetThuc AS 'Ngày kết thúc'
+                    FROM PHIEUTHUEPHONG;
+                ";
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            return data;
         }
 
         #endregion
@@ -198,7 +215,7 @@ namespace QuanLyKhachSan.DAO
 
             success = DataProvider.Instance.ExecuteNonQuery(query);
 
-            if(success > 0)
+            if (success > 0)
             {
                 RoomDAO.Instance.UpdateStatusRoom(Int32.Parse(idRoom), 0);
             }

@@ -25,7 +25,7 @@ namespace QuanLyKhachSan
         private void btn_ThanhToan_Click(object sender, EventArgs e)
         {
             int id = int.Parse(lb_DLMaHD.Text);
-            if (BillDetailsDAO.Instance.PayBillDetailsByID(id))
+            if (BillDAO.Instance.PayBillByID(id))
             {
                 MessageBox.Show("Thanh toán thành công");
             }
@@ -38,7 +38,7 @@ namespace QuanLyKhachSan
 
         private void LoadData()
         {
-            DataTable bills = BillDetailsDAO.Instance.GetUnCheckedBillsByGuestInfo(name, personalID);
+            DataTable bills = BillDAO.Instance.GetUnCheckedBillsByGuestInfo(name, personalID);
             dgv_DSHD.DataSource = bills;
             AddBindings(bills);
         }
@@ -63,7 +63,7 @@ namespace QuanLyKhachSan
         {
             name = tb_DLTenKH.Text;
             personalID = tb_DLCMND.Text;
-            DataTable bills = BillDetailsDAO.Instance.GetUnCheckedBillsByGuestInfo(name, personalID);
+            DataTable bills = BillDAO.Instance.GetUnCheckedBillsByGuestInfo(name, personalID);
             if (bills.Rows.Count > 0)
             {
                 LoadData();
@@ -71,7 +71,7 @@ namespace QuanLyKhachSan
             else
             {
                 MessageBox.Show("Khách hàng không tồn tại");
-            }    
+            }
         }
     }
 }
