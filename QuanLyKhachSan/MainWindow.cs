@@ -132,8 +132,8 @@ namespace QuanLyKhachSan
 
         private void btn_RoomMgmt_Click(object sender, EventArgs e)
         {
-            fListRentalVoucher fListRentalVoucher = new fListRentalVoucher();
-            fListRentalVoucher.ShowDialog();
+            fReservationMgmt fReservationMgmt = new fReservationMgmt();
+            fReservationMgmt.ShowDialog();
         }
 
         private void btn_Notice_Click(object sender, EventArgs e)

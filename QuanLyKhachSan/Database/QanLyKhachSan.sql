@@ -99,14 +99,16 @@ GO
 CREATE TABLE HOADON
 (
 	MaHD INT IDENTITY PRIMARY KEY,
+	MaKH INT NOT NULL,
 	MaPhong INT NOT NULL,
 	SoNgayThue Int NOT NULL,
 	ThanhTien Int NOT NULL DEFAULT 0,
 	NgayThanhToan Date,
 	DonGia INT NOT NULL DEFAULT 0,
-	TrangThai INT NOT NULL DEFAULT 0 --- 0 là chưa thanh toán, 1 là đã thanh toán,
+	TrangThai INT NOT NULL DEFAULT 0, --- 0 là chưa thanh toán, 1 là đã thanh toán
 
-	FOREIGN KEY (MaPhong) REFERENCES dbo.PHONG(MaPhong)
+	FOREIGN KEY (MaPhong) REFERENCES dbo.PHONG(MaPhong),
+	FOREIGN KEY (MaKH) REFERENCES dbo.KHACHHANG(MaKH)
 )
 GO
 
@@ -383,86 +385,6 @@ USP_InsertClient
 @CMND='123',
 @SDT='123',
 @DiaChi=[Việt Nam]
-
-INSERT INTO dbo.HOADON
-(
-	MaPhong,
-	SoNgayThue,
-	ThanhTien,
-	NgayThanhToan,
-	DonGia,
-	TrangThai
-)
-VALUES
-(
-	1,
-	2,
-	10000,
-	'20221001',
-	1000,
-	1
-)
-GO
-
-INSERT INTO dbo.HOADON
-(
-	MaPhong,
-	SoNgayThue,
-	ThanhTien,
-	NgayThanhToan,
-	DonGia,
-	TrangThai
-)
-VALUES
-(
-	2,
-	2,
-	20000,
-	'20220501',
-	2000,
-	1
-)
-GO
-
-INSERT INTO dbo.HOADON
-(
-	MaPhong,
-	SoNgayThue,
-	ThanhTien,
-	NgayThanhToan,
-	DonGia,
-	TrangThai
-)
-VALUES
-(
-	1,
-	2,
-	10000,
-	'20160710',
-	1000,
-	1
-)
-GO
-
-INSERT INTO dbo.HOADON
-(
-	MaPhong,
-	SoNgayThue,
-	ThanhTien,
-	NgayThanhToan,
-	DonGia,
-	TrangThai
-)
-VALUES
-(
-	3,
-	2,
-	30000,
-	'20160520',
-	1000,
-	1
-)
-GO
 
 INSERT INTO THAMSO
 (

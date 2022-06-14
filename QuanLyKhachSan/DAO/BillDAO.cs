@@ -58,5 +58,71 @@ namespace QuanLyKhachSan.DAO
             string query = string.Format("EXEC USP_GetListBillByYear @year");
             return (DataTable)DataProvider.Instance.ExecuteQuery(query, new object[] { year });
         }
+
+        public DataTable GetUnCheckedBillsByGuestInfo(string name, string personalID)
+        {
+            string query = $@"
+                SELECT MaHD, MaPhong, SoNgayThue, ThanhTien, NgayThanhToan, DonGia, TrangThai
+                FROM HOADON, KHACHHANG
+                WHERE TrangThai = 0
+                AND HOADON.MaKH = KHACHHANG.MaKH
+                AND KHACHHANG.TenKhachHang = N'{name}'
+                AND KHACHHANG.CMND = '{personalID}'
+            ";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            return data;
+        }
+
+        public bool PayBillByID(int id)
+        {
+            string query = $@"
+                UPDATE HOADON
+                SET TrangThai = 1
+                WHERE MaHD = {id}
+            ";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+
+        public bool CreateBill(int MaKH, int MaPhong, int SoNgayThue, int ThanhTien, string NgayThanhToan, int DonGia)
+        {
+            string query = $@"
+                INSERT INTO HOADON (MaKH, MaPhong, SoNgayThue, ThanhTien, NgayThanhToan, DonGia)
+                VALUES ({MaKH}, {MaPhong}, {SoNgayThue}, {ThanhTien}, '{NgayThanhToan}', {DonGia});
+            ";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+
+        public DataTable GetBills()
+        {
+            string query = $@"
+                SELECT MaHD AS 'Mã hóa đơn', MaPhong AS 'Mã phòng', SoNgayThue AS 'Số ngày thuê', ThanhTien AS 'Thành tiền', NgayThanhToan as 'Ngày thanh toán', DonGia as 'Đơn giá', TrangThai as 'Trạng thái'
+                FROM HOADON
+            ";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            return data;
+        }
+
+        public bool DeleteBill(int MaHD)
+        {
+            string query = $@"
+                DELETE FROM HOADON
+                WHERE MaHD = {MaHD}
+            ";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+
+        public bool UpdateBill(int MaHD, int MaKH, int MaPhong, int SoNgayThue, int ThanhTien, string NgayThanhToan, int DonGia)
+        {
+            string query = $@"
+                UPDATE HOADON
+                SET MaKH={MaKH}, MaPhong={MaPhong}, SoNgayThue={SoNgayThue}, ThanhTien={ThanhTien}, NgayThanhToan='{NgayThanhToan}', DonGia={DonGia}
+                WHERE MaHD={MaHD}
+            ";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
     }
 }
