@@ -134,6 +134,7 @@
     </Compile>
     <Compile Include="Network\FormatData.cs" />
     <Compile Include="Network\TCPServer.cs" />
+    <Compile Include="Network\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="fBillMgmt.resx">

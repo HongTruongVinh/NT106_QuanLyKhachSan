@@ -57,7 +57,7 @@ namespace QuanLyKhachSan_CLient
             else
             {
                 btn_Admin.Enabled = false;
-                btn_AccountInfo.Enabled = false;
+                //btn_AccountInfo.Enabled = false;
                 btn_BillMgmt.Enabled = false;
                 btn_GuestMgmt.Enabled = false;
                 btn_RoomMgmt.Enabled = false;

@@ -24,12 +24,12 @@ namespace QuanLyKhachSan.DAO
         private AccountDAO() { }
         #endregion
 
-        public bool Login(string username, string password)
+        public bool Login(string username, string passwordBeMD5)
         {
             //string query = "SELECT * FROM dbo.Account WHERE UserName = N'"+ username + "' AND PassWord = N'" + password + "' ";
             string query = "USP_Login @UserName , @PassWord";
 
-            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] {username, password });
+            DataTable result = DataProvider.Instance.ExecuteQuery(query, new object[] {username, passwordBeMD5 });
 
             return result.Rows.Count > 0;
         }
@@ -294,5 +294,14 @@ namespace QuanLyKhachSan.DAO
             return table;
         }
         #endregion
+
+        public bool changeInforAccountAdmin(string username, string displayName, string newPasswordBeMD5)
+        {
+            string query = string.Format("UPDATE dbo.TAIKHOAN SET MatKhau = '{0}', TenHienThi = '{1}'  WHERE TenDangNhap = '{2}'", newPasswordBeMD5,displayName, username);
+
+            int success = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return success > 0;
+        }
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using QuanLyKhachSan.DAO;
+using QuanLyKhachSan.Network;
 
 namespace QuanLyKhachSan
 {
@@ -43,6 +44,8 @@ namespace QuanLyKhachSan
             if (AccountDAO.Instance.Login(username, stringPassword))
             {
                 this.Hide();
+
+                User.Instance.Create(username, tb_PassWord.Text);
 
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.ShowDialog();

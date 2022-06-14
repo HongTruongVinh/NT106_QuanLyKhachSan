@@ -30,8 +30,8 @@ namespace QuanLyKhachSan
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.pn_Password = new System.Windows.Forms.Panel();
+            this.btn_ShowPassword = new System.Windows.Forms.Button();
             this.tb_PassWord = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.lb_Save = new System.Windows.Forms.Panel();
@@ -41,46 +41,59 @@ namespace QuanLyKhachSan
             this.panel5 = new System.Windows.Forms.Panel();
             this.tb_UserName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.pn_NewPassword = new System.Windows.Forms.Panel();
+            this.btn_ShowNewPassword = new System.Windows.Forms.Button();
+            this.tb_NewPassword = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pn_ReNewPassword = new System.Windows.Forms.Panel();
+            this.btn_ShowReNewPass = new System.Windows.Forms.Button();
+            this.tb_ReNewPassword = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.tb_DisplayName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.panel7.SuspendLayout();
+            this.pn_Password.SuspendLayout();
             this.lb_Save.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.pn_NewPassword.SuspendLayout();
+            this.pn_ReNewPassword.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.panel7);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.pn_ReNewPassword);
+            this.panel1.Controls.Add(this.pn_NewPassword);
+            this.panel1.Controls.Add(this.pn_Password);
             this.panel1.Controls.Add(this.lb_Save);
             this.panel1.Controls.Add(this.btn_Edit);
             this.panel1.Controls.Add(this.panel5);
-            this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(519, 240);
+            this.panel1.Size = new System.Drawing.Size(519, 322);
             this.panel1.TabIndex = 1;
             // 
-            // panel7
+            // pn_Password
             // 
-            this.panel7.Controls.Add(this.button4);
-            this.panel7.Controls.Add(this.tb_PassWord);
-            this.panel7.Controls.Add(this.label5);
-            this.panel7.Location = new System.Drawing.Point(3, 103);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(510, 44);
-            this.panel7.TabIndex = 15;
+            this.pn_Password.Controls.Add(this.btn_ShowPassword);
+            this.pn_Password.Controls.Add(this.tb_PassWord);
+            this.pn_Password.Controls.Add(this.label5);
+            this.pn_Password.Location = new System.Drawing.Point(3, 103);
+            this.pn_Password.Name = "pn_Password";
+            this.pn_Password.Size = new System.Drawing.Size(510, 44);
+            this.pn_Password.TabIndex = 15;
             // 
-            // button4
+            // btn_ShowPassword
             // 
-            this.button4.Location = new System.Drawing.Point(466, 11);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(31, 23);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "👁";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btn_ShowPassword.Location = new System.Drawing.Point(466, 11);
+            this.btn_ShowPassword.Name = "btn_ShowPassword";
+            this.btn_ShowPassword.Size = new System.Drawing.Size(31, 23);
+            this.btn_ShowPassword.TabIndex = 7;
+            this.btn_ShowPassword.Text = "👁";
+            this.btn_ShowPassword.UseVisualStyleBackColor = true;
+            this.btn_ShowPassword.Click += new System.EventHandler(this.btn_ShowPassword_Click);
             // 
             // tb_PassWord
             // 
@@ -89,6 +102,7 @@ namespace QuanLyKhachSan
             this.tb_PassWord.Name = "tb_PassWord";
             this.tb_PassWord.Size = new System.Drawing.Size(330, 27);
             this.tb_PassWord.TabIndex = 1;
+            this.tb_PassWord.UseSystemPasswordChar = true;
             // 
             // label5
             // 
@@ -96,15 +110,15 @@ namespace QuanLyKhachSan
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(3, 10);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(99, 25);
+            this.label5.Size = new System.Drawing.Size(75, 25);
             this.label5.TabIndex = 0;
-            this.label5.Text = "Mật khẩu:";
+            this.label5.Text = "MK cũ:";
             // 
             // lb_Save
             // 
             this.lb_Save.Controls.Add(this.btn_Cancel);
             this.lb_Save.Controls.Add(this.btn_Save);
-            this.lb_Save.Location = new System.Drawing.Point(175, 173);
+            this.lb_Save.Location = new System.Drawing.Point(192, 277);
             this.lb_Save.Name = "lb_Save";
             this.lb_Save.Size = new System.Drawing.Size(258, 42);
             this.lb_Save.TabIndex = 17;
@@ -127,10 +141,11 @@ namespace QuanLyKhachSan
             this.btn_Save.TabIndex = 5;
             this.btn_Save.Text = "Lưu";
             this.btn_Save.UseVisualStyleBackColor = true;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
             // 
             // btn_Edit
             // 
-            this.btn_Edit.Location = new System.Drawing.Point(11, 173);
+            this.btn_Edit.Location = new System.Drawing.Point(28, 277);
             this.btn_Edit.Name = "btn_Edit";
             this.btn_Edit.Size = new System.Drawing.Size(141, 35);
             this.btn_Edit.TabIndex = 16;
@@ -142,13 +157,14 @@ namespace QuanLyKhachSan
             // 
             this.panel5.Controls.Add(this.tb_UserName);
             this.panel5.Controls.Add(this.label4);
-            this.panel5.Location = new System.Drawing.Point(3, 53);
+            this.panel5.Location = new System.Drawing.Point(3, 3);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(510, 44);
             this.panel5.TabIndex = 14;
             // 
             // tb_UserName
             // 
+            this.tb_UserName.BackColor = System.Drawing.SystemColors.HighlightText;
             this.tb_UserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_UserName.Location = new System.Drawing.Point(129, 10);
             this.tb_UserName.Name = "tb_UserName";
@@ -165,19 +181,98 @@ namespace QuanLyKhachSan
             this.label4.TabIndex = 0;
             this.label4.Text = "Tài khoản:";
             // 
+            // pn_NewPassword
+            // 
+            this.pn_NewPassword.Controls.Add(this.btn_ShowNewPassword);
+            this.pn_NewPassword.Controls.Add(this.tb_NewPassword);
+            this.pn_NewPassword.Controls.Add(this.label2);
+            this.pn_NewPassword.Location = new System.Drawing.Point(3, 153);
+            this.pn_NewPassword.Name = "pn_NewPassword";
+            this.pn_NewPassword.Size = new System.Drawing.Size(510, 44);
+            this.pn_NewPassword.TabIndex = 16;
+            // 
+            // btn_ShowNewPassword
+            // 
+            this.btn_ShowNewPassword.Location = new System.Drawing.Point(466, 11);
+            this.btn_ShowNewPassword.Name = "btn_ShowNewPassword";
+            this.btn_ShowNewPassword.Size = new System.Drawing.Size(31, 23);
+            this.btn_ShowNewPassword.TabIndex = 7;
+            this.btn_ShowNewPassword.Text = "👁";
+            this.btn_ShowNewPassword.UseVisualStyleBackColor = true;
+            this.btn_ShowNewPassword.Click += new System.EventHandler(this.btn_ShowNewPassword_Click);
+            // 
+            // tb_NewPassword
+            // 
+            this.tb_NewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_NewPassword.Location = new System.Drawing.Point(129, 11);
+            this.tb_NewPassword.Name = "tb_NewPassword";
+            this.tb_NewPassword.Size = new System.Drawing.Size(330, 27);
+            this.tb_NewPassword.TabIndex = 1;
+            this.tb_NewPassword.UseSystemPasswordChar = true;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(3, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(85, 25);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "MK mới:";
+            // 
+            // pn_ReNewPassword
+            // 
+            this.pn_ReNewPassword.Controls.Add(this.btn_ShowReNewPass);
+            this.pn_ReNewPassword.Controls.Add(this.tb_ReNewPassword);
+            this.pn_ReNewPassword.Controls.Add(this.label3);
+            this.pn_ReNewPassword.Location = new System.Drawing.Point(3, 203);
+            this.pn_ReNewPassword.Name = "pn_ReNewPassword";
+            this.pn_ReNewPassword.Size = new System.Drawing.Size(510, 44);
+            this.pn_ReNewPassword.TabIndex = 16;
+            // 
+            // btn_ShowReNewPass
+            // 
+            this.btn_ShowReNewPass.Location = new System.Drawing.Point(466, 11);
+            this.btn_ShowReNewPass.Name = "btn_ShowReNewPass";
+            this.btn_ShowReNewPass.Size = new System.Drawing.Size(31, 23);
+            this.btn_ShowReNewPass.TabIndex = 7;
+            this.btn_ShowReNewPass.Text = "👁";
+            this.btn_ShowReNewPass.UseVisualStyleBackColor = true;
+            this.btn_ShowReNewPass.Click += new System.EventHandler(this.btn_ShowReNewPass_Click);
+            // 
+            // tb_ReNewPassword
+            // 
+            this.tb_ReNewPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_ReNewPassword.Location = new System.Drawing.Point(170, 11);
+            this.tb_ReNewPassword.Name = "tb_ReNewPassword";
+            this.tb_ReNewPassword.Size = new System.Drawing.Size(289, 27);
+            this.tb_ReNewPassword.TabIndex = 1;
+            this.tb_ReNewPassword.UseSystemPasswordChar = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(161, 25);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Nhập lại MK mới:";
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.tb_DisplayName);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Location = new System.Drawing.Point(3, 53);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(510, 44);
-            this.panel2.TabIndex = 13;
+            this.panel2.TabIndex = 18;
             // 
             // tb_DisplayName
             // 
+            this.tb_DisplayName.BackColor = System.Drawing.SystemColors.HighlightText;
             this.tb_DisplayName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_DisplayName.Location = new System.Drawing.Point(129, 17);
+            this.tb_DisplayName.Location = new System.Drawing.Point(129, 11);
             this.tb_DisplayName.Name = "tb_DisplayName";
             this.tb_DisplayName.Size = new System.Drawing.Size(330, 27);
             this.tb_DisplayName.TabIndex = 1;
@@ -196,16 +291,20 @@ namespace QuanLyKhachSan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(541, 260);
+            this.ClientSize = new System.Drawing.Size(541, 346);
             this.Controls.Add(this.panel1);
             this.Name = "fInformation";
-            this.Text = "Thông tin cá nhân";
+            this.Text = "Thay đổi thông tin admin";
             this.panel1.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
+            this.pn_Password.ResumeLayout(false);
+            this.pn_Password.PerformLayout();
             this.lb_Save.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.pn_NewPassword.ResumeLayout(false);
+            this.pn_NewPassword.PerformLayout();
+            this.pn_ReNewPassword.ResumeLayout(false);
+            this.pn_ReNewPassword.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -215,8 +314,8 @@ namespace QuanLyKhachSan
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Panel pn_Password;
+        private System.Windows.Forms.Button btn_ShowPassword;
         private System.Windows.Forms.TextBox tb_PassWord;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel lb_Save;
@@ -226,6 +325,14 @@ namespace QuanLyKhachSan
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox tb_UserName;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel pn_ReNewPassword;
+        private System.Windows.Forms.Button btn_ShowReNewPass;
+        private System.Windows.Forms.TextBox tb_ReNewPassword;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel pn_NewPassword;
+        private System.Windows.Forms.Button btn_ShowNewPassword;
+        private System.Windows.Forms.TextBox tb_NewPassword;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox tb_DisplayName;
         private System.Windows.Forms.Label label1;

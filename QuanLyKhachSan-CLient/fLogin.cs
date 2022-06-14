@@ -18,8 +18,6 @@ namespace QuanLyKhachSan_CLient
         {
             InitializeComponent();
 
-            //tb_UserName.Text = "Vinh";
-            //tb_PassWord.Text = "1";
             tb_UserName.Text = "Vinh";
             tb_PassWord.Text = "0";
         }
@@ -45,6 +43,8 @@ namespace QuanLyKhachSan_CLient
             if (TCPClient.Instance.Login(username, stringPassword))
             {
                 this.Hide();
+
+                User.Instance.Create(username, tb_PassWord.Text);
 
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.ShowDialog();

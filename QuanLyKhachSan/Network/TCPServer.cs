@@ -348,6 +348,29 @@ namespace QuanLyKhachSan.Network
                             clientConnecting = false;
                             break;
 
+                        #region Ngay 14/06
+
+                        case "ResetPassword":
+                            byte[] bytesResetPassword = new byte[1024 * 5000];
+
+                            string resualResetPassword = "fail";
+
+                            if (AccountDAO.Instance.ResetPassword(msg[1], msg[2]))
+                            {
+                                resualResetPassword = "success";
+                            }
+
+                            bytesResetPassword = Encoding.UTF8.GetBytes(resualResetPassword);
+
+                            newSocket.Send(bytesResetPassword);
+
+                            newSocket.Close();
+                            tcpClient1.Close();
+
+                            break;
+
+                        #endregion
+
                         case "GetListRentalVoucherUnCheckOut":
                             byte[] bytesGetListRentalVoucherUnCheckOut = new byte[1024 * 5000];
 

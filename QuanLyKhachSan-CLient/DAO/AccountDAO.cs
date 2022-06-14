@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using QuanLyKhachSan_CLient.DTO;
+using QuanLyKhachSan_CLient.Network;
 
 namespace QuanLyKhachSan_CLient.DAO
 {
@@ -109,13 +110,19 @@ namespace QuanLyKhachSan_CLient.DAO
             }
         }
 
-        public bool ResetPassword(string userName, string newPassword)
+        public bool ResetPassword(string userName, string newPasswordBeMD5)
         {
             try
             {
-                string query = string.Format("UPDATE dbo.TAIKHOAN SET MatKhau = {0} WHERE MaPhong = {1}", newPassword, userName);
+                string query = string.Format("ResetPassword {0} {1}", userName, newPasswordBeMD5);
 
-                if(DataProvider.Instance.ExecuteNonQuery(query) > 0)
+                byte[] bytes = TCPClient.Instance.GetDataFromCommand(query);
+
+                string message = Encoding.UTF8.GetString(bytes);
+
+                string[] strings = message.Split(' ', '\0');
+
+                if (strings[0] == "success")
                 {
                     return true;
                 }
