@@ -192,5 +192,11 @@ namespace QuanLyKhachSan_CLient
             User.Instance.Address = strings[3];
 
         }
+
+        private void btn_Chat_Click(object sender, EventArgs e)
+        {
+            fChat fChat = new fChat();
+            fChat.ShowDialog();
+        }
     }
 }

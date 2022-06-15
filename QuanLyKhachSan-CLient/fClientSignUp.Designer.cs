@@ -29,9 +29,12 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.tb_Notice = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.tb_Repassword = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.tb_Password = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.btn_SignUp = new System.Windows.Forms.Button();
             this.panel16 = new System.Windows.Forms.Panel();
             this.tb_Address = new System.Windows.Forms.TextBox();
@@ -46,20 +49,17 @@
             this.panel21 = new System.Windows.Forms.Panel();
             this.tb_NameCLient = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.tb_Password = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.tb_Repassword = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tb_Notice = new System.Windows.Forms.TextBox();
             this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel18.SuspendLayout();
             this.panel19.SuspendLayout();
             this.panel21.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -77,43 +77,70 @@
             this.panel2.Location = new System.Drawing.Point(12, 11);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(492, 537);
+            this.panel2.Size = new System.Drawing.Size(492, 516);
             this.panel2.TabIndex = 2;
             // 
-            // panel1
+            // panel4
             // 
-            this.panel1.Controls.Add(this.tb_Notice);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(43, 396);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(446, 92);
-            this.panel1.TabIndex = 15;
+            this.panel4.Controls.Add(this.tb_Repassword);
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Location = new System.Drawing.Point(43, 333);
+            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(446, 44);
+            this.panel4.TabIndex = 15;
             // 
-            // tb_Notice
+            // tb_Repassword
             // 
-            this.tb_Notice.Enabled = false;
-            this.tb_Notice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Notice.Location = new System.Drawing.Point(4, 2);
-            this.tb_Notice.Multiline = true;
-            this.tb_Notice.Name = "tb_Notice";
-            this.tb_Notice.Size = new System.Drawing.Size(439, 87);
-            this.tb_Notice.TabIndex = 1;
-            this.tb_Notice.Text = "Mật khẩu của khách hàng được tạo tự động là \"3\" và không thể thay đổi và tài khoả" +
-    "n là số CMND";
+            this.tb_Repassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Repassword.Location = new System.Drawing.Point(133, 8);
+            this.tb_Repassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tb_Repassword.Name = "tb_Repassword";
+            this.tb_Repassword.Size = new System.Drawing.Size(248, 27);
+            this.tb_Repassword.TabIndex = 4;
             // 
-            // label1
+            // label3
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(3, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 25);
-            this.label1.TabIndex = 0;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(3, 10);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(125, 25);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Nhập lại MK:";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.tb_Password);
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Location = new System.Drawing.Point(43, 285);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(446, 44);
+            this.panel3.TabIndex = 15;
+            // 
+            // tb_Password
+            // 
+            this.tb_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Password.Location = new System.Drawing.Point(133, 11);
+            this.tb_Password.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.tb_Password.Name = "tb_Password";
+            this.tb_Password.Size = new System.Drawing.Size(248, 27);
+            this.tb_Password.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(3, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(99, 25);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Mật khẩu:";
             // 
             // btn_SignUp
             // 
-            this.btn_SignUp.Location = new System.Drawing.Point(194, 492);
+            this.btn_SignUp.Location = new System.Drawing.Point(194, 449);
             this.btn_SignUp.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_SignUp.Name = "btn_SignUp";
             this.btn_SignUp.Size = new System.Drawing.Size(93, 43);
@@ -250,76 +277,52 @@
             this.label20.TabIndex = 0;
             this.label20.Text = "Họ Tên*:";
             // 
-            // panel3
+            // label1
             // 
-            this.panel3.Controls.Add(this.tb_Password);
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Location = new System.Drawing.Point(43, 285);
-            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(446, 44);
-            this.panel3.TabIndex = 15;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(3, 10);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(0, 25);
+            this.label1.TabIndex = 0;
             // 
-            // tb_Password
+            // panel1
             // 
-            this.tb_Password.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Password.Location = new System.Drawing.Point(133, 11);
-            this.tb_Password.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tb_Password.Name = "tb_Password";
-            this.tb_Password.Size = new System.Drawing.Size(248, 27);
-            this.tb_Password.TabIndex = 4;
+            this.panel1.Controls.Add(this.tb_Notice);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(43, 396);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(446, 49);
+            this.panel1.TabIndex = 15;
             // 
-            // label2
+            // tb_Notice
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(3, 10);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 25);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Mật khẩu:";
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.tb_Repassword);
-            this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(43, 333);
-            this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(446, 44);
-            this.panel4.TabIndex = 15;
-            // 
-            // tb_Repassword
-            // 
-            this.tb_Repassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tb_Repassword.Location = new System.Drawing.Point(133, 8);
-            this.tb_Repassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.tb_Repassword.Name = "tb_Repassword";
-            this.tb_Repassword.Size = new System.Drawing.Size(248, 27);
-            this.tb_Repassword.TabIndex = 4;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(3, 10);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(125, 25);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Nhập lại MK:";
+            this.tb_Notice.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.tb_Notice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Notice.ForeColor = System.Drawing.Color.Red;
+            this.tb_Notice.Location = new System.Drawing.Point(4, 2);
+            this.tb_Notice.Multiline = true;
+            this.tb_Notice.Name = "tb_Notice";
+            this.tb_Notice.ReadOnly = true;
+            this.tb_Notice.Size = new System.Drawing.Size(439, 40);
+            this.tb_Notice.TabIndex = 1;
+            this.tb_Notice.Text = "Chú ý: Tài khoản đăng nhập là số CMND";
             // 
             // fClientSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(516, 559);
+            this.ClientSize = new System.Drawing.Size(516, 530);
             this.Controls.Add(this.panel2);
             this.Name = "fClientSignUp";
             this.Text = "fClientSignUp";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.panel16.ResumeLayout(false);
             this.panel16.PerformLayout();
             this.panel18.ResumeLayout(false);
@@ -328,10 +331,8 @@
             this.panel19.PerformLayout();
             this.panel21.ResumeLayout(false);
             this.panel21.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -353,14 +354,14 @@
         private System.Windows.Forms.Panel panel21;
         private System.Windows.Forms.TextBox tb_NameCLient;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tb_Notice;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.TextBox tb_Repassword;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.TextBox tb_Password;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox tb_Notice;
+        private System.Windows.Forms.Label label1;
     }
 }

@@ -30,6 +30,7 @@ namespace QuanLyKhachSan_CLient
         private void InitializeComponent()
         {
             this.pn_Menu = new System.Windows.Forms.Panel();
+            this.btn_Notice = new System.Windows.Forms.Button();
             this.btn_AccountInfo = new System.Windows.Forms.Button();
             this.btn_SignOut = new System.Windows.Forms.Button();
             this.btn_Help = new System.Windows.Forms.Button();
@@ -44,7 +45,7 @@ namespace QuanLyKhachSan_CLient
             this.btn_Booking = new System.Windows.Forms.Button();
             this.pn_MenuOnWD = new System.Windows.Forms.Panel();
             this.btn_Menu = new System.Windows.Forms.Button();
-            this.btn_Notice = new System.Windows.Forms.Button();
+            this.btn_Chat = new System.Windows.Forms.Button();
             this.pn_Menu.SuspendLayout();
             this.pn_Window.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -54,6 +55,7 @@ namespace QuanLyKhachSan_CLient
             // pn_Menu
             // 
             this.pn_Menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(11)))), ((int)(((byte)(10)))));
+            this.pn_Menu.Controls.Add(this.btn_Chat);
             this.pn_Menu.Controls.Add(this.btn_Notice);
             this.pn_Menu.Controls.Add(this.btn_AccountInfo);
             this.pn_Menu.Controls.Add(this.btn_SignOut);
@@ -66,6 +68,24 @@ namespace QuanLyKhachSan_CLient
             this.pn_Menu.Name = "pn_Menu";
             this.pn_Menu.Size = new System.Drawing.Size(208, 692);
             this.pn_Menu.TabIndex = 0;
+            // 
+            // btn_Notice
+            // 
+            this.btn_Notice.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Notice.FlatAppearance.BorderSize = 0;
+            this.btn_Notice.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(160)))), ((int)(((byte)(90)))));
+            this.btn_Notice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Notice.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Notice.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_Notice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Notice.Location = new System.Drawing.Point(32, 58);
+            this.btn_Notice.Name = "btn_Notice";
+            this.btn_Notice.Size = new System.Drawing.Size(120, 54);
+            this.btn_Notice.TabIndex = 17;
+            this.btn_Notice.Text = "Thông báo ";
+            this.btn_Notice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Notice.UseVisualStyleBackColor = false;
+            this.btn_Notice.Click += new System.EventHandler(this.btn_Notice_Click);
             // 
             // btn_AccountInfo
             // 
@@ -296,23 +316,23 @@ namespace QuanLyKhachSan_CLient
             this.btn_Menu.UseVisualStyleBackColor = false;
             this.btn_Menu.Click += new System.EventHandler(this.btn_Menu_Click);
             // 
-            // btn_Notice
+            // btn_Chat
             // 
-            this.btn_Notice.BackColor = System.Drawing.Color.Transparent;
-            this.btn_Notice.FlatAppearance.BorderSize = 0;
-            this.btn_Notice.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(160)))), ((int)(((byte)(90)))));
-            this.btn_Notice.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Notice.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Notice.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btn_Notice.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btn_Notice.Location = new System.Drawing.Point(32, 58);
-            this.btn_Notice.Name = "btn_Notice";
-            this.btn_Notice.Size = new System.Drawing.Size(120, 54);
-            this.btn_Notice.TabIndex = 17;
-            this.btn_Notice.Text = "Thông báo ";
-            this.btn_Notice.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btn_Notice.UseVisualStyleBackColor = false;
-            this.btn_Notice.Click += new System.EventHandler(this.btn_Notice_Click);
+            this.btn_Chat.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Chat.FlatAppearance.BorderSize = 0;
+            this.btn_Chat.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(160)))), ((int)(((byte)(90)))));
+            this.btn_Chat.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Chat.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_Chat.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btn_Chat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btn_Chat.Location = new System.Drawing.Point(41, 118);
+            this.btn_Chat.Name = "btn_Chat";
+            this.btn_Chat.Size = new System.Drawing.Size(66, 54);
+            this.btn_Chat.TabIndex = 18;
+            this.btn_Chat.Text = "Chat";
+            this.btn_Chat.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btn_Chat.UseVisualStyleBackColor = false;
+            this.btn_Chat.Click += new System.EventHandler(this.btn_Chat_Click);
             // 
             // MainWindow
             // 
@@ -352,6 +372,7 @@ namespace QuanLyKhachSan_CLient
         private System.Windows.Forms.Button btn_Help;
         private System.Windows.Forms.Button btn_Menu;
         private System.Windows.Forms.Button btn_Notice;
+        private System.Windows.Forms.Button btn_Chat;
     }
 }
 

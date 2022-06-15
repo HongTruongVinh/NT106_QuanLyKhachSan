@@ -33,6 +33,14 @@ namespace QuanLyKhachSan_CLient
             string newPassword = fLogin.MD5(tb_Password.Text);
 
             MessageBox.Show(User.Instance.SignUp(tb_NameCLient.Text, tb_NumberPhone.Text, tb_IDPerson.Text, tb_Address.Text, newPassword));
+
+            User.Instance.Create(tb_IDPerson.Text, tb_Password.Text);
+            User.Instance.TypeUser = "Client";
+            User.Instance.Address = tb_Address.Text;
+            User.Instance.UserName = tb_IDPerson.Text;
+            User.Instance.DisplayName=tb_NameCLient.Text;
+            User.Instance.PhoneNumber = tb_NumberPhone.Text;
+
             this.Close();
         }
 

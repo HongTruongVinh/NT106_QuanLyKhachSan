@@ -51,6 +51,7 @@
     <Compile Include="DAO\BillDetailsDAO.cs" />
     <Compile Include="DAO\ClientDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
+    <Compile Include="DAO\MessageDAO.cs" />
     <Compile Include="DAO\NoticeDAO.cs" />
     <Compile Include="DAO\RegulationsDAO.cs" />
     <Compile Include="DAO\RentalVoucherDAO.cs" />
@@ -75,6 +76,12 @@
     </Compile>
     <Compile Include="fBillMgmt.Designer.cs">
       <DependentUpon>fBillMgmt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fChat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fChat.Designer.cs">
+      <DependentUpon>fChat.cs</DependentUpon>
     </Compile>
     <Compile Include="fClientSignUp.cs">
       <SubType>Form</SubType>
@@ -147,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fBillMgmt.resx">
       <DependentUpon>fBillMgmt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fChat.resx">
+      <DependentUpon>fChat.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fClientSignUp.resx">
       <DependentUpon>fClientSignUp.cs</DependentUpon>

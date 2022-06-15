@@ -38,6 +38,11 @@ namespace QuanLyKhachSan
 
         private void btn_Login_Click(object sender, EventArgs e)
         {
+            if(tb_UserName.Text != "Admin")
+            {
+                MessageBox.Show("Chỉ có Admin mới có quyền đăng nhập máy chủ!");return;
+            }
+
             string username = tb_UserName.Text;
             string stringPassword = MD5(tb_PassWord.Text);
 

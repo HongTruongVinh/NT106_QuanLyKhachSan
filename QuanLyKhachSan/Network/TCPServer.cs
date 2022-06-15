@@ -369,6 +369,45 @@ namespace QuanLyKhachSan.Network
 
                             break;
 
+                        case "GetBoxChat":
+
+                            byte[] bytesBoxChat = new byte[1024 * 5000];
+
+                            DataTable dataBoxChat = MessageDAO.Instance.TableMessage(msg[1], msg[2]);
+
+                            if (dataBoxChat != null)
+                            {
+                                bytesBoxChat = FormatData.Instance.SerializeData(dataBoxChat);
+                            }
+
+                            newSocket.Send(bytesBoxChat);
+
+                            newSocket.Close();
+                            tcpClient1.Close();
+
+                            break;
+
+                        case "Chating":
+                            string[] getMessage = message.Split('|');
+
+                            byte[] bytesResualChating = new byte[1024 * 5000];
+
+                            string resualChating = "fail";
+
+                            if (MessageDAO.Instance.SendMessage(msg[1], msg[2], getMessage[1]))
+                            {
+                                resualChating = "success";
+                            }
+
+                            bytesResualChating = Encoding.UTF8.GetBytes(resualChating);
+
+                            newSocket.Send(bytesResualChating);
+
+                            newSocket.Close();
+                            tcpClient1.Close();
+
+                            break;
+
                         #endregion
 
                         case "GetListRentalVoucherUnCheckOut":
