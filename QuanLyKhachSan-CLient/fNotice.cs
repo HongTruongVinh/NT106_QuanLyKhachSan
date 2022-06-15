@@ -20,7 +20,7 @@ namespace QuanLyKhachSan_CLient
         {
             tb_Subject.DataBindings.Add(new Binding("Text", dgv_ListNotice.DataSource, "TieuDe", true, DataSourceUpdateMode.Never));
             rtb_Content.DataBindings.Add(new Binding("Text", dgv_ListNotice.DataSource, "NoiDung", true, DataSourceUpdateMode.Never));
-            lb_Username.DataBindings.Add(new Binding("Text", dgv_ListNotice.DataSource, "TenDangNhap", true, DataSourceUpdateMode.Never));
+            lb_Username.DataBindings.Add(new Binding("Text", dgv_ListNotice.DataSource, "NgayThongBao", true, DataSourceUpdateMode.Never));
         }
 
         public fNotice()
@@ -46,15 +46,22 @@ namespace QuanLyKhachSan_CLient
             dgv_ListNotice.DataSource = bindingNotice;
 
             LoadListNotice();
-            LoadListAccountEmployee();
-            LoadListAccountClient();
+            //LoadListAccountEmployee();
+            //LoadListAccountClient();
 
             AddNoticeBinding();
         }
 
         void LoadListNotice()
         {
-            dgv_ListNotice.DataSource = NoticeDAO.Instance.GetListNoticeFromUsername(User.Instance.UserName);
+            try
+            {
+                dgv_ListNotice.DataSource = NoticeDAO.Instance.GetListNoticeFromUsername(User.Instance.UserName);
+            }
+            catch
+            {
+
+            }
         }
 
         private void btn_AddNotice_Click(object sender, EventArgs e)
