@@ -23,10 +23,9 @@ namespace QuanLyKhachSan.DAO
         public DataTable GetUnCheckedBillsByGuestInfo(string name, string personalID)
         {
             string query = $@"
-                SELECT CHITIETHOADON.MaHD, MaPhong, SoNgayThue, ThanhTien, NgayThanhToan, DonGia, TrangThai
-                FROM CHITIETHOADON, HOADON, KHACHHANG
+                SELECT MaHD, MaPhong, SoNgayThue, ThanhTien, NgayThanhToan, DonGia, TrangThai
+                FROM HOADON, KHACHHANG
                 WHERE TrangThai = 0
-                AND CHITIETHOADON.MaHD = HOADON.MaHD
                 AND HOADON.MaKH = KHACHHANG.MaKH
                 AND KHACHHANG.TenKhachHang = N'{name}'
                 AND KHACHHANG.CMND = '{personalID}'
