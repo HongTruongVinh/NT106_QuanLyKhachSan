@@ -110,7 +110,7 @@
             // tb_Subject
             // 
             this.tb_Subject.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.tb_Subject.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tb_Subject.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tb_Subject.ForeColor = System.Drawing.SystemColors.WindowText;
             this.tb_Subject.Location = new System.Drawing.Point(409, 171);
             this.tb_Subject.Multiline = true;
@@ -122,6 +122,7 @@
             // rtb_Content
             // 
             this.rtb_Content.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.rtb_Content.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rtb_Content.Location = new System.Drawing.Point(409, 263);
             this.rtb_Content.Name = "rtb_Content";
             this.rtb_Content.ReadOnly = true;

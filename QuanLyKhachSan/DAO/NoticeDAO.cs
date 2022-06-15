@@ -58,7 +58,7 @@ namespace QuanLyKhachSan.DAO
         {
             try
             {
-                string toDay = string.Format("{0}/{1}/{2}", DateTime.Now.Day, DateTime.Now.Month, DateTime.Now.Year);
+                string toDay = string.Format("{0}/{1}/{2}", DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Year);
 
                 string query = string.Format("INSERT INTO dbo.THONGBAO ( TenDangNhap , TieuDe , NoiDung, NgayThongBao) VALUES ( '{0}' , '{1}' , '{2}', '{3}')", username, subject, content, toDay);
 
