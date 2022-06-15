@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using QuanLyKhachSan_CLient.DTO;
+using QuanLyKhachSan_CLient.Network;
 
 namespace QuanLyKhachSan_CLient.DAO
 {
@@ -44,5 +45,70 @@ namespace QuanLyKhachSan_CLient.DAO
         {
             return DataProvider.Instance.ExecuteQuery("exec USP_GetListBillByDate @checkIn, @checkOut", new object[] { checkIn, checkOut });
         }
+
+        #region fListRentalVoucher
+        public DataTable GetBills()
+        {
+            string query = string.Format("GetBills");
+
+            DataTable data = (DataTable)FormatData.Instance.DeserializeData(TCPClient.Instance.GetDataFromCommand(query));
+
+            return data;
+        }
+
+        public bool CreateBill(int MaKH, int MaPhong, int SoNgayThue, int ThanhTien, string NgayThanhToan, int DonGia)
+        {
+            string query = string.Format("CreateBill {0} {1} {2} {3} {4} {5}", MaKH, MaPhong, SoNgayThue, ThanhTien, NgayThanhToan, DonGia);
+
+            byte[] bytes = TCPClient.Instance.GetDataFromCommand(query);
+
+            string msg = Encoding.UTF8.GetString(bytes);
+
+            string[] message = msg.Split(' ', '\0');
+
+            if (message[0] == "success")
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool UpdateBill(int MaHD, int MaKH, int MaPhong, int SoNgayThue, int ThanhTien, string NgayThanhToan, int DonGia)
+        {
+            string query = string.Format("UpdateBill {0} {1} {2} {3} {4} {5} {6}", MaHD, MaKH, MaPhong, SoNgayThue, ThanhTien, NgayThanhToan, DonGia);
+
+            byte[] bytes = TCPClient.Instance.GetDataFromCommand(query);
+
+            string msg = Encoding.UTF8.GetString(bytes);
+
+            string[] message = msg.Split(' ', '\0');
+
+            if (message[0] == "success")
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool DeleteBill(int MaHD)
+        {
+            string query = string.Format("DeleteBill {0}", MaHD);
+
+            byte[] bytes = TCPClient.Instance.GetDataFromCommand(query);
+
+            string msg = Encoding.UTF8.GetString(bytes);
+
+            string[] message = msg.Split(' ', '\0');
+
+            if (message[0] == "success")
+            {
+                return true;
+            }
+
+            return false;
+        }
+        #endregion
     }
 }

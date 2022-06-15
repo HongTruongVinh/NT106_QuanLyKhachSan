@@ -195,5 +195,16 @@ namespace QuanLyKhachSan_CLient.DAO
             }
         }
         #endregion
+
+        #region fListRentalVoucher
+        public DataTable getReservations()
+        {
+            string query = string.Format("GetReservations");
+
+            DataTable data = (DataTable)FormatData.Instance.DeserializeData(TCPClient.Instance.GetDataFromCommand(query));
+
+            return data;
+        }
+        #endregion
     }
 }

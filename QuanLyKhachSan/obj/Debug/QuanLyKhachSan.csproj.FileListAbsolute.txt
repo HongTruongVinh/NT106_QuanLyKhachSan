@@ -86,7 +86,6 @@ F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.f
 F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fChart.resources
 F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fGuestMgmt.resources
 F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fInformation.resources
-F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fListRentalVoucher.resources
 F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fNotice.resources
 F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fRentalVoucher.resources
 F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fLogin.resources
@@ -139,3 +138,4 @@ C:\Users\Vasilias Da Nykta\Desktop\LTM\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.c
 C:\Users\Vasilias Da Nykta\Desktop\LTM\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
 C:\Users\Vasilias Da Nykta\Desktop\LTM\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
 C:\Users\HONG VINH\source\repos\NT106_QuanLyKhachSan3\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fReservationMgmt.resources
+F:\ProgLang\C#\Winforms\NT106.M21.Edit\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fReservationMgmt.resources
