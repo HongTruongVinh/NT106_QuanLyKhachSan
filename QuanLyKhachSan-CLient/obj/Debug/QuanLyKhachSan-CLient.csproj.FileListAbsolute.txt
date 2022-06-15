@@ -65,3 +65,4 @@ C:\Users\HONG VINH\Source\Repos\NT106_QuanLyKhachSan3\QuanLyKhachSan-CLient\obj\
 C:\Users\HONG VINH\Source\Repos\NT106_QuanLyKhachSan3\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan-CLient.exe
 C:\Users\HONG VINH\Source\Repos\NT106_QuanLyKhachSan3\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan-CLient.pdb
 C:\Users\HONG VINH\source\repos\NT106_QuanLyKhachSan3\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan_CLient.fChat.resources
+F:\ProgLang\C#\Winforms\NT106.M21.Edit\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan_CLient.fChat.resources

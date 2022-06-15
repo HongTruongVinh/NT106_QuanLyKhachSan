@@ -14,107 +14,88 @@ namespace QuanLyKhachSan_CLient
 {
     public partial class fListRentalVoucher : Form
     {
-        BindingSource listRentalVoucher = new BindingSource();
-
         public fListRentalVoucher()
         {
             InitializeComponent();
-
-            Load();
+            LoadData();
         }
 
-        void Load()
+        private void LoadData()
         {
-
-            SetDefaultControls();
-
-            LoadInforRentalVoucher();
-
-
-            AddBinding();
+            DataTable RV = RentalVoucherDAO.Instance.getReservations();
+            dgv_PhieuThuePhong.DataSource = RV;
+            DataTable Bills = BillDAO.Instance.GetBills();
+            dgv_HoaDon.DataSource = Bills;
+            AddBindings(RV, Bills);
         }
 
-        void SetDefaultControls()
+        private void AddBindings(DataTable RV, DataTable Bills)
         {
-            dgv_ListRentalVoucher.DataSource =listRentalVoucher;
+            tb_MaPhieu.DataBindings.Clear();
+            tb_NgayBD.DataBindings.Clear();
+            tb_SLKhach.DataBindings.Clear();
+            tb_MaPhong.DataBindings.Clear();
+            tb_MaKH.DataBindings.Clear();
+            tb_SoNgayThue.DataBindings.Clear();
+            tb_ThanhTien.DataBindings.Clear();
+            dtp_NgayThanhToan.DataBindings.Clear();
 
-            this.Size = new Size(1280, 690);
+            tb_MaPhieu.DataBindings.Add(new Binding("Text", RV, "Mã phiếu"));
+            tb_NgayBD.DataBindings.Add(new Binding("Text", RV, "Ngày bắt đầu"));
+            tb_SLKhach.DataBindings.Add(new Binding("Text", RV, "Số lượng khách"));
+            tb_MaPhong.DataBindings.Add(new Binding("Text", RV, "Mã phòng"));
+            tb_MaKH.DataBindings.Add(new Binding("Text", RV, "Mã khách hàng"));
 
-            cbb_TypeClient.DropDownStyle = ComboBoxStyle.DropDownList;
+            tb_SoNgayThue.DataBindings.Add(new Binding("Text", Bills, "Số ngày thuê"));
+            tb_ThanhTien.DataBindings.Add(new Binding("Text", Bills, "Thành tiền"));
+            dtp_NgayThanhToan.DataBindings.Add(new Binding("Value", Bills, "Ngày thanh toán"));
         }
 
-        void AddBinding()
+        private void btn_TaoHoaDon_Click(object sender, EventArgs e)
         {
-            tb_NameRoom.DataBindings.Add(new Binding("Text", dgv_ListRentalVoucher.DataSource, "Phòng", true, DataSourceUpdateMode.Never));
-            tb_IdRentalVoucher.DataBindings.Add(new Binding("Text", dgv_ListRentalVoucher.DataSource, "MaPhieu", true, DataSourceUpdateMode.Never));
-            tb_IdPerson.DataBindings.Add(new Binding("Text", dgv_ListRentalVoucher.DataSource, "CMND", true, DataSourceUpdateMode.Never));
-            tb_NumberPhone.DataBindings.Add(new Binding("Text", dgv_ListRentalVoucher.DataSource, "SDT", true, DataSourceUpdateMode.Never));
-            tb_DateStart.DataBindings.Add(new Binding("Text", dgv_ListRentalVoucher.DataSource, "Ngày bắt đầu", true, DataSourceUpdateMode.Never));
-            tb_CountClient.DataBindings.Add(new Binding("Text", dgv_ListRentalVoucher.DataSource, "Số khách", true, DataSourceUpdateMode.Never));
-            tb_NameClient.DataBindings.Add(new Binding("Text", dgv_ListRentalVoucher.DataSource, "Khách hàng", true, DataSourceUpdateMode.Never));
-            tb_Address.DataBindings.Add(new Binding("Text", dgv_ListRentalVoucher.DataSource, "Địa chỉ", true, DataSourceUpdateMode.Never));
-            tb_IdClient.DataBindings.Add(new Binding("Text", dgv_ListRentalVoucher.DataSource, "MaKH", true, DataSourceUpdateMode.Never));
-            tb_IdRoom.DataBindings.Add(new Binding("Text", dgv_ListRentalVoucher.DataSource, "MaPhong", true, DataSourceUpdateMode.Never));
-        }
+            //if (tb_SoNgayThue.TextLength == 0 || tb_ThanhTien.TextLength == 0)
+            //{
+            //    MessageBox.Show("Bạn cần điền Số ngày thuê, Thành tiền, Ngày thanh toán để tạo hóa đơn");
+            //    return;
+            //}
+            int MaKH = int.Parse(tb_MaKH.Text);
+            int MaPhong = int.Parse(tb_MaPhong.Text);
+            int SoNgayThue = int.Parse(tb_SoNgayThue.Text);
+            int ThanhTien = int.Parse(tb_ThanhTien.Text);
+            string NgayThanhToan = dtp_NgayThanhToan.Value.ToString("yyyy/MM/dd");
+            int DonGia = ThanhTien * SoNgayThue;
 
-        void LoadInforRentalVoucher()
-        {
-            dgv_ListRentalVoucher.Columns.Clear();
-            dgv_ListRentalVoucher.DataSource = RentalVoucherDAO.Instance.ListRentalVoucherUnCheckOut("TiengViet");
-
-        }
-
-        private void btn_DeleteRV_Click(object sender, EventArgs e)
-        {
-            var result = MessageBox.Show("Bạn có chắc muốn XÓA?", "Thông báo", MessageBoxButtons.YesNo);
-
-            if (result == DialogResult.No)
+            if (BillDAO.Instance.CreateBill(MaKH, MaPhong, SoNgayThue, ThanhTien, NgayThanhToan, DonGia))
             {
-                return;
-            }
-
-            int idRV = Convert.ToInt32(tb_IdRentalVoucher.Text);
-            int idClient = Convert.ToInt32(tb_IdClient.Text);
-            int idRoom = Convert.ToInt32(tb_IdRoom.Text);
-
-            if (RentalVoucherDAO.Instance.DeleteRentalVoucher(idRV, idClient))
-            {
-                RoomDAO.Instance.UpdateStatusRoom(idRoom, 0);
-                MessageBox.Show("Xóa phiếu thuê phòng thành công! ");
-                LoadInforRentalVoucher();
-            }
-            else
-            {
-                MessageBox.Show("!!!Xóa phiếu thuê phòng không thành công!!! ");
+                MessageBox.Show("Tạo hóa đơn thành công");
+                LoadData();
             }
         }
 
-        private void tb_NameRoom_TextChanged(object sender, EventArgs e)
+        private void btn_SuaHoaDon_Click(object sender, EventArgs e)
         {
-            if (dgv_ListRentalVoucher.SelectedCells.Count > 0)
+            int MaHD = (int)dgv_HoaDon.CurrentRow.Cells["Mã hóa đơn"].Value;
+            int MaKH = int.Parse(tb_MaKH.Text);
+            int MaPhong = int.Parse(tb_MaPhong.Text);
+            int SoNgayThue = int.Parse(tb_SoNgayThue.Text);
+            int ThanhTien = int.Parse(tb_ThanhTien.Text);
+            string NgayThanhToan = dtp_NgayThanhToan.Value.ToString("yyyy/MM/dd");
+            int DonGia = ThanhTien * SoNgayThue;
+
+            if (BillDAO.Instance.UpdateBill(MaHD, MaKH, MaPhong, SoNgayThue, ThanhTien, NgayThanhToan, DonGia))
             {
-                try
-                {
-                    if (dgv_ListRentalVoucher.SelectedCells[0].OwningRow.Cells["loại khách"].Value == null)
-                    {
-                        return;
-                    }
+                MessageBox.Show("Sửa hóa đơn thành công");
+                LoadData();
+            }
+        }
 
-                    int loaiKH = (int)dgv_ListRentalVoucher.SelectedCells[0].OwningRow.Cells["loại khách"].Value;
-
-                    if(loaiKH == 1)
-                    {
-                        cbb_TypeClient.SelectedIndex = 0;
-                    }
-                    else
-                    {
-                        cbb_TypeClient.SelectedIndex = 1;
-                    }
-                }
-                catch
-                {
-
-                }
+        private void btn_XoaHoaDon_Click(object sender, EventArgs e)
+        {
+            int MaHD = (int)dgv_HoaDon.CurrentRow.Cells["Mã hóa đơn"].Value;
+            if (BillDAO.Instance.DeleteBill(MaHD))
+            {
+                MessageBox.Show("Xóa hóa đơn thành công");
+                LoadData();
             }
         }
     }

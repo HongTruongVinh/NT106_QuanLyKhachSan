@@ -377,21 +377,87 @@ namespace QuanLyKhachSan.Network
 
                         #endregion
 
-                        case "GetListRentalVoucherUnCheckOut":
-                            byte[] bytesGetListRentalVoucherUnCheckOut = new byte[1024 * 5000];
+                        #region Ngay 15/06
+                        case "GetReservations":
+                            byte[] bytesGetReservations = new byte[1024 * 5000];
 
                             //int idClient = Int32.Parse(msg[1]);
 
-                            DataTable dataGetListRentalVoucherUnCheckOut = RentalVoucherDAO.Instance.ListRentalVoucherUnCheckOut("TV");
+                            DataTable dataGetReservations = RentalVoucherDAO.Instance.getReservations();
 
-                            if (dataGetListRentalVoucherUnCheckOut != null)
+                            if (dataGetReservations != null)
                             {
-                                bytesGetListRentalVoucherUnCheckOut = FormatData.Instance.SerializeData(dataGetListRentalVoucherUnCheckOut);
+                                bytesGetReservations = FormatData.Instance.SerializeData(dataGetReservations);
                             }
 
-                            socketClient.Send(bytesGetListRentalVoucherUnCheckOut);
+                            socketClient.Send(bytesGetReservations);
 
                             break;
+
+                        case "GetBills":
+                            byte[] bytesGetBills = new byte[1024 * 5000];
+
+                            //int idClient = Int32.Parse(msg[1]);
+
+                            DataTable dataGetBills = BillDAO.Instance.GetBills();
+
+                            if (dataGetBills != null)
+                            {
+                                bytesGetBills = FormatData.Instance.SerializeData(dataGetBills);
+                            }
+
+                            socketClient.Send(bytesGetBills);
+
+                            break;
+
+                        case "CreateBill":
+                            byte[] resultCreateBill = new byte[1024 * 5000];
+
+                            string bytesResultCreateBill = "fail";
+
+                            if (BillDAO.Instance.CreateBill(Int32.Parse(msg[1]), Int32.Parse(msg[2]), Int32.Parse(msg[3]), Int32.Parse(msg[4]), msg[5], Int32.Parse(msg[6])))
+                            {
+                                bytesResultCreateBill = "success";
+                            }
+
+                            resultCreateBill = Encoding.UTF8.GetBytes(bytesResultCreateBill);
+
+                            socketClient.Send(resultCreateBill);
+
+                            break;
+
+                        case "UpdateBill":
+                            byte[] resultUpdateBill = new byte[1024 * 5000];
+
+                            string bytesResultUpdateBill = "fail";
+
+                            if (BillDAO.Instance.UpdateBill(Int32.Parse(msg[1]), Int32.Parse(msg[2]), Int32.Parse(msg[3]), Int32.Parse(msg[4]), Int32.Parse(msg[5]), msg[6], Int32.Parse(msg[7])))
+                            {
+                                bytesResultUpdateBill = "success";
+                            }
+
+                            resultUpdateBill = Encoding.UTF8.GetBytes(bytesResultUpdateBill);
+
+                            socketClient.Send(resultUpdateBill);
+
+                            break;
+
+                        case "DeleteBill":
+                            byte[] resultDeleteBill = new byte[1024 * 5000];
+
+                            string bytesResultDeleteBill = "fail";
+
+                            if (BillDAO.Instance.UpdateBill(Int32.Parse(msg[1]), Int32.Parse(msg[2]), Int32.Parse(msg[3]), Int32.Parse(msg[4]), Int32.Parse(msg[5]), msg[6], Int32.Parse(msg[7])))
+                            {
+                                bytesResultDeleteBill = "success";
+                            }
+
+                            resultDeleteBill = Encoding.UTF8.GetBytes(bytesResultDeleteBill);
+
+                            socketClient.Send(resultDeleteBill);
+
+                            break;
+                            #endregion
                     }
                 }
                 catch
