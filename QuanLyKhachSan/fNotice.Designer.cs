@@ -103,9 +103,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(13, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(481, 46);
+            this.label1.Size = new System.Drawing.Size(403, 46);
             this.label1.TabIndex = 29;
-            this.label1.Text = "Thông báo từ quản trị viên";
+            this.label1.Text = "Xin chào quản trị viên";
             // 
             // tb_Subject
             // 

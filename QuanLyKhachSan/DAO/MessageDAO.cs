@@ -25,11 +25,20 @@ namespace QuanLyKhachSan.DAO
         private MessageDAO() { }
         #endregion
 
-        public DataTable TableMessage(string clientUsername, string employeeUsername = "")
+        public DataTable TableMessage(string clientUsername, string employeeUsername = "_")
         {
             DataTable data;
 
-            string query = string.Format("SELECT * FROM TINNHAN WHERE UserNameNhanVien = '{0}' AND UserNameKhachHang = '{1}'", employeeUsername, clientUsername);
+            string query = "";
+
+            if(employeeUsername == "_")
+            {
+                query = string.Format("SELECT * FROM TINNHAN WHERE UserNameKhachHang = '{1}'", employeeUsername, clientUsername);
+            }
+            else
+            {
+                query = string.Format("SELECT * FROM TINNHAN WHERE UserNameNhanVien = '{0}' AND UserNameKhachHang = '{1}'", employeeUsername, clientUsername);
+            }
 
             data = DataProvider.Instance.ExecuteQuery(query); 
 
@@ -44,7 +53,7 @@ namespace QuanLyKhachSan.DAO
                 if(employeeUsername == "_")
                 {
                     int index = 1;
-                    string queryGetEmployee = string.Format("SELECT * FROM dbo.TAIKHOAN");
+                    string queryGetEmployee = string.Format("SELECT * FROM dbo.TAIKHOAN WHERE LoaiTaiKhoan = 0");
                     DataTable data = DataProvider.Instance.ExecuteQuery(queryGetEmployee);
                     
                     Random rand = new Random();

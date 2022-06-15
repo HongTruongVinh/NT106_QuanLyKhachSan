@@ -28,7 +28,7 @@ namespace QuanLyKhachSan_CLient.DAO
         {
             DataTable data;
 
-            string query = string.Format("GetMessage {0} {1}", clientUsername, employeeUsername);
+            string query = string.Format("GetBoxChat {0} {1}", clientUsername, employeeUsername);
 
             data = (DataTable)FormatData.Instance.DeserializeData(TCPClient.Instance.GetDataFromCommand(query)); 
 

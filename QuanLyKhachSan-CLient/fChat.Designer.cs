@@ -33,6 +33,7 @@
             this.lv_Show = new System.Windows.Forms.ListView();
             this.tb_Message = new System.Windows.Forms.TextBox();
             this.btn_Send = new System.Windows.Forms.Button();
+            this.lb_Reload = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -51,7 +52,7 @@
             this.tb_NameReceiver.Location = new System.Drawing.Point(107, 10);
             this.tb_NameReceiver.Name = "tb_NameReceiver";
             this.tb_NameReceiver.ReadOnly = true;
-            this.tb_NameReceiver.Size = new System.Drawing.Size(681, 27);
+            this.tb_NameReceiver.Size = new System.Drawing.Size(643, 27);
             this.tb_NameReceiver.TabIndex = 1;
             this.tb_NameReceiver.Text = "_";
             // 
@@ -84,11 +85,25 @@
             this.btn_Send.UseVisualStyleBackColor = true;
             this.btn_Send.Click += new System.EventHandler(this.btn_Send_Click);
             // 
+            // lb_Reload
+            // 
+            this.lb_Reload.AutoSize = true;
+            this.lb_Reload.BackColor = System.Drawing.Color.LemonChiffon;
+            this.lb_Reload.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_Reload.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lb_Reload.Location = new System.Drawing.Point(756, 15);
+            this.lb_Reload.Name = "lb_Reload";
+            this.lb_Reload.Size = new System.Drawing.Size(25, 25);
+            this.lb_Reload.TabIndex = 15;
+            this.lb_Reload.Text = "⟳";
+            this.lb_Reload.Click += new System.EventHandler(this.lb_Reload_Click);
+            // 
             // fChat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 463);
+            this.ClientSize = new System.Drawing.Size(977, 463);
+            this.Controls.Add(this.lb_Reload);
             this.Controls.Add(this.btn_Send);
             this.Controls.Add(this.tb_Message);
             this.Controls.Add(this.lv_Show);
@@ -108,5 +123,6 @@
         private System.Windows.Forms.ListView lv_Show;
         private System.Windows.Forms.TextBox tb_Message;
         private System.Windows.Forms.Button btn_Send;
+        private System.Windows.Forms.Label lb_Reload;
     }
 }

@@ -162,7 +162,7 @@ namespace QuanLyKhachSan_CLient.DAO
 
         public bool OrderRoom(int idRoom, int countPeople, int typeClient, string name, string idPerson, string numberphone, string address)
         {
-            byte[] bytes = TCPClient.Instance.GetDataFromCommand_SignUp(string.Format("OderRoom {0} {1} {2} {3} {4} {5}", countPeople, typeClient, name, idPerson, numberphone, address));
+            byte[] bytes = TCPClient.Instance.GetDataFromCommand(string.Format("OderRoom {0} {1} {2} {3} {4} {5}", countPeople, typeClient, name, idPerson, numberphone, address));
 
             string message = Encoding.UTF8.GetString(bytes);
 

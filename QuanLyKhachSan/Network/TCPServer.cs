@@ -120,10 +120,10 @@ namespace QuanLyKhachSan.Network
 
 
                         //Tao 1 thread moi để phục vụ user này 
-                        Thread clientThread = new Thread(() => CommandFromClient(usernameAndpassword[0], _tcpClient, _socketClient));
-                        tcpClientDictionary.Add(usernameAndpassword[0], _tcpClient);
-                        clientThread.Name = usernameAndpassword[0];
-                        threadDictionary.Add(usernameAndpassword[0], clientThread);
+                        Thread clientThread = new Thread(() => CommandFromClient(usernameAndpassword[0], _tcpClient));
+                        //tcpClientDictionary.Add(usernameAndpassword[0], _tcpClient);
+                        //clientThread.Name = usernameAndpassword[0];
+                        //threadDictionary.Add(usernameAndpassword[0], clientThread);
                         clientThread.Start();
                     }
                     else
@@ -144,27 +144,22 @@ namespace QuanLyKhachSan.Network
             }
         }
 
-        private void CommandFromClient(string username, TcpClient tcpClient, Socket socketClient)
+        private void CommandFromClient(string username, TcpClient tcpClient)
         {
 
             bool clientConnecting = true;
-
-            TcpListener tcpListener1 = new TcpListener(new System.Net.IPEndPoint(IPAddress.Any, SERVERPORT + 1));
-            tcpListener1.Start();
 
             while (isServerOpen && clientConnecting)
             {
 
                 try
                 {
-                    TcpClient tcpClient1 = tcpListener1.AcceptTcpClient();
-                    Socket newSocket = tcpClient1.Client;
+                    Socket socketClient = tcpClient.Client;
 
                     byte[] data = new byte[1024 * 5000];
-                    newSocket.Receive(data);
+                    socketClient.Receive(data);
 
                     string message = Encoding.UTF8.GetString(data);
-                    string xxx = Encoding.UTF8.GetString(data);
                     string[] msg = message.Split('\0', ' ');
 
 
@@ -177,10 +172,7 @@ namespace QuanLyKhachSan.Network
                             DataTable roomList = RoomDAO.Instance.ClientGetRoomList();
                             listRoom = FormatData.Instance.SerializeData(roomList);
 
-                            newSocket.Send(listRoom);
-
-                            newSocket.Close();
-                            tcpClient1.Close();
+                            socketClient.Send(listRoom);
 
                             break;
 
@@ -196,10 +188,7 @@ namespace QuanLyKhachSan.Network
                                 bytesAvailableRoom = Encoding.UTF8.GetBytes("IsNotAvailable");
                             }
 
-                            newSocket.Send(bytesAvailableRoom);
-
-                            newSocket.Close();
-                            tcpClient1.Close();
+                            socketClient.Send(bytesAvailableRoom);
 
                             break;
 
@@ -215,10 +204,7 @@ namespace QuanLyKhachSan.Network
                                 bytesSucessOderRoom = Encoding.UTF8.GetBytes("OderRoomFail");
                             }
 
-                            newSocket.Send(bytesSucessOderRoom);
-
-                            newSocket.Close();
-                            tcpClient1.Close();
+                            socketClient.Send(bytesSucessOderRoom);
 
                             break;
                         #endregion
@@ -230,11 +216,7 @@ namespace QuanLyKhachSan.Network
                             byte[] bytesInforClient = new byte[1024 * 5000];
                             bytesInforClient = Encoding.UTF8.GetBytes(inforClient);
 
-
-                            newSocket.Send(bytesInforClient);
-
-                            newSocket.Close();
-                            tcpClient1.Close();
+                            socketClient.Send(bytesInforClient);
 
                             break;
 
@@ -245,10 +227,7 @@ namespace QuanLyKhachSan.Network
                             DataTable GetListNoticeFromUsername = NoticeDAO.Instance.GetListNoticeFromUsername(username);
                             dataGetListNoticeFromUsername = FormatData.Instance.SerializeData(GetListNoticeFromUsername);
 
-                            newSocket.Send(dataGetListNoticeFromUsername);
-
-                            newSocket.Close();
-                            tcpClient1.Close();
+                            socketClient.Send(dataGetListNoticeFromUsername);
 
                             break;
                         #endregion
@@ -261,10 +240,8 @@ namespace QuanLyKhachSan.Network
 
                             byteDataGetRegulations = Encoding.UTF8.GetBytes(DataGetRegulations);
 
-                            newSocket.Send(byteDataGetRegulations);
+                            socketClient.Send(byteDataGetRegulations);
 
-                            newSocket.Close();
-                            tcpClient1.Close();
                             break;
 
                         case "GetListOrderedRoom":
@@ -273,10 +250,7 @@ namespace QuanLyKhachSan.Network
                             DataTable listOrderedRoom = RoomDAO.Instance.GetListOrderedRoomOfClient(msg[1]);
                             bytesGetListOrderedRoom = FormatData.Instance.SerializeData(listOrderedRoom);
 
-                            newSocket.Send(bytesGetListOrderedRoom);
-
-                            newSocket.Close();
-                            tcpClient1.Close();
+                            socketClient.Send(bytesGetListOrderedRoom);
 
                             break;
 
@@ -292,10 +266,7 @@ namespace QuanLyKhachSan.Network
 
                             resualtDeleteRoomOrder = Encoding.UTF8.GetBytes(bytesResualtDeleteRoomOrder);
 
-                            newSocket.Send(resualtDeleteRoomOrder);
-
-                            newSocket.Close();
-                            tcpClient1.Close();
+                            socketClient.Send(resualtDeleteRoomOrder);
 
                             break;
 
@@ -311,10 +282,7 @@ namespace QuanLyKhachSan.Network
                                 bytesGetUnCheckRentalVoucherByRoomID = FormatData.Instance.SerializeData(dataGetUnCheckRentalVoucherByRoomID);
                             }
 
-                            newSocket.Send(bytesGetUnCheckRentalVoucherByRoomID);
-
-                            newSocket.Close();
-                            tcpClient1.Close();
+                            socketClient.Send(bytesGetUnCheckRentalVoucherByRoomID);
 
                             break;
 
@@ -330,21 +298,18 @@ namespace QuanLyKhachSan.Network
                                 bytesGetClientByID = FormatData.Instance.SerializeData(dataGetClientByID);
                             }
 
-                            newSocket.Send(bytesGetClientByID);
-
-                            newSocket.Close();
-                            tcpClient1.Close();
+                            socketClient.Send(bytesGetClientByID);
 
                             break;
 
                         case "EXIT":
-                            newSocket.Close();
-                            tcpClient1.Close();
+                            socketClient.Close();
+                            tcpClient.Close();
 
-                            tcpClientDictionary.Remove(username);
-                            Thread threadBeKill = threadDictionary[username];
-                            threadDictionary.Remove(username);
-                            threadBeKill.Abort();
+                            //tcpClientDictionary.Remove(username);
+                            //Thread threadBeKill = threadDictionary[username];
+                            //threadDictionary.Remove(username);
+                            //threadBeKill.Abort();
                             clientConnecting = false;
                             break;
 
@@ -362,10 +327,7 @@ namespace QuanLyKhachSan.Network
 
                             bytesResetPassword = Encoding.UTF8.GetBytes(resualResetPassword);
 
-                            newSocket.Send(bytesResetPassword);
-
-                            newSocket.Close();
-                            tcpClient1.Close();
+                            socketClient.Send(bytesResetPassword);
 
                             break;
 
@@ -380,15 +342,12 @@ namespace QuanLyKhachSan.Network
                                 bytesBoxChat = FormatData.Instance.SerializeData(dataBoxChat);
                             }
 
-                            newSocket.Send(bytesBoxChat);
-
-                            newSocket.Close();
-                            tcpClient1.Close();
+                            socketClient.Send(bytesBoxChat);
 
                             break;
 
                         case "Chating":
-                            string[] getMessage = message.Split('|');
+                            string[] getMessage = message.Split('|', '\0');
 
                             byte[] bytesResualChating = new byte[1024 * 5000];
 
@@ -397,14 +356,22 @@ namespace QuanLyKhachSan.Network
                             if (MessageDAO.Instance.SendMessage(msg[1], msg[2], getMessage[1]))
                             {
                                 resualChating = "success";
+
+                                //byte[] bytesBoxChat1 = new byte[1024 * 5000];
+
+                                //DataTable dataBoxChat1 = MessageDAO.Instance.TableMessage(msg[1], msg[2]);
+
+                                //if (dataBoxChat1 != null)
+                                //{
+                                //    bytesBoxChat1 = FormatData.Instance.SerializeData(dataBoxChat1);
+                                //}
+
+                                //socketClient.Send(bytesBoxChat1);
                             }
 
                             bytesResualChating = Encoding.UTF8.GetBytes(resualChating);
 
-                            newSocket.Send(bytesResualChating);
-
-                            newSocket.Close();
-                            tcpClient1.Close();
+                            socketClient.Send(bytesResualChating);
 
                             break;
 
@@ -422,10 +389,7 @@ namespace QuanLyKhachSan.Network
                                 bytesGetListRentalVoucherUnCheckOut = FormatData.Instance.SerializeData(dataGetListRentalVoucherUnCheckOut);
                             }
 
-                            newSocket.Send(bytesGetListRentalVoucherUnCheckOut);
-
-                            newSocket.Close();
-                            tcpClient1.Close();
+                            socketClient.Send(bytesGetListRentalVoucherUnCheckOut);
 
                             break;
                     }

@@ -196,7 +196,7 @@ namespace QuanLyKhachSan_CLient
         private void btn_Chat_Click(object sender, EventArgs e)
         {
             fChat fChat = new fChat();
-            fChat.ShowDialog();
+            fChat.Show();
         }
     }
 }

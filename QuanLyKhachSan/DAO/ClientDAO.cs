@@ -150,7 +150,9 @@ namespace QuanLyKhachSan.DAO
 
         public bool InsertClient(string hoten, string sdt, string cmnd, string diachi)
         {
-            string query = $@"
+            try
+            {
+                string query = $@"
                 USP_InsertClient
                 @TenKhachHang=[{hoten}],
                 @CMND='{cmnd}',
@@ -158,31 +160,49 @@ namespace QuanLyKhachSan.DAO
                 @DiaChi=[{diachi}]
             ";
 
-            int result = DataProvider.Instance.ExecuteNonQuery(query);
+                int result = DataProvider.Instance.ExecuteNonQuery(query);
 
-            return result > 0;
+                return result > 0;
+            }
+            catch
+            {
+                return false;
+            }
+            
         }
 
         public bool UpdateClient(int makhachhang, string hoten, string sdt, string cmnd, string diachi)
         {
-            string query = string.Format("UPDATE KHACHHANG SET TenKhachHang = N'{0}', " +
-                "SDT = '{1}', " +
-                "CMND = '{2}', " +
-                "DiaChi = N'{3}' " +
-                "WHERE MaKH = {4}", hoten, sdt, cmnd, diachi, makhachhang);
-            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            try
+            {
+                string query = string.Format("UPDATE KHACHHANG SET TenKhachHang = N'{0}', " +
+                    "SDT = '{1}', " +
+                    "CMND = '{2}', " +
+                    "DiaChi = N'{3}' " +
+                    "WHERE MaKH = {4}", hoten, sdt, cmnd, diachi, makhachhang);
+                int result = DataProvider.Instance.ExecuteNonQuery(query);
 
-            return result > 0;
+                return result > 0;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public bool DeleteClient(int id)
         {
+            try
+            {
+                string query = string.Format("Delete KHACHHANG where MaKH = {0}", id);
+                int result = DataProvider.Instance.ExecuteNonQuery(query);
 
-
-            string query = string.Format("Delete KHACHHANG where MaKH = {0}", id);
-            int result = DataProvider.Instance.ExecuteNonQuery(query);
-
-            return result > 0;
+                return result > 0;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public DataTable GetGuestByBillID(int billId)

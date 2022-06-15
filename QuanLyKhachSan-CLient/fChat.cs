@@ -30,17 +30,18 @@ namespace QuanLyKhachSan_CLient
         {
             timeToReload = new Timer();
             timeToReload.Tick += TimeToReload_Tick; ;
-            timeToReload.Interval = 3000; // 3s Reload 1 lần 
-            timeToReload.Start();
+            timeToReload.Interval = 30000; // 3s Reload 1 lần 
+            //timeToReload.Start();
 
             tb_NameReceiver.ReadOnly= true;
-
+            lv_Show.Columns.Add("BoxChat");
+            lv_Show.View = System.Windows.Forms.View.Details;
+            lv_Show.Columns[0].Width = 500;
         }
 
         void LoadMessage()
         {
             lv_Show.Items.Clear();
-            lv_Show.View = View.Details;
 
             DataTable dt = MessageDAO.Instance.TableMessage(User.Instance.UserName, tb_NameReceiver.Text) ;
             
@@ -94,5 +95,9 @@ namespace QuanLyKhachSan_CLient
             }
         }
 
+        private void lb_Reload_Click(object sender, EventArgs e)
+        {
+            LoadMessage();
+        }
     }
 }

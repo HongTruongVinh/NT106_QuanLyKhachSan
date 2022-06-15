@@ -48,7 +48,7 @@ namespace QuanLyKhachSan_CLient.Network
         {
             string stringReturn = "";
 
-            byte[] bytes = TCPClient.Instance.GetDataFromCommand_SignUp(string.Format("SignUp {0} {1} {2} {3} {4}", name, numberphone, idPerson, address, password));
+            byte[] bytes = TCPClient.Instance.GetDataFromCommand(string.Format("SignUp {0} {1} {2} {3} {4}", name, numberphone, idPerson, address, password));
 
             string message = Encoding.UTF8.GetString(bytes);
 

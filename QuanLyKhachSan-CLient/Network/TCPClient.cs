@@ -93,9 +93,6 @@ namespace QuanLyKhachSan_CLient.Network
 
                     stopTcpCient = false;
 
-                    clientThread = new Thread(ClientReceive);
-                    clientThread.Start();
-
                     return true;
                 }
                 else
@@ -112,98 +109,49 @@ namespace QuanLyKhachSan_CLient.Network
             }
         }
 
-        void ClientReceive()
-        {
-            DataFromServer = new byte[1024 * 5000];
-            socketClient = tcpCLient.Client;
-
-            while (/*tcpCLient.Connected &&*/ !stopTcpCient && clientThread.IsAlive == true)
-            {
-                Application.DoEvents();
-                try
-                {
-
-                    byte[] data = new byte[1024 * 5000];
-                    socketClient.Receive(data);
-                    DataFromServer = data;
-
-                }
-                catch (Exception ex)
-                {
-                    //MessageBox.Show(ex.Message);
-                }
-            }
-
-            socketClient.Close();
-            tcpCLient.Close();
-            clientThread.Abort();
-        }
-
-        TcpClient newtcpCLient;
-        IPAddress newserverIP = IPAddress.Parse("127.0.0.1");
         public byte[] GetDataFromCommand(string command)
         {
-            byte[] dataGet = new byte[1024 * 5000];
-            
-            IPEndPoint newiPEndPoint = new IPEndPoint(newserverIP, SERVERPORT + 1);
-            newtcpCLient = new TcpClient();
-            newtcpCLient.Connect(newiPEndPoint);// Mở kết nối tới server 
-            Socket newclientSocket = newtcpCLient.Client;
+            byte[] bytecommand = Encoding.ASCII.GetBytes(command);
 
-            byte[] dataSend = Encoding.ASCII.GetBytes(command);
-            newclientSocket.Send(dataSend);//Gui
+            byte[] dataReveiveFromServer = new byte[1024 * 5000];
 
-            newclientSocket.Receive(dataGet);//Nhan
+            socketClient.Send(bytecommand);
 
-            newclientSocket.Close();
-            newtcpCLient.Close();
+            socketClient.Receive(dataReveiveFromServer);
 
-
-            return dataGet;
+            return dataReveiveFromServer;
         }
 
         public void TCPCLientStop()
         {
-            byte[] dataGet = new byte[1024 * 5000];
-
-            IPEndPoint newiPEndPoint = new IPEndPoint(newserverIP, SERVERPORT + 1);
-            newtcpCLient = new TcpClient();
-            newtcpCLient.Connect(newiPEndPoint);// Mở kết nối tới server 
-            Socket newclientSocket = newtcpCLient.Client;
-
             byte[] dataSend = Encoding.ASCII.GetBytes("EXIT");
-            newclientSocket.Send(dataSend);//Gui
-
-            newclientSocket.Receive(dataGet);//Nhan
-
-            newclientSocket.Close();
-            newtcpCLient.Close();
-
-            stopTcpCient = true;
-            tcpCLient.Close();
-            clientThread.Abort();
-        }
-
-        public byte[] GetDataFromCommand_SignUp(string command)
-        {
-            byte[] dataGet = new byte[1024 * 5000];
-
-            tcpCLient = new TcpClient();
-            IPAddress serverIP = IPAddress.Parse("127.0.0.1");
-            IPEndPoint iPEndPoint = new IPEndPoint(serverIP, SERVERPORT);
-
-            tcpCLient.Connect(iPEndPoint);// Mở kết nối tới server 
-            socketClient = tcpCLient.Client;// Lấy cổng kết nối để dùng 
-
-            byte[] dataSend = Encoding.ASCII.GetBytes(command);
             socketClient.Send(dataSend);//Gui
 
-            socketClient.Receive(dataGet);//Nhan
-
+            stopTcpCient = true;
             socketClient.Close();
             tcpCLient.Close();
-
-            return dataGet;
         }
+
+        //public byte[] GetDataFromCommand_SignUp(string command)
+        //{
+        //    byte[] dataGet = new byte[1024 * 5000];
+
+        //    tcpCLient = new TcpClient();
+        //    IPAddress serverIP = IPAddress.Parse("127.0.0.1");
+        //    IPEndPoint iPEndPoint = new IPEndPoint(serverIP, SERVERPORT);
+
+        //    tcpCLient.Connect(iPEndPoint);// Mở kết nối tới server 
+        //    socketClient = tcpCLient.Client;// Lấy cổng kết nối để dùng 
+
+        //    byte[] dataSend = Encoding.ASCII.GetBytes(command);
+        //    socketClient.Send(dataSend);//Gui
+
+        //    socketClient.Receive(dataGet);//Nhan
+
+        //    socketClient.Close();
+        //    tcpCLient.Close();
+
+        //    return dataGet;
+        //}
     }
 }
