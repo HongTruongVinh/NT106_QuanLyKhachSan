@@ -111,7 +111,7 @@ namespace QuanLyKhachSan_CLient.DAO
 
             foreach (DataRow item in data.Rows)
             {
-                Client customer = new Client(item,0);
+                Client customer = new Client(item, 0);
                 list.Add(customer);
             }
 
@@ -132,7 +132,7 @@ namespace QuanLyKhachSan_CLient.DAO
 
             foreach (DataRow item in data.Rows)
             {
-                Client customer = new Client(item,0);
+                Client customer = new Client(item, 0);
                 list.Add(customer);
             }
 
@@ -141,39 +141,56 @@ namespace QuanLyKhachSan_CLient.DAO
 
         public bool InsertClient(string hoten, string sdt, string cmnd, string diachi)
         {
-            string query = $@"
-                USP_InsertClient
-                @TenKhachHang=[{hoten}],
-                @CMND='{cmnd}',
-                @SDT='{sdt}',
-                @DiaChi=[{diachi}]
-            ";
+            string query = string.Format("InsertClient {0} {1} {2} {3}", hoten, sdt, cmnd, diachi);
 
-            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            byte[] bytes = TCPClient.Instance.GetDataFromCommand(query);
 
-            return result > 0;
-        }
+            string msg = Encoding.UTF8.GetString(bytes);
+
+            string[] message = msg.Split(' ', '\0');
+
+            if (message[0] == "success")
+            {
+                return true;
+            }
+
+            return false;
+        } 
 
         public bool UpdateClient(int makhachhang, string hoten, string sdt, string cmnd, string diachi)
         {
-            string query = string.Format("UPDATE KHACHHANG SET TenKhachHang = N'{0}', " +
-                "SDT = '{1}', " +
-                "CMND = '{2}', " +
-                "DiaChi = N'{3}' " +
-                "WHERE MaKH = {4}", hoten, sdt, cmnd, diachi, makhachhang);
-            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            string query = string.Format("UpdateClient {0} {1} {2} {3} {4}", makhachhang, hoten, sdt, cmnd, diachi);
 
-            return result > 0;
+            byte[] bytes = TCPClient.Instance.GetDataFromCommand(query);
+
+            string msg = Encoding.UTF8.GetString(bytes);
+
+            string[] message = msg.Split(' ', '\0');
+
+            if (message[0] == "success")
+            {
+                return true;
+            }
+
+            return false;
         }
 
-        public bool DeleteClient(int id)
+        public bool DeleteClient(int id, string cmnd)
         {
+            string query = string.Format("DeleteClient {0} {1}", id, cmnd);
 
+            byte[] bytes = TCPClient.Instance.GetDataFromCommand(query);
 
-            string query = string.Format("Delete KHACHHANG where MaKH = {0}", id);
-            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            string msg = Encoding.UTF8.GetString(bytes);
 
-            return result > 0;
+            string[] message = msg.Split(' ', '\0');
+
+            if (message[0] == "success")
+            {
+                return true;
+            }
+
+            return false;
         }
 
         public DataTable GetGuestByBillID(int billId)

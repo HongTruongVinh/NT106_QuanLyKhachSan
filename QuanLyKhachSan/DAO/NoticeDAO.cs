@@ -197,5 +197,14 @@ namespace QuanLyKhachSan.DAO
                 return false;
             }
         }
+
+        #region fGuestMgmt + fAdmin(TaiKhoan)
+        public bool DeleteNotificationGuest(string cmnd)
+        {
+            string query = string.Format("DELETE FROM THONGBAO WHERE TenDangNhap = N'{0}'", cmnd);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+        #endregion
     }
 }

@@ -78,5 +78,21 @@ namespace QuanLyKhachSan.DAO
                 return false;
             }
         }
+
+        #region fGuestMgmt + fAdmin (TaiKhoan)
+        public bool DeleteMessageGuest(string cmnd)
+        {
+            string query = string.Format("DELETE FROM TINNHAN WHERE UserNameKhachHang = N'{0}'", cmnd);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+
+        public bool DeleteMessageStaff(string TenDangNhap)
+        {
+            string query = string.Format("DELETE FROM TINNHAN WHERE UserNameNhanVien = N'{0}'", TenDangNhap);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+        #endregion
     }
 }

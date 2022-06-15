@@ -416,3 +416,87 @@ VALUES
 	1,
 	1.5
 )
+
+INSERT INTO HOADON
+(
+	MaKH,
+	MaPhong,
+	SoNgayThue,
+	ThanhTien,
+	NgayThanhToan,
+	DonGia,
+	TrangThai --- 0 là chưa thanh toán, 1 là đã thanh toán
+)
+VALUES
+(
+	1,
+	2,
+	2,
+	3000,
+	'20220601',
+	1000,
+	1
+)
+
+INSERT INTO HOADON
+(
+	MaKH,
+	MaPhong,
+	SoNgayThue,
+	ThanhTien,
+	NgayThanhToan,
+	DonGia,
+	TrangThai --- 0 là chưa thanh toán, 1 là đã thanh toán
+)
+VALUES
+(
+	1,
+	2,
+	5,
+	5000,
+	'20220710',
+	2000,
+	1
+)
+
+INSERT INTO HOADON
+(
+	MaKH,
+	MaPhong,
+	SoNgayThue,
+	ThanhTien,
+	NgayThanhToan,
+	DonGia,
+	TrangThai --- 0 là chưa thanh toán, 1 là đã thanh toán
+)
+VALUES
+(
+	1,
+	2,
+	3,
+	4000,
+	'20220715',
+	2000,
+	1
+)
+
+INSERT INTO HOADON
+(
+	MaKH,
+	MaPhong,
+	SoNgayThue,
+	ThanhTien,
+	NgayThanhToan,
+	DonGia,
+	TrangThai --- 0 là chưa thanh toán, 1 là đã thanh toán
+)
+VALUES
+(
+	1,
+	3,
+	5,
+	10000,
+	'20160601',
+	2000,
+	1
+)

@@ -71,7 +71,7 @@ namespace QuanLyKhachSan
         {
             int id = Convert.ToInt32(tb_MaKH.Text);
 
-            if (ClientDAO.Instance.DeleteClient(id))
+            if (ClientDAO.Instance.DeleteClient(id, tb_ID.Text))
             {
                 MessageBox.Show("Xóa khách hàng thành công");
                 Load_client_List();

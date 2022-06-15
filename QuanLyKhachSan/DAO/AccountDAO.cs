@@ -102,7 +102,8 @@ namespace QuanLyKhachSan.DAO
             {
                 // Xóa thông báo chứa username này trước
                 bool deleteNotice = NoticeDAO.Instance.DeleteByUsername(userName);
-                if (!deleteNotice) return false;
+                bool deleteMess = MessageDAO.Instance.DeleteMessageStaff(userName);
+                if (!deleteNotice && !deleteMess) return false;
 
                 string query = string.Format("DELETE dbo.TAIKHOAN WHERE TenDangNhap = '{0}' ", userName);
 
@@ -148,14 +149,15 @@ namespace QuanLyKhachSan.DAO
 
         public bool DeleteAccClient(string userName)
         {
-            try
+            if (IsAccountExist(userName))
             {
                 // Xóa thông báo chứa username này trước
                 bool deleteNotice = NoticeDAO.Instance.DeleteByUsername(userName);
-                if(!deleteNotice)return false;
+                bool deleteMess = MessageDAO.Instance.DeleteMessageGuest(userName);
+                if (!deleteNotice && !deleteMess) return false;
 
                 //xóa TK đăng nhập 
-                string query = string.Format("DELETE dbo.TAIKHOAN WHERE TenDangNhap = '{0}' ", userName);
+                string query = string.Format("DELETE FROM dbo.TAIKHOAN WHERE TenDangNhap = '{0}' ", userName);
 
                 int success = DataProvider.Instance.ExecuteNonQuery(query);
 
@@ -167,12 +169,9 @@ namespace QuanLyKhachSan.DAO
                 {
                     return false;//Xoa khong thanh cong
                 }
+            }
 
-            }
-            catch
-            {
-                return false;
-            }
+            return false;
         }
 
         public int DeleteListAccClient(List<string> listAccClient)
@@ -303,5 +302,16 @@ namespace QuanLyKhachSan.DAO
 
             return success > 0;
         }
+
+        #region fGuestMngmt(Client)
+        public bool IsAccountExist(string cmnd)
+        {
+            string query = string.Format("SELECT * FROM TAIKHOAN WHERE TenDangNhap = N'{0}'", cmnd);
+
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            return result > 0;
+        }
+        #endregion
     }
 }

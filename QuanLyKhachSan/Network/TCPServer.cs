@@ -509,6 +509,54 @@ namespace QuanLyKhachSan.Network
                             socketClient.Send(bytesGetUnCheckedBillsByGuestInfo);
 
                             break;
+
+                        case "InsertClient":
+                            byte[] resultInsertClient = new byte[1024 * 5000];
+
+                            string bytesResultInsertClient = "fail";
+
+                            if (ClientDAO.Instance.InsertClient(msg[1], msg[2], msg[3], msg[4]))
+                            {
+                                bytesResultInsertClient = "success";
+                            }
+
+                            resultInsertClient = Encoding.UTF8.GetBytes(bytesResultInsertClient);
+
+                            socketClient.Send(resultInsertClient);
+
+                            break;
+
+                        case "UpdateClient":
+                            byte[] resultUpdateClient = new byte[1024 * 5000];
+
+                            string bytesResultUpdateClient = "fail";
+
+                            if (ClientDAO.Instance.UpdateClient(Int32.Parse(msg[1]), msg[2], msg[3], msg[4], msg[5]))
+                            {
+                                bytesResultUpdateClient = "success";
+                            }
+
+                            resultUpdateClient = Encoding.UTF8.GetBytes(bytesResultUpdateClient);
+
+                            socketClient.Send(resultUpdateClient);
+
+                            break;
+
+                        case "DeleteClient":
+                            byte[] resultDeleteClient = new byte[1024 * 5000];
+
+                            string bytesResultDeleteClient = "fail";
+
+                            if (ClientDAO.Instance.DeleteClient(Int32.Parse(msg[1]), msg[2]))
+                            {
+                                bytesResultDeleteClient = "success";
+                            }
+
+                            resultDeleteClient = Encoding.UTF8.GetBytes(bytesResultDeleteClient);
+
+                            socketClient.Send(resultDeleteClient);
+
+                            break;
                             #endregion
                     }
                 }

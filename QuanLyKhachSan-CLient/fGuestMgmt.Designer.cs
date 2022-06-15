@@ -354,7 +354,7 @@
             this.pn_LoaiKH.Location = new System.Drawing.Point(438, 486);
             this.pn_LoaiKH.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pn_LoaiKH.Name = "pn_LoaiKH";
-            this.pn_LoaiKH.Padding = new System.Windows.Forms.Padding(16, 16, 16, 16);
+            this.pn_LoaiKH.Padding = new System.Windows.Forms.Padding(16);
             this.pn_LoaiKH.Size = new System.Drawing.Size(318, 75);
             this.pn_LoaiKH.TabIndex = 19;
             // 
@@ -401,7 +401,7 @@
             this.pn_TTKH.Controls.Add(this.btn_Xoa);
             this.pn_TTKH.Controls.Add(this.btn_Them);
             this.pn_TTKH.Location = new System.Drawing.Point(24, 23);
-            this.pn_TTKH.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.pn_TTKH.Margin = new System.Windows.Forms.Padding(8);
             this.pn_TTKH.Name = "pn_TTKH";
             this.pn_TTKH.Size = new System.Drawing.Size(778, 779);
             this.pn_TTKH.TabIndex = 22;
@@ -414,7 +414,7 @@
             this.pn_TimKiem.Controls.Add(this.pn_NhapTuKhoa);
             this.pn_TimKiem.Controls.Add(this.btn_TiemKiem);
             this.pn_TimKiem.Location = new System.Drawing.Point(836, 25);
-            this.pn_TimKiem.Margin = new System.Windows.Forms.Padding(8, 8, 8, 8);
+            this.pn_TimKiem.Margin = new System.Windows.Forms.Padding(8);
             this.pn_TimKiem.Name = "pn_TimKiem";
             this.pn_TimKiem.Size = new System.Drawing.Size(1094, 154);
             this.pn_TimKiem.TabIndex = 23;
@@ -449,7 +449,7 @@
             // 
             this.dgv_TTKH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_TTKH.Location = new System.Drawing.Point(836, 214);
-            this.dgv_TTKH.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.dgv_TTKH.Margin = new System.Windows.Forms.Padding(6);
             this.dgv_TTKH.Name = "dgv_TTKH";
             this.dgv_TTKH.RowHeadersWidth = 51;
             this.dgv_TTKH.Size = new System.Drawing.Size(1096, 591);
