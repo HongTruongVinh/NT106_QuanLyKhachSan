@@ -378,6 +378,8 @@ namespace QuanLyKhachSan.Network
                         #endregion
 
                         #region Ngay 15/06
+
+                        // ĐIỀU CHỈNH FORM fListRentalVoucher
                         case "GetReservations":
                             byte[] bytesGetReservations = new byte[1024 * 5000];
 
@@ -455,6 +457,56 @@ namespace QuanLyKhachSan.Network
                             resultDeleteBill = Encoding.UTF8.GetBytes(bytesResultDeleteBill);
 
                             socketClient.Send(resultDeleteBill);
+
+                            break;
+
+                        //ĐIỀU CHỈNH FORM fGuestMgnt
+                        case "GetListClient":
+                            byte[] bytesGetListClient = new byte[1024 * 5000];
+
+                            //int idClient = Int32.Parse(msg[1]);
+
+                            DataTable dataGetListClient = BillDAO.Instance.GetBills();
+
+                            if (dataGetListClient != null)
+                            {
+                                bytesGetListClient = FormatData.Instance.SerializeData(dataGetListClient);
+                            }
+
+                            socketClient.Send(bytesGetListClient);
+
+                            break;
+
+                        //ĐIỀU CHỈNH FORM fBillDetailsDAO
+                        case "PayBillDetailsByID":
+                            byte[] resultPayBillDetailsByID = new byte[1024 * 5000];
+
+                            string bytesResultPayBillDetailsByID = "fail";
+
+                            if (BillDetailsDAO.Instance.PayBillDetailsByID(Int32.Parse(msg[1])))
+                            {
+                                bytesResultPayBillDetailsByID = "success";
+                            }
+
+                            resultPayBillDetailsByID = Encoding.UTF8.GetBytes(bytesResultPayBillDetailsByID);
+
+                            socketClient.Send(resultPayBillDetailsByID);
+
+                            break;
+
+                        case "GetUnCheckedBillsByGuestInfo":
+                            byte[] bytesGetUnCheckedBillsByGuestInfo = new byte[1024 * 5000];
+
+                            //int idClient = Int32.Parse(msg[1]);
+
+                            DataTable dataGetUnCheckedBillsByGuestInfo = BillDetailsDAO.Instance.GetUnCheckedBillsByGuestInfo(msg[1], msg[2]);
+
+                            if (dataGetUnCheckedBillsByGuestInfo != null)
+                            {
+                                bytesGetUnCheckedBillsByGuestInfo = FormatData.Instance.SerializeData(dataGetUnCheckedBillsByGuestInfo);
+                            }
+
+                            socketClient.Send(bytesGetUnCheckedBillsByGuestInfo);
 
                             break;
                             #endregion

@@ -80,6 +80,7 @@ namespace QuanLyKhachSan_CLient
             // 
             // tlp_Chinh
             // 
+            this.tlp_Chinh.AutoSize = true;
             this.tlp_Chinh.ColumnCount = 3;
             this.tlp_Chinh.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 320F));
             this.tlp_Chinh.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 320F));
@@ -565,7 +566,7 @@ namespace QuanLyKhachSan_CLient
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(983, 560);
+            this.ClientSize = new System.Drawing.Size(986, 563);
             this.Controls.Add(this.tlp_Chinh);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "fListRentalVoucher";
@@ -593,6 +594,7 @@ namespace QuanLyKhachSan_CLient
             this.pn_ThanhTien.ResumeLayout(false);
             this.pn_ThanhTien.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

@@ -122,11 +122,13 @@ namespace QuanLyKhachSan_CLient.DAO
         {
             List<Client> list = new List<Client>();
 
-            string query = "select * from KHACHHANG";
+            //string query = "select * from KHACHHANG";
 
-            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            //DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
+            string query = string.Format("GetListClient");
 
+            DataTable data = (DataTable)FormatData.Instance.DeserializeData(TCPClient.Instance.GetDataFromCommand(query));
 
             foreach (DataRow item in data.Rows)
             {
