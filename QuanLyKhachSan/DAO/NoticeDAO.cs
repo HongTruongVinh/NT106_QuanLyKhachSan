@@ -80,6 +80,31 @@ namespace QuanLyKhachSan.DAO
             }
         }
 
+        public bool NoticeOrderRoomSuccess(int idClient)
+        {
+            try
+            {
+                string subject = "Thong bao ket qua dat phong.";
+                string content = "Khach san ABC thong bao ban da dat phong thanh cong!\n" +
+                                 "Xin cam on ban da dat phong cua chung toi.\n";
+
+                Client client = ClientDAO.Instance.GetClientByID(idClient);
+
+                bool resual = false;
+
+                if (client != null)
+                {
+                    resual = Insert(client.IDPerson.ToString(), subject, content);
+                }
+
+                return resual;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public int InsertForAllAccount(string subject = "", string content = "")
         {
             int success = 0;

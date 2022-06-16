@@ -49,16 +49,10 @@ namespace QuanLyKhachSan_CLient
         {
             LoadRoomInfor(room);
 
-            rentalVoucher = RentalVoucherDAO.Instance.GetUnCheckRentalVoucherByRoomID(room.ID);
-
-            if(rentalVoucher == null)
-            {
-                return;
-            }
-
             
             if (User.Instance.TypeUser == "Client")
             {
+                tb_IDClient.Text = User.Instance.ID;
                 tb_IDPerson.Text = User.Instance.UserName;
                 tb_NameCLient.Text = User.Instance.DisplayName;
                 tb_Address.Text = User.Instance.Address;
@@ -66,6 +60,14 @@ namespace QuanLyKhachSan_CLient
             }
             else
             {
+
+                rentalVoucher = RentalVoucherDAO.Instance.GetUnCheckRentalVoucherByRoomID(room.ID);
+
+                if (rentalVoucher == null)
+                {
+                    return;
+                }
+
                 //Nếu là nhân viên sẽ load thông tin KH đã đặt phòng này 
                 LoadCLientInfor(rentalVoucher.ClientID);
             }

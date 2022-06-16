@@ -167,7 +167,7 @@ namespace QuanLyKhachSan.DAO
 
 
         #region Ngay 11/06
-        public bool InserRentalVoucherFromClient(int idRoom, int countPeople, int typeClient, string name, string idPerson, string numberphone, string address)
+        public bool InserRentalVoucherFromClient(int idRoom, int countPeople, int typeClient, string name, string numberphone, string idPerson, string address)
         {
             try
             {

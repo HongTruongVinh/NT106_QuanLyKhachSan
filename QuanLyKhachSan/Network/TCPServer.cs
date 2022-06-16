@@ -96,7 +96,7 @@ namespace QuanLyKhachSan.Network
                             responseMessage += " OK OK";
 
                             //AccountDAO.Instance.Insert(strings[2], strings[1], strings[5]);
-                            ClientDAO.Instance.InsertLient(strings[1], Convert.ToInt32(strings[3]), strings[2], strings[4]);
+                            ClientDAO.Instance.InsertLient(strings[1], Convert.ToInt32(strings[2]), strings[3], strings[4]);
                         }
 
 
@@ -113,7 +113,16 @@ namespace QuanLyKhachSan.Network
 
                         Account account = AccountDAO.Instance.GetUser(usernameAndpassword[0], usernameAndpassword[1]);
 
-                        LoggedInSuccessfully += " " + account.TypeUser + " " + account.DisplayName;// Gửi về loại tài khoản và DisplayName, vd: "Successfully Employee vinh"
+                        if(account.TypeUser == "Client")
+                        {
+                            Client client = ClientDAO.Instance.GetClientByIDPerson(Int32.Parse(account.UserName));
+
+                            LoggedInSuccessfully += String.Format(" {0} {1} {2} {3} {4} {5}", account.TypeUser, account.DisplayName, client.ID, client.NumberPhone, client.Address, client.IDPerson);
+                        }
+                        else
+                        {
+                            LoggedInSuccessfully += " " + account.TypeUser + " " + account.DisplayName;// Gửi về loại tài khoản và DisplayName, vd: "Successfully Employee vinh"
+                        }
 
                         byte[] Loged = Encoding.UTF8.GetBytes(LoggedInSuccessfully);
                         _socketClient.Send(Loged); // thong bao toi client dang nhap thanh cong

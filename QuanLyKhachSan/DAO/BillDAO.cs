@@ -91,6 +91,12 @@ namespace QuanLyKhachSan.DAO
                 VALUES ({MaKH}, {MaPhong}, {SoNgayThue}, {ThanhTien}, '{NgayThanhToan}', {DonGia});
             ";
             int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            if(result > 0)
+            {
+                NoticeDAO.Instance.NoticeOrderRoomSuccess(MaKH);
+            }
+
             return result > 0;
         }
 

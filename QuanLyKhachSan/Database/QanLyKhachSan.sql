@@ -3,19 +3,21 @@ GO
 
 USE QuanLyKhachSan
 GO
-
+--SELECT MaKH id, TenKhachHang name, CMND idPerson, DiaChi address, SDT numberPhone FROM KHACHHANG  WHERE CMND = '2323'
 --USE  master
-
+SELECT p.MaPhong, p.TenPhong, p.GhiChu, kh.TenKhachHang FROM PHONG p, PHIEUTHUEPHONG ptp, KHACHHANG kh 
+WHERE ptp.MaKH = kh.MaKH AND ptp.MaPhong = p.MaPhong AND kh.CMND = '9999'
 --Drop database QuanLyKhachSan
-
+SELECT p.MaPhong, p.TenPhong, p.GhiChu, kh.TenKhachHang FROM PHONG p, PHIEUTHUEPHONG ptp, KHACHHANG kh WHERE ptp.MaKH = kh.MaKH AND ptp.MaPhong = p.MaPhong AND kh.CMND = '12345'
 ---------------------------------------------------------------------------
 -- Phần tạo bảng
 --SELECT * FROM PHONG
---SELECT * FROM KHACHHANG
---SELECT * FROM TAIKHOAN
+SELECT * FROM KHACHHANG
+SELECT * FROM TAIKHOAN WHERE LoaiTaiKhoan = 3
+SELECT * FROM PHIEUTHUEPHONG
 --SELECT * FROM TINNHAN
---DELETE TINNHAN WHERE UserNameKhachHang = '123'
---DELETE TAIKHOAN WHERE TenDangNhap = '123'
+--DELETE PHIEUTHUEPHONG WHERE UserNameKhachHang = '000'
+--DELETE TAIKHOAN WHERE TenDangNhap = '000'
 --DELETE THONGBAO WHERE TenDangNhap = '12345'
 --INSERT INTO dbo.THONGBAO ( TenDangNhap , TieuDe , NoiDung, NgayThongBao) VALUES ( '12345' , 'sdfs' , 'fsdf', '6/14/2022')
 
@@ -27,7 +29,7 @@ CREATE TABLE TAIKHOAN
 	LoaiTaiKhoan INT DEFAULT 0, check(LoaiTaiKhoan = 0 or LoaiTaiKhoan = 1 or LoaiTaiKhoan = 3) -- 0 là loại TK của nhân viên, 1 là loại TK của admin , 3 là loại TK của khách hàng
 )
 GO
---UPDATE dbo.TAIKHOAN SET MatKhau = '0' WHERE TenDangNhap = 'Vinh'
+--UPDATE dbo.PHONG SET TinhTrang = 0 WHERE TenDangNhap = 'Vinh'
 CREATE TABLE THONGBAO
 (
 	MaThongBao INT IDENTITY PRIMARY KEY,

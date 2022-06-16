@@ -84,11 +84,17 @@ namespace QuanLyKhachSan_CLient.Network
                     else
                     {
                         User.Instance.TypeUser = "Client";
+
+                        User.Instance.ID = strings[3];
+                        User.Instance.PhoneNumber = strings[4];
+                        User.Instance.Address = strings[5];
+                        ///User.Instance.UserName = strings[6];
                     }
                     #endregion
 
-                    #region lấy displayName được gửi về từ server
+                    #region lấy displayName, id, phonenumber, address được gửi về từ server
                     User.Instance.DisplayName = strings[2];
+                    
                     #endregion
 
                     stopTcpCient = false;
