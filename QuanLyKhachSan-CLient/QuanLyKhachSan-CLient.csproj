@@ -107,11 +107,11 @@
     <Compile Include="fListOrderedRoom.Designer.cs">
       <DependentUpon>fListOrderedRoom.cs</DependentUpon>
     </Compile>
-    <Compile Include="fListRentalVoucher.cs">
+    <Compile Include="fReservationMgmt.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fListRentalVoucher.Designer.cs">
-      <DependentUpon>fListRentalVoucher.cs</DependentUpon>
+    <Compile Include="fReservationMgmt.Designer.cs">
+      <DependentUpon>fReservationMgmt.cs</DependentUpon>
     </Compile>
     <Compile Include="fLoadRoom.cs">
       <SubType>Form</SubType>
@@ -170,8 +170,8 @@
     <EmbeddedResource Include="fListOrderedRoom.resx">
       <DependentUpon>fListOrderedRoom.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fListRentalVoucher.resx">
-      <DependentUpon>fListRentalVoucher.cs</DependentUpon>
+    <EmbeddedResource Include="fReservationMgmt.resx">
+      <DependentUpon>fReservationMgmt.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fLoadRoom.resx">
       <DependentUpon>fLoadRoom.cs</DependentUpon>

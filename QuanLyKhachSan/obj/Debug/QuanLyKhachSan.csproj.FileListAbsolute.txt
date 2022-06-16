@@ -139,3 +139,24 @@ C:\Users\Vasilias Da Nykta\Desktop\LTM\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.e
 C:\Users\Vasilias Da Nykta\Desktop\LTM\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
 C:\Users\HONG VINH\source\repos\NT106_QuanLyKhachSan3\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fReservationMgmt.resources
 F:\ProgLang\C#\Winforms\NT106.M21.Edit\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fReservationMgmt.resources
+C:\Users\Vasilias Da Nykta\Desktop\NT106\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe.config
+C:\Users\Vasilias Da Nykta\Desktop\NT106\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.exe
+C:\Users\Vasilias Da Nykta\Desktop\NT106\QuanLyKhachSan\bin\Debug\QuanLyKhachSan.pdb
+C:\Users\Vasilias Da Nykta\Desktop\NT106\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.AssemblyReference.cache
+C:\Users\Vasilias Da Nykta\Desktop\NT106\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.SuggestedBindingRedirects.cache
+C:\Users\Vasilias Da Nykta\Desktop\NT106\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fBillMgmt.resources
+C:\Users\Vasilias Da Nykta\Desktop\NT106\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fAdmin.resources
+C:\Users\Vasilias Da Nykta\Desktop\NT106\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fChart.resources
+C:\Users\Vasilias Da Nykta\Desktop\NT106\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fGuestMgmt.resources
+C:\Users\Vasilias Da Nykta\Desktop\NT106\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fInformation.resources
+C:\Users\Vasilias Da Nykta\Desktop\NT106\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fNotice.resources
+C:\Users\Vasilias Da Nykta\Desktop\NT106\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fRentalVoucher.resources
+C:\Users\Vasilias Da Nykta\Desktop\NT106\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fLogin.resources
+C:\Users\Vasilias Da Nykta\Desktop\NT106\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fLoadRoom.resources
+C:\Users\Vasilias Da Nykta\Desktop\NT106\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.fReservationMgmt.resources
+C:\Users\Vasilias Da Nykta\Desktop\NT106\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.MainWindow.resources
+C:\Users\Vasilias Da Nykta\Desktop\NT106\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.Properties.Resources.resources
+C:\Users\Vasilias Da Nykta\Desktop\NT106\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.GenerateResource.cache
+C:\Users\Vasilias Da Nykta\Desktop\NT106\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.csproj.CoreCompileInputs.cache
+C:\Users\Vasilias Da Nykta\Desktop\NT106\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.exe
+C:\Users\Vasilias Da Nykta\Desktop\NT106\QuanLyKhachSan\obj\Debug\QuanLyKhachSan.pdb
