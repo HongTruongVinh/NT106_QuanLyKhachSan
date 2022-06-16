@@ -12,11 +12,16 @@ using QuanLyKhachSan_CLient.DTO;
 
 namespace QuanLyKhachSan_CLient
 {
-    public partial class fListRentalVoucher : Form
+    public partial class fReservationMgmt : Form
     {
-        public fListRentalVoucher()
+        public fReservationMgmt()
         {
             InitializeComponent();
+            LoadData();
+        }
+
+        private void fReservationMgmt_Load(object sender, EventArgs e)
+        {
             LoadData();
         }
 
@@ -53,11 +58,11 @@ namespace QuanLyKhachSan_CLient
 
         private void btn_TaoHoaDon_Click(object sender, EventArgs e)
         {
-            //if (tb_SoNgayThue.TextLength == 0 || tb_ThanhTien.TextLength == 0)
-            //{
-            //    MessageBox.Show("Bạn cần điền Số ngày thuê, Thành tiền, Ngày thanh toán để tạo hóa đơn");
-            //    return;
-            //}
+            if (tb_SoNgayThue.TextLength == 0 || tb_ThanhTien.TextLength == 0)
+            {
+                MessageBox.Show("Bạn cần điền Số ngày thuê, Thành tiền, Ngày thanh toán để tạo hóa đơn");
+                return;
+            }
             int MaKH = int.Parse(tb_MaKH.Text);
             int MaPhong = int.Parse(tb_MaPhong.Text);
             int SoNgayThue = int.Parse(tb_SoNgayThue.Text);
