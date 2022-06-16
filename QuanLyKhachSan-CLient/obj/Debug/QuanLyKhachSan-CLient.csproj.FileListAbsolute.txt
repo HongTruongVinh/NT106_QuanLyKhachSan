@@ -31,7 +31,6 @@ F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan-CLient\obj\Debug\QuanLyKha
 F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan_CLient.fGuestMgmt.resources
 F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan_CLient.fInformation.resources
 F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan_CLient.fListOrderedRoom.resources
-F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan_CLient.fListRentalVoucher.resources
 F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan_CLient.fLoadRoom.resources
 F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan_CLient.fLogin.resources
 F:\ProgLang\C#\Winforms\NT106.M21.edit\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan_CLient.fNotice.resources
@@ -89,3 +88,4 @@ C:\Users\Vasilias Da Nykta\Desktop\NT106\QuanLyKhachSan-CLient\obj\Debug\QuanLyK
 C:\Users\Vasilias Da Nykta\Desktop\NT106\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan-CLient.csproj.CoreCompileInputs.cache
 C:\Users\Vasilias Da Nykta\Desktop\NT106\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan-CLient.exe
 C:\Users\Vasilias Da Nykta\Desktop\NT106\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan-CLient.pdb
+F:\ProgLang\C#\Winforms\NT106.M21.Edit\QuanLyKhachSan-CLient\obj\Debug\QuanLyKhachSan_CLient.fReservationMgmt.resources

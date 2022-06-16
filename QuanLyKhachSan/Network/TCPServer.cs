@@ -478,19 +478,19 @@ namespace QuanLyKhachSan.Network
                             break;
 
                         //ĐIỀU CHỈNH FORM fBillDetailsDAO
-                        case "PayBillDetailsByID":
-                            byte[] resultPayBillDetailsByID = new byte[1024 * 5000];
+                        case "PayBillByID":
+                            byte[] resultPayBillByID = new byte[1024 * 5000];
 
-                            string bytesResultPayBillDetailsByID = "fail";
+                            string bytesResultPayBillByID = "fail";
 
-                            if (BillDetailsDAO.Instance.PayBillDetailsByID(Int32.Parse(msg[1])))
+                            if (BillDAO.Instance.PayBillByID(Int32.Parse(msg[1])))
                             {
-                                bytesResultPayBillDetailsByID = "success";
+                                bytesResultPayBillByID = "success";
                             }
 
-                            resultPayBillDetailsByID = Encoding.UTF8.GetBytes(bytesResultPayBillDetailsByID);
+                            resultPayBillByID = Encoding.UTF8.GetBytes(bytesResultPayBillByID);
 
-                            socketClient.Send(resultPayBillDetailsByID);
+                            socketClient.Send(resultPayBillByID);
 
                             break;
 
@@ -498,8 +498,9 @@ namespace QuanLyKhachSan.Network
                             byte[] bytesGetUnCheckedBillsByGuestInfo = new byte[1024 * 5000];
 
                             //int idClient = Int32.Parse(msg[1]);
+                            string[] stringss = message.Split('_','\0');
 
-                            DataTable dataGetUnCheckedBillsByGuestInfo = BillDetailsDAO.Instance.GetUnCheckedBillsByGuestInfo(msg[1], msg[2]);
+                            DataTable dataGetUnCheckedBillsByGuestInfo = BillDetailsDAO.Instance.GetUnCheckedBillsByGuestInfo(stringss[1], stringss[2]);
 
                             if (dataGetUnCheckedBillsByGuestInfo != null)
                             {
@@ -515,7 +516,9 @@ namespace QuanLyKhachSan.Network
 
                             string bytesResultInsertClient = "fail";
 
-                            if (ClientDAO.Instance.InsertClient(msg[1], msg[2], msg[3], msg[4]))
+                            string[] ClientInfoForInsert = message.Split('_', '\0'); 
+
+                            if (ClientDAO.Instance.InsertClient(ClientInfoForInsert[1], ClientInfoForInsert[2], ClientInfoForInsert[3], ClientInfoForInsert[4]))
                             {
                                 bytesResultInsertClient = "success";
                             }

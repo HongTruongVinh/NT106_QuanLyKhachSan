@@ -213,7 +213,7 @@ namespace QuanLyKhachSan_CLient
             this.dtp_NgayThanhToan.Location = new System.Drawing.Point(125, 348);
             this.dtp_NgayThanhToan.Margin = new System.Windows.Forms.Padding(4, 12, 4, 4);
             this.dtp_NgayThanhToan.Name = "dtp_NgayThanhToan";
-            this.dtp_NgayThanhToan.Size = new System.Drawing.Size(175, 27);
+            this.dtp_NgayThanhToan.Size = new System.Drawing.Size(175, 39);
             this.dtp_NgayThanhToan.TabIndex = 31;
             // 
             // lb_NgayThanhToan
@@ -251,7 +251,7 @@ namespace QuanLyKhachSan_CLient
             this.tb_SoNgayThue.Location = new System.Drawing.Point(8, 10);
             this.tb_SoNgayThue.Margin = new System.Windows.Forms.Padding(0);
             this.tb_SoNgayThue.Name = "tb_SoNgayThue";
-            this.tb_SoNgayThue.Size = new System.Drawing.Size(157, 20);
+            this.tb_SoNgayThue.Size = new System.Drawing.Size(157, 32);
             this.tb_SoNgayThue.TabIndex = 0;
             // 
             // lb_SoNgayThue
@@ -289,7 +289,7 @@ namespace QuanLyKhachSan_CLient
             this.tb_MaKH.Location = new System.Drawing.Point(8, 10);
             this.tb_MaKH.Margin = new System.Windows.Forms.Padding(0);
             this.tb_MaKH.Name = "tb_MaKH";
-            this.tb_MaKH.Size = new System.Drawing.Size(157, 20);
+            this.tb_MaKH.Size = new System.Drawing.Size(157, 32);
             this.tb_MaKH.TabIndex = 0;
             // 
             // lb_MaKH
@@ -327,7 +327,7 @@ namespace QuanLyKhachSan_CLient
             this.tb_MaPhong.Location = new System.Drawing.Point(8, 10);
             this.tb_MaPhong.Margin = new System.Windows.Forms.Padding(0);
             this.tb_MaPhong.Name = "tb_MaPhong";
-            this.tb_MaPhong.Size = new System.Drawing.Size(157, 20);
+            this.tb_MaPhong.Size = new System.Drawing.Size(157, 32);
             this.tb_MaPhong.TabIndex = 0;
             // 
             // lb_MaPhong
@@ -365,7 +365,7 @@ namespace QuanLyKhachSan_CLient
             this.tb_SLKhach.Location = new System.Drawing.Point(8, 10);
             this.tb_SLKhach.Margin = new System.Windows.Forms.Padding(0);
             this.tb_SLKhach.Name = "tb_SLKhach";
-            this.tb_SLKhach.Size = new System.Drawing.Size(157, 20);
+            this.tb_SLKhach.Size = new System.Drawing.Size(157, 32);
             this.tb_SLKhach.TabIndex = 0;
             // 
             // lb_SLKhach
@@ -403,7 +403,7 @@ namespace QuanLyKhachSan_CLient
             this.tb_NgayBD.Location = new System.Drawing.Point(8, 10);
             this.tb_NgayBD.Margin = new System.Windows.Forms.Padding(0);
             this.tb_NgayBD.Name = "tb_NgayBD";
-            this.tb_NgayBD.Size = new System.Drawing.Size(157, 20);
+            this.tb_NgayBD.Size = new System.Drawing.Size(157, 32);
             this.tb_NgayBD.TabIndex = 0;
             // 
             // lb_MaPhieu
@@ -453,7 +453,7 @@ namespace QuanLyKhachSan_CLient
             this.tb_MaPhieu.Location = new System.Drawing.Point(8, 10);
             this.tb_MaPhieu.Margin = new System.Windows.Forms.Padding(0);
             this.tb_MaPhieu.Name = "tb_MaPhieu";
-            this.tb_MaPhieu.Size = new System.Drawing.Size(157, 20);
+            this.tb_MaPhieu.Size = new System.Drawing.Size(157, 32);
             this.tb_MaPhieu.TabIndex = 0;
             // 
             // lb_ThanhTien
@@ -491,7 +491,7 @@ namespace QuanLyKhachSan_CLient
             this.tb_ThanhTien.Location = new System.Drawing.Point(8, 10);
             this.tb_ThanhTien.Margin = new System.Windows.Forms.Padding(0);
             this.tb_ThanhTien.Name = "tb_ThanhTien";
-            this.tb_ThanhTien.Size = new System.Drawing.Size(157, 20);
+            this.tb_ThanhTien.Size = new System.Drawing.Size(157, 32);
             this.tb_ThanhTien.TabIndex = 0;
             // 
             // tlp_Giua
@@ -562,7 +562,7 @@ namespace QuanLyKhachSan_CLient
             // 
             // fReservationMgmt
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1025, 601);

@@ -171,7 +171,7 @@ namespace QuanLyKhachSan.DAO
                 }
             }
 
-            return true;
+            return false;
         }
 
         public int DeleteListAccClient(List<string> listAccClient)

@@ -109,6 +109,32 @@ namespace QuanLyKhachSan_CLient.DAO
 
             return false;
         }
+
+        public bool PayBillByID(int id)
+        {
+            //string query = $@"
+            //    UPDATE HOADON
+            //    SET TrangThai = 1
+            //    WHERE MaHD = {id}
+            //";
+            //int result = DataProvider.Instance.ExecuteNonQuery(query);
+            //return result > 0;
+
+            string query = string.Format("PayBillByID {0}", id);
+
+            byte[] bytes = TCPClient.Instance.GetDataFromCommand(query);
+
+            string msg = Encoding.UTF8.GetString(bytes);
+
+            string[] message = msg.Split(' ', '\0');
+
+            if (message[0] == "success")
+            {
+                return true;
+            }
+
+            return false;
+        }
         #endregion
     }
 }

@@ -34,7 +34,7 @@ namespace QuanLyKhachSan_CLient.DAO
             //";
             //DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
-            string query = string.Format("GetUnCheckedBillsByGuestInfo {0} {1}", name, personalID);
+            string query = string.Format("GetUnCheckedBillsByGuestInfo _{0}_{1}", name, personalID);
 
             DataTable data = (DataTable)FormatData.Instance.DeserializeData(TCPClient.Instance.GetDataFromCommand(query));
 
@@ -43,7 +43,7 @@ namespace QuanLyKhachSan_CLient.DAO
 
         public bool PayBillDetailsByID(int id)
         {
-            string query = string.Format("UpdateBill {0}", id);
+            string query = string.Format("PayBillDetailsByID {0}", id);
 
             byte[] bytes = TCPClient.Instance.GetDataFromCommand(query);
 

@@ -150,7 +150,7 @@ namespace QuanLyKhachSan_CLient.DAO
 
         public bool InsertClient(string hoten, string sdt, string cmnd, string diachi)
         {
-            string query = string.Format("InsertClient {0} {1} {2} {3}", hoten, sdt, cmnd, diachi);
+            string query = string.Format("InsertClient _{0}_{1}_{2}_{3}", hoten, sdt, cmnd, diachi);
 
             byte[] bytes = TCPClient.Instance.GetDataFromCommand(query);
 

@@ -201,14 +201,11 @@ namespace QuanLyKhachSan.DAO
 
         public bool DeleteClient(int id, string cmnd)
         {
-            if (AccountDAO.Instance.DeleteAccClient(cmnd))
-            {
-                string query = string.Format("Delete KHACHHANG where MaKH = {0}", id);
-                int result = DataProvider.Instance.ExecuteNonQuery(query);
+            AccountDAO.Instance.DeleteAccClient(cmnd);
+            string query = string.Format("Delete KHACHHANG where MaKH = {0}", id);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
 
-                return result > 0;
-            }
-            return false;
+            return result > 0;
         }
 
         public DataTable GetGuestByBillID(int billId)
