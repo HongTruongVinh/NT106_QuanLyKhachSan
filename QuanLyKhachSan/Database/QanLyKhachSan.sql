@@ -500,3 +500,40 @@ VALUES
 	2000,
 	1
 )
+
+INSERT INTO KHACHHANG
+(
+	TenKhachHang,
+	CMND,
+	SDT,
+	DiaChi
+)
+VALUES
+(
+	N'BUI HAI DANG',
+	'1234',
+	'1234',
+	'1234'
+)
+
+INSERT INTO HOADON
+(
+	MaKH,
+	MaPhong,
+	SoNgayThue,
+	ThanhTien,
+	NgayThanhToan,
+	DonGia,
+	TrangThai --- 0 là chưa thanh toán, 1 là đã thanh toán
+)
+VALUES
+(
+	5,
+	1,
+	1,
+	10000,
+	'20221201',
+	2000,
+	0
+)
+
