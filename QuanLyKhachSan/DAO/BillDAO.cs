@@ -124,5 +124,12 @@ namespace QuanLyKhachSan.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
+
+        public bool DeleteBillByMaKH(int id)
+        {
+            string query = string.Format("DELETE FROM HOADON WHERE MaKH = {0}", id);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
     }
 }

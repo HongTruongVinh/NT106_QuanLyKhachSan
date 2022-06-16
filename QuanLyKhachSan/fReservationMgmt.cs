@@ -72,7 +72,6 @@ namespace QuanLyKhachSan
             if (BillDAO.Instance.CreateBill(MaKH, MaPhong, SoNgayThue, ThanhTien, NgayThanhToan, DonGia))
             {
                 MessageBox.Show("Tạo hóa đơn thành công");
-
                 LoadData();
             }
         }

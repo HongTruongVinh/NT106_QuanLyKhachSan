@@ -29,7 +29,6 @@ namespace QuanLyKhachSan_CLient
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.lb_MaKH = new System.Windows.Forms.Label();
             this.lb_TenKH = new System.Windows.Forms.Label();
             this.tlp_ThongTinKH = new System.Windows.Forms.TableLayoutPanel();
@@ -64,7 +63,7 @@ namespace QuanLyKhachSan_CLient
             this.lb_DLMaHD = new System.Windows.Forms.Label();
             this.dgv_DSHD = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.fBillMgmtBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fBillMgmtBindingSource = new System.Windows.Forms.BindingSource();
             this.tlp_ThongTinKH.SuspendLayout();
             this.tlp_Chinh.SuspendLayout();
             this.tlp_TongKet.SuspendLayout();

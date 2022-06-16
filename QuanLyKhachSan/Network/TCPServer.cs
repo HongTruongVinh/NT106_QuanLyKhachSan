@@ -545,6 +545,38 @@ namespace QuanLyKhachSan.Network
 
                             break;
 
+                        case "DeleteBillByMaKH":
+                            byte[] resultDeleteBillByMaKH = new byte[1024 * 5000];
+
+                            string bytesResultDeleteBillByMaKH = "fail";
+
+                            if (BillDAO.Instance.DeleteBillByMaKH(Int32.Parse(msg[1])))
+                            {
+                                bytesResultDeleteBillByMaKH = "success";
+                            }
+
+                            resultDeleteBillByMaKH = Encoding.UTF8.GetBytes(bytesResultDeleteBillByMaKH);
+
+                            socketClient.Send(resultDeleteBillByMaKH);
+
+                            break;
+
+                        case "DeleteRentalVoucherByMaKH":
+                            byte[] resultDeleteRentalVoucherByMaKH = new byte[1024 * 5000];
+
+                            string bytesResultDeleteRentalVoucherByMaKH = "fail";
+
+                            if (RentalVoucherDAO.Instance.DeleteRentalVoucherByMaKH(Int32.Parse(msg[1])))
+                            {
+                                bytesResultDeleteRentalVoucherByMaKH = "success";
+                            }
+
+                            resultDeleteRentalVoucherByMaKH = Encoding.UTF8.GetBytes(bytesResultDeleteRentalVoucherByMaKH);
+
+                            socketClient.Send(resultDeleteRentalVoucherByMaKH);
+
+                            break;
+
                         case "DeleteClient":
                             byte[] resultDeleteClient = new byte[1024 * 5000];
 
