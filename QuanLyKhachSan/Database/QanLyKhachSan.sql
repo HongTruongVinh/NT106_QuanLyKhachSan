@@ -18,8 +18,8 @@ GO
 --DELETE TAIKHOAN WHERE TenDangNhap = '123'
 --DELETE THONGBAO WHERE TenDangNhap = '12345'
 --INSERT INTO dbo.THONGBAO ( TenDangNhap , TieuDe , NoiDung, NgayThongBao) VALUES ( '12345' , 'sdfs' , 'fsdf', '6/14/2022')
---SELECT kh.TenKhachHang , kh.CMND FROM dbo.TINNHAN tn, dbo.KHACHHANG kh 
---WHERE UserNameNhanVien = 'Vinh' AND kh.CMND = tn.UserNameKhachHang GROUP BY kh.TenKhachHang , kh.CMND
+SELECT kh.TenKhachHang , kh.CMND FROM dbo.TINNHAN tn, dbo.KHACHHANG kh 
+WHERE UserNameNhanVien = 'Vinh' AND kh.CMND = tn.UserNameKhachHang GROUP BY kh.TenKhachHang , kh.CMND
 CREATE TABLE TAIKHOAN
 (
 	TenDangNhap NVARCHAR(100)  PRIMARY KEY,

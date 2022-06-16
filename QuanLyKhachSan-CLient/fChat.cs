@@ -52,23 +52,26 @@ namespace QuanLyKhachSan_CLient
         {
             lv_Show.Items.Clear();
 
-            DataTable dt = MessageDAO.Instance.TableMessage(User.Instance.UserName, tb_NameReceiver.Text) ;
-            
-            for (int i = 0; i < dt.Rows.Count; i++)
+            if(User.Instance.TypeUser == "Client")
             {
-                ListViewItem msg = new ListViewItem((string)dt.Rows[i]["NoiDung"]);
+                DataTable dt = MessageDAO.Instance.TableMessage(User.Instance.UserName, tb_NameReceiver.Text);
 
-                lv_Show.Items.Add(msg);
-
-                if (tb_NameReceiver.Text != "_") continue;
-
-                if(User.Instance.TypeUser == "Employee")
+                for (int i = 0; i < dt.Rows.Count; i++)
                 {
-                    tb_NameReceiver.Text = (string)dt.Rows[i]["UserNameKhachHang"];
-                }
-                else
-                {
-                    tb_NameReceiver.Text = (string)dt.Rows[i]["UserNameNhanVien"];
+                    ListViewItem msg = new ListViewItem((string)dt.Rows[i]["NoiDung"]);
+
+                    lv_Show.Items.Add(msg);
+
+                    if (tb_NameReceiver.Text != "_") continue;
+
+                    if (User.Instance.TypeUser == "Employee")
+                    {
+                        tb_NameReceiver.Text = (string)dt.Rows[i]["UserNameKhachHang"];
+                    }
+                    else
+                    {
+                        tb_NameReceiver.Text = (string)dt.Rows[i]["UserNameNhanVien"];
+                    }
                 }
             }
         }
