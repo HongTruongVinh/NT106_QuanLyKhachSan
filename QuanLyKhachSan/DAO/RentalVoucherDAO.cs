@@ -223,5 +223,14 @@ namespace QuanLyKhachSan.DAO
             return success > 0;
         }
         #endregion
+
+        #region 16/06
+        public bool DeleteRentalVoucherByMaKH(int id)
+        {
+            string query = string.Format("DELETE FROM PHIEUTHUEPHONG WHERE MaKH = {0}", id);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+        #endregion
     }
 }

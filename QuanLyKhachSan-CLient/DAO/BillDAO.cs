@@ -135,6 +135,25 @@ namespace QuanLyKhachSan_CLient.DAO
 
             return false;
         }
+
+        // XỬ LÝ FORM fGuestMgnt
+        public bool DeleteBillByMaKH(int id)
+        {
+            string query = string.Format("DeleteBillByMaKH {0}", id);
+
+            byte[] bytes = TCPClient.Instance.GetDataFromCommand(query);
+
+            string msg = Encoding.UTF8.GetString(bytes);
+
+            string[] message = msg.Split(' ', '\0');
+
+            if (message[0] == "success")
+            {
+                return true;
+            }
+
+            return false;
+        }
         #endregion
     }
 }

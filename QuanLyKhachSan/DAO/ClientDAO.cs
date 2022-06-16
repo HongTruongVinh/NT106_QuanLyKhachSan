@@ -201,6 +201,8 @@ namespace QuanLyKhachSan.DAO
 
         public bool DeleteClient(int id, string cmnd)
         {
+            BillDAO.Instance.DeleteBillByMaKH(id);
+            RentalVoucherDAO.Instance.DeleteRentalVoucherByMaKH(id);
             AccountDAO.Instance.DeleteAccClient(cmnd);
             string query = string.Format("Delete KHACHHANG where MaKH = {0}", id);
             int result = DataProvider.Instance.ExecuteNonQuery(query);

@@ -206,5 +206,25 @@ namespace QuanLyKhachSan_CLient.DAO
             return data;
         }
         #endregion
+
+        #region XỬ LÝ FORM fGuestMgmt
+        public bool DeleteRentalVoucherByMaKH(int id)
+        {
+            string query = string.Format("DeleteRentalVoucherByMaKH {0}", id);
+
+            byte[] bytes = TCPClient.Instance.GetDataFromCommand(query);
+
+            string msg = Encoding.UTF8.GetString(bytes);
+
+            string[] message = msg.Split(' ', '\0');
+
+            if (message[0] == "success")
+            {
+                return true;
+            }
+
+            return false;
+        }
+        #endregion
     }
 }
