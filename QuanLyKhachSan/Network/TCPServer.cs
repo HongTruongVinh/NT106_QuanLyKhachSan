@@ -461,12 +461,12 @@ namespace QuanLyKhachSan.Network
                             break;
 
                         //ĐIỀU CHỈNH FORM fGuestMgnt
-                        case "GetListClient":
+                        case "GetTableClient":
                             byte[] bytesGetListClient = new byte[1024 * 5000];
 
                             //int idClient = Int32.Parse(msg[1]);
 
-                            DataTable dataGetListClient = BillDAO.Instance.GetBills();
+                            DataTable dataGetListClient = ClientDAO.Instance.GetTableClient();
 
                             if (dataGetListClient != null)
                             {

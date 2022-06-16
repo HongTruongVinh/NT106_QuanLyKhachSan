@@ -139,6 +139,15 @@ namespace QuanLyKhachSan_CLient.DAO
             return list;
         }
 
+        public DataTable GetTableClient()
+        {
+            string query = string.Format("GetTableClient");
+
+            DataTable data = (DataTable)FormatData.Instance.DeserializeData(TCPClient.Instance.GetDataFromCommand(query));
+
+            return data;
+        }
+
         public bool InsertClient(string hoten, string sdt, string cmnd, string diachi)
         {
             string query = string.Format("InsertClient {0} {1} {2} {3}", hoten, sdt, cmnd, diachi);

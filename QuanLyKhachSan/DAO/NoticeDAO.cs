@@ -176,7 +176,9 @@ namespace QuanLyKhachSan.DAO
 
         public bool DeleteByUsername(string username)
         {
-            try
+            string query1 = string.Format("SELECT * FROM THONGBAO WHERE TenDangNhap = N'{0}'", username);
+            int success1 = DataProvider.Instance.ExecuteNonQuery(query1);
+            if(success1 > 0)
             {
                 string query = string.Format("DELETE dbo.THONGBAO WHERE TenDangNhap = '{0}'", username);
 
@@ -190,12 +192,8 @@ namespace QuanLyKhachSan.DAO
                 {
                     return false;//Xoa khong thanh cong
                 }
-
             }
-            catch
-            {
-                return false;
-            }
+            return true;
         }
 
         #region fGuestMgmt + fAdmin(TaiKhoan)

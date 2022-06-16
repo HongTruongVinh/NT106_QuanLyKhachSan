@@ -82,16 +82,28 @@ namespace QuanLyKhachSan.DAO
         #region fGuestMgmt + fAdmin (TaiKhoan)
         public bool DeleteMessageGuest(string cmnd)
         {
-            string query = string.Format("DELETE FROM TINNHAN WHERE UserNameKhachHang = N'{0}'", cmnd);
-            int result = DataProvider.Instance.ExecuteNonQuery(query);
-            return result > 0;
+            string query1 = string.Format("SELECT * FROM TINNHAN WHERE UserNameKhachHang = N'{0}'", cmnd);
+            int result1 = DataProvider.Instance.ExecuteNonQuery(query1);
+            if(result1 > 0)
+            {
+                string query = string.Format("DELETE FROM TINNHAN WHERE UserNameKhachHang = N'{0}'", cmnd);
+                int result = DataProvider.Instance.ExecuteNonQuery(query);
+                return result > 0;
+            }
+            return true;
         }
 
         public bool DeleteMessageStaff(string TenDangNhap)
         {
-            string query = string.Format("DELETE FROM TINNHAN WHERE UserNameNhanVien = N'{0}'", TenDangNhap);
-            int result = DataProvider.Instance.ExecuteNonQuery(query);
-            return result > 0;
+            string query1 = string.Format("SELECT * FROM TINNHAN WHERE UserNameNhanVien = N'{0}'", TenDangNhap);
+            int result1 = DataProvider.Instance.ExecuteNonQuery(query1);
+            if (result1 > 0)
+            {
+                string query = string.Format("DELETE FROM TINNHAN WHERE UserNameNhanVien = N'{0}'", TenDangNhap);
+                int result = DataProvider.Instance.ExecuteNonQuery(query);
+                return result > 0;
+            }
+            return true;
         }
         #endregion
     }

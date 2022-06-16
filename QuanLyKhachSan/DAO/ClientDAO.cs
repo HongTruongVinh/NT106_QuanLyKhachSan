@@ -148,6 +148,15 @@ namespace QuanLyKhachSan.DAO
             return list;
         }
 
+        public DataTable GetTableClient()
+        {
+            string query = "SELECT MaKH as 'Mã khách hàng', TenKhachHang as 'Họ và tên', CMND as 'CMND', SDT as 'Số điện thoại', DiaChi as 'Địa chỉ' from KHACHHANG";
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            return data;
+        }
+
         public bool InsertClient(string hoten, string sdt, string cmnd, string diachi)
         {
             try
