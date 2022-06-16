@@ -91,6 +91,12 @@ namespace QuanLyKhachSan.DAO
                 VALUES ({MaKH}, {MaPhong}, {SoNgayThue}, {ThanhTien}, '{NgayThanhToan}', {DonGia});
             ";
             int result = DataProvider.Instance.ExecuteNonQuery(query);
+
+            if(result > 0)
+            {
+                NoticeDAO.Instance.NoticeOrderRoomSuccess(MaKH);
+            }
+
             return result > 0;
         }
 
@@ -121,6 +127,13 @@ namespace QuanLyKhachSan.DAO
                 SET MaKH={MaKH}, MaPhong={MaPhong}, SoNgayThue={SoNgayThue}, ThanhTien={ThanhTien}, NgayThanhToan='{NgayThanhToan}', DonGia={DonGia}
                 WHERE MaHD={MaHD}
             ";
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
+        }
+
+        public bool DeleteBillByMaKH(int id)
+        {
+            string query = string.Format("DELETE FROM HOADON WHERE MaKH = {0}", id);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }

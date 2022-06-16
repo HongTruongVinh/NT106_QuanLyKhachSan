@@ -148,6 +148,15 @@ namespace QuanLyKhachSan.DAO
             return list;
         }
 
+        public DataTable GetTableClient()
+        {
+            string query = "SELECT MaKH as 'Mã khách hàng', TenKhachHang as 'Họ và tên', CMND as 'CMND', SDT as 'Số điện thoại', DiaChi as 'Địa chỉ' from KHACHHANG";
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            return data;
+        }
+
         public bool InsertClient(string hoten, string sdt, string cmnd, string diachi)
         {
             try
@@ -192,14 +201,13 @@ namespace QuanLyKhachSan.DAO
 
         public bool DeleteClient(int id, string cmnd)
         {
-            if (AccountDAO.Instance.DeleteAccClient(cmnd))
-            {
-                string query = string.Format("Delete KHACHHANG where MaKH = {0}", id);
-                int result = DataProvider.Instance.ExecuteNonQuery(query);
+            BillDAO.Instance.DeleteBillByMaKH(id);
+            RentalVoucherDAO.Instance.DeleteRentalVoucherByMaKH(id);
+            AccountDAO.Instance.DeleteAccClient(cmnd);
+            string query = string.Format("Delete KHACHHANG where MaKH = {0}", id);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
 
-                return result > 0;
-            }
-            return false;
+            return result > 0;
         }
 
         public DataTable GetGuestByBillID(int billId)

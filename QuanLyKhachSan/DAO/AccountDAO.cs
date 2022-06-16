@@ -292,6 +292,13 @@ namespace QuanLyKhachSan.DAO
             table.Merge(DataProvider.Instance.ExecuteQuery(query));
             return table;
         }
+
+        public DataTable LoadListEmployee()
+        {
+            string query = "SELECT TenHienThi 'Tên', TenDangNhap FROM dbo.TAIKHOAN WHERE LoaiTaiKhoan = 0";
+            DataTable table = DataProvider.Instance.ExecuteQuery(query);
+            return table;
+        }
         #endregion
 
         public bool changeInforAccountAdmin(string username, string displayName, string newPasswordBeMD5)

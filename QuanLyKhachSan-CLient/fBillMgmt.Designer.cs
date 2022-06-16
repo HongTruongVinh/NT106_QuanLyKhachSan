@@ -29,7 +29,6 @@ namespace QuanLyKhachSan_CLient
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.lb_MaKH = new System.Windows.Forms.Label();
             this.lb_TenKH = new System.Windows.Forms.Label();
             this.tlp_ThongTinKH = new System.Windows.Forms.TableLayoutPanel();
@@ -64,7 +63,7 @@ namespace QuanLyKhachSan_CLient
             this.lb_DLMaHD = new System.Windows.Forms.Label();
             this.dgv_DSHD = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.fBillMgmtBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.fBillMgmtBindingSource = new System.Windows.Forms.BindingSource();
             this.tlp_ThongTinKH.SuspendLayout();
             this.tlp_Chinh.SuspendLayout();
             this.tlp_TongKet.SuspendLayout();
@@ -133,7 +132,7 @@ namespace QuanLyKhachSan_CLient
             this.tb_DLTenKH.Location = new System.Drawing.Point(129, 40);
             this.tb_DLTenKH.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
             this.tb_DLTenKH.Name = "tb_DLTenKH";
-            this.tb_DLTenKH.Size = new System.Drawing.Size(124, 39);
+            this.tb_DLTenKH.Size = new System.Drawing.Size(124, 27);
             this.tb_DLTenKH.TabIndex = 19;
             this.tb_DLTenKH.Text = "Nguyễn Văn A";
             // 
@@ -171,7 +170,7 @@ namespace QuanLyKhachSan_CLient
             this.tb_DLCMND.Location = new System.Drawing.Point(504, 6);
             this.tb_DLCMND.Margin = new System.Windows.Forms.Padding(3, 6, 3, 3);
             this.tb_DLCMND.Name = "tb_DLCMND";
-            this.tb_DLCMND.Size = new System.Drawing.Size(134, 39);
+            this.tb_DLCMND.Size = new System.Drawing.Size(134, 27);
             this.tb_DLCMND.TabIndex = 20;
             this.tb_DLCMND.Text = "123";
             // 
@@ -555,7 +554,7 @@ namespace QuanLyKhachSan_CLient
             // 
             // fBillMgmt
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(751, 729);

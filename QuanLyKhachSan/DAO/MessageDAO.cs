@@ -83,7 +83,7 @@ namespace QuanLyKhachSan.DAO
         {
             DataTable data;
 
-            string query = string.Format("SELECT kh.TenKhachHang , kh.CMND FROM dbo.TINNHAN tn, dbo.KHACHHANG kh WHERE UserNameNhanVien = '{0}' AND kh.CMND = tn.UserNameKhachHang GROUP BY kh.TenKhachHang , kh.CMND", employeeUsername);
+            string query = string.Format("SELECT tk.TenHienThi 'Tên', tk.TenDangNhap FROM TINNHAN tn, TAIKHOAN tk WHERE tn.UserNameKhachHang = tk.TenDangNhap AND UserNameNhanVien = '{0}' GROUP BY tk.TenHienThi, tk.TenDangNhap", employeeUsername);
 
             data = DataProvider.Instance.ExecuteQuery(query);
 
@@ -93,17 +93,40 @@ namespace QuanLyKhachSan.DAO
         #region fGuestMgmt + fAdmin (TaiKhoan)
         public bool DeleteMessageGuest(string cmnd)
         {
-            string query = string.Format("DELETE FROM TINNHAN WHERE UserNameKhachHang = N'{0}'", cmnd);
-            int result = DataProvider.Instance.ExecuteNonQuery(query);
-            return result > 0;
+            string query1 = string.Format("SELECT * FROM TINNHAN WHERE UserNameKhachHang = N'{0}'", cmnd);
+            int result1 = DataProvider.Instance.ExecuteNonQuery(query1);
+            if(result1 > 0)
+            {
+                string query = string.Format("DELETE FROM TINNHAN WHERE UserNameKhachHang = N'{0}'", cmnd);
+                int result = DataProvider.Instance.ExecuteNonQuery(query);
+                return result > 0;
+            }
+            return true;
         }
 
         public bool DeleteMessageStaff(string TenDangNhap)
         {
-            string query = string.Format("DELETE FROM TINNHAN WHERE UserNameNhanVien = N'{0}'", TenDangNhap);
-            int result = DataProvider.Instance.ExecuteNonQuery(query);
-            return result > 0;
+            string query1 = string.Format("SELECT * FROM TINNHAN WHERE UserNameNhanVien = N'{0}'", TenDangNhap);
+            int result1 = DataProvider.Instance.ExecuteNonQuery(query1);
+            if (result1 > 0)
+            {
+                string query = string.Format("DELETE FROM TINNHAN WHERE UserNameNhanVien = N'{0}'", TenDangNhap);
+                int result = DataProvider.Instance.ExecuteNonQuery(query);
+                return result > 0;
+            }
+            return true;
         }
         #endregion
+
+        public DataTable LoadMessage(string usernameEmployee, string usernameClient)
+        {
+            DataTable data;
+
+            string query = string.Format("SELECT * FROM TINNHAN WHERE UserNameNhanVien = '{0}' AND UserNameKhachHang = '{1}'", usernameEmployee, usernameClient);
+
+            data = DataProvider.Instance.ExecuteQuery(query);
+
+            return data;
+        }
     }
 }

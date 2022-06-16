@@ -28,7 +28,7 @@ namespace QuanLyKhachSan.DAO
                 WHERE TrangThai = 0
                 AND HOADON.MaKH = KHACHHANG.MaKH
                 AND KHACHHANG.TenKhachHang = N'{name}'
-                AND KHACHHANG.CMND = '{personalID}'
+                AND KHACHHANG.CMND = N'{personalID}'
             ";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             return data;

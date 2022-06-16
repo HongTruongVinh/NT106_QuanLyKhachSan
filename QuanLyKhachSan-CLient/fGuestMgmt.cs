@@ -13,7 +13,6 @@ namespace QuanLyKhachSan_CLient
 {
     public partial class fGuestMgmt : Form
     {
-        BindingSource clientList = new BindingSource();
         public fGuestMgmt()
         {
             InitializeComponent();
@@ -22,32 +21,19 @@ namespace QuanLyKhachSan_CLient
 
         void Load_client()
         {
-            dgv_TTKH.DataSource = clientList;
-
-            Load_client_List();
-
-            this.dgv_TTKH.Columns["ID"].HeaderText = "Mã khách hàng";
-            this.dgv_TTKH.Columns["NumberPhone"].HeaderText = "Số điện thoại";
-            this.dgv_TTKH.Columns["IDPerson"].HeaderText = "CMND";
-            this.dgv_TTKH.Columns["Address"].HeaderText = "Địa chỉ";
-            this.dgv_TTKH.Columns["Name"].HeaderText = "Họ và tên";
+            dgv_TTKH.DataSource = ClientDAO.Instance.GetTableClient();
 
             Add_client_Binding();
-        }
-
-        void Load_client_List()
-        {
-            clientList.DataSource = ClientDAO.Instance.GetListClient();
         }
 
 
         void Add_client_Binding()
         {
-            tb_MaKH.DataBindings.Add(new Binding("Text", dgv_TTKH.DataSource, "ID", true, DataSourceUpdateMode.Never));
-            tb_HoTen.DataBindings.Add(new Binding("Text", dgv_TTKH.DataSource, "Name", true, DataSourceUpdateMode.Never));
-            tb_SDT.DataBindings.Add(new Binding("Text", dgv_TTKH.DataSource, "NumberPhone", true, DataSourceUpdateMode.Never));
-            tb_ID.DataBindings.Add(new Binding("Text", dgv_TTKH.DataSource, "IDPerson", true, DataSourceUpdateMode.Never));
-            tb_DiaChi.DataBindings.Add(new Binding("Text", dgv_TTKH.DataSource, "Address", true, DataSourceUpdateMode.Never));
+            tb_MaKH.DataBindings.Add(new Binding("Text", dgv_TTKH.DataSource, "Mã khách hàng", true, DataSourceUpdateMode.Never));
+            tb_HoTen.DataBindings.Add(new Binding("Text", dgv_TTKH.DataSource, "Họ và tên", true, DataSourceUpdateMode.Never));
+            tb_SDT.DataBindings.Add(new Binding("Text", dgv_TTKH.DataSource, "Số điện thoại", true, DataSourceUpdateMode.Never));
+            tb_ID.DataBindings.Add(new Binding("Text", dgv_TTKH.DataSource, "CMND", true, DataSourceUpdateMode.Never));
+            tb_DiaChi.DataBindings.Add(new Binding("Text", dgv_TTKH.DataSource, "Địa chỉ", true, DataSourceUpdateMode.Never));
         }
 
         private void btn_Them_Click(object sender, EventArgs e)
@@ -59,7 +45,7 @@ namespace QuanLyKhachSan_CLient
             if (ClientDAO.Instance.InsertClient(hoten, sdt, cmnd, diachi))
             {
                 MessageBox.Show("Thêm khách hàng thành công");
-                Load_client_List();
+                dgv_TTKH.DataSource = ClientDAO.Instance.GetTableClient();
             }
             else
             {
@@ -74,7 +60,7 @@ namespace QuanLyKhachSan_CLient
             if (ClientDAO.Instance.DeleteClient(id, tb_ID.Text))
             {
                 MessageBox.Show("Xóa khách hàng thành công");
-                Load_client_List();
+                dgv_TTKH.DataSource = ClientDAO.Instance.GetTableClient();
             }
             else
             {
@@ -93,7 +79,7 @@ namespace QuanLyKhachSan_CLient
             if (ClientDAO.Instance.UpdateClient(makhachhang, hoten, sdt, cmnd, diachi))
             {
                 MessageBox.Show("Sửa khách hàng thành công");
-                Load_client_List();
+                dgv_TTKH.DataSource = ClientDAO.Instance.GetTableClient();
             }
             else
             {

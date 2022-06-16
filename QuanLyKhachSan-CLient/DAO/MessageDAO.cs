@@ -71,5 +71,27 @@ namespace QuanLyKhachSan_CLient.DAO
 
             return data;
         }
+
+        public DataTable LoadListEmployee()
+        {
+            DataTable data;
+
+            string query = string.Format("LoadListEmployee");
+
+            data = (DataTable)FormatData.Instance.DeserializeData(TCPClient.Instance.GetDataFromCommand(query));
+
+            return data;
+        }
+
+        public DataTable LoadMessage(string usernameEmployee, string usernameClient)
+        {
+            DataTable data;
+
+            string query = string.Format("LoadMessage {0} {1}", usernameEmployee , usernameClient);
+
+            data = (DataTable)FormatData.Instance.DeserializeData(TCPClient.Instance.GetDataFromCommand(query));
+
+            return data;
+        }
     }
 }

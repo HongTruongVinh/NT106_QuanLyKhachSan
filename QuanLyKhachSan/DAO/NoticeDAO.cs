@@ -80,6 +80,31 @@ namespace QuanLyKhachSan.DAO
             }
         }
 
+        public bool NoticeOrderRoomSuccess(int idClient)
+        {
+            try
+            {
+                string subject = "Thong bao ket qua dat phong.";
+                string content = "Khach san ABC thong bao ban da dat phong thanh cong!\n" +
+                                 "Xin cam on ban da dat phong cua chung toi.\n";
+
+                Client client = ClientDAO.Instance.GetClientByID(idClient);
+
+                bool resual = false;
+
+                if (client != null)
+                {
+                    resual = Insert(client.IDPerson.ToString(), subject, content);
+                }
+
+                return resual;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         public int InsertForAllAccount(string subject = "", string content = "")
         {
             int success = 0;
@@ -176,7 +201,9 @@ namespace QuanLyKhachSan.DAO
 
         public bool DeleteByUsername(string username)
         {
-            try
+            string query1 = string.Format("SELECT * FROM THONGBAO WHERE TenDangNhap = N'{0}'", username);
+            int success1 = DataProvider.Instance.ExecuteNonQuery(query1);
+            if(success1 > 0)
             {
                 string query = string.Format("DELETE dbo.THONGBAO WHERE TenDangNhap = '{0}'", username);
 
@@ -190,12 +217,8 @@ namespace QuanLyKhachSan.DAO
                 {
                     return false;//Xoa khong thanh cong
                 }
-
             }
-            catch
-            {
-                return false;
-            }
+            return true;
         }
 
         #region fGuestMgmt + fAdmin(TaiKhoan)

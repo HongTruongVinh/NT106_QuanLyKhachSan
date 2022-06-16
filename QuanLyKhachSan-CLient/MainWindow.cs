@@ -63,6 +63,8 @@ namespace QuanLyKhachSan_CLient
                 btn_RoomMgmt.Enabled = false;
             }
 
+            this.Text += ". Xin chào " + User.Instance.DisplayName;
+
         }
 
         private void MainWindow_FormClosing(object sender, FormClosingEventArgs e)
@@ -154,7 +156,7 @@ namespace QuanLyKhachSan_CLient
 
         private void btn_RoomMgmt_Click(object sender, EventArgs e)
         {
-            fListRentalVoucher fListRentalVoucher = new fListRentalVoucher();
+            fReservationMgmt fListRentalVoucher = new fReservationMgmt();
             fListRentalVoucher.ShowDialog();
         }
 
@@ -196,6 +198,7 @@ namespace QuanLyKhachSan_CLient
         private void btn_Chat_Click(object sender, EventArgs e)
         {
             fChat fChat = new fChat();
+            fChat.Text = "Mesager của:" + User.Instance.DisplayName;
             fChat.Show();
         }
     }

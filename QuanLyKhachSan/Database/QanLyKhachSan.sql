@@ -4,22 +4,22 @@ GO
 USE QuanLyKhachSan
 GO
 
---USE  master
 
---Drop database QuanLyKhachSan
+--SELECT tk.TenHienThi, tk.TenDangNhap FROM TINNHAN tn, TAIKHOAN tk WHERE tn.UserNameKhachHang = tk.TenDangNhap AND UserNameNhanVien = 'Dung' GROUP BY tk.TenHienThi, tk.TenDangNhap
 
 ---------------------------------------------------------------------------
 -- Phần tạo bảng
 --SELECT * FROM PHONG
 --SELECT * FROM KHACHHANG
---SELECT * FROM TAIKHOAN
+--SELECT * FROM TAIKHOAN WHERE LoaiTaiKhoan = 0
+--SELECT * FROM PHIEUTHUEPHONG
 --SELECT * FROM TINNHAN
---DELETE TINNHAN WHERE UserNameKhachHang = '123'
---DELETE TAIKHOAN WHERE TenDangNhap = '123'
+--DELETE TINNHAN WHERE UserNameKhachHang = 'Vinh'
+--DELETE TINNHAN WHERE TenDangNhap = '000'
 --DELETE THONGBAO WHERE TenDangNhap = '12345'
 --INSERT INTO dbo.THONGBAO ( TenDangNhap , TieuDe , NoiDung, NgayThongBao) VALUES ( '12345' , 'sdfs' , 'fsdf', '6/14/2022')
-SELECT kh.TenKhachHang , kh.CMND FROM dbo.TINNHAN tn, dbo.KHACHHANG kh 
-WHERE UserNameNhanVien = 'Vinh' AND kh.CMND = tn.UserNameKhachHang GROUP BY kh.TenKhachHang , kh.CMND
+--SELECT kh.TenKhachHang , kh.CMND FROM dbo.TINNHAN tn, dbo.KHACHHANG kh 
+--WHERE UserNameNhanVien = 'Vinh' AND kh.CMND = tn.UserNameKhachHang GROUP BY kh.TenKhachHang , kh.CMND
 CREATE TABLE TAIKHOAN
 (
 	TenDangNhap NVARCHAR(100)  PRIMARY KEY,
@@ -28,7 +28,7 @@ CREATE TABLE TAIKHOAN
 	LoaiTaiKhoan INT DEFAULT 0, check(LoaiTaiKhoan = 0 or LoaiTaiKhoan = 1 or LoaiTaiKhoan = 3) -- 0 là loại TK của nhân viên, 1 là loại TK của admin , 3 là loại TK của khách hàng
 )
 GO
---UPDATE dbo.TAIKHOAN SET MatKhau = '0' WHERE TenDangNhap = 'Vinh'
+--UPDATE dbo.PHONG SET TinhTrang = 0 WHERE TenDangNhap = 'Vinh'
 CREATE TABLE THONGBAO
 (
 	MaThongBao INT IDENTITY PRIMARY KEY,
@@ -500,4 +500,40 @@ VALUES
 	'20160601',
 	2000,
 	1
+)
+
+INSERT INTO KHACHHANG
+(
+	TenKhachHang,
+	CMND,
+	SDT,
+	DiaChi
+)
+VALUES
+(
+	N'BUI HAI DANG',
+	'1234',
+	'1234',
+	'1234'
+)
+
+INSERT INTO HOADON
+(
+	MaKH,
+	MaPhong,
+	SoNgayThue,
+	ThanhTien,
+	NgayThanhToan,
+	DonGia,
+	TrangThai --- 0 là chưa thanh toán, 1 là đã thanh toán
+)
+VALUES
+(
+	5,
+	1,
+	1,
+	10000,
+	'20221201',
+	2000,
+	0
 )

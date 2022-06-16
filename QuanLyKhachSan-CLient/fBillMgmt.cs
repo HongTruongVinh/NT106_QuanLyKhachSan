@@ -17,6 +17,7 @@ namespace QuanLyKhachSan_CLient
         public fBillMgmt()
         {
             InitializeComponent();
+            LoadData();
         }
 
         private string name;
@@ -24,8 +25,8 @@ namespace QuanLyKhachSan_CLient
 
         private void btn_ThanhToan_Click(object sender, EventArgs e)
         {
-            int id = int.Parse(lb_DLMaHD.Text);
-            if (BillDetailsDAO.Instance.PayBillDetailsByID(id))
+            int id = Int32.Parse(lb_DLMaHD.Text);
+            if (BillDAO.Instance.PayBillByID(id))
             {
                 MessageBox.Show("Thanh toán thành công");
             }

@@ -168,10 +168,10 @@ namespace QuanLyKhachSan.DAO
 
         public DataTable GetListOrderedRoomOfClient(string username)
         {
-            DataTable tableClient = DataProvider.Instance.ExecuteQuery("SELECT kh.MaKH id, CMND idPerson, TenKhachHang name, SDT numberPhone, DiaChi address  FROM dbo.KHACHHANG kh WHERE kh.CMND = " + username);
-            Client client = new Client(tableClient.Rows[0]);
+            //DataTable tableClient = DataProvider.Instance.ExecuteQuery("SELECT kh.MaKH id, CMND idPerson, TenKhachHang name, SDT numberPhone, DiaChi address  FROM dbo.KHACHHANG kh WHERE kh.CMND = '" + username + "'");
+            //Client client = new Client(tableClient.Rows[0]);
 
-            string query = string.Format("SELECT p.MaPhong, p.TenPhong, p.GhiChu, kh.TenKhachHang FROM PHONG p, PHIEUTHUEPHONG ptp, KHACHHANG kh WHERE ptp.MaKH = kh.MaKH AND ptp.MaPhong = p.MaPhong AND kh.MaKH = {0}", client.ID);
+            string query = string.Format("SELECT p.MaPhong, p.TenPhong, p.GhiChu, kh.TenKhachHang FROM PHONG p, PHIEUTHUEPHONG ptp, KHACHHANG kh WHERE ptp.MaKH = kh.MaKH AND ptp.MaPhong = p.MaPhong AND kh.CMND = '{0}'", username);
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
             return data;

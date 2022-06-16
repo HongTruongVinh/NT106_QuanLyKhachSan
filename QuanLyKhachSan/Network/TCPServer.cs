@@ -96,7 +96,7 @@ namespace QuanLyKhachSan.Network
                             responseMessage += " OK OK";
 
                             //AccountDAO.Instance.Insert(strings[2], strings[1], strings[5]);
-                            ClientDAO.Instance.InsertLient(strings[1], Convert.ToInt32(strings[3]), strings[2], strings[4]);
+                            ClientDAO.Instance.InsertLient(strings[1], Convert.ToInt32(strings[2]), strings[3], strings[4]);
                         }
 
 
@@ -113,7 +113,16 @@ namespace QuanLyKhachSan.Network
 
                         Account account = AccountDAO.Instance.GetUser(usernameAndpassword[0], usernameAndpassword[1]);
 
-                        LoggedInSuccessfully += " " + account.TypeUser + " " + account.DisplayName;// Gửi về loại tài khoản và DisplayName, vd: "Successfully Employee vinh"
+                        if(account.TypeUser == "Client")
+                        {
+                            Client client = ClientDAO.Instance.GetClientByIDPerson(Int32.Parse(account.UserName));
+
+                            LoggedInSuccessfully += String.Format(" {0} {1} {2} {3} {4} {5}", account.TypeUser, account.DisplayName, client.ID, client.NumberPhone, client.Address, client.IDPerson);
+                        }
+                        else
+                        {
+                            LoggedInSuccessfully += " " + account.TypeUser + " " + account.DisplayName;// Gửi về loại tài khoản và DisplayName, vd: "Successfully Employee vinh"
+                        }
 
                         byte[] Loged = Encoding.UTF8.GetBytes(LoggedInSuccessfully);
                         _socketClient.Send(Loged); // thong bao toi client dang nhap thanh cong
@@ -476,12 +485,12 @@ namespace QuanLyKhachSan.Network
                             break;
 
                         //ĐIỀU CHỈNH FORM fGuestMgnt
-                        case "GetListClient":
+                        case "GetTableClient":
                             byte[] bytesGetListClient = new byte[1024 * 5000];
 
                             //int idClient = Int32.Parse(msg[1]);
 
-                            DataTable dataGetListClient = BillDAO.Instance.GetBills();
+                            DataTable dataGetListClient = ClientDAO.Instance.GetTableClient();
 
                             if (dataGetListClient != null)
                             {
@@ -493,19 +502,19 @@ namespace QuanLyKhachSan.Network
                             break;
 
                         //ĐIỀU CHỈNH FORM fBillDetailsDAO
-                        case "PayBillDetailsByID":
-                            byte[] resultPayBillDetailsByID = new byte[1024 * 5000];
+                        case "PayBillByID":
+                            byte[] resultPayBillByID = new byte[1024 * 5000];
 
-                            string bytesResultPayBillDetailsByID = "fail";
+                            string bytesResultPayBillByID = "fail";
 
-                            if (BillDetailsDAO.Instance.PayBillDetailsByID(Int32.Parse(msg[1])))
+                            if (BillDAO.Instance.PayBillByID(Int32.Parse(msg[1])))
                             {
-                                bytesResultPayBillDetailsByID = "success";
+                                bytesResultPayBillByID = "success";
                             }
 
-                            resultPayBillDetailsByID = Encoding.UTF8.GetBytes(bytesResultPayBillDetailsByID);
+                            resultPayBillByID = Encoding.UTF8.GetBytes(bytesResultPayBillByID);
 
-                            socketClient.Send(resultPayBillDetailsByID);
+                            socketClient.Send(resultPayBillByID);
 
                             break;
 
@@ -513,8 +522,9 @@ namespace QuanLyKhachSan.Network
                             byte[] bytesGetUnCheckedBillsByGuestInfo = new byte[1024 * 5000];
 
                             //int idClient = Int32.Parse(msg[1]);
+                            string[] stringss = message.Split('_','\0');
 
-                            DataTable dataGetUnCheckedBillsByGuestInfo = BillDetailsDAO.Instance.GetUnCheckedBillsByGuestInfo(msg[1], msg[2]);
+                            DataTable dataGetUnCheckedBillsByGuestInfo = BillDetailsDAO.Instance.GetUnCheckedBillsByGuestInfo(stringss[1], stringss[2]);
 
                             if (dataGetUnCheckedBillsByGuestInfo != null)
                             {
@@ -530,7 +540,9 @@ namespace QuanLyKhachSan.Network
 
                             string bytesResultInsertClient = "fail";
 
-                            if (ClientDAO.Instance.InsertClient(msg[1], msg[2], msg[3], msg[4]))
+                            string[] ClientInfoForInsert = message.Split('_', '\0'); 
+
+                            if (ClientDAO.Instance.InsertClient(ClientInfoForInsert[1], ClientInfoForInsert[2], ClientInfoForInsert[3], ClientInfoForInsert[4]))
                             {
                                 bytesResultInsertClient = "success";
                             }
@@ -557,6 +569,38 @@ namespace QuanLyKhachSan.Network
 
                             break;
 
+                        case "DeleteBillByMaKH":
+                            byte[] resultDeleteBillByMaKH = new byte[1024 * 5000];
+
+                            string bytesResultDeleteBillByMaKH = "fail";
+
+                            if (BillDAO.Instance.DeleteBillByMaKH(Int32.Parse(msg[1])))
+                            {
+                                bytesResultDeleteBillByMaKH = "success";
+                            }
+
+                            resultDeleteBillByMaKH = Encoding.UTF8.GetBytes(bytesResultDeleteBillByMaKH);
+
+                            socketClient.Send(resultDeleteBillByMaKH);
+
+                            break;
+
+                        case "DeleteRentalVoucherByMaKH":
+                            byte[] resultDeleteRentalVoucherByMaKH = new byte[1024 * 5000];
+
+                            string bytesResultDeleteRentalVoucherByMaKH = "fail";
+
+                            if (RentalVoucherDAO.Instance.DeleteRentalVoucherByMaKH(Int32.Parse(msg[1])))
+                            {
+                                bytesResultDeleteRentalVoucherByMaKH = "success";
+                            }
+
+                            resultDeleteRentalVoucherByMaKH = Encoding.UTF8.GetBytes(bytesResultDeleteRentalVoucherByMaKH);
+
+                            socketClient.Send(resultDeleteRentalVoucherByMaKH);
+
+                            break;
+
                         case "DeleteClient":
                             byte[] resultDeleteClient = new byte[1024 * 5000];
 
@@ -570,6 +614,37 @@ namespace QuanLyKhachSan.Network
                             resultDeleteClient = Encoding.UTF8.GetBytes(bytesResultDeleteClient);
 
                             socketClient.Send(resultDeleteClient);
+
+                            break;
+                        #endregion
+
+
+                        #region Ngay 16/06
+                        case "LoadListEmployee":
+                            byte[] bytesLoadListEmployee = new byte[1024 * 5000];
+
+                            DataTable dataLoadListEmployee = AccountDAO.Instance.LoadListEmployee();
+
+                            if (dataLoadListEmployee != null)
+                            {
+                                bytesLoadListEmployee = FormatData.Instance.SerializeData(dataLoadListEmployee);
+                            }
+
+                            socketClient.Send(bytesLoadListEmployee);
+
+                            break;
+
+                        case "LoadMessage":
+                            byte[] bytesLoadMessage = new byte[1024 * 5000];
+
+                            DataTable dataLoadMessage = MessageDAO.Instance.LoadMessage(msg[1], msg[2]);
+
+                            if (dataLoadMessage != null)
+                            {
+                                bytesLoadMessage = FormatData.Instance.SerializeData(dataLoadMessage);
+                            }
+
+                            socketClient.Send(bytesLoadMessage);
 
                             break;
                             #endregion

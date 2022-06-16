@@ -167,7 +167,7 @@ namespace QuanLyKhachSan.DAO
 
 
         #region Ngay 11/06
-        public bool InserRentalVoucherFromClient(int idRoom, int countPeople, int typeClient, string name, string idPerson, string numberphone, string address)
+        public bool InserRentalVoucherFromClient(int idRoom, int countPeople, int typeClient, string name, string numberphone, string idPerson, string address)
         {
             try
             {
@@ -221,6 +221,15 @@ namespace QuanLyKhachSan.DAO
             }
 
             return success > 0;
+        }
+        #endregion
+
+        #region 16/06
+        public bool DeleteRentalVoucherByMaKH(int id)
+        {
+            string query = string.Format("DELETE FROM PHIEUTHUEPHONG WHERE MaKH = {0}", id);
+            int result = DataProvider.Instance.ExecuteNonQuery(query);
+            return result > 0;
         }
         #endregion
     }
