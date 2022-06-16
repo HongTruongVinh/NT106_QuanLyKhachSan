@@ -60,5 +60,16 @@ namespace QuanLyKhachSan_CLient.DAO
                 return false;
             }
         }
+
+        public DataTable MessageOfEmployee(string employeeUsername)
+        {
+            DataTable data;
+
+            string query = string.Format("MessageOfEmployee {0} ", employeeUsername);
+
+            data = (DataTable)FormatData.Instance.DeserializeData(TCPClient.Instance.GetDataFromCommand(query));
+
+            return data;
+        }
     }
 }

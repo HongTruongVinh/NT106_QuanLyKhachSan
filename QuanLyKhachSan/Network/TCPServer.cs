@@ -302,6 +302,7 @@ namespace QuanLyKhachSan.Network
 
                             break;
 
+
                         case "EXIT":
                             socketClient.Close();
                             tcpClient.Close();
@@ -372,6 +373,20 @@ namespace QuanLyKhachSan.Network
                             bytesResualChating = Encoding.UTF8.GetBytes(resualChating);
 
                             socketClient.Send(bytesResualChating);
+
+                            break;
+
+                        case "MessageOfEmployee":
+                            byte[] bytesMessageOfEmployee = new byte[1024 * 5000];
+
+                            DataTable dataMessageOfEmployee = MessageDAO.Instance.MessageOfEmployee(msg[1]);
+
+                            if (dataMessageOfEmployee != null)
+                            {
+                                bytesMessageOfEmployee = FormatData.Instance.SerializeData(dataMessageOfEmployee);
+                            }
+
+                            socketClient.Send(bytesMessageOfEmployee);
 
                             break;
 

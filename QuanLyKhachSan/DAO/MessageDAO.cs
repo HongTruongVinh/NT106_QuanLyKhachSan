@@ -47,9 +47,9 @@ namespace QuanLyKhachSan.DAO
 
         public bool SendMessage(string employeeUsername, string clientUsername, string msg)
         {
+            
             try
             {
-                
                 if(employeeUsername == "_")
                 {
                     int index = 1;
@@ -77,6 +77,17 @@ namespace QuanLyKhachSan.DAO
             {
                 return false;
             }
+        }
+
+        public DataTable MessageOfEmployee(string employeeUsername)
+        {
+            DataTable data;
+
+            string query = string.Format("SELECT kh.TenKhachHang , kh.CMND FROM dbo.TINNHAN tn, dbo.KHACHHANG kh WHERE UserNameNhanVien = '{0}' AND kh.CMND = tn.UserNameKhachHang GROUP BY kh.TenKhachHang , kh.CMND", employeeUsername);
+
+            data = DataProvider.Instance.ExecuteQuery(query);
+
+            return data;
         }
 
         #region fGuestMgmt + fAdmin (TaiKhoan)

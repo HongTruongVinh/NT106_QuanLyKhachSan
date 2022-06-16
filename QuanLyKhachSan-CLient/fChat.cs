@@ -37,6 +37,15 @@ namespace QuanLyKhachSan_CLient
             lv_Show.Columns.Add("BoxChat");
             lv_Show.View = System.Windows.Forms.View.Details;
             lv_Show.Columns[0].Width = 500;
+
+            if (User.Instance.TypeUser == "Employee")
+            {
+                LoadMessagesOfEmployee();
+            }
+            else
+            {
+                dgv_ListMsg.Hide();
+            }
         }
 
         void LoadMessage()
@@ -64,7 +73,10 @@ namespace QuanLyKhachSan_CLient
             }
         }
 
-
+        void LoadMessagesOfEmployee()
+        {
+            dgv_ListMsg.DataSource = MessageDAO.Instance.MessageOfEmployee(User.Instance.UserName);
+        }
 
         string FormatMessage(string sender, string message)
         {
@@ -74,6 +86,12 @@ namespace QuanLyKhachSan_CLient
         private void btn_Send_Click(object sender, EventArgs e)
         {
             if (tb_Message.Text == "") return;
+
+            if (User.Instance.TypeUser == "Employee" && tb_NameReceiver.Text=="_")
+            {
+                return;//Nếu ko có người để gửi thì Nhân viên ko thể gửi tin nhắn
+            }
+
 
             string msg = FormatMessage(User.Instance.UserName, tb_Message.Text);
 
@@ -98,6 +116,11 @@ namespace QuanLyKhachSan_CLient
         private void lb_Reload_Click(object sender, EventArgs e)
         {
             LoadMessage();
+
+            if (User.Instance.TypeUser == "Employee")
+            {
+                LoadMessagesOfEmployee();
+            }
         }
     }
 }

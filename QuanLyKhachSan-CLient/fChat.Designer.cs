@@ -34,6 +34,8 @@
             this.tb_Message = new System.Windows.Forms.TextBox();
             this.btn_Send = new System.Windows.Forms.Button();
             this.lb_Reload = new System.Windows.Forms.Label();
+            this.dgv_ListMsg = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ListMsg)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -98,11 +100,22 @@
             this.lb_Reload.Text = "⟳";
             this.lb_Reload.Click += new System.EventHandler(this.lb_Reload_Click);
             // 
+            // dgv_ListMsg
+            // 
+            this.dgv_ListMsg.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_ListMsg.Location = new System.Drawing.Point(794, 43);
+            this.dgv_ListMsg.Name = "dgv_ListMsg";
+            this.dgv_ListMsg.RowHeadersWidth = 51;
+            this.dgv_ListMsg.RowTemplate.Height = 24;
+            this.dgv_ListMsg.Size = new System.Drawing.Size(171, 336);
+            this.dgv_ListMsg.TabIndex = 35;
+            // 
             // fChat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(977, 463);
+            this.Controls.Add(this.dgv_ListMsg);
             this.Controls.Add(this.lb_Reload);
             this.Controls.Add(this.btn_Send);
             this.Controls.Add(this.tb_Message);
@@ -111,6 +124,7 @@
             this.Controls.Add(this.label1);
             this.Name = "fChat";
             this.Text = "Chating";
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_ListMsg)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,5 +138,6 @@
         private System.Windows.Forms.TextBox tb_Message;
         private System.Windows.Forms.Button btn_Send;
         private System.Windows.Forms.Label lb_Reload;
+        private System.Windows.Forms.DataGridView dgv_ListMsg;
     }
 }
